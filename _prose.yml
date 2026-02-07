@@ -1,0 +1,24 @@
+rooturl: '_posts'
+siteurl: 'https://drjustinjeon.com'
+media: 'images'
+metadata:
+  _posts:
+    - name: "layout"
+      field:
+        element: "hidden"
+        value: "post"
+    - name: "title"
+      field:
+        element: "text"
+        label: "Title"
+        placeholder: "Enter post title"
+    - name: "subtitle"
+      field:
+        element: "text"
+        label: "Subtitle (optional)"
+        placeholder: "Enter subtitle"
+    - name: "date"
+      field:
+        element: "text"
+        label: "Date"
+        placeholder: "YYYY-MM-DD"
