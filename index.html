@@ -10,8 +10,8 @@
     <meta property="og:title" content="Justin Y. Jeon | Yonsei University" />
     <meta property="og:description" content="Underwood Distinguished Professor at Yonsei University. Expert in exercise oncology, salutogenesis, and AI in health." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://justinjeon70-hue.github.io/justin-jeon-website/" />
-    <link rel="canonical" href="https://justinjeon70-hue.github.io/justin-jeon-website/" />
+    <meta property="og:url" content="https://drjustinjeon.com" />
+    <link rel="canonical" href="https://drjustinjeon.com" />
     <title>Justin Y. Jeon | Underwood Distinguished Professor | Yonsei University</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -520,7 +520,7 @@
         /* ===== Media ===== */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
             gap: 1.5rem;
         }
 
@@ -554,7 +554,7 @@
             border: none;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 540px) {
             .video-grid { grid-template-columns: 1fr; }
         }
 
@@ -655,15 +655,26 @@
         }
 
         @media (max-width: 600px) {
-            .hero { padding: 100px 1.5rem 60px; }
+            .hero { padding: 100px 1.25rem 60px; }
             .hero-photo { width: 120px; height: 120px; }
-            .section { padding: 60px 1.5rem; }
+            .hero-name { font-size: clamp(2rem, 8vw, 2.8rem); white-space: nowrap; }
+            .section { padding: 60px 1.25rem; }
             .research-grid { grid-template-columns: 1fr; }
-            nav ul { gap: 1rem; }
-            nav a { font-size: 0.75rem; }
+            nav ul { gap: 0.6rem; flex-wrap: wrap; justify-content: flex-end; }
+            nav a { font-size: 0.7rem; }
+            .nav-inner { padding: 0 1rem; height: auto; min-height: 48px; padding-top: 0.4rem; padding-bottom: 0.4rem; }
+            .nav-logo { font-size: 0.85rem; white-space: nowrap; flex-shrink: 0; margin-right: 0.75rem; }
             .edu-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1.5rem; }
             .pub-card { padding: 1.25rem 1.5rem; }
             .hero-links { flex-direction: column; align-items: center; }
+            .contact-card { padding: 1.25rem; gap: 1rem; }
+            .section-heading { font-size: clamp(1.6rem, 5vw, 2rem); }
+        }
+
+        @media (max-width: 380px) {
+            .hero-name { font-size: 1.8rem; }
+            nav ul { gap: 0.4rem; }
+            nav a { font-size: 0.65rem; }
         }
     </style>
 </head>
