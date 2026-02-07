@@ -1,0 +1,15 @@
+title: "Justin Y. Jeon"
+description: "Underwood Distinguished Professor at Yonsei University"
+url: "https://drjustinjeon.com"
+baseurl: ""
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - create_sarcopenia_ppt.py
+  - "*.py"

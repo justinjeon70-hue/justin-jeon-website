@@ -1,0 +1,172 @@
+---
+layout: null
+title: Blog
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Justin Y. Jeon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --bg-primary: #fbfbfd;
+            --bg-secondary: #f5f5f7;
+            --accent: #0071e3;
+            --border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: var(--bg-primary);
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(251, 251, 253, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center; height: 52px;
+        }
+
+        .nav-logo { font-weight: 600; font-size: 1rem; color: var(--text-primary); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--text-secondary); font-size: 0.82rem; font-weight: 400; transition: color 0.3s; }
+        nav a:hover { color: var(--text-primary); }
+
+        .blog-header {
+            max-width: 800px; margin: 0 auto;
+            padding: 120px 2rem 3rem; text-align: center;
+        }
+
+        .blog-label {
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem;
+        }
+
+        .blog-heading {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+            letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 0.75rem;
+        }
+
+        .blog-subtitle {
+            font-size: 1.05rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto;
+        }
+
+        .posts-list {
+            max-width: 800px; margin: 0 auto; padding: 0 2rem 4rem;
+            display: flex; flex-direction: column; gap: 1.25rem;
+        }
+
+        .post-card {
+            background: white; border-radius: 20px; padding: 2rem 2.5rem;
+            box-shadow: var(--card-shadow); border: 1px solid var(--border);
+            text-decoration: none; color: inherit;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: block;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .post-card-date {
+            font-size: 0.78rem; font-weight: 500; color: var(--text-tertiary);
+            letter-spacing: 0.02em; margin-bottom: 0.5rem;
+        }
+
+        .post-card-title {
+            font-size: 1.25rem; font-weight: 600; color: var(--text-primary);
+            letter-spacing: -0.01em; margin-bottom: 0.5rem; line-height: 1.35;
+        }
+
+        .post-card-excerpt {
+            font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;
+        }
+
+        .post-card-read {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            margin-top: 1rem; font-size: 0.85rem; color: var(--accent); font-weight: 500;
+        }
+
+        .empty-state {
+            text-align: center; padding: 4rem 2rem; color: var(--text-tertiary); font-size: 1rem;
+        }
+
+        footer {
+            padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border);
+        }
+
+        .footer-copy { font-size: 0.75rem; color: var(--text-tertiary); }
+
+        @media (max-width: 600px) {
+            .blog-header { padding: 100px 1.25rem 2rem; }
+            .posts-list { padding: 0 1.25rem 3rem; }
+            .post-card { padding: 1.5rem; }
+            .nav-inner { padding: 0 1rem; }
+            nav ul { gap: 0.8rem; }
+            nav a { font-size: 0.72rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Justin Y. Jeon</a>
+        <ul>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#research">Research</a></li>
+            <li><a href="/blog" style="color: var(--text-primary);">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="blog-header">
+    <p class="blog-label">Blog</p>
+    <h1 class="blog-heading">Thoughts & Insights</h1>
+    <p class="blog-subtitle">Reflections on exercise medicine, salutogenesis, and the science of health.</p>
+</div>
+
+<div class="posts-list">
+    {% for post in site.posts %}
+    <a href="{{ post.url }}" class="post-card">
+        <div class="post-card-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        <div class="post-card-title">{{ post.title }}</div>
+        <div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</div>
+        <div class="post-card-read">Read more &rarr;</div>
+    </a>
+    {% endfor %}
+
+    {% if site.posts.size == 0 %}
+    <div class="empty-state">No posts yet. Check back soon.</div>
+    {% endif %}
+</div>
+
+<footer>
+    <p class="footer-copy">&copy; 2026 Justin Y. Jeon &middot; Yonsei University</p>
+</footer>
+
+</body>
+</html>
