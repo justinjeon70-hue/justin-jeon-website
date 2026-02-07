@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Y. Jeon | Yonsei University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --bg-primary: #fbfbfd;
+            --bg-secondary: #f5f5f7;
+            --bg-dark: #1d1d1f;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* ===== Scroll Animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .fade-in-delay-4 { transition-delay: 0.4s; }
+        .fade-in-delay-5 { transition-delay: 0.5s; }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(251, 251, 253, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(251, 251, 253, 0.92);
+            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 52px;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            letter-spacing: 0;
+        }
+
+        nav a:hover { color: var(--text-primary); }
+
+        /* ===== Hero ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 80px;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 980px;
+            text-align: center;
+        }
+
+        .hero-photo-wrapper {
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.6s ease;
+        }
+
+        .hero-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+        }
+
+        .hero-overline {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-name {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            letter-spacing: -0.01em;
+        }
+
+        .btn-filled {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-filled:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(0, 113, 227, 0.06);
+        }
+
+        /* ===== Sections ===== */
+        .section {
+            padding: 100px 2rem;
+        }
+
+        .section-dark {
+            background: var(--bg-secondary);
+        }
+
+        .section-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-heading {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--text-primary);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .section-subheading {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 640px;
+            line-height: 1.6;
+            margin-bottom: 3.5rem;
+        }
+
+        /* ===== About ===== */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .metrics-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            position: sticky;
+            top: 80px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .metrics-card:hover {
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .metrics-card-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .metric-row:last-of-type { border-bottom: none; }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .metrics-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            font-size: 0.82rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .metrics-link:hover { opacity: 0.7; }
+
+        /* ===== Research Grid ===== */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .research-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .research-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.08), rgba(0, 113, 227, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .research-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .research-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ===== Education ===== */
+        .edu-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .edu-card {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .edu-card:hover {
+            transform: translateX(6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .edu-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(0, 113, 227, 0.08);
+            padding: 0.4rem 1rem;
+            border-radius: 980px;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+
+        .edu-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.15rem;
+            letter-spacing: -0.01em;
+        }
+
+        .edu-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== Publications ===== */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pub-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .pub-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.45;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .pub-authors {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-bottom: 0.6rem;
+        }
+
+        .pub-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pub-journal {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .pub-year-badge {
+            font-size: 0.72rem;
+            font-weight: 600;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 980px;
+        }
+
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .cta-link:hover {
+            gap: 0.75rem;
+        }
+
+        .cta-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-link:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* ===== Contact ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .contact-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-tertiary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .contact-value a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-value a:hover { opacity: 0.7; }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: var(--bg-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--text-primary); }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            .research-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+            .metrics-card { position: static; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 100px 1.5rem 60px; }
+            .hero-photo { width: 120px; height: 120px; }
+            .section { padding: 60px 1.5rem; }
+            .research-grid { grid-template-columns: 1fr; }
+            nav ul { gap: 1rem; }
+            nav a { font-size: 0.75rem; }
+            .edu-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1.5rem; }
+            .pub-card { padding: 1.25rem 1.5rem; }
+            .hero-links { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <div class="nav-logo">Justin Y. Jeon</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-photo-wrapper fade-in">
+            <img class="hero-photo" src="photo.png" alt="Justin Y. Jeon">
+        </div>
+        <p class="hero-overline fade-in fade-in-delay-1">Underwood Distinguished Professor</p>
+        <h1 class="hero-name fade-in fade-in-delay-2">Justin Y. Jeon</h1>
+        <p class="hero-title fade-in fade-in-delay-3">
+            Exercise Oncology &middot; Salutogenesis &middot; AI in Health<br>
+            Yonsei University, Seoul
+        </p>
+        <div class="hero-links fade-in fade-in-delay-4">
+            <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="btn btn-filled">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                Google Scholar
+            </a>
+            <a href="https://www.researchgate.net/profile/Justin-Jeon-2" target="_blank" class="btn btn-ghost">ResearchGate</a>
+            <a href="https://yonsei.elsevierpure.com/en/persons/justin-y-jeon" target="_blank" class="btn btn-ghost">Yonsei Pure</a>
+        </div>
+    </div>
+</header>
+
+<!-- About -->
+<section id="about" class="section section-dark">
+    <div class="section-inner">
+        <p class="section-label fade-in">About</p>
+        <h2 class="section-heading fade-in">Bridging exercise science<br>and health systems.</h2>
+        <p class="section-subheading fade-in">Translating scientific evidence into real-world interventions that improve lives through exercise, oncology, and systemic health transformation.</p>
+        <div class="about-layout">
+            <div class="about-text">
+                <p class="fade-in">
+                    I am an <strong>Underwood Distinguished Professor</strong> at <strong>Yonsei University</strong>, holding appointments in the
+                    Department of Sport Industry Studies (College of Education Sciences), the Cancer Prevention Center at Yonsei Cancer Center
+                    (Severance Hospital), and the Department of Artificial Intelligence.
+                </p>
+                <p class="fade-in">
+                    I serve as Head of the <strong>Center for Exercise Medicine and Salutogenesis</strong> at Yonsei University,
+                    where my team develops and validates exercise-based interventions for chronic disease management. My research sits at the
+                    intersection of exercise physiology, oncology, and public health.
+                </p>
+                <p class="fade-in">
+                    More recently, I have been leading the <strong>Korean Health Generation System Transformation Research Group</strong>,
+                    pursuing a paradigm shift from Pathogenesis (disease-centered) to <strong>Salutogenesis</strong> (health-generation) in addressing
+                    Korea's complex health crises including suicide, low fertility, and chronic disease epidemics. I am a member of the
+                    <strong>Global Working Group on Salutogenesis</strong> (IUHPE/STARS) and collaborate with the Center for Salutogenesis at
+                    the University of Zurich.
+                </p>
+                <p class="fade-in">
+                    With over <strong>192 publications</strong> spanning exercise oncology, diabetes, obesity, and health systems,
+                    my work aims to translate scientific evidence into real-world interventions that improve lives.
+                </p>
+            </div>
+            <div class="fade-in">
+                <div class="metrics-card">
+                    <div class="metrics-card-title">Google Scholar Metrics</div>
+                    <div id="gs-metrics">
+                        <div class="metric-row"><span class="metric-label">Citations</span><span class="metric-value" id="gs-citations">Loading...</span></div>
+                        <div class="metric-row"><span class="metric-label">h-index</span><span class="metric-value" id="gs-hindex">Loading...</span></div>
+                        <div class="metric-row"><span class="metric-label">i10-index</span><span class="metric-value" id="gs-i10">Loading...</span></div>
+                        <div class="metric-row"><span class="metric-label">Publications</span><span class="metric-value">300+</span></div>
+                    </div>
+                    <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="metrics-link">
+                        View on Google Scholar &#8594;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research -->
+<section id="research" class="section">
+    <div class="section-inner">
+        <p class="section-label fade-in">Research</p>
+        <h2 class="section-heading fade-in">Areas of focus.</h2>
+        <p class="section-subheading fade-in">Pioneering research at the intersection of exercise science, chronic disease, and health system transformation.</p>
+        <div class="research-grid">
+            <div class="research-card fade-in">
+                <div class="research-icon">&#127981;</div>
+                <h3>Exercise Oncology</h3>
+                <p>Exercise interventions for cancer patients and survivors across all phases of survivorship</p>
+            </div>
+            <div class="research-card fade-in fade-in-delay-1">
+                <div class="research-icon">&#129656;</div>
+                <h3>Exercise &amp; Diabetes</h3>
+                <p>Physical activity-based management strategies for type 2 diabetes and metabolic syndrome</p>
+            </div>
+            <div class="research-card fade-in fade-in-delay-2">
+                <div class="research-icon">&#127793;</div>
+                <h3>Salutogenesis</h3>
+                <p>Health generation paradigm &mdash; shifting from disease treatment to systemic health creation</p>
+            </div>
+            <div class="research-card fade-in fade-in-delay-3">
+                <div class="research-icon">&#129516;</div>
+                <h3>Exercise Physiology</h3>
+                <p>Mechanisms of exercise-induced health benefits, molecular pathways, and biomarkers</p>
+            </div>
+            <div class="research-card fade-in fade-in-delay-4">
+                <div class="research-icon">&#127759;</div>
+                <h3>Public Health &amp; Policy</h3>
+                <p>System-level interventions for suicide prevention, chronic disease, and health equity</p>
+            </div>
+            <div class="research-card fade-in fade-in-delay-5">
+                <div class="research-icon">&#129302;</div>
+                <h3>AI in Health</h3>
+                <p>Human-centered AI platforms integrating personal, relational, and environmental health data</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section section-dark">
+    <div class="section-inner">
+        <p class="section-label fade-in">Education</p>
+        <h2 class="section-heading fade-in">Academic journey.</h2>
+        <div class="edu-timeline">
+            <div class="edu-card fade-in">
+                <span class="edu-badge">Postdoc</span>
+                <div class="edu-info">
+                    <h3>Harvard Medical School</h3>
+                    <p>Post-Doctoral Fellowship &middot; Boston, USA</p>
+                </div>
+            </div>
+            <div class="edu-card fade-in fade-in-delay-1">
+                <span class="edu-badge">M.Sc.</span>
+                <div class="edu-info">
+                    <h3>University of Alberta</h3>
+                    <p>Master of Science &middot; Edmonton, Canada</p>
+                </div>
+            </div>
+            <div class="edu-card fade-in fade-in-delay-2">
+                <span class="edu-badge">B.A.</span>
+                <div class="edu-info">
+                    <h3>Yonsei University</h3>
+                    <p>Bachelor's Degree &middot; Seoul, South Korea</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Publications -->
+<section id="publications" class="section">
+    <div class="section-inner">
+        <p class="section-label fade-in">Publications</p>
+        <h2 class="section-heading fade-in">Selected works.</h2>
+        <p class="section-subheading fade-in">A curated selection from 300+ peer-reviewed publications in exercise oncology, diabetes, and health systems.</p>
+        <div class="pub-list">
+            <div class="pub-card fade-in">
+                <div class="pub-title">Exercise as a New Therapeutic Modality in Oncology: CHALLENGE Trial Refines Survivorship Care</div>
+                <div class="pub-authors">Jeon, J.Y.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">Nature Reviews Clinical Oncology</span>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card fade-in">
+                <div class="pub-title">A Phenomenological Exploration of the Intersectionality of Body Image and Identity of Female Rugby Players</div>
+                <div class="pub-authors">Kim, J., Im, S., Jeon, J.Y., &amp; Heo, J.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">Leisure Sciences</span>
+                    <span class="pub-year-badge">2026</span>
+                </div>
+            </div>
+            <div class="pub-card fade-in">
+                <div class="pub-title">Effects of Exercise on Pain and Disability After Lumbar Disc Herniation Surgery</div>
+                <div class="pub-authors">Jin, H.S., Kwon, J.W., Lee, J., Lee, D.J., Lee, D.H. &amp; Jeon, J.Y.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">American Journal of Physical Medicine and Rehabilitation</span>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card fade-in">
+                <div class="pub-title">Global Trends in Importance of 24-Hour Movement Behaviors to Pediatric Health</div>
+                <div class="pub-authors">Lee, E.Y., Jayawardena, R., Park, S., Jeon, J.Y., Kim, Y.S. &amp; Tremblay, M.S.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">Clinical and Experimental Pediatrics</span>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card fade-in">
+                <div class="pub-title">Greater Excess Post-Exercise Oxygen Consumption and Fat Use Following Calisthenics</div>
+                <div class="pub-authors">Lee, E.B., et al.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">Research Quarterly for Exercise and Sport</span>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card fade-in">
+                <div class="pub-title">Leisure Constraints and Negotiation among Canadian and South Korean Mountain Hikers</div>
+                <div class="pub-authors">Chun, S.B., Halpenny, E.A., Jeon, J.Y., &amp; Lee, C.W.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">Leisure Sciences</span>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card fade-in">
+                <div class="pub-title">Exercise Across the Phases of Cancer Survivorship: A Narrative Review</div>
+                <div class="pub-authors">Jeon, J.Y., et al.</div>
+                <div class="pub-footer">
+                    <span class="pub-journal">Yonsei Medical Journal</span>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+        </div>
+        <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="cta-link fade-in">
+            View all publications on Google Scholar
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section section-dark">
+    <div class="section-inner">
+        <p class="section-label fade-in">Contact</p>
+        <h2 class="section-heading fade-in">Get in touch.</h2>
+        <p class="section-subheading fade-in">I welcome inquiries about research collaborations, speaking engagements, and academic partnerships.</p>
+        <div class="contact-grid">
+            <div class="contact-card fade-in">
+                <div class="contact-icon-wrap">&#9993;</div>
+                <div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value"><a href="mailto:jjeon@yonsei.ac.kr">jjeon@yonsei.ac.kr</a></div>
+                </div>
+            </div>
+            <div class="contact-card fade-in fade-in-delay-1">
+                <div class="contact-icon-wrap">&#9742;</div>
+                <div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+82-2-2123-6197</div>
+                </div>
+            </div>
+            <div class="contact-card fade-in fade-in-delay-2">
+                <div class="contact-icon-wrap">&#127970;</div>
+                <div>
+                    <div class="contact-label">Office</div>
+                    <div class="contact-value">Department of Sport Industry Studies<br>College of Education Sciences<br>Yonsei University, Seoul</div>
+                </div>
+            </div>
+            <div class="contact-card fade-in fade-in-delay-3">
+                <div class="contact-icon-wrap">&#127973;</div>
+                <div>
+                    <div class="contact-label">Clinical</div>
+                    <div class="contact-value">Cancer Prevention Center<br>Yonsei Cancer Center<br>Severance Hospital</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Justin-Jeon-2" target="_blank">ResearchGate</a>
+        <a href="https://yonsei.elsevierpure.com/en/persons/justin-y-jeon" target="_blank">Yonsei Pure</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Justin Y. Jeon &middot; Yonsei University</p>
+</footer>
+
+<script>
+// Frosted nav on scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+// Smooth scroll for nav links
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offset = 60;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    });
+});
+
+// Scroll-triggered fade-in animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Google Scholar metrics via CORS proxy, with fallback
+(async function loadScholarMetrics() {
+    const SCHOLAR_ID = '43h5Xs8AAAAJ';
+    const corsProxies = [
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://scholar.google.com/citations?user=${SCHOLAR_ID}&hl=en`)}`,
+        `https://corsproxy.io/?${encodeURIComponent(`https://scholar.google.com/citations?user=${SCHOLAR_ID}&hl=en`)}`
+    ];
+
+    for (const proxyUrl of corsProxies) {
+        try {
+            const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(8000) });
+            if (!response.ok) continue;
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const cells = doc.querySelectorAll('#gsc_rsb_st td.gsc_rsb_std');
+            if (cells.length >= 6) {
+                document.getElementById('gs-citations').textContent = cells[0].textContent.trim();
+                document.getElementById('gs-hindex').textContent = cells[2].textContent.trim();
+                document.getElementById('gs-i10').textContent = cells[4].textContent.trim();
+                console.log('Google Scholar metrics loaded live');
+                return;
+            }
+        } catch (e) {
+            console.warn('Proxy failed:', e.message);
+        }
+    }
+    document.getElementById('gs-citations').textContent = '12,724';
+    document.getElementById('gs-hindex').textContent = '57';
+    document.getElementById('gs-i10').textContent = '168';
+    console.log('Using cached Google Scholar metrics');
+})();
+</script>
+
+</body>
+</html>
