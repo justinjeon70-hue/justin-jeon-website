@@ -508,6 +508,47 @@
             transform: translateX(3px);
         }
 
+        /* ===== Media ===== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
+
         /* ===== Contact ===== */
         .contact-grid {
             display: grid;
@@ -628,6 +669,7 @@
             <li><a href="#research">Research</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#media">Media</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -847,8 +889,29 @@
     </div>
 </section>
 
+<!-- Media -->
+<section id="media" class="section section-dark">
+    <div class="section-inner">
+        <p class="section-label fade-in">Media</p>
+        <h2 class="section-heading fade-in">Featured videos.</h2>
+        <p class="section-subheading fade-in">Lectures, talks, and media appearances on exercise, health, and salutogenesis.</p>
+        <div class="video-grid">
+            <div class="video-card fade-in">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/1dCpIMAfI0I?start=2" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="video-card fade-in fade-in-delay-1">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/MfE56LrVg3c?start=97" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contact -->
-<section id="contact" class="section section-dark">
+<section id="contact" class="section">
     <div class="section-inner">
         <p class="section-label fade-in">Contact</p>
         <h2 class="section-heading fade-in">Get in touch.</h2>
