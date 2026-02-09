@@ -680,6 +680,49 @@ layout: null
             nav a { font-size: 0.65rem; }
         }
 
+        /* ===== Network Section ===== */
+        .network-image-wrap {
+            background: #0D1117;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.4s ease;
+        }
+        .network-image-wrap:hover {
+            box-shadow: var(--card-shadow-hover);
+        }
+        .network-image-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .network-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+        .network-stat {
+            background: white;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .network-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+        }
+        .network-stat-label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
         /* ===== Language Toggle ===== */
         .lang-toggle {
             display: flex;
@@ -726,6 +769,7 @@ layout: null
             <li><a href="#research" data-i18n="nav.research">Research</a></li>
             <li><a href="#education" data-i18n="nav.education">Education</a></li>
             <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+            <li><a href="#network" data-i18n="nav.network">Network</a></li>
             <li><a href="#media" data-i18n="nav.media">Media</a></li>
             <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
             <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -850,8 +894,38 @@ layout: null
     </div>
 </section>
 
+<!-- Collaboration Network -->
+<section id="network" class="section section-dark">
+    <div class="section-inner">
+        <p class="section-label fade-in" data-i18n="network.label">Collaboration</p>
+        <h2 class="section-heading fade-in" data-i18n="network.heading">Co-author network.</h2>
+        <p class="section-subheading fade-in" data-i18n="network.sub">A visualization of research collaborations spanning 10+ academic fields and institutions across 6 countries.</p>
+        <div class="network-image-wrap fade-in">
+            <img src="coauthor_network.png" alt="Co-Author Collaboration Network of Prof. Justin Y. Jeon" loading="lazy">
+        </div>
+        <div class="network-legend fade-in">
+            <div class="network-stat">
+                <div class="network-stat-value">44</div>
+                <div class="network-stat-label" data-i18n="network.s1">Key Co-Authors</div>
+            </div>
+            <div class="network-stat">
+                <div class="network-stat-value">10</div>
+                <div class="network-stat-label" data-i18n="network.s2">Research Fields</div>
+            </div>
+            <div class="network-stat">
+                <div class="network-stat-value">6</div>
+                <div class="network-stat-label" data-i18n="network.s3">Countries</div>
+            </div>
+            <div class="network-stat">
+                <div class="network-stat-value">15+</div>
+                <div class="network-stat-label" data-i18n="network.s4">Institutions</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Education -->
-<section id="education" class="section section-dark">
+<section id="education" class="section">
     <div class="section-inner">
         <p class="section-label fade-in" data-i18n="edu.label">Education</p>
         <h2 class="section-heading fade-in" data-i18n="edu.heading">Academic journey.</h2>
@@ -1150,6 +1224,14 @@ const translations = {
         'about.citations': '피인용수',
         'about.pubs': '논문 수',
         'about.viewgs': 'Google Scholar에서 보기 &#8594;',
+        'nav.network': '네트워크',
+        'network.label': '공동연구',
+        'network.heading': '공저자 네트워크.',
+        'network.sub': '6개국 15개 이상의 기관, 10개 이상의 학문 분야에 걸친 연구 협력 네트워크입니다.',
+        'network.s1': '주요 공저자',
+        'network.s2': '연구 분야',
+        'network.s3': '국가',
+        'network.s4': '기관',
         'research.label': '연구',
         'research.heading': '주요 연구 분야.',
         'research.sub': '운동과학, 만성질환, 건강 시스템 전환의 교차점에서 선도적 연구를 수행하고 있습니다.',
