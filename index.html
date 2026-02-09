@@ -128,25 +128,7 @@ layout: null
         }
         .hero-content { position: relative; z-index: 1; }
 
-        /* Section divider gradients */
         .section { position: relative; }
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .section-dark::before {
-            background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
-        }
-        .section:not(.section-dark) + .section-dark ~ .section:not(.section-dark)::before,
-        .section-dark + .section:not(.section-dark)::before {
-            background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
-        }
 
         /* ===== Navigation ===== */
         nav {
@@ -872,6 +854,81 @@ layout: null
             .network-stats { grid-template-columns: repeat(2, 1fr); }
         }
 
+        /* ===== Back to Top Button ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 113, 227, 0.35);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s, transform 0.4s, background 0.3s;
+            z-index: 999;
+            pointer-events: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 28px rgba(0, 113, 227, 0.45);
+        }
+        .back-to-top svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ===== Typing Effect ===== */
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: var(--accent);
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 0.8s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ===== Wave Section Dividers ===== */
+        .wave-divider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            margin-top: -1px;
+        }
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 60px;
+        }
+        .wave-divider-flip {
+            transform: rotate(180deg);
+            margin-bottom: -1px;
+            margin-top: 0;
+        }
+        @media (max-width: 600px) {
+            .wave-divider svg { height: 35px; }
+            .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 42px; height: 42px; }
+        }
+
         /* ===== Scroll Progress Bar ===== */
         .scroll-progress {
             position: fixed;
@@ -956,6 +1013,9 @@ layout: null
 <body>
 
 <div class="scroll-progress" id="scroll-progress"></div>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
 
 <!-- Navigation -->
 <nav id="navbar">
@@ -1007,6 +1067,7 @@ layout: null
     </div>
 </header>
 
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,0 C360,60 1080,0 1440,50 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
 <!-- About -->
 <section id="about" class="section section-dark">
     <div class="section-inner">
@@ -1055,6 +1116,7 @@ layout: null
     </div>
 </section>
 
+<div class="wave-divider wave-divider-flip"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
 <!-- Research -->
 <section id="research" class="section">
     <div class="section-inner">
@@ -1096,6 +1158,7 @@ layout: null
     </div>
 </section>
 
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,10 C320,60 720,0 1440,50 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
 <!-- Collaboration Network -->
 <section id="network" class="section section-dark">
     <div class="section-inner">
@@ -1133,6 +1196,7 @@ layout: null
     </div>
 </section>
 
+<div class="wave-divider wave-divider-flip"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,5 C400,55 1000,10 1440,45 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
 <!-- Education -->
 <section id="education" class="section">
     <div class="section-inner">
@@ -1171,6 +1235,7 @@ layout: null
     </div>
 </section>
 
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,15 C360,55 900,5 1440,40 L1440,60 L0,60Z" fill="#fbfbfd"/></svg></div>
 <!-- Publications -->
 <section id="publications" class="section">
     <div class="section-inner">
@@ -1242,6 +1307,7 @@ layout: null
     </div>
 </section>
 
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,0 C480,55 960,10 1440,50 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
 <!-- Media -->
 <section id="media" class="section section-dark">
     <div class="section-inner">
@@ -1293,6 +1359,7 @@ layout: null
     </div>
 </section>
 
+<div class="wave-divider wave-divider-flip"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,10 C320,55 800,5 1440,45 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
 <!-- Contact -->
 <section id="contact" class="section">
     <div class="section-inner">
@@ -1492,6 +1559,94 @@ document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in').forE
             card.style.setProperty('--glow-y', (e.clientY - rect.top) + 'px');
         });
     });
+})();
+
+// ===== Back to Top Button =====
+(function() {
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ===== Hero Typing Effect =====
+(function() {
+    const el = document.querySelector('.hero-title');
+    if (!el) return;
+
+    const enLines = ['Exercise Oncology', 'Salutogenesis', 'AI in Health'];
+    const koLines = ['운동종양학', '살루토제네시스', 'AI 헬스'];
+    let currentIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+
+    // Create typing container
+    const typingSpan = document.createElement('span');
+    typingSpan.id = 'typing-text';
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+
+    // Replace first line of hero-title with typing effect
+    const locationLine = document.createElement('div');
+    locationLine.style.marginTop = '0.3rem';
+    locationLine.id = 'typing-location';
+    locationLine.textContent = 'Yonsei University, Seoul';
+
+    el.innerHTML = '';
+    el.appendChild(typingSpan);
+    el.appendChild(cursor);
+    el.appendChild(locationLine);
+
+    function getLines() {
+        return document.documentElement.lang === 'ko' ? koLines : enLines;
+    }
+
+    function type() {
+        const lines = getLines();
+        const current = lines[currentIndex % lines.length];
+        const sep = ' · ';
+
+        if (isPaused) {
+            setTimeout(type, 50);
+            return;
+        }
+
+        if (!isDeleting) {
+            typingSpan.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === current.length) {
+                isPaused = true;
+                setTimeout(() => {
+                    isPaused = false;
+                    isDeleting = true;
+                }, 2000);
+            }
+            setTimeout(type, 80 + Math.random() * 40);
+        } else {
+            typingSpan.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+                isDeleting = false;
+                currentIndex++;
+            }
+            setTimeout(type, 40);
+        }
+    }
+
+    // Listen for language changes
+    new MutationObserver(() => {
+        const loc = document.getElementById('typing-location');
+        if (loc) loc.textContent = document.documentElement.lang === 'ko' ? '연세대학교, 서울' : 'Yonsei University, Seoul';
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // Start after a delay
+    setTimeout(type, 1500);
 })();
 
 // Google Scholar metrics via CORS proxy, with fallback
