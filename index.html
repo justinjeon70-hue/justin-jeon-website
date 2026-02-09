@@ -53,9 +53,9 @@ layout: null
         /* ===== Scroll Animations ===== */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .fade-in.visible {
@@ -68,6 +68,85 @@ layout: null
         .fade-in-delay-3 { transition-delay: 0.3s; }
         .fade-in-delay-4 { transition-delay: 0.4s; }
         .fade-in-delay-5 { transition-delay: 0.5s; }
+
+        /* Slide from left */
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .slide-left.visible { opacity: 1; transform: translateX(0); }
+
+        /* Slide from right */
+        .slide-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+        /* Scale up */
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
+
+        /* Parallax hero layers */
+        .hero { overflow: hidden; }
+        .hero-bg-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.07;
+            filter: blur(60px);
+        }
+        .hero-shape-1 {
+            width: 500px; height: 500px;
+            background: var(--accent);
+            top: -10%; left: -5%;
+        }
+        .hero-shape-2 {
+            width: 400px; height: 400px;
+            background: #E91E63;
+            bottom: -15%; right: -5%;
+        }
+        .hero-shape-3 {
+            width: 300px; height: 300px;
+            background: #2ECC71;
+            top: 20%; right: 15%;
+        }
+        .hero-content { position: relative; z-index: 1; }
+
+        /* Section divider gradients */
+        .section { position: relative; }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .section-dark::before {
+            background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+        }
+        .section:not(.section-dark) + .section-dark ~ .section:not(.section-dark)::before,
+        .section-dark + .section:not(.section-dark)::before {
+            background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
+        }
 
         /* ===== Navigation ===== */
         nav {
@@ -843,6 +922,11 @@ layout: null
 
 <!-- Hero -->
 <header class="hero">
+    <div class="hero-bg-shapes">
+        <div class="hero-shape hero-shape-1" data-parallax-speed="0.3"></div>
+        <div class="hero-shape hero-shape-2" data-parallax-speed="0.5"></div>
+        <div class="hero-shape hero-shape-3" data-parallax-speed="0.2"></div>
+    </div>
     <div class="hero-content">
         <div class="hero-photo-wrapper fade-in">
             <img class="hero-photo" src="photo.png" alt="Justin Y. Jeon">
@@ -868,9 +952,9 @@ layout: null
 <!-- About -->
 <section id="about" class="section section-dark">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="about.label">About</p>
-        <h2 class="section-heading fade-in" data-i18n="about.heading" data-i18n-html="true">Bridging exercise science<br>and health systems.</h2>
-        <p class="section-subheading fade-in" data-i18n="about.sub">Translating scientific evidence into real-world interventions that improve lives through exercise, oncology, and systemic health transformation.</p>
+        <p class="section-label slide-left" data-i18n="about.label">About</p>
+        <h2 class="section-heading slide-left" data-i18n="about.heading" data-i18n-html="true">Bridging exercise science<br>and health systems.</h2>
+        <p class="section-subheading slide-left" data-i18n="about.sub">Translating scientific evidence into real-world interventions that improve lives through exercise, oncology, and systemic health transformation.</p>
         <div class="about-layout">
             <div class="about-text">
                 <p class="fade-in" data-i18n="about.p1" data-i18n-html="true">
@@ -916,9 +1000,9 @@ layout: null
 <!-- Research -->
 <section id="research" class="section">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="research.label">Research</p>
-        <h2 class="section-heading fade-in" data-i18n="research.heading">Areas of focus.</h2>
-        <p class="section-subheading fade-in" data-i18n="research.sub">Pioneering research at the intersection of exercise science, chronic disease, and health system transformation.</p>
+        <p class="section-label slide-right" data-i18n="research.label">Research</p>
+        <h2 class="section-heading slide-right" data-i18n="research.heading">Areas of focus.</h2>
+        <p class="section-subheading slide-right" data-i18n="research.sub">Pioneering research at the intersection of exercise science, chronic disease, and health system transformation.</p>
         <div class="research-grid">
             <div class="research-card fade-in">
                 <div class="research-icon">&#127981;</div>
@@ -957,10 +1041,10 @@ layout: null
 <!-- Collaboration Network -->
 <section id="network" class="section section-dark">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="network.label">Collaboration</p>
-        <h2 class="section-heading fade-in" data-i18n="network.heading">Co-author network.</h2>
-        <p class="section-subheading fade-in" data-i18n="network.sub">An interactive visualization of research collaborations spanning 10+ academic fields and institutions across 6 countries.</p>
-        <div class="network-canvas fade-in" id="network-canvas">
+        <p class="section-label slide-left" data-i18n="network.label">Collaboration</p>
+        <h2 class="section-heading slide-left" data-i18n="network.heading">Co-author network.</h2>
+        <p class="section-subheading slide-left" data-i18n="network.sub">An interactive visualization of research collaborations spanning 10+ academic fields and institutions across 6 countries.</p>
+        <div class="network-canvas scale-in" id="network-canvas">
             <div class="network-tooltip" id="network-tooltip">
                 <div class="network-tooltip-name" id="tt-name"></div>
                 <div class="network-tooltip-inst" id="tt-inst"></div>
@@ -994,8 +1078,8 @@ layout: null
 <!-- Education -->
 <section id="education" class="section">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="edu.label">Education</p>
-        <h2 class="section-heading fade-in" data-i18n="edu.heading">Academic journey.</h2>
+        <p class="section-label slide-right" data-i18n="edu.label">Education</p>
+        <h2 class="section-heading slide-right" data-i18n="edu.heading">Academic journey.</h2>
         <div class="edu-timeline">
             <div class="edu-card fade-in">
                 <span class="edu-badge" data-i18n="edu.postdoc">Postdoc</span>
@@ -1032,9 +1116,9 @@ layout: null
 <!-- Publications -->
 <section id="publications" class="section">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="pub.label">Publications</p>
-        <h2 class="section-heading fade-in" data-i18n="pub.heading">Selected works.</h2>
-        <p class="section-subheading fade-in" data-i18n="pub.sub">A curated selection from 300+ peer-reviewed publications in exercise oncology, diabetes, and health systems.</p>
+        <p class="section-label slide-left" data-i18n="pub.label">Publications</p>
+        <h2 class="section-heading slide-left" data-i18n="pub.heading">Selected works.</h2>
+        <p class="section-subheading slide-left" data-i18n="pub.sub">A curated selection from 300+ peer-reviewed publications in exercise oncology, diabetes, and health systems.</p>
         <div class="pub-list">
             <div class="pub-card fade-in">
                 <div class="pub-title">Exercise as a New Therapeutic Modality in Oncology: CHALLENGE Trial Refines Survivorship Care</div>
@@ -1103,9 +1187,9 @@ layout: null
 <!-- Media -->
 <section id="media" class="section section-dark">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="media.label">Media</p>
-        <h2 class="section-heading fade-in" data-i18n="media.heading">Featured videos.</h2>
-        <p class="section-subheading fade-in" data-i18n="media.sub">Lectures, talks, and media appearances on exercise, health, and salutogenesis.</p>
+        <p class="section-label slide-right" data-i18n="media.label">Media</p>
+        <h2 class="section-heading slide-right" data-i18n="media.heading">Featured videos.</h2>
+        <p class="section-subheading slide-right" data-i18n="media.sub">Lectures, talks, and media appearances on exercise, health, and salutogenesis.</p>
         <div class="video-grid">
             <div class="video-card fade-in">
                 <div class="video-wrapper">
@@ -1154,9 +1238,9 @@ layout: null
 <!-- Contact -->
 <section id="contact" class="section">
     <div class="section-inner">
-        <p class="section-label fade-in" data-i18n="contact.label">Contact</p>
-        <h2 class="section-heading fade-in" data-i18n="contact.heading">Get in touch.</h2>
-        <p class="section-subheading fade-in" data-i18n="contact.sub">I welcome inquiries about research collaborations, speaking engagements, and academic partnerships.</p>
+        <p class="section-label slide-left" data-i18n="contact.label">Contact</p>
+        <h2 class="section-heading slide-left" data-i18n="contact.heading">Get in touch.</h2>
+        <p class="section-subheading slide-left" data-i18n="contact.sub">I welcome inquiries about research collaborations, speaking engagements, and academic partnerships.</p>
         <div class="contact-grid">
             <div class="contact-card fade-in">
                 <div class="contact-icon-wrap">&#9993;</div>
@@ -1235,7 +1319,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll-triggered fade-in animations
+// Scroll-triggered animations (fade-in, slide-left, slide-right, scale-in)
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1247,7 +1331,40 @@ const observer = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -40px 0px'
 });
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in').forEach(el => observer.observe(el));
+
+// Parallax effect on hero shapes & content
+(function() {
+    const shapes = document.querySelectorAll('[data-parallax-speed]');
+    const heroContent = document.querySelector('.hero-content');
+    let ticking = false;
+
+    function updateParallax() {
+        const scrollY = window.scrollY;
+        const heroH = document.querySelector('.hero').offsetHeight;
+
+        // Only apply when hero is visible
+        if (scrollY < heroH * 1.5) {
+            shapes.forEach(shape => {
+                const speed = parseFloat(shape.dataset.parallaxSpeed);
+                shape.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+            // Hero content moves up slower = parallax feel
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrollY * 0.15}px)`;
+                heroContent.style.opacity = Math.max(0, 1 - scrollY / (heroH * 0.7));
+            }
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }, { passive: true });
+})();
 
 // Google Scholar metrics via CORS proxy, with fallback
 (async function loadScholarMetrics() {
