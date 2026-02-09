@@ -681,27 +681,77 @@ layout: null
         }
 
         /* ===== Network Section ===== */
-        .network-image-wrap {
+        .network-canvas {
             background: #0D1117;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-            transition: box-shadow 0.4s ease;
-        }
-        .network-image-wrap:hover {
-            box-shadow: var(--card-shadow-hover);
-        }
-        .network-image-wrap img {
+            border: 1px solid rgba(255,255,255,0.06);
+            position: relative;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 700px;
+            cursor: grab;
         }
-        .network-legend {
+        .network-canvas:active { cursor: grabbing; }
+        .network-canvas svg { width: 100%; height: 100%; }
+        .network-tooltip {
+            position: absolute;
+            pointer-events: none;
+            background: rgba(22, 27, 34, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: #E6EDF3;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 10;
+            max-width: 240px;
+        }
+        .network-tooltip.visible { opacity: 1; }
+        .network-tooltip-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.2rem; }
+        .network-tooltip-inst { color: #8B949E; }
+        .network-tooltip-field { margin-top: 0.3rem; }
+        .network-tooltip-field span {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 980px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+        }
+        .network-legend-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            justify-content: center;
+        }
+        .network-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            border-radius: 980px;
+            transition: background 0.2s;
+        }
+        .network-legend-item:hover { background: rgba(0,0,0,0.04); }
+        .network-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .network-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 0.75rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         .network-stat {
             background: white;
@@ -721,6 +771,16 @@ layout: null
             font-size: 0.82rem;
             color: var(--text-secondary);
             margin-top: 0.25rem;
+        }
+        .network-hint {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            margin-top: 0.75rem;
+        }
+        @media (max-width: 600px) {
+            .network-canvas { height: 500px; }
+            .network-stats { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* ===== Language Toggle ===== */
@@ -899,11 +959,18 @@ layout: null
     <div class="section-inner">
         <p class="section-label fade-in" data-i18n="network.label">Collaboration</p>
         <h2 class="section-heading fade-in" data-i18n="network.heading">Co-author network.</h2>
-        <p class="section-subheading fade-in" data-i18n="network.sub">A visualization of research collaborations spanning 10+ academic fields and institutions across 6 countries.</p>
-        <div class="network-image-wrap fade-in">
-            <img src="coauthor_network.png" alt="Co-Author Collaboration Network of Prof. Justin Y. Jeon" loading="lazy">
+        <p class="section-subheading fade-in" data-i18n="network.sub">An interactive visualization of research collaborations spanning 10+ academic fields and institutions across 6 countries.</p>
+        <div class="network-canvas fade-in" id="network-canvas">
+            <div class="network-tooltip" id="network-tooltip">
+                <div class="network-tooltip-name" id="tt-name"></div>
+                <div class="network-tooltip-inst" id="tt-inst"></div>
+                <div class="network-tooltip-field"><span id="tt-field"></span></div>
+            </div>
+            <svg id="network-svg"></svg>
         </div>
-        <div class="network-legend fade-in">
+        <p class="network-hint fade-in" data-i18n="network.hint">Drag nodes to rearrange. Hover for details. Scroll to zoom.</p>
+        <div class="network-legend-bar fade-in" id="network-legend"></div>
+        <div class="network-stats fade-in">
             <div class="network-stat">
                 <div class="network-stat-value">44</div>
                 <div class="network-stat-label" data-i18n="network.s1">Key Co-Authors</div>
@@ -1228,6 +1295,7 @@ const translations = {
         'network.label': '공동연구',
         'network.heading': '공저자 네트워크.',
         'network.sub': '6개국 15개 이상의 기관, 10개 이상의 학문 분야에 걸친 연구 협력 네트워크입니다.',
+        'network.hint': '노드를 드래그하여 이동하세요. 마우스를 올리면 상세 정보가 표시됩니다. 스크롤로 확대/축소할 수 있습니다.',
         'network.s1': '주요 공저자',
         'network.s2': '연구 분야',
         'network.s3': '국가',
@@ -1307,5 +1375,259 @@ const savedLang = localStorage.getItem('site_lang');
 if (savedLang === 'ko') setLang('ko');
 </script>
 
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+// ===== Interactive Co-Author Network =====
+(function() {
+    const FIELDS = {
+        "Exercise Oncology":     "#E74C3C",
+        "Diabetes / Metabolic":  "#3498DB",
+        "Cancer Surgery":        "#E67E22",
+        "Epidemiology":          "#2ECC71",
+        "Rehabilitation":        "#9B59B6",
+        "AI / Computer Science": "#1ABC9C",
+        "Public Health / Policy":"#F1C40F",
+        "Exercise Physiology":   "#E91E63",
+        "Pediatric / Youth":     "#00BCD4",
+        "Neuroscience / Other":  "#607D8B"
+    };
+
+    const coauthors = [
+        {id:"Lee DH",i:"Yonsei University",f:"Exercise Oncology",t:1},
+        {id:"Kim NK",i:"Yonsei Univ. Medicine",f:"Cancer Surgery",t:1},
+        {id:"Min J",i:"Nat'l Cancer Center",f:"Exercise Oncology",t:1},
+        {id:"Oh M",i:"Yonsei University",f:"Exercise Oncology",t:1},
+        {id:"Courneya KS",i:"University of Alberta",f:"Exercise Oncology",t:1},
+        {id:"Park DH",i:"Yonsei Univ. Medicine",f:"Cancer Surgery",t:1},
+        {id:"Lee MK",i:"Yonsei University",f:"Exercise Oncology",t:1},
+        {id:"Kang DW",i:"University of Alberta",f:"Exercise Oncology",t:1},
+        {id:"An KY",i:"King's University",f:"Exercise Physiology",t:2},
+        {id:"Kim DI",i:"Incheon Nat'l University",f:"Diabetes / Metabolic",t:2},
+        {id:"Yang HI",i:"Yonsei University",f:"Diabetes / Metabolic",t:2},
+        {id:"Cho W",i:"Yonsei University",f:"Rehabilitation",t:2},
+        {id:"Park JH",i:"Yonsei University",f:"Exercise Oncology",t:2},
+        {id:"Lee J",i:"Yonsei University",f:"Exercise Oncology",t:2},
+        {id:"Kim JY",i:"Korea Inst. Sport Science",f:"Public Health / Policy",t:2},
+        {id:"Chu SH",i:"Yonsei Univ. Nursing",f:"Diabetes / Metabolic",t:2},
+        {id:"Lee JW",i:"Yonsei Univ. Medicine",f:"Cancer Surgery",t:2},
+        {id:"Meyerhardt JA",i:"Harvard / Dana-Farber",f:"Exercise Oncology",t:2},
+        {id:"Kim SI",i:"Yonsei Univ. Medicine",f:"Exercise Oncology",t:2},
+        {id:"Park S",i:"Yonsei University",f:"Exercise Oncology",t:2},
+        {id:"Lee EY",i:"Queen's University",f:"Pediatric / Youth",t:3},
+        {id:"Hong S",i:"Yonsei University",f:"Exercise Physiology",t:3},
+        {id:"Jee SH",i:"Yonsei Univ. Public Health",f:"Epidemiology",t:3},
+        {id:"Giovannucci E",i:"Harvard School Pub. Health",f:"Epidemiology",t:3},
+        {id:"Kim SA",i:"Yonsei University",f:"Exercise Oncology",t:3},
+        {id:"Do JH",i:"Yonsei Univ. Medicine",f:"Rehabilitation",t:3},
+        {id:"Jones LW",i:"Duke University / MSKCC",f:"Exercise Oncology",t:3},
+        {id:"Suh SH",i:"Yonsei University",f:"Exercise Physiology",t:3},
+        {id:"Byeon JY",i:"Yonsei University",f:"Exercise Oncology",t:3},
+        {id:"Lee YH",i:"Yonsei Univ. Medicine",f:"Diabetes / Metabolic",t:3},
+        {id:"Ryu J",i:"Yonsei University",f:"Rehabilitation",t:3},
+        {id:"Ligibel J",i:"Harvard / Dana-Farber",f:"Exercise Oncology",t:3},
+        {id:"Brage S",i:"University of Cambridge",f:"Epidemiology",t:3},
+        {id:"Spence JC",i:"University of Alberta",f:"Public Health / Policy",t:3},
+        {id:"Lee CW",i:"Yonsei University",f:"Public Health / Policy",t:4},
+        {id:"Chung CH",i:"Yonsei Univ. Wonju",f:"Diabetes / Metabolic",t:4},
+        {id:"Andrews BJ",i:"University of Oxford",f:"Neuroscience / Other",t:4},
+        {id:"Kim HC",i:"Yonsei Univ. Medicine",f:"Epidemiology",t:4},
+        {id:"Song W",i:"Seoul Nat'l University",f:"Exercise Physiology",t:4},
+        {id:"Won YS",i:"Yonsei University",f:"Public Health / Policy",t:4},
+        {id:"Kim YB",i:"Harvard Medical School",f:"Diabetes / Metabolic",t:4},
+        {id:"Lee K",i:"Yonsei Univ. CS",f:"AI / Computer Science",t:4},
+        {id:"Bodary PF",i:"University of Michigan",f:"Exercise Physiology",t:4},
+        {id:"Park J",i:"Beth Israel / Harvard",f:"Diabetes / Metabolic",t:4}
+    ];
+
+    const clusterEdges = [
+        ["Lee DH","Min J"],["Lee DH","Oh M"],["Lee DH","Lee MK"],
+        ["Min J","Oh M"],["Min J","Kang DW"],["Oh M","Lee MK"],
+        ["Park JH","Lee J"],["Kim SA","Byeon JY"],["Kim SI","Park S"],
+        ["Lee DH","Byeon JY"],["Kim NK","Park DH"],["Kim NK","Lee JW"],
+        ["Park DH","Lee JW"],["Kim DI","Yang HI"],["Kim DI","Chu SH"],
+        ["Yang HI","Chu SH"],["Lee YH","Chung CH"],["Kim YB","Park J"],
+        ["Courneya KS","Kang DW"],["Courneya KS","An KY"],
+        ["Courneya KS","Spence JC"],["Kang DW","An KY"],
+        ["Meyerhardt JA","Ligibel J"],["Meyerhardt JA","Giovannucci E"],
+        ["Giovannucci E","Ligibel J"],["Jee SH","Kim HC"],["Brage S","Lee EY"]
+    ];
+
+    const CENTER = {id:"Justin Y. Jeon",i:"Yonsei University",f:"Center",t:0};
+    const nodes = [CENTER, ...coauthors];
+    const links = [];
+
+    // Hub links
+    coauthors.forEach(c => {
+        links.push({source: CENTER.id, target: c.id, w: {1:5,2:3,3:2,4:1}[c.t]});
+    });
+    // Cluster links
+    const nodeIds = new Set(nodes.map(n => n.id));
+    clusterEdges.forEach(([a,b]) => {
+        if (nodeIds.has(a) && nodeIds.has(b)) links.push({source:a, target:b, w:1});
+    });
+
+    // Build legend
+    const legendEl = document.getElementById('network-legend');
+    Object.entries(FIELDS).forEach(([name, color]) => {
+        const d = document.createElement('div');
+        d.className = 'network-legend-item';
+        d.innerHTML = '<span class="network-legend-dot" style="background:'+color+'"></span>' + name;
+        legendEl.appendChild(d);
+    });
+
+    // D3 setup
+    const container = document.getElementById('network-canvas');
+    const svg = d3.select('#network-svg');
+    const tooltip = document.getElementById('network-tooltip');
+    const ttName = document.getElementById('tt-name');
+    const ttInst = document.getElementById('tt-inst');
+    const ttField = document.getElementById('tt-field');
+
+    let W = container.clientWidth, H = container.clientHeight;
+
+    const g = svg.append('g');
+
+    // Zoom
+    const zoom = d3.zoom()
+        .scaleExtent([0.3, 4])
+        .on('zoom', (e) => g.attr('transform', e.transform));
+    svg.call(zoom);
+
+    // Simulation
+    const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
+            if (d.source.id === CENTER.id || d.target.id === CENTER.id) {
+                const tier = d.source.t || d.target.t;
+                return {1:100, 2:160, 3:220, 4:270}[tier] || 180;
+            }
+            return 80;
+        }).strength(d => {
+            if (d.source.id === CENTER.id || d.target.id === CENTER.id) return 0.7;
+            return 0.3;
+        }))
+        .force('charge', d3.forceManyBody().strength(d => d.t === 0 ? -800 : -200))
+        .force('center', d3.forceCenter(W/2, H/2))
+        .force('collision', d3.forceCollide().radius(d => d.t === 0 ? 40 : {1:28,2:22,3:18,4:14}[d.t]))
+        .alphaDecay(0.02);
+
+    // Draw links
+    const link = g.append('g')
+        .selectAll('line')
+        .data(links)
+        .join('line')
+        .attr('stroke', d => (d.source.id === CENTER.id || d.target.id === CENTER.id) ? '#58A6FF' : '#30363D')
+        .attr('stroke-opacity', d => (d.source.id === CENTER.id || d.target.id === CENTER.id) ? 0.15 + d.w * 0.06 : 0.15)
+        .attr('stroke-width', d => (d.source.id === CENTER.id || d.target.id === CENTER.id) ? d.w * 0.5 : 0.5);
+
+    // Draw nodes
+    const node = g.append('g')
+        .selectAll('g')
+        .data(nodes)
+        .join('g')
+        .call(d3.drag()
+            .on('start', (e,d) => { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+            .on('drag', (e,d) => { d.fx=e.x; d.fy=e.y; })
+            .on('end', (e,d) => { if (!e.active) simulation.alphaTarget(0); d.fx=null; d.fy=null; })
+        );
+
+    // Node circles
+    node.append('circle')
+        .attr('r', d => d.t === 0 ? 28 : {1:18,2:14,3:11,4:9}[d.t])
+        .attr('fill', d => d.t === 0 ? '#FFFFFF' : FIELDS[d.f] || '#607D8B')
+        .attr('stroke', d => d.t === 0 ? '#58A6FF' : 'rgba(255,255,255,0.25)')
+        .attr('stroke-width', d => d.t === 0 ? 3 : 1.5)
+        .style('cursor', 'pointer')
+        .style('filter', d => d.t === 0 ? 'drop-shadow(0 0 12px rgba(88,166,255,0.5))' : 'none');
+
+    // Node labels
+    node.append('text')
+        .text(d => d.id)
+        .attr('dy', d => d.t === 0 ? -36 : -(({1:18,2:14,3:11,4:9}[d.t]||10) + 6))
+        .attr('text-anchor', 'middle')
+        .attr('fill', d => d.t === 0 ? '#FFFFFF' : '#C9D1D9')
+        .attr('font-size', d => d.t === 0 ? '14px' : {1:'12px',2:'11px',3:'10px',4:'9px'}[d.t])
+        .attr('font-weight', d => d.t <= 1 ? '700' : '500')
+        .attr('font-family', "'Inter', sans-serif")
+        .style('pointer-events', 'none');
+
+    // Institution labels for tier 1
+    node.filter(d => d.t === 1)
+        .append('text')
+        .text(d => d.i)
+        .attr('dy', d => 18 + 10)
+        .attr('text-anchor', 'middle')
+        .attr('fill', '#8B949E')
+        .attr('font-size', '8.5px')
+        .attr('font-family', "'Inter', sans-serif")
+        .style('pointer-events', 'none');
+
+    // Hover interactions
+    node.on('mouseenter', function(e, d) {
+        if (d.t === 0) return;
+        const tierLabels = {1:'Core (15+ papers)',2:'Frequent (8-14)',3:'Regular (4-7)',4:'Scholar Listed'};
+        ttName.textContent = d.id;
+        ttInst.textContent = d.i;
+        ttField.textContent = d.f;
+        ttField.style.background = FIELDS[d.f] || '#607D8B';
+        tooltip.classList.add('visible');
+
+        // Highlight connected
+        const connected = new Set();
+        links.forEach(l => {
+            const s = typeof l.source === 'object' ? l.source.id : l.source;
+            const t = typeof l.target === 'object' ? l.target.id : l.target;
+            if (s === d.id) connected.add(t);
+            if (t === d.id) connected.add(s);
+        });
+        connected.add(d.id);
+
+        node.selectAll('circle').style('opacity', n => connected.has(n.id) ? 1 : 0.15);
+        node.selectAll('text').style('opacity', n => connected.has(n.id) ? 1 : 0.1);
+        link.style('stroke-opacity', l => {
+            const s = typeof l.source === 'object' ? l.source.id : l.source;
+            const t = typeof l.target === 'object' ? l.target.id : l.target;
+            return (s === d.id || t === d.id) ? 0.7 : 0.03;
+        }).style('stroke-width', l => {
+            const s = typeof l.source === 'object' ? l.source.id : l.source;
+            const t = typeof l.target === 'object' ? l.target.id : l.target;
+            return (s === d.id || t === d.id) ? 2.5 : 0.3;
+        }).style('stroke', l => {
+            const s = typeof l.source === 'object' ? l.source.id : l.source;
+            const t = typeof l.target === 'object' ? l.target.id : l.target;
+            return (s === d.id || t === d.id) ? (FIELDS[d.f] || '#58A6FF') : '#30363D';
+        });
+    })
+    .on('mousemove', function(e) {
+        const rect = container.getBoundingClientRect();
+        let x = e.clientX - rect.left + 16;
+        let y = e.clientY - rect.top - 10;
+        if (x + 240 > rect.width) x = e.clientX - rect.left - 250;
+        if (y + 80 > rect.height) y = rect.height - 90;
+        tooltip.style.left = x + 'px';
+        tooltip.style.top = y + 'px';
+    })
+    .on('mouseleave', function() {
+        tooltip.classList.remove('visible');
+        node.selectAll('circle').style('opacity', 1);
+        node.selectAll('text').style('opacity', 1);
+        link.style('stroke-opacity', d => (d.source.id === CENTER.id || d.target.id === CENTER.id) ? 0.15 + d.w * 0.06 : 0.15)
+            .style('stroke-width', d => (d.source.id === CENTER.id || d.target.id === CENTER.id) ? d.w * 0.5 : 0.5)
+            .style('stroke', d => (d.source.id === CENTER.id || d.target.id === CENTER.id) ? '#58A6FF' : '#30363D');
+    });
+
+    // Tick
+    simulation.on('tick', () => {
+        link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        node.attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+
+    // Resize
+    window.addEventListener('resize', () => {
+        W = container.clientWidth; H = container.clientHeight;
+        simulation.force('center', d3.forceCenter(W/2, H/2)).alpha(0.3).restart();
+    });
+})();
+</script>
 </body>
 </html>
