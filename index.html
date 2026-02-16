@@ -5,7 +5,7 @@ layout: null
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="google-site-verification" content="MZGtAX-h5ZO784dkLQTcWtrk_7wXFKamOgmJ0cwanwQ" />
     <meta name="description" content="Justin Y. Jeon - Underwood Distinguished Professor & Yoonje Lee Fellow at Yonsei University. Expert in exercise oncology, salutogenesis, and AI in health. Head of the Center for Exercise Medicine and Salutogenesis. 300+ publications, Harvard postdoc." />
     <meta name="keywords" content="Justin Jeon, Justin Y. Jeon, 전용관, Yonsei University, exercise oncology, salutogenesis, exercise medicine, cancer exercise, Underwood Distinguished Professor & Yoonje Lee Fellow" />
@@ -35,11 +35,13 @@ layout: null
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        img, iframe, video, svg { max-width: 100%; }
 
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         body {
@@ -304,6 +306,8 @@ layout: null
         .section-inner {
             max-width: 1080px;
             margin: 0 auto;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .section-label {
@@ -594,7 +598,7 @@ layout: null
         /* ===== Media ===== */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 1.5rem;
         }
 
@@ -731,13 +735,10 @@ layout: null
         @media (max-width: 600px) {
             .hero { padding: 100px 1.25rem 60px; }
             .hero-photo { width: 120px; height: 120px; }
-            .hero-name { font-size: clamp(2rem, 8vw, 2.8rem); white-space: nowrap; }
+            .hero-name { font-size: clamp(2rem, 8vw, 2.8rem); white-space: normal; word-break: keep-all; }
             .section { padding: 60px 1.25rem; }
             .research-grid { grid-template-columns: 1fr; }
-            nav ul { gap: 0.6rem; flex-wrap: wrap; justify-content: flex-end; }
-            nav a { font-size: 0.7rem; }
-            .nav-inner { padding: 0 1rem; height: auto; min-height: 48px; padding-top: 0.4rem; padding-bottom: 0.4rem; }
-            .nav-logo { font-size: 0.85rem; white-space: nowrap; flex-shrink: 0; margin-right: 0.75rem; }
+            .nav-logo { font-size: 0.85rem; }
             .edu-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1.5rem; }
             .pub-card { padding: 1.25rem 1.5rem; }
             .hero-links { flex-direction: column; align-items: center; }
@@ -746,9 +747,9 @@ layout: null
         }
 
         @media (max-width: 380px) {
-            .hero-name { font-size: 1.8rem; }
-            nav ul { gap: 0.4rem; }
-            nav a { font-size: 0.65rem; }
+            .hero-name { font-size: 1.6rem; white-space: normal; }
+            .edu-card { padding: 1.25rem; }
+            .pub-card { padding: 1rem 1.25rem; }
         }
 
         /* ===== Network Section ===== */
@@ -926,7 +927,7 @@ layout: null
         }
         @media (max-width: 600px) {
             .wave-divider svg { height: 35px; }
-            .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 42px; height: 42px; }
+            .back-to-top { bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); right: 1rem; width: 42px; height: 42px; }
         }
 
         /* ===== Scroll Progress Bar ===== */
@@ -1004,9 +1005,98 @@ layout: null
             color: var(--text-primary);
             box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
-        @media (max-width: 600px) {
-            .lang-toggle { margin-left: 0.4rem; }
-            .lang-btn { padding: 0.2rem 0.5rem; font-size: 0.65rem; }
+        /* ===== Hamburger Menu ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1002;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                flex-shrink: 0;
+            }
+            .nav-inner {
+                height: 52px;
+                padding: 0 0.75rem;
+                justify-content: flex-start;
+            }
+            .nav-logo {
+                font-size: 0.9rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .lang-toggle {
+                margin-left: auto;
+                margin-right: 0.5rem;
+                flex-shrink: 0;
+            }
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 52px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(251, 251, 253, 0.98);
+                backdrop-filter: saturate(180%) blur(20px);
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 2rem 1.5rem;
+                z-index: 1001;
+                overflow-y: auto;
+            }
+            nav ul.open {
+                display: flex;
+            }
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li a {
+                font-size: 1.05rem;
+                display: block;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--border);
+                color: var(--text-primary);
+                font-weight: 500;
+            }
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+            body.menu-open {
+                overflow: hidden;
+            }
         }
     </style>
 </head>
@@ -1035,6 +1125,9 @@ layout: null
             <button class="lang-btn active" onclick="setLang('en')" id="lang-en">EN</button>
             <button class="lang-btn" onclick="setLang('ko')" id="lang-ko">KR</button>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </nav>
 
@@ -1244,11 +1337,43 @@ layout: null
         <p class="section-subheading slide-left" data-i18n="pub.sub">A curated selection from 300+ peer-reviewed publications in exercise oncology, diabetes, and health systems.</p>
         <div class="pub-list">
             <div class="pub-card glow-card fade-in">
+                <div class="pub-title">Meeting Physical Activity and Resistance Exercise Guidelines Associated with Significantly Reduced Prevalence of Diabetes in Older Adults</div>
+                <div class="pub-authors">Kim, C., Park, D.H., Lee, Y., Kim, E.C., Oh, C.G., Lee, D.H. &amp; Jeon, J.Y.</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1093/ageing/afaf109" target="_blank" class="pub-journal">Age and Ageing</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card glow-card fade-in">
                 <div class="pub-title">Exercise as a New Therapeutic Modality in Oncology: CHALLENGE Trial Refines Survivorship Care</div>
                 <div class="pub-authors">Jeon, J.Y.</div>
                 <div class="pub-footer">
                     <span class="pub-journal">Nature Reviews Clinical Oncology</span>
                     <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+            <div class="pub-card glow-card fade-in">
+                <div class="pub-title">Early Implementation of Exercise to Facilitate Recovery After Breast Cancer Surgery: A Randomized Clinical Trial</div>
+                <div class="pub-authors">Min, J., Kim, J.Y., Ryu, J., Park, S., Courneya, K.S., Ligibel, J., Kim, S.I. &amp; Jeon, J.Y.</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1001/jamasurg.2024.1633" target="_blank" class="pub-journal">JAMA Surgery</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+            <div class="pub-card glow-card fade-in">
+                <div class="pub-title">Wearable-Device-Measured Physical Activity and Future Health Risk</div>
+                <div class="pub-authors">Strain, T., Wijndaele, K., Dempsey, P.C., Sharp, S.J., Pearce, M., Jeon, J.Y., Lindsay, T., Wareham, N. &amp; Brage, S.</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41591-020-1012-3" target="_blank" class="pub-journal">Nature Medicine</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+            <div class="pub-card glow-card fade-in">
+                <div class="pub-title">SGLT2 Inhibition Modulates NLRP3 Inflammasome Activity via Ketones and Insulin in Diabetes with Cardiovascular Disease</div>
+                <div class="pub-authors">Kim, S.R., Lee, S.G., Kim, S.H., Kim, J.H., Choi, E., Cho, W., ... Jeon, J.Y., ... &amp; Lee, Y.H.</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41467-020-15983-6" target="_blank" class="pub-journal">Nature Communications</a>
+                    <span class="pub-year-badge">2020</span>
                 </div>
             </div>
             <div class="pub-card glow-card fade-in">
@@ -1425,6 +1550,23 @@ layout: null
 </footer>
 
 <script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navUl = document.querySelector('nav ul');
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navUl.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+});
+// Close menu when a nav link is clicked
+document.querySelectorAll('nav ul a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navUl.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+});
+
 // Frosted nav on scroll
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
