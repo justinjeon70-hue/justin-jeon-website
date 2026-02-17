@@ -1,0 +1,1378 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Complete list of peer-reviewed publications by Justin Y. Jeon (2018-2026). Exercise oncology, physical activity, cancer survivorship, and health research." />
+    <meta name="author" content="Justin Y. Jeon" />
+    <title>Publications | Justin Y. Jeon | Yonsei University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --bg-primary: #fbfbfd;
+            --bg-secondary: #f5f5f7;
+            --bg-dark: #1d1d1f;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(251, 251, 253, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(251, 251, 253, 0.92);
+            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 52px;
+        }
+
+        .nav-back a {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-hover);
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        /* ===== Page Header ===== */
+        .page-header {
+            padding: 120px 2rem 60px;
+            text-align: center;
+            background: var(--bg-primary);
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .total-count {
+            display: inline-block;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* ===== Main Content ===== */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 100px;
+        }
+
+        /* ===== Year Section ===== */
+        .year-section {
+            margin-bottom: 3rem;
+        }
+
+        .year-heading {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--bg-secondary);
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+        }
+
+        .year-heading .year-count {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
+        }
+
+        /* ===== Publication Card ===== */
+        .pub-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .pub-card:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-2px);
+        }
+
+        .pub-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .pub-authors {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .pub-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pub-journal {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .pub-journal:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .pub-year-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== Footer ===== */
+        .page-footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-tertiary);
+            font-size: 0.82rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 0 1.2rem 80px;
+            }
+
+            .pub-card {
+                padding: 1.2rem;
+                border-radius: 12px;
+            }
+
+            .pub-title {
+                font-size: 0.95rem;
+            }
+
+            .pub-authors {
+                font-size: 0.82rem;
+            }
+
+            .pub-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .year-heading {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 100px 1.2rem 40px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-inner {
+                padding: 0 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="nav-back">
+                <a href="index.html">&larr; Back to Home</a>
+            </div>
+            <div class="nav-logo">Justin Y. Jeon</div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Publications</h1>
+        <p class="subtitle">Complete list of peer-reviewed publications (2018&ndash;2026)</p>
+        <span class="total-count">114 publications</span>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- ===== 2026 (3 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2026 <span class="year-count">(3 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Long-term association of physical activity with survival by primary cancer treatment in endometrial cancer: The Alberta Endometrial Cancer Cohort Study</div>
+                <div class="pub-authors">Minsuk Oh, Ki-Yong An, Dong Hoon Lee, Renee L. Kokts-Porietis, Linda S. Cook, Christine M. Friedenreich, Justin Y. Jeon, Kerry S. Courneya</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1002/ijc.70369" target="_blank" class="pub-journal">International Journal of Cancer</a>
+                    <span class="pub-year-badge">2026</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Salutogenesis for health promotion: tensions and future directions for physical activity/active living research</div>
+                <div class="pub-authors">Eun-Young Lee, Justin Y. Jeon, John C. Spence</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1093/heapro/daag003" target="_blank" class="pub-journal">Health Promotion International</a>
+                    <span class="pub-year-badge">2026</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association of Aerobic Physical Activity and Resistance Exercise with Glycated Hemoglobin in Women with Diabetes</div>
+                <div class="pub-authors">Susanna Jun, Ji Won Kang, Dong-Hyuk Park, Ki-Yong An, Dong Hoon Lee, Minsuk Oh, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3349/ymj.2024.0480" target="_blank" class="pub-journal">Yonsei Medical Journal</a>
+                    <span class="pub-year-badge">2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2025 (22 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2025 <span class="year-count">(22 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Feasibility of a 4-week combined supervised and home-based exercise program for patients with nontuberculous mycobacterial pulmonary disease</div>
+                <div class="pub-authors">Eun Chan Kim, Youngmok Park, Chiho Kim, Dong-Hyuk Park, Young Ae Kang, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-025-28839-0" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effects of exercise interventions on physical recovery in paediatric cancer patients and survivors: a meta-analysis</div>
+                <div class="pub-authors">Bo Yeon Kim, Hye Yeon Kim, Dong Hoon Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12887-025-06136-z" target="_blank" class="pub-journal">BMC Pediatrics</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association of weekend warrior physical activity pattern with health outcomes: A systematic review and meta-analysis</div>
+                <div class="pub-authors">Yun Sung Kim, Young-Heon Shin, Minsuk Oh, Justin Y. Jeon, Dong Hoon Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.puhe.2025.105977" target="_blank" class="pub-journal">Public Health</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Invasive and non-invasive variables prediction models for cardiovascular disease-specific mortality between machine learning vs. traditional statistics</div>
+                <div class="pub-authors">Seonggyu Choi, Minsuk Oh, Dong Hoon Lee, Sun Ha Jee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-025-18853-7" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Elevated Resting Heart Rate Is an Independent Risk Factor for Mortality in Patients with Colorectal Cancer</div>
+                <div class="pub-authors">Wonhee Cho, Ho Seung Kim, Dong Hoon Lee, Dong-Hyuk Park, Mi Kyung Lee, Seung Yoon Yang, Byung Soh Min, Kerry S. Courneya, Jeffrey A. Meyerhardt, Edward Giovannucci, Nam-Kyu Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1158/1055-9965.EPI-25-0704" target="_blank" class="pub-journal">Cancer Epidemiology, Biomarkers &amp; Prevention</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Correction: Evaluating the effects of a resistance exercise intervention for sarcopenia in patients receiving neoadjuvant chemotherapy for breast cancer</div>
+                <div class="pub-authors">Min Kyeong Jang, Seho Park, Justin Y. Jeon, Min Jae Kang, Chang Park, Ardith Z. Doorenbos, Sue Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12885-025-15003-0" target="_blank" class="pub-journal">BMC Cancer</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Exercise as a new therapeutic modality in oncology: CHALLENGE trial refines survivorship care</div>
+                <div class="pub-authors">Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41571-025-01071-5" target="_blank" class="pub-journal">Nature Reviews Clinical Oncology</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">International perspectives on exercise oncology: current state, challenges, and opportunities for future development</div>
+                <div class="pub-authors">Hao Luo, Paulo G. Bergerot, Daniel A. Galvao, Justin Y. Jeon, Karen Mustian, Robert U. Newton, Lervasen Pillay, Joachim Wiskemann, Kathryn H. Schmitz</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1093/jncimonographs/lgaf028" target="_blank" class="pub-journal">Journal of the National Cancer Institute Monographs</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Evaluating the effects of a resistance exercise intervention for sarcopenia in patients receiving neoadjuvant chemotherapy for breast cancer: study protocol</div>
+                <div class="pub-authors">Min Kyeong Jang, Seho Park, Justin Y. Jeon, Min Jae Kang, Chang Park, Ardith Z. Doorenbos, Sue Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12885-025-14721-9" target="_blank" class="pub-journal">BMC Cancer</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Personalized exercise programs improve health-related quality of life in individuals with spinal cord injuries</div>
+                <div class="pub-authors">Jeongmin Lee, Dong-Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.20463/pan.2025.0009" target="_blank" class="pub-journal">Physical Activity and Nutrition</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Occupational physical activity and depression risk: A systematic review and dose-response meta-analysis</div>
+                <div class="pub-authors">Yumi Park, Seo Yeong An, Justin Y. Jeon, Dong Hoon Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jad.2025.119983" target="_blank" class="pub-journal">Journal of Affective Disorders</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Meeting Physical Activity Guidelines: Impact on Chronic Kidney Disease Prevalence in Diabetic Individuals</div>
+                <div class="pub-authors">Yong Jun Lee, Dong-Hyuk Park, Chiho Kim, Dong Hoon Lee, Yong-Ho Lee, Byung-Wan Lee, Joon Young Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3349/ymj.2024.0245" target="_blank" class="pub-journal">Yonsei Medical Journal</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Postdiagnosis physical activity is associated with improved survival in prostate cancer patients treated with surgery</div>
+                <div class="pub-authors">Ki-Yong An, Justin Y. Jeon, Fernanda Z. Arthuso, Qinggang Wang, Christine M. Friedenreich, Kerry S. Courneya</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41416-025-03123-0" target="_blank" class="pub-journal">British Journal of Cancer</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Postdiagnosis physical activity and dietary inflammatory and insulinemic potential with overall survival in men with nonmetastatic prostate cancer</div>
+                <div class="pub-authors">Dong Hoon Lee, Leandro F.M. Rezende, Gerson Ferrari, Yiwen Zhang, Qiao-Li Wang, Hannah Oh, NaNa Keum, Jinbo Hu, Justin Y. Jeon, Lorelei A. Mucci, Edward L. Giovannucci</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s10654-025-01240-x" target="_blank" class="pub-journal">European Journal of Epidemiology</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Physical Activity, Sedentary Behavior, Cardiorespiratory Fitness with Cardiac Adiposity: A Narrative Review</div>
+                <div class="pub-authors">Minsuk Oh, Hyo-In Choi, Jong-Young Lee, Dong Hoon Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1159/000544804" target="_blank" class="pub-journal">Pulse</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Impact of physical activities in metabolic dysfunction associated steatotic liver disease, sarcopenia, and cardiovascular disease</div>
+                <div class="pub-authors">Eugene Han, Sin Yung Woo, Justin Y. Jeon, Eun Seok Kang, Bong-Soo Cha, Byung-Wan Lee, Yong-Ho Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.diabres.2025.112209" target="_blank" class="pub-journal">Diabetes Research and Clinical Practice</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Meeting physical activity and resistance exercise guidelines associated with significantly reduced prevalence of diabetes in older adults</div>
+                <div class="pub-authors">Chiho Kim, Dong-Hyuk Park, YongJun Lee, Eun Chan Kim, Chang-Geun Oh, Dong Hoon Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1093/ageing/afaf109" target="_blank" class="pub-journal">Age and Ageing</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Physical activity levels among long-term cancer survivors of more than 5 years: a propensity score matching analysis</div>
+                <div class="pub-authors">Mi Kyung Lee, Dong-Hyuk Park, Dong Hoon Lee, Jongwook Yu, Ji Soo Park, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-025-09366-0" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association between resting heart rate and prognosis in patients with gastric cancer</div>
+                <div class="pub-authors">Dong Hoon Lee, Dong-Hyuk Park, Tae Ho Lee, Edward L. Giovannucci, Sung Hyun Park, Minah Cho, Yoo Min Kim, Woo Jin Hyung, Justin Y. Jeon, Hyoung-Il Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-025-89577-x" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effects of Exercise on Pain and Disability After Lumbar Disc Herniation Surgery: A Systematic Review and Meta-analysis</div>
+                <div class="pub-authors">HyungSub Jin, JangWon Kwon, Jeongmin Lee, Dong-Jun Lee, Dong Hoon Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1097/PHM.0000000000002658" target="_blank" class="pub-journal">American Journal of Physical Medicine &amp; Rehabilitation</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Global trends in importance of 24-hour movement behaviors to pediatric health</div>
+                <div class="pub-authors">Eun-Young Lee, Reyana Jayawardena, Seiyeong Park, Justin Y. Jeon, Yeon-Soo Kim, Mark S. Tremblay</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3345/cep.2024.00178" target="_blank" class="pub-journal">Clinical and Experimental Pediatrics</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Greater Excess Post-Exercise Oxygen Consumption and Fat Use Following Calisthenics</div>
+                <div class="pub-authors">Eun-Byeol Lee, Oyama Okimitsu, Jiin Ryu, Tae Ho Lee, Dong-Hyuk Park, Sunghyun Hong, Sang-Hoon Suh, Daehyun Park, Jungsun Han, Sophie Lalande, Hirofumi Tanaka, Minsuk Oh, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1080/02701367.2024.2410394" target="_blank" class="pub-journal">Research Quarterly for Exercise and Sport</a>
+                    <span class="pub-year-badge">2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2024 (14 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2024 <span class="year-count">(14 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Exercise Preferences and Barriers Among Patients With Heart Failure With Reduced Ejection Fraction or Myocardial Infarction</div>
+                <div class="pub-authors">Mi Kyung Lee, Chan Joo Lee, Seon Young Goo, Jin Young Moon, Tae Ho Lee, Seok-Min Kang, Ick-Mo Chung, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.4070/kcj.2024.0097" target="_blank" class="pub-journal">Korean Circulation Journal</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Cardiorespiratory and aerobic demands of squat exercise</div>
+                <div class="pub-authors">Sunghyun Hong, Minsuk Oh, Chang-Geun Oh, Hae-Dong Lee, Sang-Hoon Suh, Hyon Park, Sophie Lalande, Hirofumi Tanaka, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-024-68187-z" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association of physical inactivity and handgrip strength with non-tuberculous mycobacterial pulmonary disease</div>
+                <div class="pub-authors">E. Chung, Y. Park, D-H. Park, J.Y. Jeon, Y.A. Kang</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.5588/ijtld.23.0476" target="_blank" class="pub-journal">International Journal of Tuberculosis and Lung Disease</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Early Implementation of Exercise to Facilitate Recovery After Breast Cancer Surgery: A Randomized Clinical Trial</div>
+                <div class="pub-authors">Jihee Min, Jee Ye Kim, Jiin Ryu, Seho Park, Kerry S. Courneya, Jennifer Ligibel, Seung Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1001/jamasurg.2024.1633" target="_blank" class="pub-journal">JAMA Surgery</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effects of exercise during active surveillance for prostate cancer: A systematic review and meta-analysis</div>
+                <div class="pub-authors">Dong-Jun Lee, Ji Yong Byeon, Dong-Hyuk Park, Chang Geun Oh, Jongsoo Lee, Young Deuk Choi, Dong-Woo Kang, Ki-Yong An, Kerry S. Courneya, Dong Hoon Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-024-08606-z" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Exercise Across the Phases of Cancer Survivorship: A Narrative Review</div>
+                <div class="pub-authors">Ki-Yong An, Jihee Min, Dong Hoon Lee, Dong-Woo Kang, Kerry S. Courneya, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3349/ymj.2023.0638" target="_blank" class="pub-journal">Yonsei Medical Journal</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Impact of leisure physical activity and resistance exercise on the prevalence of depressive symptoms in Korean adults</div>
+                <div class="pub-authors">Eun Chan Kim, Ansuk Jeong, Dong Hoon Lee, Dong-Hyuk Park, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jad.2024.04.028" target="_blank" class="pub-journal">Journal of Affective Disorders</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">A qualitative exploration of exercise motivation among colorectal cancer survivors</div>
+                <div class="pub-authors">Ji Yong Byeon, Mi Kyung Lee, Dong-Hyuk Park, Su Jin Yeon, Sun Ha Jee, Chul Won Lee, Seung Yoon Yang, Nam-Kyu Kim, Jeff Vallance, Kerry S. Courneya, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-024-08362-0" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Development and application of a home-based exercise program for patients with cardiovascular disease: a feasibility study</div>
+                <div class="pub-authors">Mi Kyung Lee, Chan Joo Lee, Seon Young Goo, Tae Ho Lee, Jin Young Moon, Jiyoung Jung, Min Jung Kim, Sang Hee Shin, Jong Nam Kim, Sung Nim Han, Jung Eun Lee, Jong Young Lee, Ick-Mo Chung, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s13102-024-00835-3" target="_blank" class="pub-journal">BMC Sports Science, Medicine &amp; Rehabilitation</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Resting heart rate is associated with the prevalence of chronic kidney disease in Korean adults</div>
+                <div class="pub-authors">Dong-Hyuk Park, Choon Hee Chung, Dong Hoon Lee, Eun Young Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12889-024-17877-4" target="_blank" class="pub-journal">BMC Public Health</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Comparing domain- and intensity-specific physical activity in coronary heart disease and non-CHD individuals</div>
+                <div class="pub-authors">Seon Young Goo, Mi Kyung Lee, Dong Hoon Lee, Dong-Hyuk Park, Tae Ho Lee, Chan Joo Lee, Jong-Young Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-024-52764-3" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effectiveness of breath acetone monitoring in reducing body fat and improving body composition</div>
+                <div class="pub-authors">Seonggyu Choi, Minsuk Oh, Okimitsu Oyama, Dong-Hyuk Park, Sunghyun Hong, Tae Ho Lee, Junho Hwang, Hyun-Sook Lee, Yong-Sahm Choe, Wooyoung Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1088/1752-7163/ad1b19" target="_blank" class="pub-journal">Journal of Breath Research</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">The metabolic potential of inflammatory and insulinaemic dietary patterns and risk of type 2 diabetes</div>
+                <div class="pub-authors">Dong Hoon Lee, Qi Jin, Ni Shi, Fenglei Wang, Alaina M. Bever, Liming Liang, Frank B. Hu, Mingyang Song, Oana A. Zeleznik, Xuehong Zhang, Amit Joshi, Kana Wu, Justin Y. Jeon, Jeffrey A. Meyerhardt, Andrew T. Chan, A. Heather Eliassen, Clary Clish, Steven K. Clinton, Edward L. Giovannucci, Jun Li, Fred K. Tabung</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00125-023-06021-3" target="_blank" class="pub-journal">Diabetologia</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Early Implementation of Exercise to Facilitate Recovery After Breast Cancer Surgery: A Randomized Clinical Trial</div>
+                <div class="pub-authors">Jihee Min, Jee Ye Kim, Jiin Ryu, Seho Park, Kerry S. Courneya, Jennifer Ligibel, Seung Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1001/jamasurg.2024.1633" target="_blank" class="pub-journal">JAMA Surgery</a>
+                    <span class="pub-year-badge">2024</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2023 (17 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2023 <span class="year-count">(17 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Intelligent Estimation of Exercise Induced Energy Expenditure Including Excess Post-Exercise Oxygen Consumption (EPOC) with Different Exercise Intensity</div>
+                <div class="pub-authors">Junhyung Moon, Minsuk Oh, Soljee Kim, Kyoungwoo Lee, Junga Lee, Yoonkyung Song, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/s23229235" target="_blank" class="pub-journal">Sensors</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Long Term Effects of a Social Capital-Based Exercise Adherence Intervention for Breast Cancer Survivors With Moderate Fatigue</div>
+                <div class="pub-authors">Jeehee Han, Min Kyeong Jang, Hyojin Lee, Soo Yeon Kim, Sung Hae Kim, Yun Hee Ko, Yoonkyung Song, Min Jae Kang, Justin Y. Jeon, Young Up Cho, Gihong Yi, Sue Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1177/15347354231209440" target="_blank" class="pub-journal">Integrative Cancer Therapies</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">The effect of a short-term ketogenic diet on exercise efficiency during graded exercise in healthy adults</div>
+                <div class="pub-authors">Wonhee Cho, Hwaebong Jung, Sunghyun Hong, Hyuk In Yang, Dong-Hyuk Park, Sang-Hoon Suh, Dong Hoon Lee, Yong-Sahm Choe, Joon Young Kim, Wooyoung Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1080/15502783.2023.2264278" target="_blank" class="pub-journal">Journal of the International Society of Sports Nutrition</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Comparisons of the prediction models for undiagnosed diabetes between machine learning versus traditional statistical methods</div>
+                <div class="pub-authors">Seong Gyu Choi, Minsuk Oh, Dong-Hyuk Park, Byeongchan Lee, Yong-Ho Lee, Sun Ha Jee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-023-40170-0" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Dietary Inflammatory and Insulinemic Potentials, Plasma Metabolome and Risk of Colorectal Cancer</div>
+                <div class="pub-authors">Dong Hoon Lee, Qi Jin, Ni Shi, Fenglei Wang, Alaina M. Bever, Jun Li, Liming Liang, Frank B. Hu, Mingyang Song, Oana A. Zeleznik, Xuehong Zhang, Amit Joshi, Kana Wu, Justin Y. Jeon, Jeffrey A. Meyerhardt, Andrew T. Chan, A. Heather Eliassen, Clary B. Clish, Steven K. Clinton, Edward L. Giovannucci, Fred K. Tabung</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/metabo13060744" target="_blank" class="pub-journal">Metabolites</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Resting heart rate is a population-level biomarker of cardiorespiratory fitness: The Fenland Study</div>
+                <div class="pub-authors">Tomas I. Gonzales, Justin Y. Jeon, Timothy Lindsay, Kate Westgate, Ignacio Perez-Pozuelo, Stefanie Hollidge, Katrien Wijndaele, Kirsten Rennie, Nita Forouhi, Simon Griffin, Nick Wareham, Soren Brage</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1371/journal.pone.0285272" target="_blank" class="pub-journal">PLoS ONE</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">An 8-step approach for the systematic development of an evidence-based exercise program for patients undergoing hematopoietic stem cell transplantation</div>
+                <div class="pub-authors">Ki-Yong An, Mi-Seong Yu, Wonhee Cho, Meeok Choi, Kerry S. Courneya, June-Won Cheong, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3389/fonc.2023.1132776" target="_blank" class="pub-journal">Frontiers in Oncology</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Prognostic value of resting heart rate in predicting undiagnosed diabetes in adults (Corrigendum)</div>
+                <div class="pub-authors">Dong-Hyuk Park, Seon Young Goo, Sung Hyun Hong, Ji-Hee Min, Jiyong Byeon, Mi-Kyoung Lee, Hae Dong Lee, Byung Wook Ahn, Hee Jin Kimm, Sunha Jee, Dong Hoon Lee, Yong-Ho Lee, Eun Seok Kang, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.numecd.2023.02.021" target="_blank" class="pub-journal">Nutrition, Metabolism and Cardiovascular Diseases</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Prognostic value of resting heart rate in predicting undiagnosed diabetes in adults</div>
+                <div class="pub-authors">Dong-Hyuk Park, Seon Young Goo, Sung Hyun Hong, Ji-Hee Min, Ji Yong Byeon, Mi-Kyung Lee, Hae Dong Lee, Byoung Wook Ahn, Heejin Kimm, Sun Ha Jee, Dong Hoon Lee, Yong-Ho Lee, Eun Seok Kang, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.numecd.2022.09.012" target="_blank" class="pub-journal">Nutrition, Metabolism and Cardiovascular Diseases</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Postoperative inpatient exercise facilitates recovery after laparoscopic surgery in colorectal cancer patients: a randomized controlled trial</div>
+                <div class="pub-authors">Jihee Min, Ki-Yong An, Hyuna Park, Wonhee Cho, Hye Jeong Jung, Sang Hui Chu, Minsoo Cho, Seung Yoon Yang, Justin Y. Jeon, Nam Kyu Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12876-023-02755-x" target="_blank" class="pub-journal">BMC Gastroenterology</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Shoulder function and health outcomes in newly diagnosed breast cancer patients receiving surgery: a prospective study</div>
+                <div class="pub-authors">Jihee Min, Sujin Yeon, Jiin Ryu, Jee Ye Kim, Eun Joo Yang, Seung Il Kim, Seho Park, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.clbc.2023.03.001" target="_blank" class="pub-journal">Clinical Breast Cancer</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effect of a 1-year tailored exercise program according to cancer trajectories in patients with breast cancer: study protocol</div>
+                <div class="pub-authors">Jiin Ryu, Eun-Young Lee, Jihee Min, Sujin Yeon, Ji-Won Lee, Sang Hui Chu, Hyangkyu Lee, Seung Il Kim, Jee Ye Kim, Seho Park, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12885-023-10664-1" target="_blank" class="pub-journal">BMC Cancer</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Results From South Korean 2022 Para Report Card on Physical Activity for Children and Adolescents With Disabilities</div>
+                <div class="pub-authors">Jeongmin Lee, Kitaek Oh, Jihee Min, Seon-Young Goo, Eun-Young Lee, Kyoung June Yi, Jinmoo Heo, Joon-Sung Lee, Dong-Il Kim, Wonsang Shin, Kwon-Il Kim, Yeonsoo Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1123/apaq.2022-0049" target="_blank" class="pub-journal">Adapted Physical Activity Quarterly</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Report card grades on physical activity for children and adolescents from 18 Asian countries</div>
+                <div class="pub-authors">Eun-Young Lee, An-Chi Shih, Maia Collins, Yeong-Bae Kim, [and co-authors], Justin Y. Jeon, Yeon Soo Kim, Tom Loney, Falk Muller-Riemenschneider, Bozhi Chen, Jonathan Y. Cagas, Jyh Eiin Wong, Mohd Razif Shahril, Agus Mahendra, Mark S. Tremblay</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jesf.2022.10.008" target="_blank" class="pub-journal">Journal of Exercise Science and Fitness</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Physical activity in the era of climate change and COVID-19 pandemic: Results from the South Korea's 2022 Report Card</div>
+                <div class="pub-authors">Eun-Young Lee, Yeong-Bae Kim, Seonyoung Goo, Okimitsu Oyama, Jeongmin Lee, Geonhui Kim, Heejun Lim, Hoyong Sung, Jiyeon Yoon, Jongnam Hwang, Sochung Chung, Hyun Joo Kang, Joon Young Kim, Kwon-Il Kim, Youngwon Kim, Mi-Young Lee, Jung-Woo Oh, Hyon Park, Wook Song, Kyoungjune Yi, Yeon-Soo Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jesf.2022.10.014" target="_blank" class="pub-journal">Journal of Exercise Science and Fitness</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Corrigendum: Physical activity in the era of climate change and COVID-19 pandemic</div>
+                <div class="pub-authors">Eun-Young Lee, Yeong-Bae Kim, Seonyoung Goo, Okimitsu Oyama, Jeongmin Lee, Geonhui Kim, Heejun Lim, Hoyong Sung, Jiyeon Yoon, Jongnam Hwang, Sochung Chung, Hyun Joo Kang, Joon Young Kim, Kwon-Il Kim, Youngwon Kim, Mi-Young Lee, Jung-Woo Oh, Hyon Park, Wook Song, Kyoungjune Yi, Yeon-Soo Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jesf.2023.01.003" target="_blank" class="pub-journal">Journal of Exercise Science and Fitness</a>
+                    <span class="pub-year-badge">2023</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2022 (12 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2022 <span class="year-count">(12 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">ESMO Expert Consensus Statements on Cancer Survivorship: promoting high-quality survivorship care and research in Europe</div>
+                <div class="pub-authors">Ines Vaz-Luis, Marianna Masiero, Guido Cavaletti, Andres Cervantes, Rowan T. Chlebowski, Giuseppe Curigliano, Enriqueta Felip, Arlindo R. Ferreira, Patricia A. Ganz, Josephine Hegarty, Justin Jeon, Christoffer Johansen, Florence Joly, Karin Jordan, Bogda Koczwara, Pernilla Lagergren, Matteo Lambertini, Daniel Lenihan, Helena Linardou, Charles Loprinzi, Ann H. Partridge, Stefan Rauh, Karen Steindorf, Winette van der Graaf, Lonneke van de Poll-Franse, George Pentheroudakis, Solange Peters, Gabriella Pravettoni</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.annonc.2022.07.1941" target="_blank" class="pub-journal">Annals of Oncology</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Global Matrix 4.0 Physical Activity Report Card Grades for Children and Adolescents: Results and Analyses From 57 Countries</div>
+                <div class="pub-authors">Salome Aubert, Joel D. Barnes, [and co-authors], Justin Y. Jeon, [and co-authors], Mark S. Tremblay</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1123/jpah.2022-0456" target="_blank" class="pub-journal">Journal of Physical Activity and Health</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association of Absolute and Relative Handgrip Strength with Prevalent Metabolic Syndrome in Adults</div>
+                <div class="pub-authors">Sunghyun Hong, Minsuk Oh, Youngwon Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/ijerph191912585" target="_blank" class="pub-journal">International Journal of Environmental Research and Public Health</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Tearing down the barriers to exercise after mastectomy: a qualitative inquiry</div>
+                <div class="pub-authors">Sujin Yeon, Ansuk Jeong, Jihee Min, Jiyong Byeon, Yong Jin Yoon, Jinmoo Heo, Chulwon Lee, Jeeye Kim, Seho Park, Seung Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1136/bmjopen-2021-055157" target="_blank" class="pub-journal">BMJ Open</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Application of the theory of planned behavior to understand physical activity intentions and behavior among Korean breast cancer survivors</div>
+                <div class="pub-authors">Jihee Min, Ye-Won Yu, Jeongmin Lee, Sujin Yeon, Ha-Nui Park, Joon Sung Lee, Kerry S. Courneya, Hyung Seok Park, Seung Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-022-07258-1" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Short Term Isocaloric Ketogenic Diet Modulates NLRP3 Inflammasome Via B-hydroxybutyrate and Fibroblast Growth Factor 21</div>
+                <div class="pub-authors">Eun Ran Kim, So Ra Kim, Wonhee Cho, Sang-Guk Lee, Soo Hyun Kim, Jin Hee Kim, Eunhye Choi, Jeong-Ho Kim, Je-Wook Yu, Byung-Wan Lee, Eun Seok Kang, Bong-Soo Cha, Myung-Shik Lee, Jin Won Cho, Justin Y. Jeon, Yong-Ho Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3389/fimmu.2022.843520" target="_blank" class="pub-journal">Frontiers in Immunology</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">The relationship between domain-specific physical activity and depressive symptoms in Korean adults</div>
+                <div class="pub-authors">Jiin Ryu, Ansuk Jeong, Ji-Hye Min, Dong Hoon Lee, Jeongmin Lee, In Han Song, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jad.2022.01.097" target="_blank" class="pub-journal">Journal of Affective Disorders</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">The predictive value of resting heart rate in identifying undiagnosed diabetes in Korean adults</div>
+                <div class="pub-authors">Dong-Hyuk Park, Wonhee Cho, Yong-Ho Lee, Sun Ha Jee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.4178/epih.e2022009" target="_blank" class="pub-journal">Epidemiology and Health</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Ideal cardiovascular health duration and risk of chronic kidney disease and cardiovascular disease</div>
+                <div class="pub-authors">So Mi Jemma Cho, Justin Y. Jeon, Tae-Hyun Yoo, Hae-Young Lee, Yong-Ho Lee, Hyeon Chang Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1136/heartjnl-2021-320180" target="_blank" class="pub-journal">Heart</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Changes in DNA methylation after 6-week exercise training in colorectal cancer survivors</div>
+                <div class="pub-authors">Seo-Hyeon Hwang, Dong-Woo Kang, Mi-Kyung Lee, Ji Yong Byeon, Hanui Park, Dong-Hyuk Park, Kyung-Chul Kim, Seung-Tae Lee, Sang Hui Chu, Nam Kyu Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1111/ajco.13482" target="_blank" class="pub-journal">Asia-Pacific Journal of Clinical Oncology</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Physical activity levels, exercise preferences, and exercise barriers in Korean children and adolescents after cancer treatment</div>
+                <div class="pub-authors">Ji Young Kim, Samuel Yoo, Su Jin Yeon, Ji Hee Min, Dong-Il Kim, Ji Won Lee, Jung Woo Han, Chuhl Joo Lyu, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-021-06588-w" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2022</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2021 (13 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2021 <span class="year-count">(13 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Development of a 24-Hour Movement Behavior Questionnaire for Youth</div>
+                <div class="pub-authors">Yoonkyung Song, Yong Jin Yoon, Han Joo Lee, Yeon Soo Kim, John C. Spence, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jneb.2021.08.012" target="_blank" class="pub-journal">Journal of Nutrition Education and Behavior</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Development of a New Submaximal Walk Test to Predict Maximal Oxygen Consumption in Healthy Adults</div>
+                <div class="pub-authors">Hyuk In Yang, Wonhee Cho, Dong Hoon Lee, Sang-Hoon Suh, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/s21175726" target="_blank" class="pub-journal">Sensors</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Change in Shoulder Function in the Early Recovery Phase after Breast Cancer Surgery</div>
+                <div class="pub-authors">Jihee Min, Jee Ye Kim, Sujin Yeon, Jiin Ryu, Jin Joo Min, Seho Park, Seung Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/jcm10153416" target="_blank" class="pub-journal">Journal of Clinical Medicine</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Physical activity and quality of life of patients with inflammatory bowel disease</div>
+                <div class="pub-authors">Bun Kim, Jisuk Chae, Eun Hye Kim, Hyuk In Yang, Jae Hee Cheon, Tae Il Kim, Won Ho Kim, Justin Y. Jeon, Soo Jung Park</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1097/MD.0000000000026290" target="_blank" class="pub-journal">Medicine</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association between domain-specific physical activity and diabetes in Korean adults</div>
+                <div class="pub-authors">Eun-Byeol Lee, Sunghyun Hong, Jihee Min, Dong-Hyuk Park, Wonhee Cho, Sang-Hoon Suh, Hae-Dong Lee, Han-Joo Lee, Heejin Kimm, Sun Ha Jee, Eun Seok Kang, Dong Hoon Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41598-021-92560-x" target="_blank" class="pub-journal">Scientific Reports</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association between physical activity and inflammatory markers in community-dwelling, middle-aged adults</div>
+                <div class="pub-authors">So Mi Jemma Cho, Hokyou Lee, Jee-Seon Shim, Justin Y. Jeon, Hyeon Chang Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1139/apnm-2020-1069" target="_blank" class="pub-journal">Applied Physiology, Nutrition, and Metabolism</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Associations of health inequality factors with physical activity and sedentary behaviors in Korean cancer survivors</div>
+                <div class="pub-authors">Dong-Woo Kang, Jihee Min, Justin Y. Jeon, Ki-Yong An</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-021-06014-1" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Correction to: Pre-post analysis of a social capital-based exercise adherence intervention for breast cancer survivors</div>
+                <div class="pub-authors">Sue Kim, Yun Hee Ko, Yoonkyung Song, Min Jae Kang, Hyojin Lee, Sung Hae Kim, Justin Y. Jeon, Young Up Cho, Gihong Yi, Jeehee Han</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-020-05823-0" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Autonomy is not but competence and relatedness are associated with physical activity among colorectal cancer survivors</div>
+                <div class="pub-authors">Kyoung-A Kim, Sang Hui Chu, Eui Geum Oh, Sang Joon Shin, Justin Y. Jeon, Yun Jin Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-020-05661-0" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Intensity- and domain-specific physical activity levels between cancer survivors and non-cancer diagnosis individuals</div>
+                <div class="pub-authors">Jeongmin Lee, Jihee Min, Dong Hoon Lee, Dong-Woo Kang, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-020-05514-w" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Exercise participation, barriers, and preferences in Korean prostate cancer survivors</div>
+                <div class="pub-authors">Jihee Min, Samuel Yoo, Min-Jae Kim, Eunwoo Yang, Seohyeon Hwang, Minjae Kang, Mi-Seong Yu, Cheolyong Yoon, Ji Eun Heo, Youngdeuk Choi, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1080/13557858.2019.1634184" target="_blank" class="pub-journal">Ethnicity &amp; Health</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Cardiopulmonary fitness but not muscular fitness associated with visceral adipose tissue mass</div>
+                <div class="pub-authors">Ki-Yong An, Sue Kim, Minsuk Oh, Hye-Sun Lee, Hyuk In Yang, Hyuna Park, Ji-Won Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1080/13813455.2019.1628066" target="_blank" class="pub-journal">Archives of Physiology and Biochemistry</a>
+                    <span class="pub-year-badge">2021</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2020 (11 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2020 <span class="year-count">(11 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Role of exercise on insulin sensitivity and beta-cell function: is exercise sufficient for the prevention of youth-onset type 2 diabetes?</div>
+                <div class="pub-authors">Joon Young Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.6065/apem.2040140.070" target="_blank" class="pub-journal">Annals of Pediatric Endocrinology &amp; Metabolism</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Breath Acetone Measurement-Based Prediction of Exercise-Induced Energy and Substrate Expenditure</div>
+                <div class="pub-authors">Min Jae Kim, Sung Hyun Hong, Wonhee Cho, Dong-Hyuk Park, Eun-Byeol Lee, Yoonkyung Song, Yong-Sahm Choe, Jun Ho Lee, Yeonji Jang, Wooyoung Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/s20236878" target="_blank" class="pub-journal">Sensors</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Wearable-device-measured physical activity and future health risk</div>
+                <div class="pub-authors">Tessa Strain, Katrien Wijndaele, Paddy C. Dempsey, Stephen J. Sharp, Matthew Pearce, Justin Jeon, Tim Lindsay, Nick Wareham, Soren Brage</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41591-020-1012-3" target="_blank" class="pub-journal">Nature Medicine</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Exercise barriers and facilitators during hematopoietic stem cell transplantation: a qualitative study</div>
+                <div class="pub-authors">Mi-Seong Yu, Ki-Yong An, Jiyong Byeon, Meeok Choi, June-Won Cheong, Kerry Courneya, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1136/bmjopen-2020-037460" target="_blank" class="pub-journal">BMJ Open</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">The Relationship between Physical Activity Levels and Mental Health in Individuals with Spinal Cord Injury in South Korea</div>
+                <div class="pub-authors">Dong-Il Kim, Jeongmin Lee, Hyuna Park, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/ijerph17124423" target="_blank" class="pub-journal">International Journal of Environmental Research and Public Health</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease</div>
+                <div class="pub-authors">So Ra Kim, Sang-Guk Lee, Soo Hyun Kim, Jin Hee Kim, Eunhye Choi, Wonhee Cho, John Hoon Rim, Inhwa Hwang, Chan Joo Lee, Minyoung Lee, Chang-Myung Oh, Justin Y. Jeon, Heon Yung Gee, Jeong-Ho Kim, Byung-Wan Lee, Eun Seok Kang, Bong-Soo Cha, Myung-Shik Lee, Je-Wook Yu, Jin Won Cho, Jung-Sun Kim, Yong-Ho Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1038/s41467-020-15983-6" target="_blank" class="pub-journal">Nature Communications</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Moderate to vigorous physical activity participation associated with better quality of life among breast and colorectal cancer survivors in Korea</div>
+                <div class="pub-authors">Ji-Hye Park, Dong Hoon Lee, Seung Il Kim, Nam Kyu Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12885-020-06819-z" target="_blank" class="pub-journal">BMC Cancer</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">A new anthropometric index to predict percent body fat in young adults</div>
+                <div class="pub-authors">Hyuk In Yang, Wonhee Cho, Ki Yong Ahn, Seung-Chul Shin, Ju-Hwa Kim, Seoungjae Yoo, Yong-In Park, Eun-Young Lee, Dong Hoon Lee, John C. Spence, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1017/S1368980019004191" target="_blank" class="pub-journal">Public Health Nutrition</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Pre-post analysis of a social capital-based exercise adherence intervention for breast cancer survivors with moderate fatigue</div>
+                <div class="pub-authors">Sue Kim, Yun Hee Ko, Yoonkyung Song, Min Jae Kang, Hyojin Lee, Sung Hae Kim, Justin Y. Jeon, Young Up Cho, Gihong Yi, Jeehee Han</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-020-05363-7" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Objectively measured physical activity during chemotherapy in colon cancer patients</div>
+                <div class="pub-authors">Hyuna Park, Minkyu Jung, Min Jae Kim, Jihee Min, Choong-Kun Lee, Sang Joon Shin, Seung-Hoon Beom, Joong Bae Ahn, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-019-05049-9" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Development process of an evidence-based exercise program for post-operative colorectal cancer patients</div>
+                <div class="pub-authors">Ki-Yong An, Hyuk In Yang, Dong-Woo Kang, Kerry S. Courneya, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-019-04864-4" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Development of the Korean Global Physical Activity Questionnaire: reliability and validity study</div>
+                <div class="pub-authors">Junga Lee, Choae Lee, Jihee Min, Dong-Woo Kang, Ji-Young Kim, Hyuk In Yang, Jihye Park, Mi-Kyung Lee, Mi-Young Lee, Ilhyeok Park, Sae Young Jae, Yoonsuk Jekal, Sun Ha Jee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1177/1757975919854301" target="_blank" class="pub-journal">Global Health Promotion</a>
+                    <span class="pub-year-badge">2020</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2019 (13 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2019 <span class="year-count">(13 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Validation of Submaximal Step Tests and the 6-Min Walk Test for Predicting Maximal Oxygen Consumption in Young and Healthy Participants</div>
+                <div class="pub-authors">Sung Hyun Hong, Hyuk In Yang, Dong-Il Kim, Tomas I. Gonzales, Soren Brage, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/ijerph16234858" target="_blank" class="pub-journal">International Journal of Environmental Research and Public Health</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Levels and correlates of 24-hour movement behaviors among South Koreans</div>
+                <div class="pub-authors">Eun-Young Lee, Valerie Carson, Justin Y. Jeon, John C. Spence, Mark S. Tremblay</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jshs.2018.11.007" target="_blank" class="pub-journal">Journal of Sport and Health Science</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Association between Resting Heart Rate and Colorectal Cancer</div>
+                <div class="pub-authors">Yu-Jin Kwon, Hye Sun Lee, Mi Ra Cho, Si Nae Kim, Justin Y. Jeon, Nam Kyu Kim, Ji-Won Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/ijerph16162883" target="_blank" class="pub-journal">International Journal of Environmental Research and Public Health</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Dry Electrode-Based Body Fat Estimation System with Anthropometric Data for Use in a Wearable Device</div>
+                <div class="pub-authors">Seung-Chul Shin, Jinkyu Lee, Soyeon Choe, Hyuk In Yang, Jihee Min, Ki-Yong Ahn, Justin Y. Jeon, Hong-Goo Kang</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.3390/s19092177" target="_blank" class="pub-journal">Sensors</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Development of an exercise adherence program for breast cancer survivors with cancer-related fatigue</div>
+                <div class="pub-authors">Sue Kim, Yun Hee Ko, Yoonkyung Song, Min Jae Kang, Hyojin Lee, Sung Hae Kim, Justin Y. Jeon, Young Up Cho, Gihong Yi, Jeehee Han</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-019-04785-2" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Lower Relative Handgrip Strength is Significantly Associated with a Higher Prevalence of the Metabolic Syndrome in Adults</div>
+                <div class="pub-authors">Ji Yong Byeon, Mi Kyung Lee, Mi-Seong Yu, Min Jae Kang, Dong Hoon Lee, Kyong Chol Kim, Jee Aee Im, Sun Hyun Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1089/met.2018.0111" target="_blank" class="pub-journal">Metabolic Syndrome and Related Disorders</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Handgrip Strength as a Predictor of All-Cause Mortality in Patients With Chronic Kidney Disease Undergoing Dialysis</div>
+                <div class="pub-authors">Seo-Hyeon Hwang, Dong Hoon Lee, Jihee Min, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1053/j.jrn.2019.01.002" target="_blank" class="pub-journal">Journal of Renal Nutrition</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">A pilot randomized controlled trial of 6-week combined exercise program on fasting insulin and fitness levels in individuals with spinal cord injury</div>
+                <div class="pub-authors">Dong-Il Kim, J. Andrew Taylor, Can Ozan Tan, Hyuna Park, Ji Young Kim, Sang-Yong Park, Kyong-Mee Chung, Young-Hee Lee, Bum-Suk Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00586-019-05885-7" target="_blank" class="pub-journal">European Spine Journal</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Results from South Korea's 2018 Report Card on physical activity for children and youth</div>
+                <div class="pub-authors">Jung-Woo Oh, Eun-Young Lee, JungJun Lim, [and co-authors], Justin Y. Jeon, Yeon Soo Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.jesf.2018.10.006" target="_blank" class="pub-journal">Journal of Exercise Science and Fitness</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effects of alternate day fasting and exercise on cholesterol metabolism in overweight or obese adults</div>
+                <div class="pub-authors">A-Ra Cho, Ju-Yeon Moon, Sue Kim, Ki-Yong An, Minsuk Oh, Justin Y. Jeon, Dong-Hyuk Jung, Man Ho Choi, Ji-Won Lee</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.metabol.2019.01.002" target="_blank" class="pub-journal">Metabolism</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effects of a 12-week home-based exercise program on quality of life, psychological health, and the level of physical activity in colorectal cancer survivors</div>
+                <div class="pub-authors">Ji Young Kim, Mi Kyung Lee, Dong Hoon Lee, Dong Woo Kang, Ji Hee Min, Ji Won Lee, Sang Hui Chu, Min Su Cho, Nam Kyu Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s00520-018-4588-0" target="_blank" class="pub-journal">Supportive Care in Cancer</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Resting heart rate and risk of type 2 diabetes: A prospective cohort study and meta-analysis</div>
+                <div class="pub-authors">Dong Hoon Lee, Leandro Fornias Machado de Rezende, Frank B. Hu, Justin Y. Jeon, Edward L. Giovannucci</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1002/dmrr.3095" target="_blank" class="pub-journal">Diabetes/Metabolism Research and Reviews</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Impacts of an Exercise Program and Motivational Telephone Counseling on Health-Related Quality of Life in People With Parkinson's Disease</div>
+                <div class="pub-authors">JuHee Lee, MoonKi Choi, Yonju Yoo, Sangwoo Ahn, Justin Y. Jeon, Ji Young Kim, Ji Yong Byun</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1097/rnj.0000000000000106" target="_blank" class="pub-journal">Rehabilitation Nursing</a>
+                    <span class="pub-year-badge">2019</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2018 (9 papers) ===== -->
+        <div class="year-section">
+            <h2 class="year-heading">2018 <span class="year-count">(9 papers)</span></h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Results from South Korea's 2018 Report Card on Physical Activity for Children and Youth</div>
+                <div class="pub-authors">Jung-Woo Oh, JungJun Lim, [and co-authors], Justin Y. Jeon, [and co-authors], Yeon Soo Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1123/jpah.2018-0518" target="_blank" class="pub-journal">Journal of Physical Activity and Health</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effects of alternate day calorie restriction and exercise on cardio-metabolic risk factors in overweight and obese adults</div>
+                <div class="pub-authors">Minsuk Oh, Sue Kim, Ki-Yong An, Jihee Min, Hyuk In Yang, Junga Lee, Mi Kyung Lee, Dong-Il Kim, Hye-Sun Lee, Ji-Won Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1186/s12889-018-6009-1" target="_blank" class="pub-journal">BMC Public Health</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Relationship between resting heart rate and metabolic risk factors in breast cancer patients</div>
+                <div class="pub-authors">Mi Kyung Lee, Dong Hoon Lee, Seho Park, Seung Il Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.cca.2018.07.032" target="_blank" class="pub-journal">Clinica Chimica Acta</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">The Effects of Diet Alone or in Combination with Exercise in Patients with Prehypertension and Hypertension</div>
+                <div class="pub-authors">Chan Joo Lee, Ji Young Kim, Eugene Shim, Sung Hyun Hong, MiKyung Lee, Justin Y. Jeon, Sungha Park</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.4070/kcj.2017.0349" target="_blank" class="pub-journal">Korean Circulation Journal</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effect of the 6-week home-based exercise program on physical activity level and physical fitness in colorectal cancer survivors</div>
+                <div class="pub-authors">Mi Kyung Lee, Nam Kyu Kim, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1371/journal.pone.0196220" target="_blank" class="pub-journal">PLoS ONE</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Resting heart rate is an independent predictor of advanced colorectal adenoma recurrence</div>
+                <div class="pub-authors">Jihye Park, Jae Hyun Kim, Yehyun Park, Soo Jung Park, Jae Hee Cheon, Won Ho Kim, Ji Soo Park, Justin Y. Jeon, Tae Il Kim</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1371/journal.pone.0193753" target="_blank" class="pub-journal">PLoS ONE</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Associations between physical activity and comorbidities in Korean cancer survivors</div>
+                <div class="pub-authors">Dong-Woo Kang, Eun-Young Lee, Ki Yong An, Jihee Min, Justin Y. Jeon, Kerry S. Courneya</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1007/s11764-018-0683-y" target="_blank" class="pub-journal">Journal of Cancer Survivorship</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Effect of a short-term physical activity intervention on liver fat content in obese children</div>
+                <div class="pub-authors">Dong-Woo Kang, Ji-Hye Park, Mi Kyung Lee, YoonMyung Kim, In Deok Kong, Choon Hee Chung, Young Hee Lee, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1139/apnm-2017-0406" target="_blank" class="pub-journal">Applied Physiology, Nutrition, and Metabolism</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Six weeks of combined aerobic and resistance exercise using outdoor exercise machines improves fitness, insulin resistance, and chemerin in the Korean elderly</div>
+                <div class="pub-authors">Dong-Il Kim, Dong Hoon Lee, Sunghyun Hong, Sung-Won Jo, Young-Shin Won, Justin Y. Jeon</div>
+                <div class="pub-footer">
+                    <a href="https://doi.org/10.1016/j.archger.2017.11.006" target="_blank" class="pub-journal">Archives of Gerontology and Geriatrics</a>
+                    <span class="pub-year-badge">2018</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+        &copy; 2026 Justin Y. Jeon. All rights reserved.
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
