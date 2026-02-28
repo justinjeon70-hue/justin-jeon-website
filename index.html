@@ -98,37 +98,25 @@ layout: null
         }
         .scale-in.visible { opacity: 1; transform: scale(1); }
 
-        /* Parallax hero layers */
-        .hero { overflow: hidden; }
-        .hero-bg-shapes {
+        /* Hero ambient glow effects */
+        .hero::before {
+            content: '';
             position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .hero-shape {
-            position: absolute;
+            top: -50%; right: -20%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(100,255,218,0.08) 0%, transparent 70%);
             border-radius: 50%;
-            opacity: 0.07;
-            filter: blur(60px);
+            pointer-events: none;
         }
-        .hero-shape-1 {
-            width: 500px; height: 500px;
-            background: var(--accent);
-            top: -10%; left: -5%;
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(67,97,238,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
-        .hero-shape-2 {
-            width: 400px; height: 400px;
-            background: #E91E63;
-            bottom: -15%; right: -5%;
-        }
-        .hero-shape-3 {
-            width: 300px; height: 300px;
-            background: #2ECC71;
-            top: 20%; right: 15%;
-        }
-        .hero-content { position: relative; z-index: 1; }
 
         .section { position: relative; }
 
@@ -190,75 +178,79 @@ layout: null
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 2rem 80px;
-            background: var(--bg-primary);
+            padding: 100px 60px 60px;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             position: relative;
+            overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 980px;
-            text-align: center;
+        /* Nav transparent on hero */
+        nav.hero-nav-transparent {
+            background: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border-bottom: none;
+        }
+        nav.hero-nav-transparent .nav-logo { color: #fff; }
+        nav.hero-nav-transparent a { color: rgba(255,255,255,0.8); }
+        nav.hero-nav-transparent a:hover { color: #fff; }
+        nav.hero-nav-transparent .lang-btn { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+        nav.hero-nav-transparent .lang-btn.active { background: rgba(255,255,255,0.15); color: #fff; }
+
+        .hero-inner {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 1;
         }
 
-        .hero-photo-wrapper {
-            margin-bottom: 2.5rem;
+        .hero-text-side { flex: 1.2; }
+        .hero-photo-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
         }
 
-        .hero-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        box-shadow 0.6s ease;
-        }
-
-        .hero-photo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
-        }
-
-        .hero-overline {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--accent);
-            letter-spacing: 0.02em;
-            margin-bottom: 0.75rem;
+        .hero-field-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #64ffda;
+            margin-bottom: 16px;
         }
 
         .hero-name {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
+            font-size: 64px;
+            font-weight: 800;
+            color: #ffffff;
             line-height: 1.1;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #1d1d1f, #0071e3, #E91E63, #0071e3, #1d1d1f);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 24px;
         }
+        .hero-name span { display: block; }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-title {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+        .hero-position {
+            font-size: 18px;
             font-weight: 400;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .hero-university {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 36px;
         }
 
         .hero-links {
             display: flex;
-            gap: 0.75rem;
-            justify-content: center;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -266,32 +258,85 @@ layout: null
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.7rem 1.5rem;
-            border-radius: 980px;
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 14px;
             font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
         }
 
         .btn-filled {
-            background: var(--accent);
-            color: white;
+            background: #64ffda;
+            color: #0f2027;
         }
 
         .btn-filled:hover {
-            background: var(--accent-hover);
-            transform: scale(1.02);
+            background: #a7ffeb;
+            transform: translateY(-2px);
         }
 
         .btn-ghost {
-            background: transparent;
-            color: var(--accent);
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .btn-ghost:hover {
-            background: rgba(0, 113, 227, 0.06);
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .hero-new-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 24px;
+            object-fit: cover;
+            object-position: center 15%;
+            border: 3px solid rgba(100,255,218,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+        .hero-new-photo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+        }
+
+        .hero-stats { display: flex; gap: 20px; }
+        .hero-stat {
+            text-align: center;
+            padding: 16px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            min-width: 90px;
+        }
+        .hero-stat-number {
+            font-size: 26px;
+            font-weight: 700;
+            color: #64ffda;
+            display: block;
+        }
+        .hero-stat-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 80px 24px 40px; }
+            .hero-inner { flex-direction: column; gap: 40px; text-align: center; }
+            .hero-name { font-size: 42px; }
+            .hero-links { justify-content: center; }
+            .hero-photo-side { order: -1; }
+            .hero-new-photo { width: 200px; height: 200px; }
+            .hero-stats { gap: 12px; }
+            .hero-stat { padding: 12px 14px; min-width: 75px; }
+            .hero-stat-number { font-size: 22px; }
         }
 
         /* ===== Sections ===== */
@@ -1133,29 +1178,46 @@ layout: null
 
 <!-- Hero -->
 <header class="hero">
-    <div class="hero-bg-shapes">
-        <div class="hero-shape hero-shape-1" data-parallax-speed="0.3"></div>
-        <div class="hero-shape hero-shape-2" data-parallax-speed="0.5"></div>
-        <div class="hero-shape hero-shape-3" data-parallax-speed="0.2"></div>
-    </div>
-    <div class="hero-content">
-        <div class="hero-photo-wrapper fade-in">
-            <img class="hero-photo" src="photo.png" alt="Justin Y. Jeon">
+    <div class="hero-inner">
+        <!-- Left: Text -->
+        <div class="hero-text-side">
+            <div class="hero-field-label fade-in" data-i18n="hero.field">Exercise Oncology</div>
+            <h1 class="hero-name fade-in fade-in-delay-1" data-i18n="hero.name" data-i18n-html="true">
+                <span>Justin Y.</span>
+                <span>Jeon</span>
+            </h1>
+            <p class="hero-position fade-in fade-in-delay-2" data-i18n="hero.overline" data-i18n-html="true">
+                Underwood Distinguished Professor<br>
+                &amp; Yoonje Lee Fellow
+            </p>
+            <p class="hero-university fade-in fade-in-delay-3" data-i18n="hero.university">Yonsei University, Seoul</p>
+            <div class="hero-links fade-in fade-in-delay-4">
+                <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="btn btn-filled">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                    Google Scholar
+                </a>
+                <a href="https://www.researchgate.net/profile/Justin-Jeon-2" target="_blank" class="btn btn-ghost">ResearchGate</a>
+                <a href="https://yonsei.elsevierpure.com/en/persons/justin-y-jeon" target="_blank" class="btn btn-ghost">Yonsei Pure</a>
+                <a href="https://www.youtube.com/@exercisewins6703" target="_blank" class="btn btn-ghost">YouTube</a>
+            </div>
         </div>
-        <p class="hero-overline fade-in fade-in-delay-1" data-i18n="hero.overline">Underwood Distinguished Professor & Yoonje Lee Fellow</p>
-        <h1 class="hero-name fade-in fade-in-delay-2" data-i18n="hero.name">Justin Y. Jeon</h1>
-        <p class="hero-title fade-in fade-in-delay-3" data-i18n="hero.title" data-i18n-html="true">
-            Exercise Oncology &middot; Salutogenesis &middot; AI in Health<br>
-            Yonsei University, Seoul
-        </p>
-        <div class="hero-links fade-in fade-in-delay-4">
-            <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="btn btn-filled">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
-                Google Scholar
-            </a>
-            <a href="https://www.researchgate.net/profile/Justin-Jeon-2" target="_blank" class="btn btn-ghost">ResearchGate</a>
-            <a href="https://yonsei.elsevierpure.com/en/persons/justin-y-jeon" target="_blank" class="btn btn-ghost">Yonsei Pure</a>
-            <a href="https://www.youtube.com/@exercisewins6703" target="_blank" class="btn btn-ghost">YouTube</a>
+        <!-- Right: Photo + Stats -->
+        <div class="hero-photo-side">
+            <img src="photo_new.jpg" alt="Justin Y. Jeon" class="hero-new-photo fade-in">
+            <div class="hero-stats fade-in fade-in-delay-2">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">12.8K</span>
+                    <span class="hero-stat-label">Citations</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">300+</span>
+                    <span class="hero-stat-label">Papers</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">57</span>
+                    <span class="hero-stat-label">h-index</span>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -1551,10 +1613,18 @@ document.querySelectorAll('nav ul a').forEach(link => {
     });
 });
 
-// Frosted nav on scroll
+// Frosted nav on scroll + transparent on hero
 const navbar = document.getElementById('navbar');
+const heroSection = document.querySelector('.hero');
+const heroHeight = heroSection ? heroSection.offsetHeight - 60 : 0;
+// Start with transparent nav on hero
+if (heroSection) navbar.classList.add('hero-nav-transparent');
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 10);
+    const scrolled = window.scrollY > 10;
+    navbar.classList.toggle('scrolled', scrolled);
+    if (heroSection) {
+        navbar.classList.toggle('hero-nav-transparent', window.scrollY < heroHeight);
+    }
 }, { passive: true });
 
 // Smooth scroll for nav links
