@@ -1142,6 +1142,19 @@ layout: null
             body.menu-open {
                 overflow: hidden;
             }
+            /* hero-nav-transparent 모바일 메뉴 오버라이드 */
+            nav.hero-nav-transparent .hamburger span {
+                background: #fff;
+            }
+            nav.hero-nav-transparent .hamburger.active span {
+                background: var(--text-primary);
+            }
+            nav.hero-nav-transparent ul.open li a {
+                color: var(--text-primary);
+            }
+            nav.hero-nav-transparent ul.open li a:hover {
+                color: var(--accent);
+            }
         }
     </style>
 </head>
