@@ -232,7 +232,7 @@ layout: null
             line-height: 1.1;
             margin-bottom: 24px;
         }
-        .hero-name span { display: block; }
+        .hero-name span { display: inline; }
 
         .hero-position {
             font-size: 18px;
@@ -330,7 +330,7 @@ layout: null
         @media (max-width: 768px) {
             .hero { padding: 80px 24px 40px; }
             .hero-inner { flex-direction: column; gap: 40px; text-align: center; }
-            .hero-name { font-size: 42px; }
+            .hero-name { font-size: 36px; white-space: nowrap; }
             .hero-links { justify-content: center; }
             .hero-photo-side { order: -1; }
             .hero-new-photo { width: 200px; height: 200px; }
@@ -780,7 +780,7 @@ layout: null
         @media (max-width: 600px) {
             .hero { padding: 100px 1.25rem 60px; }
             .hero-photo { width: 120px; height: 120px; }
-            .hero-name { font-size: clamp(2rem, 8vw, 2.8rem); white-space: normal; word-break: keep-all; }
+            .hero-name { font-size: clamp(1.8rem, 7vw, 2.4rem); white-space: nowrap; }
             .section { padding: 60px 1.25rem; }
             .research-grid { grid-template-columns: 1fr; }
             .nav-logo { font-size: 0.85rem; }
@@ -792,7 +792,7 @@ layout: null
         }
 
         @media (max-width: 380px) {
-            .hero-name { font-size: 1.6rem; white-space: normal; }
+            .hero-name { font-size: 1.5rem; white-space: nowrap; }
             .edu-card { padding: 1.25rem; }
             .pub-card { padding: 1rem 1.25rem; }
         }
@@ -1145,6 +1145,35 @@ layout: null
             /* hero 위 햄버거 아이콘 흰색 */
             nav.hero-nav-transparent .hamburger span {
                 background: #fff;
+            }
+            /* 모바일 메뉴 열림: 투명 nav 강제 오버라이드 */
+            body.menu-open nav {
+                background: rgba(251, 251, 253, 0.98) !important;
+                backdrop-filter: saturate(180%) blur(20px) !important;
+                -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+            }
+            body.menu-open .nav-logo {
+                color: var(--text-primary) !important;
+            }
+            body.menu-open .hamburger span {
+                background: var(--text-primary) !important;
+            }
+            body.menu-open .lang-btn {
+                color: var(--text-tertiary) !important;
+                border-color: var(--border) !important;
+            }
+            body.menu-open .lang-btn.active {
+                background: white !important;
+                color: var(--text-primary) !important;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            }
+            body.menu-open .lang-toggle {
+                background: var(--bg-secondary) !important;
+                border-color: var(--border) !important;
+            }
+            nav ul.open li a {
+                color: var(--text-primary) !important;
             }
         }
     </style>
