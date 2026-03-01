@@ -1142,37 +1142,9 @@ layout: null
             body.menu-open {
                 overflow: hidden;
             }
-            /* hero-nav-transparent: 메뉴 닫힌 상태 (히어로 위) */
+            /* hero 위 햄버거 아이콘 흰색 */
             nav.hero-nav-transparent .hamburger span {
                 background: #fff;
-            }
-            /* hero-nav-transparent: 메뉴 열린 상태 — 전체를 불투명+어두운색으로 */
-            body.menu-open nav.hero-nav-transparent {
-                background: rgba(251, 251, 253, 0.98);
-                backdrop-filter: saturate(180%) blur(20px);
-                -webkit-backdrop-filter: saturate(180%) blur(20px);
-                border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-            }
-            body.menu-open nav.hero-nav-transparent .nav-logo {
-                color: var(--text-primary);
-            }
-            body.menu-open nav.hero-nav-transparent .hamburger span {
-                background: var(--text-primary);
-            }
-            body.menu-open nav.hero-nav-transparent .lang-btn {
-                color: var(--text-tertiary);
-                border-color: var(--border);
-            }
-            body.menu-open nav.hero-nav-transparent .lang-btn.active {
-                background: white;
-                color: var(--text-primary);
-                box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-            }
-            nav.hero-nav-transparent ul.open li a {
-                color: var(--text-primary);
-            }
-            nav.hero-nav-transparent ul.open li a:hover {
-                color: var(--accent);
             }
         }
     </style>
@@ -1628,33 +1600,55 @@ layout: null
 </footer>
 
 <script>
+// Nav element
+const navbar = document.getElementById('navbar');
+const heroSection = document.querySelector('.hero');
+const heroHeight = heroSection ? heroSection.offsetHeight - 60 : 0;
+
+// Start with transparent nav on hero
+if (heroSection) navbar.classList.add('hero-nav-transparent');
+
 // Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const navUl = document.querySelector('nav ul');
+let wasTransparent = false;
+
+function restoreTransparentNav() {
+    if (wasTransparent && heroSection && window.scrollY < heroHeight) {
+        navbar.classList.add('hero-nav-transparent');
+    }
+    wasTransparent = false;
+}
+
 hamburger.addEventListener('click', () => {
+    const opening = !navUl.classList.contains('open');
     hamburger.classList.toggle('active');
     navUl.classList.toggle('open');
     document.body.classList.toggle('menu-open');
+    if (opening) {
+        wasTransparent = navbar.classList.contains('hero-nav-transparent');
+        navbar.classList.remove('hero-nav-transparent');
+    } else {
+        restoreTransparentNav();
+    }
 });
+
 // Close menu when a nav link is clicked
 document.querySelectorAll('nav ul a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navUl.classList.remove('open');
         document.body.classList.remove('menu-open');
+        restoreTransparentNav();
     });
 });
 
 // Frosted nav on scroll + transparent on hero
-const navbar = document.getElementById('navbar');
-const heroSection = document.querySelector('.hero');
-const heroHeight = heroSection ? heroSection.offsetHeight - 60 : 0;
-// Start with transparent nav on hero
-if (heroSection) navbar.classList.add('hero-nav-transparent');
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY > 10;
     navbar.classList.toggle('scrolled', scrolled);
-    if (heroSection) {
+    // 메뉴가 열려있을 때는 투명 전환하지 않음
+    if (heroSection && !navUl.classList.contains('open')) {
         navbar.classList.toggle('hero-nav-transparent', window.scrollY < heroHeight);
     }
 }, { passive: true });
