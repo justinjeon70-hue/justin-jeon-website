@@ -1142,12 +1142,31 @@ layout: null
             body.menu-open {
                 overflow: hidden;
             }
-            /* hero-nav-transparent 모바일 메뉴 오버라이드 */
+            /* hero-nav-transparent: 메뉴 닫힌 상태 (히어로 위) */
             nav.hero-nav-transparent .hamburger span {
                 background: #fff;
             }
-            nav.hero-nav-transparent .hamburger.active span {
+            /* hero-nav-transparent: 메뉴 열린 상태 — 전체를 불투명+어두운색으로 */
+            body.menu-open nav.hero-nav-transparent {
+                background: rgba(251, 251, 253, 0.98);
+                backdrop-filter: saturate(180%) blur(20px);
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            }
+            body.menu-open nav.hero-nav-transparent .nav-logo {
+                color: var(--text-primary);
+            }
+            body.menu-open nav.hero-nav-transparent .hamburger span {
                 background: var(--text-primary);
+            }
+            body.menu-open nav.hero-nav-transparent .lang-btn {
+                color: var(--text-tertiary);
+                border-color: var(--border);
+            }
+            body.menu-open nav.hero-nav-transparent .lang-btn.active {
+                background: white;
+                color: var(--text-primary);
+                box-shadow: 0 1px 4px rgba(0,0,0,0.1);
             }
             nav.hero-nav-transparent ul.open li a {
                 color: var(--text-primary);
