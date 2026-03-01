@@ -1107,7 +1107,7 @@ layout: null
             nav ul {
                 display: none;
                 position: fixed;
-                top: 52px;
+                top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
@@ -1116,8 +1116,8 @@ layout: null
                 align-items: center;
                 justify-content: flex-start;
                 gap: 0;
-                padding: 2rem 1.5rem;
-                z-index: 1001;
+                padding: 70px 1.5rem 2rem;
+                z-index: 999;
                 overflow-y: auto;
             }
             nav ul.open {
@@ -1147,9 +1147,9 @@ layout: null
             }
             /* 모바일 메뉴 열림: 투명 nav 강제 오버라이드 */
             body.menu-open nav {
-                background: rgba(251, 251, 253, 0.98) !important;
-                backdrop-filter: saturate(180%) blur(20px) !important;
-                -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+                background: #fbfbfd !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
                 border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
             }
             body.menu-open .nav-logo {
