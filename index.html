@@ -1204,6 +1204,110 @@ layout: null
             }
         }
 
+        /* ===== OxyCort Promo Section ===== */
+        .oxycort-promo {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f4ff 0%, #faf0ff 50%, #fff0f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .oxycort-promo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(0,122,255,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(175,82,222,0.05) 0%, transparent 50%);
+            animation: promoShimmer 8s ease-in-out infinite;
+        }
+        @keyframes promoShimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-2%, 1%); }
+        }
+        .oxycort-promo-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .oxycort-promo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #007aff, #af52de);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+        .oxycort-promo h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+        .oxycort-promo .promo-sub {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .oxycort-promo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .oxycort-promo-quad {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .oxycort-promo-quad:hover { transform: translateY(-3px); }
+        .oxycort-promo-quad .quad-emoji { font-size: 1.5rem; margin-bottom: 0.4rem; }
+        .oxycort-promo-quad .quad-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
+        .oxycort-promo-quad .quad-desc { font-size: 0.75rem; color: var(--text-tertiary); line-height: 1.4; }
+        .oxycort-promo-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,122,255,0.25);
+        }
+        .oxycort-promo-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,122,255,0.35);
+        }
+        @media (max-width: 768px) {
+            .oxycort-promo h2 { font-size: 1.8rem; }
+            .oxycort-promo-grid { grid-template-columns: repeat(2, 1fr); }
+            .oxycort-promo { padding: 3rem 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .oxycort-promo h2 { font-size: 1.5rem; }
+            .oxycort-promo-grid { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+        }
+
         /* ===== Calculator Modal ===== */
         .calc-overlay {
             position: fixed;
@@ -1330,7 +1434,7 @@ layout: null
         /* Calc cards */
         .calc-cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 0.8rem;
             margin-bottom: 1.5rem;
         }
@@ -1588,7 +1692,7 @@ layout: null
             .calc-modal-header { padding: 1.4rem 1.4rem 1rem; }
             .calc-modal-header h2 { font-size: 1.4rem; }
             .calc-modal-body { padding: 0 1.4rem 1.4rem; }
-            .calc-cards { grid-template-columns: 1fr; gap: 0.6rem; }
+            .calc-cards { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
             .calc-result-btns { flex-direction: column; }
         }
     </style>
@@ -1976,6 +2080,42 @@ layout: null
 </section>
 
 <div class="wave-divider wave-divider-flip"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,10 C320,55 800,5 1440,45 L1440,60 L0,60Z" fill="#f5f5f7"/></svg></div>
+
+<!-- OxyCort Promo -->
+<section class="oxycort-promo" id="oxycort">
+    <div class="oxycort-promo-inner">
+        <div class="oxycort-promo-badge fade-in" data-i18n="oxycort.badge">NEW</div>
+        <h2 class="fade-in" data-i18n="oxycort.heading">Are You Connected or Isolated Under Stress?</h2>
+        <p class="promo-sub fade-in" data-i18n="oxycort.sub">Discover your health risk through the balance of stress hormones (cortisol) and connection hormones (oxytocin). High stress doesn't always make you sick &mdash; isolation under stress does.</p>
+        <div class="oxycort-promo-grid">
+            <div class="oxycort-promo-quad fade-in">
+                <div class="quad-emoji">&#x1F7E2;</div>
+                <div class="quad-name" style="color:#34c759" data-i18n="oxycort.q1.name">Thriving</div>
+                <div class="quad-desc" data-i18n="oxycort.q1.desc">High connection, low stress. Optimal health state.</div>
+            </div>
+            <div class="oxycort-promo-quad fade-in fade-in-delay-1">
+                <div class="quad-emoji">&#x1F535;</div>
+                <div class="quad-name" style="color:#007aff" data-i18n="oxycort.q2.name">Resilient</div>
+                <div class="quad-desc" data-i18n="oxycort.q2.desc">High stress, but connection protects you.</div>
+            </div>
+            <div class="oxycort-promo-quad fade-in fade-in-delay-2">
+                <div class="quad-emoji">&#x1F7E3;</div>
+                <div class="quad-name" style="color:#af52de" data-i18n="oxycort.q3.name">Depleted</div>
+                <div class="quad-desc" data-i18n="oxycort.q3.desc">Low energy, low connection. Risk of depression.</div>
+            </div>
+            <div class="oxycort-promo-quad fade-in fade-in-delay-3">
+                <div class="quad-emoji">&#x1F534;</div>
+                <div class="quad-name" style="color:#ff3b30" data-i18n="oxycort.q4.name">At Risk</div>
+                <div class="quad-desc" data-i18n="oxycort.q4.desc">High stress, no connection. Highest disease risk.</div>
+            </div>
+        </div>
+        <a href="calculator.html" class="oxycort-promo-cta fade-in" data-i18n="oxycort.cta" onclick="localStorage.setItem('autoSelectOxycort','1')">
+            Take the Assessment
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
 <!-- Contact -->
 <section id="contact" class="section">
     <div class="section-inner">
@@ -2433,6 +2573,20 @@ const translations = {
         'calc.c2.desc': '당뇨 환자 신장질환 위험 평가',
         'calc.c3.title': '대장암 재발',
         'calc.c3.desc': '대장암 재발 위험 평가',
+        'calc.c4.title': '옥시-코르티솔 균형',
+        'calc.c4.desc': '옥시토신-코르티솔 건강위험 평가',
+        'oxycort.badge': 'NEW',
+        'oxycort.heading': '스트레스 속에서 연결되어 있나요, 고립되어 있나요?',
+        'oxycort.sub': '스트레스 호르몬(코르티솔)과 연결 호르몬(옥시토신)의 균형을 통해 건강 위험도를 알아보세요. 스트레스 자체가 병을 만드는 것이 아닙니다 \u2014 스트레스 속 고립이 병을 만듭니다.',
+        'oxycort.q1.name': '최적 건강',
+        'oxycort.q1.desc': '높은 연결, 낮은 스트레스. 최적의 건강 상태.',
+        'oxycort.q2.name': '회복탄력',
+        'oxycort.q2.desc': '스트레스는 높지만 연결이 보호합니다.',
+        'oxycort.q3.name': '우울/무기력',
+        'oxycort.q3.desc': '낮은 에너지, 낮은 연결. 우울 위험.',
+        'oxycort.q4.name': '질병 위험',
+        'oxycort.q4.desc': '높은 스트레스, 연결 없음. 최고 질병 위험.',
+        'oxycort.cta': '평가 시작하기',
         'calc.submit': '위험도 평가하기',
         'calc.rec.exercise': '\u{1F3C3} 운동 권고',
         'calc.rec.diet': '\u{1F957} 식이 권고',
@@ -2765,6 +2919,11 @@ if (savedLang === 'ko') setLang('ko');
                     <div class="cc-icon">&#x1F3AF;</div>
                     <h4 data-i18n="calc.c3.title">Cancer Recurrence</h4>
                     <p data-i18n="calc.c3.desc">Colorectal cancer recurrence risk</p>
+                </div>
+                <div class="calc-card-item" data-model="oxycort" onclick="window.location.href='calculator.html';localStorage.setItem('autoSelectOxycort','1');" style="background:linear-gradient(135deg,rgba(0,122,255,0.04),rgba(175,82,222,0.04))">
+                    <div class="cc-icon">&#x1F499;</div>
+                    <h4 data-i18n="calc.c4.title">OxyCort Balance</h4>
+                    <p data-i18n="calc.c4.desc">Oxytocin-cortisol health risk</p>
                 </div>
             </div>
 
