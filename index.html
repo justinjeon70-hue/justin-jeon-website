@@ -1203,6 +1203,394 @@ layout: null
                 color: var(--text-primary) !important;
             }
         }
+
+        /* ===== Calculator Modal ===== */
+        .calc-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 60px 1rem 2rem;
+            overflow-y: auto;
+        }
+
+        .calc-overlay.open {
+            display: flex;
+        }
+
+        .calc-modal {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 720px;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+            animation: calcModalIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes calcModalIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .calc-modal-header {
+            padding: 1.8rem 2rem 1.2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .calc-modal-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .calc-modal-header p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .calc-close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            color: var(--text-secondary);
+        }
+
+        .calc-close-btn:hover {
+            background: #e5e5e7;
+            color: var(--text-primary);
+        }
+
+        .calc-modal-body {
+            padding: 0 2rem 2rem;
+        }
+
+        /* RHR Info */
+        .calc-rhr-info {
+            background: linear-gradient(135deg, rgba(44, 83, 100, 0.06), rgba(0, 113, 227, 0.04));
+            border: 1px solid rgba(44, 83, 100, 0.1);
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-rhr-info summary {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #2c5364;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .calc-rhr-info summary::-webkit-details-marker { display: none; }
+
+        .calc-rhr-info summary::after {
+            content: '+';
+            margin-left: auto;
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: transform 0.2s;
+        }
+
+        .calc-rhr-info[open] summary::after {
+            content: '\2212';
+        }
+
+        .calc-rhr-info ol {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-top: 0.6rem;
+            padding-left: 1.2rem;
+        }
+
+        /* Calc cards */
+        .calc-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-card-item {
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+
+        .calc-card-item:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-2px);
+        }
+
+        .calc-card-item.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.12);
+        }
+
+        .calc-card-item .cc-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-card-item h4 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.3rem;
+        }
+
+        .calc-card-item p {
+            font-size: 0.72rem;
+            color: var(--text-tertiary);
+            line-height: 1.4;
+        }
+
+        /* Calc form */
+        .calc-form-area {
+            display: none;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            animation: calcSlideUp 0.3s ease;
+        }
+
+        .calc-form-area.visible { display: block; }
+
+        @keyframes calcSlideUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calc-form-area h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .calc-field {
+            margin-bottom: 0.9rem;
+        }
+
+        .calc-field label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .calc-field input,
+        .calc-field select {
+            width: 100%;
+            padding: 0.6rem 0.9rem;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 9px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .calc-field select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236e6e73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            padding-right: 2.2rem;
+        }
+
+        .calc-field input:focus,
+        .calc-field select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+
+        .calc-submit-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #2c5364;
+            color: white;
+            border: none;
+            border-radius: 9px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 0.3rem;
+        }
+
+        .calc-submit-btn:hover {
+            background: #1e3a47;
+            box-shadow: 0 4px 12px rgba(44, 83, 100, 0.3);
+        }
+
+        /* Calc result */
+        .calc-result-area {
+            display: none;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            animation: calcSlideUp 0.3s ease;
+        }
+
+        .calc-result-area.visible { display: block; }
+
+        .calc-result-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .calc-risk-meter {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            height: 14px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+        }
+
+        .calc-risk-bar {
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .calc-risk-label {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .calc-risk-score {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .calc-rec {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .calc-rec h4 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .calc-rec p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .calc-citation {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .calc-disclaimer {
+            font-size: 0.73rem;
+            color: var(--text-tertiary);
+            margin-top: 0.6rem;
+            line-height: 1.5;
+            background: rgba(255, 59, 48, 0.04);
+            border: 1px solid rgba(255, 59, 48, 0.08);
+            border-radius: 8px;
+            padding: 0.7rem 0.9rem;
+        }
+
+        .calc-result-btns {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .calc-btn-retry,
+        .calc-btn-share {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 9px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .calc-btn-retry {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .calc-btn-retry:hover { background: #e5e5e7; }
+
+        .calc-btn-share {
+            background: #2c5364;
+            color: white;
+            border: none;
+        }
+
+        .calc-btn-share:hover { background: #1e3a47; }
+
+        @media (max-width: 768px) {
+            .calc-overlay { padding: 20px 0.8rem 1rem; }
+            .calc-modal { border-radius: 16px; }
+            .calc-modal-header { padding: 1.4rem 1.4rem 1rem; }
+            .calc-modal-header h2 { font-size: 1.4rem; }
+            .calc-modal-body { padding: 0 1.4rem 1.4rem; }
+            .calc-cards { grid-template-columns: 1fr; gap: 0.6rem; }
+            .calc-result-btns { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -1223,7 +1611,7 @@ layout: null
             <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
             <li><a href="#network" data-i18n="nav.network">Network</a></li>
             <li><a href="#media" data-i18n="nav.media">Media</a></li>
-            <li><a href="/calculator" data-i18n="nav.calculator">Calculator</a></li>
+            <li><a href="#" onclick="openCalculator();return false;" data-i18n="nav.calculator">Calculator</a></li>
             <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
             <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -2032,6 +2420,25 @@ const translations = {
         'contact.clinical': '임상',
         'contact.clinical.val': '암예방센터<br>연세암센터<br>세브란스병원',
         'footer.copy': '&copy; 2026 전용관 · 연세대학교',
+        'calc.title': '건강 위험도 계산기',
+        'calc.sub': '안정시 심박수 연구 기반 근거 중심 위험도 평가.',
+        'calc.rhr.title': '\u2764\uFE0F 안정시 심박수 측정 방법',
+        'calc.rhr.s1': '측정 전 5분간 편안히 앉아 쉬세요',
+        'calc.rhr.s2': '손목 안쪽에 두 손가락을 대세요',
+        'calc.rhr.s3': '60초 동안 맥박을 세세요',
+        'calc.rhr.s4': '카페인 섭취 전 아침에 측정하세요',
+        'calc.c1.title': '당뇨 위험',
+        'calc.c1.desc': '미진단 제2형 당뇨 위험 평가',
+        'calc.c2.title': '당뇨 신부전 위험',
+        'calc.c2.desc': '당뇨 환자 신장질환 위험 평가',
+        'calc.c3.title': '대장암 재발',
+        'calc.c3.desc': '대장암 재발 위험 평가',
+        'calc.submit': '위험도 평가하기',
+        'calc.rec.exercise': '\u{1F3C3} 운동 권고',
+        'calc.rec.diet': '\u{1F957} 식이 권고',
+        'calc.disclaimer': '이 평가는 동료 심사 논문에 기반한 참고용 도구이며, 전문적인 의학적 진단을 대체하지 않습니다.',
+        'calc.retry': '다시 평가하기',
+        'calc.share': '결과 공유하기',
     }
 };
 
@@ -2319,6 +2726,298 @@ if (savedLang === 'ko') setLang('ko');
         W = container.clientWidth; H = container.clientHeight;
         simulation.force('center', d3.forceCenter(W/2, H/2)).alpha(0.3).restart();
     });
+})();
+</script>
+
+<!-- Calculator Modal -->
+<div class="calc-overlay" id="calcOverlay" onclick="if(event.target===this)closeCalculator()">
+    <div class="calc-modal">
+        <div class="calc-modal-header">
+            <h2 data-i18n="calc.title">Health Risk Calculator</h2>
+            <p data-i18n="calc.sub">Evidence-based risk assessment using resting heart rate research.</p>
+            <button class="calc-close-btn" onclick="closeCalculator()" aria-label="Close">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="calc-modal-body">
+            <details class="calc-rhr-info">
+                <summary data-i18n="calc.rhr.title">&#x2764;&#xFE0F; How to Measure Resting Heart Rate</summary>
+                <ol>
+                    <li data-i18n="calc.rhr.s1">Sit quietly for 5 minutes before measuring</li>
+                    <li data-i18n="calc.rhr.s2">Place two fingers on the inside of your wrist</li>
+                    <li data-i18n="calc.rhr.s3">Count your pulse for 60 seconds</li>
+                    <li data-i18n="calc.rhr.s4">Measure in the morning before caffeine</li>
+                </ol>
+            </details>
+
+            <div class="calc-cards">
+                <div class="calc-card-item" data-model="diabetes" onclick="calcSelectModel('diabetes')">
+                    <div class="cc-icon">&#x1F6E1;&#xFE0F;</div>
+                    <h4 data-i18n="calc.c1.title">Diabetes Risk</h4>
+                    <p data-i18n="calc.c1.desc">Undiagnosed Type 2 diabetes risk assessment</p>
+                </div>
+                <div class="calc-card-item" data-model="ckd" onclick="calcSelectModel('ckd')">
+                    <div class="cc-icon">&#x1F9EC;</div>
+                    <h4 data-i18n="calc.c2.title">Diabetic CKD Risk</h4>
+                    <p data-i18n="calc.c2.desc">Kidney disease risk for diabetes patients</p>
+                </div>
+                <div class="calc-card-item" data-model="cancer" onclick="calcSelectModel('cancer')">
+                    <div class="cc-icon">&#x1F3AF;</div>
+                    <h4 data-i18n="calc.c3.title">Cancer Recurrence</h4>
+                    <p data-i18n="calc.c3.desc">Colorectal cancer recurrence risk</p>
+                </div>
+            </div>
+
+            <div class="calc-form-area" id="calcFormArea">
+                <h3 id="calcFormTitle"></h3>
+                <div id="calcFormFields"></div>
+                <button class="calc-submit-btn" onclick="calcSubmit()" data-i18n="calc.submit">Assess My Risk</button>
+            </div>
+
+            <div class="calc-result-area" id="calcResultArea">
+                <div class="calc-result-title" id="calcResultTitle"></div>
+                <div class="calc-risk-meter"><div class="calc-risk-bar" id="calcRiskBar"></div></div>
+                <div class="calc-risk-label" id="calcRiskLabel"></div>
+                <div class="calc-risk-score" id="calcRiskScore"></div>
+                <div class="calc-rec" id="calcRecExercise">
+                    <h4 data-i18n="calc.rec.exercise">&#x1F3C3; Exercise Recommendation</h4>
+                    <p id="calcRecExerciseText"></p>
+                </div>
+                <div class="calc-rec" id="calcRecDiet">
+                    <h4 data-i18n="calc.rec.diet">&#x1F957; Diet Recommendation</h4>
+                    <p id="calcRecDietText"></p>
+                </div>
+                <div class="calc-citation" id="calcCitation"></div>
+                <div class="calc-disclaimer" data-i18n="calc.disclaimer">This assessment is based on peer-reviewed research and does not replace professional medical diagnosis.</div>
+                <div class="calc-result-btns">
+                    <button class="calc-btn-retry" onclick="calcRetry()" data-i18n="calc.retry">Try Again</button>
+                    <button class="calc-btn-share" onclick="calcShare()" data-i18n="calc.share">Share Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ===== Calculator Popup Logic =====
+(function() {
+    const CALC_MODELS = {
+        diabetes: {
+            title: { en: 'Undiagnosed Diabetes Risk', ko: '미진단 당뇨 위험 평가' },
+            citation: 'Park & Jeon (Epid Health 2022); Park et al. (NMCD 2023)',
+            maxScore: 20,
+            levels: [
+                { max: 5, label: { en: 'Low', ko: '낮음' }, color: '#34c759', emoji: '\u{1F7E2}' },
+                { max: 10, label: { en: 'Moderate', ko: '보통' }, color: '#ff9500', emoji: '\u{1F7E1}' },
+                { max: 14, label: { en: 'High', ko: '높음' }, color: '#ff6b35', emoji: '\u{1F7E0}' },
+                { max: 20, label: { en: 'Very High', ko: '매우 높음' }, color: '#ff3b30', emoji: '\u{1F534}' }
+            ],
+            fields: [
+                { id: 'gender', label: { en: 'Gender', ko: '성별' }, type: 'select', options: [['male',{en:'Male',ko:'남성'}],['female',{en:'Female',ko:'여성'}]] },
+                { id: 'age', label: { en: 'Age', ko: '나이' }, type: 'number', placeholder: { en: 'e.g., 55', ko: '예: 55' }, min: 20, max: 100 },
+                { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 72', ko: '예: 72' }, min: 40, max: 150 },
+                { id: 'wc', label: { en: 'Waist Circumference (cm)', ko: '허리둘레 (cm)' }, type: 'number', placeholder: { en: 'e.g., 90', ko: '예: 90' }, min: 50, max: 160 }
+            ],
+            calculate: function(v) {
+                var s = 0, age = parseInt(v.age), rhr = parseInt(v.rhr), wc = parseInt(v.wc), m = v.gender === 'male';
+                if (age >= 70) s += 7; else if (age >= 60) s += 6; else if (age >= 50) s += 5; else if (age >= 40) s += 3; else if (age >= 30) s += 1;
+                if (rhr >= 90) s += m ? 6 : 5; else if (rhr >= 80) s += m ? 4 : 3; else if (rhr >= 70) s += 2; else if (rhr >= 60) s += 1;
+                if (m) { if (wc >= 95) s += 6; else if (wc >= 90) s += 4; else if (wc >= 85) s += 2; }
+                else { if (wc >= 90) s += 6; else if (wc >= 85) s += 4; else if (wc >= 80) s += 2; }
+                return s;
+            }
+        },
+        ckd: {
+            title: { en: 'Diabetic CKD Risk', ko: '당뇨 환자 신부전 위험 평가' },
+            citation: 'Park & Jeon (BMC Public Health 2024)',
+            maxScore: 16,
+            levels: [
+                { max: 4, label: { en: 'Low', ko: '낮음' }, color: '#34c759', emoji: '\u{1F7E2}' },
+                { max: 8, label: { en: 'Moderate', ko: '보통' }, color: '#ff9500', emoji: '\u{1F7E1}' },
+                { max: 12, label: { en: 'High', ko: '높음' }, color: '#ff6b35', emoji: '\u{1F7E0}' },
+                { max: 16, label: { en: 'Very High', ko: '매우 높음' }, color: '#ff3b30', emoji: '\u{1F534}' }
+            ],
+            fields: [
+                { id: 'gender', label: { en: 'Gender', ko: '성별' }, type: 'select', options: [['male',{en:'Male',ko:'남성'}],['female',{en:'Female',ko:'여성'}]] },
+                { id: 'age', label: { en: 'Age', ko: '나이' }, type: 'number', placeholder: { en: 'e.g., 60', ko: '예: 60' }, min: 20, max: 100 },
+                { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 75', ko: '예: 75' }, min: 40, max: 150 },
+                { id: 'duration', label: { en: 'Years with Diabetes', ko: '당뇨 유병기간 (년)' }, type: 'number', placeholder: { en: 'e.g., 8', ko: '예: 8' }, min: 0, max: 50 },
+                { id: 'hypertension', label: { en: 'Hypertension', ko: '고혈압 여부' }, type: 'select', options: [['no',{en:'No',ko:'없음'}],['yes',{en:'Yes',ko:'있음'}]] }
+            ],
+            calculate: function(v) {
+                var s = 0, rhr = parseInt(v.rhr), age = parseInt(v.age), dur = parseInt(v.duration);
+                if (rhr >= 100) s += 5; else if (rhr >= 90) s += 4; else if (rhr >= 80) s += 3; else if (rhr >= 70) s += 2; else if (rhr >= 60) s += 1;
+                if (age >= 70) s += 4; else if (age >= 60) s += 3; else if (age >= 50) s += 2; else if (age >= 40) s += 1;
+                if (dur >= 15) s += 3; else if (dur >= 10) s += 2; else if (dur >= 5) s += 1;
+                if (v.hypertension === 'yes') s += 2;
+                if (v.gender === 'male') s += 2;
+                return s;
+            }
+        },
+        cancer: {
+            title: { en: 'Colorectal Cancer Recurrence', ko: '대장암 재발 위험 평가' },
+            citation: 'Park & Jeon (PLOS ONE 2018); Cho & Jeon (Cancer Epi 2025)',
+            maxScore: 14,
+            levels: [
+                { max: 3, label: { en: 'Low', ko: '낮음' }, color: '#34c759', emoji: '\u{1F7E2}' },
+                { max: 7, label: { en: 'Moderate', ko: '보통' }, color: '#ff9500', emoji: '\u{1F7E1}' },
+                { max: 10, label: { en: 'High', ko: '높음' }, color: '#ff6b35', emoji: '\u{1F7E0}' },
+                { max: 14, label: { en: 'Very High', ko: '매우 높음' }, color: '#ff3b30', emoji: '\u{1F534}' }
+            ],
+            fields: [
+                { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 72', ko: '예: 72' }, min: 40, max: 150 },
+                { id: 'bodyfat', label: { en: 'Body Fat Category', ko: '체지방률' }, type: 'select', options: [
+                    ['normal',{en:'Normal (M<20%/F<28%)',ko:'정상 (남<20/여<28)'}],
+                    ['over',{en:'Overweight (M 20-25%/F 28-33%)',ko:'과체중 (남20-25/여28-33)'}],
+                    ['obese',{en:'Obese (M 25-30%/F 33-38%)',ko:'비만 (남25-30/여33-38)'}],
+                    ['severe',{en:'Severely Obese (M>30%/F>38%)',ko:'고도비만 (남>30/여>38)'}]
+                ]},
+                { id: 'activity', label: { en: 'Weekly Physical Activity', ko: '주간 신체활동' }, type: 'select', options: [
+                    ['active',{en:'Active (150+ min/wk)',ko:'활동적 (150분 이상/주)'}],
+                    ['moderate',{en:'Moderate (75-149 min/wk)',ko:'보통 (75-149분/주)'}],
+                    ['low',{en:'Low (1-74 min/wk)',ko:'부족 (1-74분/주)'}],
+                    ['inactive',{en:'Inactive',ko:'비활동 (거의 안 함)'}]
+                ]},
+                { id: 'stage', label: { en: 'Cancer Stage', ko: '대장암 병기' }, type: 'select', options: [
+                    ['1',{en:'Stage I',ko:'I기'}],['2',{en:'Stage II',ko:'II기'}],
+                    ['3',{en:'Stage III',ko:'III기'}],['4',{en:'Stage IV',ko:'IV기'}]
+                ]}
+            ],
+            calculate: function(v) {
+                var s = 0, rhr = parseInt(v.rhr);
+                if (rhr >= 100) s += 5; else if (rhr >= 90) s += 4; else if (rhr >= 80) s += 3; else if (rhr >= 70) s += 2; else if (rhr >= 60) s += 1;
+                s += ({normal:0,over:1,obese:2,severe:3})[v.bodyfat] || 0;
+                s += ({active:0,moderate:1,low:2,inactive:3})[v.activity] || 0;
+                s += (parseInt(v.stage) - 1);
+                return s;
+            }
+        }
+    };
+
+    const CALC_EX_RECS = {
+        en: { Low:'Maintain your current lifestyle. Aim for 150 min of moderate aerobic exercise per week + 2 strength sessions.', Moderate:'Aim for 150-300 min aerobic exercise/week, 2-3 strength sessions. Walk 30 minutes daily.', High:'Start gradually after consulting a specialist. Begin with 30-min walks 5x/week and 15-min walks after meals.', 'Very High':'Medical consultation is essential. Start with low-intensity walking under professional supervision.' },
+        ko: { Low:'현재 생활습관을 유지하세요. 주 150분 중강도 유산소 운동 + 주 2회 근력 운동을 권장합니다.', Moderate:'주 150~300분 유산소 운동, 주 2~3회 근력 운동을 권장합니다. 매일 30분 걷기를 실천하세요.', High:'전문가 상담 후 점진적으로 시작하세요. 주 5회 30분 걷기, 식후 15분 걷기부터 시작하세요.', 'Very High':'의료진 상담이 필수입니다. 저강도 걷기부터 천천히 시작하고, 반드시 전문가의 관리를 받으세요.' }
+    };
+
+    const CALC_DIET_RECS = {
+        en: { diabetes:'Practice time-restricted eating (within 12 hrs), limit refined carbs, increase dietary fiber.', ckd:'Consider low-protein diet, restrict sodium, maintain proper hydration.', cancer:'Follow an anti-inflammatory diet. Increase vegetables/fruits, limit processed meats.' },
+        ko: { diabetes:'시간제한 식이(12시간 내 식사), 정제 탄수화물 제한, 식이섬유 섭취를 늘리세요.', ckd:'저단백 식이를 고려하고, 나트륨 섭취를 제한하며, 적절한 수분 관리가 중요합니다.', cancer:'항염증 식이를 실천하세요. 채소·과일 섭취를 늘리고, 가공육을 제한하세요.' }
+    };
+
+    var calcCurrentModel = null;
+
+    function getLang() { return document.documentElement.lang || 'en'; }
+    function gl(obj) { return typeof obj === 'string' ? obj : (obj[getLang()] || obj.en); }
+    function calcGetLevel(key, score) {
+        var m = CALC_MODELS[key];
+        for (var i = 0; i < m.levels.length; i++) { if (score <= m.levels[i].max) return m.levels[i]; }
+        return m.levels[m.levels.length - 1];
+    }
+
+    window.openCalculator = function() {
+        // Close mobile menu if open
+        var hb = document.getElementById('hamburger');
+        var nu = document.querySelector('nav ul');
+        if (nu && nu.classList.contains('open')) { nu.classList.remove('open'); hb.classList.remove('active'); document.body.classList.remove('menu-open'); }
+        // Reset state
+        calcCurrentModel = null;
+        document.querySelectorAll('.calc-card-item').forEach(function(c) { c.classList.remove('active'); });
+        document.getElementById('calcFormArea').classList.remove('visible');
+        document.getElementById('calcResultArea').classList.remove('visible');
+        // Open
+        document.getElementById('calcOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeCalculator = function() {
+        document.getElementById('calcOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    // ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('calcOverlay').classList.contains('open')) closeCalculator();
+    });
+
+    window.calcSelectModel = function(key) {
+        calcCurrentModel = key;
+        document.querySelectorAll('.calc-card-item').forEach(function(c) { c.classList.remove('active'); });
+        document.querySelector('.calc-card-item[data-model="'+key+'"]').classList.add('active');
+        document.getElementById('calcResultArea').classList.remove('visible');
+
+        var model = CALC_MODELS[key];
+        document.getElementById('calcFormTitle').textContent = gl(model.title);
+        var html = '';
+        model.fields.forEach(function(f) {
+            html += '<div class="calc-field"><label>' + gl(f.label) + '</label>';
+            if (f.type === 'select') {
+                html += '<select data-field="'+f.id+'">';
+                f.options.forEach(function(o) { html += '<option value="'+o[0]+'">'+gl(o[1])+'</option>'; });
+                html += '</select>';
+            } else {
+                html += '<input type="number" data-field="'+f.id+'" placeholder="'+gl(f.placeholder)+'" min="'+f.min+'" max="'+f.max+'">';
+            }
+            html += '</div>';
+        });
+        document.getElementById('calcFormFields').innerHTML = html;
+        document.getElementById('calcFormArea').classList.add('visible');
+    };
+
+    window.calcSubmit = function() {
+        if (!calcCurrentModel) return;
+        var model = CALC_MODELS[calcCurrentModel], values = {}, valid = true;
+        model.fields.forEach(function(f) {
+            var el = document.querySelector('#calcFormFields [data-field="'+f.id+'"]');
+            if (!el) { valid = false; return; }
+            if (f.type === 'number' && (!el.value || isNaN(parseInt(el.value)))) { el.style.borderColor = '#ff3b30'; valid = false; }
+            else { el.style.borderColor = ''; values[f.id] = el.value; }
+        });
+        if (!valid) return;
+
+        var score = model.calculate(values);
+        var level = calcGetLevel(calcCurrentModel, score);
+        var pct = Math.min(Math.round((score / model.maxScore) * 100), 100);
+        var lang = getLang(), lbl = gl(level.label);
+        var riskWord = lang === 'ko' ? ' 위험' : ' Risk';
+
+        document.getElementById('calcResultTitle').textContent = gl(model.title) + (lang === 'ko' ? ' 결과' : ' Result');
+        document.getElementById('calcRiskLabel').textContent = level.emoji + ' ' + lbl + riskWord;
+        document.getElementById('calcRiskLabel').style.color = level.color;
+        document.getElementById('calcRiskScore').textContent = (lang === 'ko' ? '점수: ' : 'Score: ') + score + ' / ' + model.maxScore;
+        document.getElementById('calcRecExerciseText').textContent = CALC_EX_RECS[lang][lbl];
+        document.getElementById('calcRecDietText').textContent = CALC_DIET_RECS[lang][calcCurrentModel];
+        document.getElementById('calcCitation').textContent = '\u{1F4DA} ' + (lang === 'ko' ? '근거: ' : 'Citation: ') + model.citation;
+
+        var bar = document.getElementById('calcRiskBar');
+        bar.style.width = '0%';
+        bar.style.background = level.color;
+
+        document.getElementById('calcFormArea').classList.remove('visible');
+        document.getElementById('calcResultArea').classList.add('visible');
+
+        setTimeout(function() { bar.style.width = pct + '%'; }, 80);
+    };
+
+    window.calcRetry = function() {
+        document.getElementById('calcResultArea').classList.remove('visible');
+        if (calcCurrentModel) calcSelectModel(calcCurrentModel);
+    };
+
+    window.calcShare = function() {
+        var lbl = document.getElementById('calcRiskLabel').textContent;
+        var sc = document.getElementById('calcRiskScore').textContent;
+        var title = gl(CALC_MODELS[calcCurrentModel].title);
+        var text = title + '\n' + lbl + '\n' + sc + '\n\ndrjustinjeon.com';
+        if (navigator.share) { navigator.share({ title: title, text: text }).catch(function(){}); }
+        else if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = document.querySelector('.calc-btn-share');
+                var orig = btn.textContent;
+                btn.textContent = getLang() === 'ko' ? '복사됨!' : 'Copied!';
+                setTimeout(function() { btn.textContent = orig; }, 2000);
+            });
+        }
+    };
 })();
 </script>
 
