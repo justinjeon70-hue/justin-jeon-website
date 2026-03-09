@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Health Risk Assessment Calculators based on resting heart rate research by Prof. Justin Y. Jeon, Yonsei University. Assess diabetes, CKD, and colorectal cancer recurrence risk." />
+    <meta name="author" content="Justin Y. Jeon" />
+    <title>Health Risk Calculator | Justin Y. Jeon | Yonsei University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --bg-primary: #fbfbfd;
+            --bg-secondary: #f5f5f7;
+            --bg-dark: #1d1d1f;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+            --teal: #2c5364;
+            --green: #34c759;
+            --yellow: #ff9500;
+            --orange: #ff6b35;
+            --red: #ff3b30;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(251, 251, 253, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(251, 251, 253, 0.92);
+            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 52px;
+        }
+
+        .nav-back a {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-back a:hover { color: var(--accent-hover); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .lang-toggle {
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--bg-secondary);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-tertiary);
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--text-primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* ===== Page Header ===== */
+        .page-header {
+            padding: 120px 2rem 40px;
+            text-align: center;
+            background: var(--bg-primary);
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* ===== RHR Info Box ===== */
+        .rhr-info {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            background: linear-gradient(135deg, rgba(44, 83, 100, 0.06), rgba(0, 113, 227, 0.04));
+            border: 1px solid rgba(44, 83, 100, 0.12);
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            text-align: left;
+        }
+
+        .rhr-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rhr-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .rhr-info ol {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+
+        /* ===== Calculator Cards ===== */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 100px;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .calc-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 16px 16px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .calc-card[data-model="diabetes"]::before { background: var(--accent); }
+        .calc-card[data-model="ckd"]::before { background: var(--teal); }
+        .calc-card[data-model="cancer"]::before { background: #6366f1; }
+
+        .calc-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .calc-card.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.15), var(--card-shadow);
+        }
+
+        .calc-card .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1rem;
+        }
+
+        .calc-card[data-model="diabetes"] .card-icon {
+            background: rgba(0, 113, 227, 0.08);
+        }
+        .calc-card[data-model="ckd"] .card-icon {
+            background: rgba(44, 83, 100, 0.08);
+        }
+        .calc-card[data-model="cancer"] .card-icon {
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        .calc-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .calc-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .calc-card .card-citation {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        /* ===== Assessment Form ===== */
+        .form-container {
+            display: none;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .form-container.visible { display: block; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-container h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .form-field {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-field label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-field input,
+        .form-field select {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-field select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236e6e73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+
+        .form-field input::placeholder {
+            color: var(--text-tertiary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #1e3a47;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 83, 100, 0.3);
+        }
+
+        /* ===== Result Display ===== */
+        .result-container {
+            display: none;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .result-container.visible { display: block; }
+
+        .result-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .risk-meter {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            height: 16px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .risk-bar {
+            height: 100%;
+            border-radius: 12px;
+            width: 0%;
+            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .risk-label {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .risk-score {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .rec-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .rec-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .rec-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .result-citation {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .result-disclaimer {
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            margin-top: 0.8rem;
+            line-height: 1.5;
+            background: rgba(255, 59, 48, 0.04);
+            border: 1px solid rgba(255, 59, 48, 0.08);
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .btn-retry {
+            flex: 1;
+            padding: 0.7rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-retry:hover { background: #eee; }
+
+        .btn-share {
+            flex: 1;
+            padding: 0.7rem;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-share:hover { background: #1e3a47; }
+
+        /* ===== Disclaimer Section ===== */
+        .disclaimer-section {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            padding: 1.5rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .disclaimer-section p {
+            font-size: 0.82rem;
+            color: var(--text-tertiary);
+            line-height: 1.7;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .page-header { padding: 100px 1.5rem 30px; }
+            .page-header h1 { font-size: 2.2rem; }
+            .content { padding: 0 1.5rem 60px; }
+
+            .calc-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-container,
+            .result-container {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            .rhr-info {
+                padding: 1.3rem 1.5rem;
+            }
+
+            .result-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 { font-size: 1.8rem; }
+            .nav-inner { padding: 0 1rem; }
+            .content { padding: 0 1rem 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <div class="nav-back">
+            <a href="/">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="nav.back">Back to Home</span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-logo">Justin Jeon</div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLang('en')" id="lang-en">EN</button>
+                <button class="lang-btn" onclick="setLang('ko')" id="lang-ko">KR</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+    <h1 data-i18n="header.title">Health Risk Calculator</h1>
+    <p class="subtitle" data-i18n="header.sub">Evidence-based risk assessment tools developed from peer-reviewed research on resting heart rate and chronic disease prediction.</p>
+</div>
+
+<!-- RHR Info Box -->
+<div class="content">
+    <div class="rhr-info">
+        <h3 data-i18n="rhr.title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> How to Measure Your Resting Heart Rate</h3>
+        <p data-i18n="rhr.desc">Your resting heart rate (RHR) is a key predictor across all three assessments. To measure accurately:</p>
+        <ol>
+            <li data-i18n="rhr.step1">Sit quietly for 5 minutes before measuring</li>
+            <li data-i18n="rhr.step2">Place two fingers on the inside of your wrist (radial artery)</li>
+            <li data-i18n="rhr.step3">Count your pulse for 60 seconds (or 30 seconds and multiply by 2)</li>
+            <li data-i18n="rhr.step4">Measure in the morning before caffeine for the most accurate result</li>
+        </ol>
+    </div>
+
+    <!-- Calculator Cards -->
+    <div class="calc-grid">
+        <div class="calc-card" data-model="diabetes" onclick="selectModel('diabetes')">
+            <div class="card-icon">&#x1F6E1;&#xFE0F;</div>
+            <h3 data-i18n="card.diabetes.title">Undiagnosed Diabetes Risk</h3>
+            <p data-i18n="card.diabetes.desc">Assess your risk of having undiagnosed Type 2 diabetes based on age, resting heart rate, and waist circumference.</p>
+            <div class="card-citation">Park & Jeon (Epid Health 2022)</div>
+        </div>
+        <div class="calc-card" data-model="ckd" onclick="selectModel('ckd')">
+            <div class="card-icon">&#x1F9EC;</div>
+            <h3 data-i18n="card.ckd.title">Diabetic CKD Risk</h3>
+            <p data-i18n="card.ckd.desc">For individuals with diabetes: evaluate your risk of developing chronic kidney disease (CKD) complications.</p>
+            <div class="card-citation">Park & Jeon (BMC Public Health 2024)</div>
+        </div>
+        <div class="calc-card" data-model="cancer" onclick="selectModel('cancer')">
+            <div class="card-icon">&#x1F3AF;</div>
+            <h3 data-i18n="card.cancer.title">Colorectal Cancer Recurrence</h3>
+            <p data-i18n="card.cancer.desc">For colorectal cancer survivors: assess your recurrence risk based on heart rate, body composition, and activity level.</p>
+            <div class="card-citation">Park & Jeon (PLOS ONE 2018)</div>
+        </div>
+    </div>
+
+    <!-- Assessment Form -->
+    <div class="form-container" id="form-container">
+        <h3 id="form-title"></h3>
+        <div id="form-fields"></div>
+        <button class="submit-btn" onclick="submitAssessment()" data-i18n="form.submit">Assess My Risk</button>
+    </div>
+
+    <!-- Result Display -->
+    <div class="result-container" id="result-container">
+        <div class="result-title" id="result-title"></div>
+        <div class="risk-meter"><div class="risk-bar" id="risk-bar"></div></div>
+        <div class="risk-label" id="risk-label"></div>
+        <div class="risk-score" id="risk-score"></div>
+        <div class="rec-card" id="rec-exercise">
+            <h4 data-i18n="result.exercise">&#x1F3C3; Exercise Recommendation</h4>
+            <p id="rec-exercise-text"></p>
+        </div>
+        <div class="rec-card" id="rec-diet">
+            <h4 data-i18n="result.diet">&#x1F957; Diet Recommendation</h4>
+            <p id="rec-diet-text"></p>
+        </div>
+        <div class="result-citation" id="result-citation"></div>
+        <div class="result-disclaimer" id="result-disclaimer" data-i18n="result.disclaimer">This assessment is a reference tool based on peer-reviewed research by Prof. Jeon's team and does not replace professional medical diagnosis. Please consult your healthcare provider for clinical decisions.</div>
+        <div class="result-actions">
+            <button class="btn-retry" onclick="retryAssessment()" data-i18n="result.retry">Try Again</button>
+            <button class="btn-share" onclick="shareResult()" data-i18n="result.share">Share Result</button>
+        </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer-section">
+        <p data-i18n="disclaimer.text">All calculators are based on published, peer-reviewed research by Prof. Justin Y. Jeon and colleagues at Yonsei University. These tools are for informational purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Justin Jeon &middot; <a href="/">drjustinjeon.com</a></p>
+</footer>
+
+<script>
+// ===== Risk Models =====
+const RISK_MODELS = {
+    diabetes: {
+        title: { en: 'Undiagnosed Diabetes Risk', ko: '미진단 당뇨 위험 평가' },
+        citation: 'Park & Jeon (Epid Health 2022); Park et al. (NMCD 2023); Park et al. (KSEP 2020)',
+        maxScore: 20,
+        levels: [
+            { max: 5, label: { en: 'Low', ko: '낮음' }, color: '#34c759', emoji: '\u{1F7E2}' },
+            { max: 10, label: { en: 'Moderate', ko: '보통' }, color: '#ff9500', emoji: '\u{1F7E1}' },
+            { max: 14, label: { en: 'High', ko: '높음' }, color: '#ff6b35', emoji: '\u{1F7E0}' },
+            { max: 20, label: { en: 'Very High', ko: '매우 높음' }, color: '#ff3b30', emoji: '\u{1F534}' }
+        ],
+        fields: [
+            { id: 'gender', label: { en: 'Gender', ko: '성별' }, type: 'select', options: [['male', { en: 'Male', ko: '남성' }], ['female', { en: 'Female', ko: '여성' }]] },
+            { id: 'age', label: { en: 'Age', ko: '나이' }, type: 'number', placeholder: { en: 'e.g., 55', ko: '예: 55' }, min: 20, max: 100 },
+            { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 72', ko: '예: 72' }, min: 40, max: 150 },
+            { id: 'wc', label: { en: 'Waist Circumference (cm)', ko: '허리둘레 (cm)' }, type: 'number', placeholder: { en: 'e.g., 90', ko: '예: 90' }, min: 50, max: 160 }
+        ],
+        calculate: function(v) {
+            var score = 0;
+            var age = parseInt(v.age);
+            if (age >= 70) score += 7;
+            else if (age >= 60) score += 6;
+            else if (age >= 50) score += 5;
+            else if (age >= 40) score += 3;
+            else if (age >= 30) score += 1;
+            var rhr = parseInt(v.rhr);
+            var isMale = v.gender === 'male';
+            if (rhr >= 90) score += isMale ? 6 : 5;
+            else if (rhr >= 80) score += isMale ? 4 : 3;
+            else if (rhr >= 70) score += 2;
+            else if (rhr >= 60) score += 1;
+            var wc = parseInt(v.wc);
+            if (isMale) {
+                if (wc >= 95) score += 6;
+                else if (wc >= 90) score += 4;
+                else if (wc >= 85) score += 2;
+            } else {
+                if (wc >= 90) score += 6;
+                else if (wc >= 85) score += 4;
+                else if (wc >= 80) score += 2;
+            }
+            return score;
+        }
+    },
+    ckd: {
+        title: { en: 'Diabetic CKD Risk', ko: '당뇨 환자 신부전 위험 평가' },
+        citation: 'Park & Jeon (BMC Public Health 2024)',
+        maxScore: 16,
+        levels: [
+            { max: 4, label: { en: 'Low', ko: '낮음' }, color: '#34c759', emoji: '\u{1F7E2}' },
+            { max: 8, label: { en: 'Moderate', ko: '보통' }, color: '#ff9500', emoji: '\u{1F7E1}' },
+            { max: 12, label: { en: 'High', ko: '높음' }, color: '#ff6b35', emoji: '\u{1F7E0}' },
+            { max: 16, label: { en: 'Very High', ko: '매우 높음' }, color: '#ff3b30', emoji: '\u{1F534}' }
+        ],
+        fields: [
+            { id: 'gender', label: { en: 'Gender', ko: '성별' }, type: 'select', options: [['male', { en: 'Male', ko: '남성' }], ['female', { en: 'Female', ko: '여성' }]] },
+            { id: 'age', label: { en: 'Age', ko: '나이' }, type: 'number', placeholder: { en: 'e.g., 60', ko: '예: 60' }, min: 20, max: 100 },
+            { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 75', ko: '예: 75' }, min: 40, max: 150 },
+            { id: 'duration', label: { en: 'Years with Diabetes', ko: '당뇨 유병기간 (년)' }, type: 'number', placeholder: { en: 'e.g., 8', ko: '예: 8' }, min: 0, max: 50 },
+            { id: 'hypertension', label: { en: 'Hypertension', ko: '고혈압 여부' }, type: 'select', options: [['no', { en: 'No', ko: '없음' }], ['yes', { en: 'Yes', ko: '있음' }]] }
+        ],
+        calculate: function(v) {
+            var score = 0;
+            var rhr = parseInt(v.rhr);
+            if (rhr >= 100) score += 5;
+            else if (rhr >= 90) score += 4;
+            else if (rhr >= 80) score += 3;
+            else if (rhr >= 70) score += 2;
+            else if (rhr >= 60) score += 1;
+            var age = parseInt(v.age);
+            if (age >= 70) score += 4;
+            else if (age >= 60) score += 3;
+            else if (age >= 50) score += 2;
+            else if (age >= 40) score += 1;
+            var dur = parseInt(v.duration);
+            if (dur >= 15) score += 3;
+            else if (dur >= 10) score += 2;
+            else if (dur >= 5) score += 1;
+            if (v.hypertension === 'yes') score += 2;
+            if (v.gender === 'male') score += 2;
+            return score;
+        }
+    },
+    cancer: {
+        title: { en: 'Colorectal Cancer Recurrence Risk', ko: '대장암 재발 위험 평가' },
+        citation: 'Park & Jeon (PLOS ONE 2018); Cho & Jeon (Cancer Epi 2025)',
+        maxScore: 14,
+        levels: [
+            { max: 3, label: { en: 'Low', ko: '낮음' }, color: '#34c759', emoji: '\u{1F7E2}' },
+            { max: 7, label: { en: 'Moderate', ko: '보통' }, color: '#ff9500', emoji: '\u{1F7E1}' },
+            { max: 10, label: { en: 'High', ko: '높음' }, color: '#ff6b35', emoji: '\u{1F7E0}' },
+            { max: 14, label: { en: 'Very High', ko: '매우 높음' }, color: '#ff3b30', emoji: '\u{1F534}' }
+        ],
+        fields: [
+            { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 72', ko: '예: 72' }, min: 40, max: 150 },
+            { id: 'bodyfat', label: { en: 'Body Fat Category', ko: '체지방률 (%)' }, type: 'select', options: [
+                ['normal', { en: 'Normal (M<20% / F<28%)', ko: '정상 (남<20/여<28)' }],
+                ['over', { en: 'Overweight (M 20-25% / F 28-33%)', ko: '과체중 (남20-25/여28-33)' }],
+                ['obese', { en: 'Obese (M 25-30% / F 33-38%)', ko: '비만 (남25-30/여33-38)' }],
+                ['severe', { en: 'Severely Obese (M>30% / F>38%)', ko: '고도비만 (남>30/여>38)' }]
+            ]},
+            { id: 'activity', label: { en: 'Weekly Physical Activity', ko: '주간 신체활동' }, type: 'select', options: [
+                ['active', { en: 'Active (150+ min/week)', ko: '활동적 (150분 이상/주)' }],
+                ['moderate', { en: 'Moderate (75-149 min/week)', ko: '보통 (75-149분/주)' }],
+                ['low', { en: 'Low (1-74 min/week)', ko: '부족 (1-74분/주)' }],
+                ['inactive', { en: 'Inactive (almost none)', ko: '비활동 (거의 안 함)' }]
+            ]},
+            { id: 'stage', label: { en: 'Cancer Stage', ko: '대장암 병기' }, type: 'select', options: [
+                ['1', { en: 'Stage I', ko: 'I기' }],
+                ['2', { en: 'Stage II', ko: 'II기' }],
+                ['3', { en: 'Stage III', ko: 'III기' }],
+                ['4', { en: 'Stage IV', ko: 'IV기' }]
+            ]}
+        ],
+        calculate: function(v) {
+            var score = 0;
+            var rhr = parseInt(v.rhr);
+            if (rhr >= 100) score += 5;
+            else if (rhr >= 90) score += 4;
+            else if (rhr >= 80) score += 3;
+            else if (rhr >= 70) score += 2;
+            else if (rhr >= 60) score += 1;
+            var bf = { normal: 0, over: 1, obese: 2, severe: 3 };
+            score += bf[v.bodyfat] || 0;
+            var act = { active: 0, moderate: 1, low: 2, inactive: 3 };
+            score += act[v.activity] || 0;
+            score += (parseInt(v.stage) - 1);
+            return score;
+        }
+    }
+};
+
+const EXERCISE_RECS = {
+    en: {
+        'Low': 'Maintain your current lifestyle. Aim for 150 minutes of moderate aerobic exercise per week plus 2 sessions of strength training.',
+        'Moderate': 'Aim for 150-300 minutes of aerobic exercise per week, 2-3 sessions of strength training (squats, calf raises, back extensions). Try to walk 30 minutes daily.',
+        'High': 'Start gradually after consulting a specialist. Begin with 30-minute walks 5 times per week and 15-minute walks after meals.',
+        'Very High': 'Medical consultation is essential. Start with low-intensity walking and ensure professional supervision throughout your exercise program.'
+    },
+    ko: {
+        'Low': '현재 생활습관을 유지하세요. 주 150분 중강도 유산소 운동 + 주 2회 근력 운동을 권장합니다.',
+        'Moderate': '주 150~300분 유산소 운동, 주 2~3회 근력 운동(스쿼트·까치발·허리 젖히기)을 권장합니다. 매일 30분 걷기를 실천하세요.',
+        'High': '전문가 상담 후 점진적으로 시작하세요. 주 5회 30분 걷기, 식후 15분 걷기부터 시작하세요.',
+        'Very High': '의료진 상담이 필수입니다. 저강도 걷기부터 천천히 시작하고, 반드시 전문가의 관리를 받으세요.'
+    }
+};
+
+const DIET_RECS = {
+    en: {
+        diabetes: 'Practice time-restricted eating (meals within 12 hours), limit refined carbohydrates, and increase dietary fiber intake.',
+        ckd: 'Consider a low-protein diet, restrict sodium intake, and maintain proper hydration. Consult a renal dietitian for personalized guidance.',
+        cancer: 'Follow an anti-inflammatory diet. Increase vegetable and fruit intake, and limit processed meats.'
+    },
+    ko: {
+        diabetes: '시간제한 식이(12시간 내 식사), 정제 탄수화물 제한, 식이섬유 섭취를 늘리세요.',
+        ckd: '저단백 식이를 고려하고, 나트륨 섭취를 제한하며, 적절한 수분 관리가 중요합니다.',
+        cancer: '항염증 식이를 실천하세요. 채소·과일 섭취를 늘리고, 가공육을 제한하세요.'
+    }
+};
+
+// ===== State =====
+let currentLang = 'en';
+let currentModel = null;
+
+// ===== i18n translations =====
+const translations = {
+    ko: {
+        'nav.back': '홈으로',
+        'header.title': '건강 위험도 계산기',
+        'header.sub': '안정시 심박수와 만성질환 예측에 관한 동료 심사 연구를 기반으로 개발된 근거 중심 위험도 평가 도구입니다.',
+        'rhr.title': '안정시 심박수 측정 방법',
+        'rhr.desc': '안정시 심박수(RHR)는 세 가지 평가 모두의 핵심 예측 인자입니다. 정확한 측정을 위해:',
+        'rhr.step1': '측정 전 5분간 편안히 앉아 쉬세요',
+        'rhr.step2': '손목 안쪽(요골동맥)에 두 손가락을 대세요',
+        'rhr.step3': '60초 동안 맥박을 세세요 (또는 30초 세고 2를 곱하세요)',
+        'rhr.step4': '카페인 섭취 전 아침에 측정하면 가장 정확합니다',
+        'card.diabetes.title': '미진단 당뇨 위험 평가',
+        'card.diabetes.desc': '나이, 안정시 심박수, 허리둘레를 기반으로 진단되지 않은 제2형 당뇨 위험을 평가합니다.',
+        'card.ckd.title': '당뇨 환자 신부전 위험',
+        'card.ckd.desc': '당뇨 환자를 위한 만성 신장질환(CKD) 합병증 발생 위험도를 평가합니다.',
+        'card.cancer.title': '대장암 재발 위험',
+        'card.cancer.desc': '대장암 생존자를 위한 재발 위험도를 심박수, 체성분, 활동 수준으로 평가합니다.',
+        'form.submit': '위험도 평가하기',
+        'result.exercise': '\u{1F3C3} 운동 권고',
+        'result.diet': '\u{1F957} 식이 권고',
+        'result.disclaimer': '이 평가는 전용관 교수 연구팀의 동료 심사 논문에 기반한 참고용 도구이며, 전문적인 의학적 진단을 대체하지 않습니다. 임상적 결정은 담당 의료진과 상담하시기 바랍니다.',
+        'result.retry': '다시 평가하기',
+        'result.share': '결과 공유하기',
+        'disclaimer.text': '모든 계산기는 연세대학교 전용관 교수 연구팀의 동료 심사 논문에 기반합니다. 이 도구는 정보 제공 목적이며, 전문적인 의학적 조언, 진단 또는 치료를 대체할 수 없습니다.'
+    }
+};
+
+const originals = {};
+
+// ===== Language functions =====
+function t(key) {
+    if (currentLang === 'ko' && translations.ko[key]) return translations.ko[key];
+    return null;
+}
+
+function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-ko').classList.toggle('active', lang === 'ko');
+
+    // Update data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (!originals[key]) originals[key] = el.innerHTML;
+        if (lang === 'ko' && translations.ko[key]) {
+            el.innerHTML = translations.ko[key];
+        } else if (originals[key]) {
+            el.innerHTML = originals[key];
+        }
+    });
+
+    // Re-render form if open
+    if (currentModel) {
+        renderForm(currentModel);
+    }
+}
+
+// ===== Helper =====
+function getLabel(obj) {
+    if (typeof obj === 'string') return obj;
+    return obj[currentLang] || obj.en;
+}
+
+function getRiskLevel(modelKey, score) {
+    var model = RISK_MODELS[modelKey];
+    for (var i = 0; i < model.levels.length; i++) {
+        if (score <= model.levels[i].max) return model.levels[i];
+    }
+    return model.levels[model.levels.length - 1];
+}
+
+// ===== Select Model =====
+function selectModel(modelKey) {
+    currentModel = modelKey;
+
+    // Update active card
+    document.querySelectorAll('.calc-card').forEach(c => c.classList.remove('active'));
+    document.querySelector(`.calc-card[data-model="${modelKey}"]`).classList.add('active');
+
+    // Hide result
+    document.getElementById('result-container').classList.remove('visible');
+
+    // Show and render form
+    renderForm(modelKey);
+    document.getElementById('form-container').classList.add('visible');
+
+    // Scroll to form
+    setTimeout(() => {
+        document.getElementById('form-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+}
+
+// ===== Render Form =====
+function renderForm(modelKey) {
+    var model = RISK_MODELS[modelKey];
+    document.getElementById('form-title').textContent = getLabel(model.title);
+
+    var fieldsHTML = '';
+    model.fields.forEach(function(f) {
+        fieldsHTML += '<div class="form-field">';
+        fieldsHTML += '<label>' + getLabel(f.label) + '</label>';
+        if (f.type === 'select') {
+            fieldsHTML += '<select data-field="' + f.id + '">';
+            f.options.forEach(function(opt) {
+                fieldsHTML += '<option value="' + opt[0] + '">' + getLabel(opt[1]) + '</option>';
+            });
+            fieldsHTML += '</select>';
+        } else {
+            fieldsHTML += '<input type="number" data-field="' + f.id + '" placeholder="' + getLabel(f.placeholder) + '" min="' + f.min + '" max="' + f.max + '">';
+        }
+        fieldsHTML += '</div>';
+    });
+
+    document.getElementById('form-fields').innerHTML = fieldsHTML;
+}
+
+// ===== Submit Assessment =====
+function submitAssessment() {
+    if (!currentModel) return;
+
+    var model = RISK_MODELS[currentModel];
+    var values = {};
+    var valid = true;
+
+    model.fields.forEach(function(f) {
+        var el = document.querySelector('[data-field="' + f.id + '"]');
+        if (!el) { valid = false; return; }
+        var val = el.value;
+        if (f.type === 'number' && (!val || isNaN(parseInt(val)))) {
+            el.style.borderColor = '#ff3b30';
+            valid = false;
+        } else {
+            el.style.borderColor = '';
+            values[f.id] = val;
+        }
+    });
+
+    if (!valid) return;
+
+    var score = model.calculate(values);
+    var level = getRiskLevel(currentModel, score);
+    var pct = Math.min(Math.round((score / model.maxScore) * 100), 100);
+    var levelLabel = getLabel(level.label);
+    var riskWord = currentLang === 'ko' ? ' 위험' : ' Risk';
+
+    // Update result UI
+    document.getElementById('result-title').textContent = getLabel(model.title) + (currentLang === 'ko' ? ' 결과' : ' Result');
+    document.getElementById('risk-label').textContent = level.emoji + ' ' + levelLabel + riskWord;
+    document.getElementById('risk-label').style.color = level.color;
+    document.getElementById('risk-score').textContent = (currentLang === 'ko' ? '점수: ' : 'Score: ') + score + ' / ' + model.maxScore;
+    document.getElementById('rec-exercise-text').textContent = EXERCISE_RECS[currentLang][levelLabel];
+    document.getElementById('rec-diet-text').textContent = DIET_RECS[currentLang][currentModel];
+    document.getElementById('result-citation').textContent = (currentLang === 'ko' ? '\u{1F4DA} 근거: ' : '\u{1F4DA} Citation: ') + model.citation;
+
+    // Animate bar
+    var bar = document.getElementById('risk-bar');
+    bar.style.width = '0%';
+    bar.style.background = level.color;
+
+    // Show result
+    document.getElementById('result-container').classList.add('visible');
+    document.getElementById('form-container').classList.remove('visible');
+
+    setTimeout(function() {
+        bar.style.width = pct + '%';
+    }, 100);
+
+    // Scroll to result
+    setTimeout(function() {
+        document.getElementById('result-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 150);
+}
+
+// ===== Retry =====
+function retryAssessment() {
+    document.getElementById('result-container').classList.remove('visible');
+    if (currentModel) {
+        selectModel(currentModel);
+    }
+}
+
+// ===== Share =====
+function shareResult() {
+    var level = document.getElementById('risk-label').textContent;
+    var score = document.getElementById('risk-score').textContent;
+    var model = RISK_MODELS[currentModel];
+    var title = getLabel(model.title);
+
+    var text = title + '\n' + level + '\n' + score + '\n\nTry it yourself at drjustinjeon.com/calculator';
+
+    if (navigator.share) {
+        navigator.share({ title: title, text: text }).catch(function(){});
+    } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.querySelector('.btn-share');
+            var orig = btn.textContent;
+            btn.textContent = currentLang === 'ko' ? '복사됨!' : 'Copied!';
+            setTimeout(function() { btn.textContent = orig; }, 2000);
+        });
+    }
+}
+
+// ===== Nav scroll effect =====
+window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+</script>
+
+</body>
+</html>
