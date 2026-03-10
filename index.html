@@ -1003,6 +1003,26 @@ layout: null
             .back-to-top { bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); right: 1rem; width: 42px; height: 42px; }
         }
 
+        /* ===== Mission Banner ===== */
+        .mission-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: rgba(255,255,255,0.92);
+            text-align: center;
+            padding: 0.7rem 2rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            position: relative;
+            z-index: 999;
+        }
+        .mission-banner .mission-icon {
+            margin-right: 0.4rem;
+        }
+        @media (max-width: 600px) {
+            .mission-banner { font-size: 0.75rem; padding: 0.6rem 1.2rem; }
+        }
+
         /* ===== Scroll Progress Bar ===== */
         .scroll-progress {
             position: fixed;
@@ -1774,6 +1794,12 @@ layout: null
     </style>
 </head>
 <body>
+
+<!-- Mission Banner -->
+<div class="mission-banner">
+    <span class="mission-icon">&#x1F331;</span>
+    <span data-i18n="mission.text">Mission: To build a nurturing society that enables people to live healthier and happier lives through salutogenic lifestyles.</span>
+</div>
 
 <div class="scroll-progress" id="scroll-progress"></div>
 <button class="back-to-top" id="back-to-top" aria-label="Back to top">
@@ -2651,7 +2677,7 @@ const translations = {
         'calc.c3.desc': '대장암 재발 위험 평가',
         'calc.c4.title': '옥시-코르티솔 균형',
         'calc.c4.desc': '옥시토신-코르티솔 건강위험 평가',
-        'banner.text': '\uC2A4\uD2B8\uB808\uC2A4 \uC18D\uC5D0\uC11C \uC5F0\uACB0\uB418\uC5B4 \uC788\uB098\uC694, \uACE0\uB9BD\uB418\uC5B4 \uC788\uB098\uC694? \uC625\uC2DC\uD1A0\uC2E0-\uCF54\uB974\uD2F0\uC194 \uADE0\uD615 \uD3C9\uAC00\uB97C \uBC1B\uC544\uBCF4\uC138\uC694',
+        'mission.text': '돌봄과 연결이 살아있는 사회를 만들고, 살루토제닉 라이프스타일을 확산하여 더 건강하고 행복한 사회 만들기',
         'oxycort.badge': 'NEW',
         'oxycort.heading': '스트레스 속에서 연결되어 있나요, 고립되어 있나요?',
         'oxycort.sub': '스트레스 호르몬(코르티솔)과 연결 호르몬(옥시토신)의 균형을 통해 건강 위험도를 알아보세요. 스트레스 자체가 병을 만드는 것이 아닙니다 \u2014 스트레스 속 고립이 병을 만듭니다.',
