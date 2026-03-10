@@ -571,6 +571,38 @@
             .content { padding: 0 1rem 40px; }
         }
 
+        /* ===== Unit Toggle ===== */
+        .unit-toggle-wrap {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .unit-toggle-wrap input {
+            flex: 1;
+        }
+        .unit-toggle {
+            display: flex;
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .unit-btn {
+            background: var(--bg-secondary);
+            border: none;
+            padding: 0.5rem 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-tertiary);
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .unit-btn.active {
+            background: var(--teal);
+            color: white;
+        }
+
         /* ===== Oxytocin-Cortisol Calculator ===== */
         .calc-card[data-model="oxycort"]::before {
             background: linear-gradient(90deg, #007aff, #af52de);
@@ -977,7 +1009,7 @@ const RISK_MODELS = {
             { id: 'gender', label: { en: 'Gender', ko: '성별' }, type: 'select', options: [['male', { en: 'Male', ko: '남성' }], ['female', { en: 'Female', ko: '여성' }]] },
             { id: 'age', label: { en: 'Age', ko: '나이' }, type: 'number', placeholder: { en: 'e.g., 55', ko: '예: 55' }, min: 20, max: 100 },
             { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 72', ko: '예: 72' }, min: 40, max: 150 },
-            { id: 'wc', label: { en: 'Waist Circumference (cm)', ko: '허리둘레 (cm)' }, type: 'number', placeholder: { en: 'e.g., 90', ko: '예: 90' }, min: 50, max: 160 }
+            { id: 'wc', label: { en: 'Waist Circumference', ko: '허리둘레' }, type: 'number', placeholder: { en: 'e.g., 90', ko: '예: 90' }, min: 15, max: 160, hasUnit: true }
         ],
         calculate: function(v) {
             var score = 0;
@@ -1057,12 +1089,7 @@ const RISK_MODELS = {
         ],
         fields: [
             { id: 'rhr', label: { en: 'Resting Heart Rate (bpm)', ko: '안정시 심박수 (bpm)' }, type: 'number', placeholder: { en: 'e.g., 72', ko: '예: 72' }, min: 40, max: 150 },
-            { id: 'bodyfat', label: { en: 'Body Fat Category', ko: '체지방률 (%)' }, type: 'select', options: [
-                ['normal', { en: 'Normal (M<20% / F<28%)', ko: '정상 (남<20/여<28)' }],
-                ['over', { en: 'Overweight (M 20-25% / F 28-33%)', ko: '과체중 (남20-25/여28-33)' }],
-                ['obese', { en: 'Obese (M 25-30% / F 33-38%)', ko: '비만 (남25-30/여33-38)' }],
-                ['severe', { en: 'Severely Obese (M>30% / F>38%)', ko: '고도비만 (남>30/여>38)' }]
-            ]},
+            { id: 'bodyfat', label: { en: 'Body Composition (BMI)', ko: '체성분 (BMI)' }, type: 'bmi' },
             { id: 'activity', label: { en: 'Weekly Physical Activity', ko: '주간 신체활동' }, type: 'select', options: [
                 ['active', { en: 'Active (150+ min/week)', ko: '활동적 (150분 이상/주)' }],
                 ['moderate', { en: 'Moderate (75-149 min/week)', ko: '보통 (75-149분/주)' }],
@@ -1387,6 +1414,21 @@ function renderForm(modelKey) {
                     fieldsHTML += '<option value="' + opt[0] + '">' + getLabel(opt[1]) + '</option>';
                 });
                 fieldsHTML += '</select>';
+            } else if (f.hasUnit) {
+                fieldsHTML += '<div class="unit-toggle-wrap">';
+                fieldsHTML += '<input type="number" data-field="' + f.id + '" placeholder="' + getLabel(f.placeholder) + '" min="' + f.min + '" max="' + f.max + '">';
+                fieldsHTML += '<div class="unit-toggle" data-unit-for="' + f.id + '">';
+                fieldsHTML += '<button type="button" class="unit-btn active" data-unit="cm" onclick="selectUnit(this,\'cm\')">cm</button>';
+                fieldsHTML += '<button type="button" class="unit-btn" data-unit="inch" onclick="selectUnit(this,\'inch\')">inch</button>';
+                fieldsHTML += '</div></div>';
+            } else if (f.type === 'bmi') {
+                var isKo = currentLang === 'ko';
+                fieldsHTML += '<div style="display:flex;gap:0.5rem">';
+                fieldsHTML += '<div style="flex:1"><label style="font-size:0.78rem;color:var(--text-tertiary)">' + (isKo ? '키 (cm)' : 'Height (cm)') + '</label>';
+                fieldsHTML += '<input type="number" data-field="height" placeholder="' + (isKo ? '예: 170' : 'e.g., 170') + '" min="100" max="250"></div>';
+                fieldsHTML += '<div style="flex:1"><label style="font-size:0.78rem;color:var(--text-tertiary)">' + (isKo ? '몸무게 (kg)' : 'Weight (kg)') + '</label>';
+                fieldsHTML += '<input type="number" data-field="weight" placeholder="' + (isKo ? '예: 70' : 'e.g., 70') + '" min="20" max="300"></div>';
+                fieldsHTML += '</div>';
             } else {
                 fieldsHTML += '<input type="number" data-field="' + f.id + '" placeholder="' + getLabel(f.placeholder) + '" min="' + f.min + '" max="' + f.max + '">';
             }
@@ -1395,6 +1437,23 @@ function renderForm(modelKey) {
     }
 
     document.getElementById('form-fields').innerHTML = fieldsHTML;
+}
+
+// ===== Unit Toggle =====
+function selectUnit(btn, unit) {
+    var wrap = btn.parentElement;
+    wrap.querySelectorAll('.unit-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    wrap.setAttribute('data-selected-unit', unit);
+    // Update placeholder
+    var input = wrap.parentElement.querySelector('input');
+    if (unit === 'inch') {
+        input.placeholder = currentLang === 'ko' ? '예: 35' : 'e.g., 35';
+        input.min = 15; input.max = 65;
+    } else {
+        input.placeholder = currentLang === 'ko' ? '예: 90' : 'e.g., 90';
+        input.min = 50; input.max = 160;
+    }
 }
 
 // ===== Submit Assessment =====
@@ -1490,6 +1549,26 @@ function submitAssessment() {
     var valid = true;
 
     model.fields.forEach(function(f) {
+        if (f.type === 'bmi') {
+            // BMI: collect height and weight, compute BMI category
+            var hEl = document.querySelector('[data-field="height"]');
+            var wEl = document.querySelector('[data-field="weight"]');
+            if (!hEl || !wEl || !hEl.value || !wEl.value || isNaN(parseFloat(hEl.value)) || isNaN(parseFloat(wEl.value))) {
+                if (hEl) hEl.style.borderColor = hEl.value ? '' : '#ff3b30';
+                if (wEl) wEl.style.borderColor = wEl.value ? '' : '#ff3b30';
+                valid = false;
+            } else {
+                hEl.style.borderColor = ''; wEl.style.borderColor = '';
+                var hm = parseFloat(hEl.value) / 100;
+                var bmi = parseFloat(wEl.value) / (hm * hm);
+                // Map BMI to body fat category
+                if (bmi < 23) values[f.id] = 'normal';
+                else if (bmi < 25) values[f.id] = 'over';
+                else if (bmi < 30) values[f.id] = 'obese';
+                else values[f.id] = 'severe';
+            }
+            return;
+        }
         var el = document.querySelector('[data-field="' + f.id + '"]');
         if (!el) { valid = false; return; }
         var val = el.value;
@@ -1499,6 +1578,14 @@ function submitAssessment() {
         } else {
             el.style.borderColor = '';
             values[f.id] = val;
+        }
+        // Convert inches to cm for waist circumference
+        if (f.hasUnit && values[f.id]) {
+            var unitToggle = document.querySelector('[data-unit-for="' + f.id + '"]');
+            var selectedUnit = unitToggle ? unitToggle.getAttribute('data-selected-unit') : 'cm';
+            if (selectedUnit === 'inch') {
+                values[f.id] = String(Math.round(parseFloat(values[f.id]) * 2.54));
+            }
         }
     });
 
