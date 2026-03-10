@@ -3309,6 +3309,28 @@ if (savedLang === 'ko') setLang('ko');
 <!-- 전용관 AI 챗봇 -->
 <script>
 window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';
+
+// Override TTS to use Canadian English voice when in EN mode
+(function() {
+    var OrigUtterance = window.SpeechSynthesisUtterance;
+    if (!OrigUtterance) return;
+    window.SpeechSynthesisUtterance = function(text) {
+        var utter = new OrigUtterance(text);
+        var lang = document.documentElement.lang || 'en';
+        if (lang !== 'ko') {
+            utter.lang = 'en-CA';
+            // Try to pick a Canadian/US English voice
+            var voices = window.speechSynthesis.getVoices();
+            var preferred = voices.find(function(v) { return v.lang === 'en-CA'; })
+                         || voices.find(function(v) { return v.lang === 'en-US'; })
+                         || voices.find(function(v) { return v.lang.startsWith('en'); });
+            if (preferred) utter.voice = preferred;
+        }
+        return utter;
+    };
+    window.SpeechSynthesisUtterance.prototype = OrigUtterance.prototype;
+})();
+
 // Intercept fetch: force English response + inject system instruction
 (function() {
     var origFetch = window.fetch;
