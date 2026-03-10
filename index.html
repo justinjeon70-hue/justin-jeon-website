@@ -3317,43 +3317,48 @@ if (savedLang === 'ko') setLang('ko');
         headerTitle: 'Justin AI',
         headerSub: 'Evidence-based Exercise & Health Advisor',
         welcomeTitle: 'Ask me anything',
-        welcomeDesc: 'Evidence-based exercise medicine &amp; salutogenesis<br>AI health advisor',
+        welcomeDesc: 'Evidence-based exercise medicine & salutogenesis<br>AI health advisor',
         placeholder: 'Ask about exercise and health...',
         disclaimer: 'This does not replace medical diagnosis or treatment. Please consult a healthcare professional.',
-        btnDiabetes: '🩺 Diabetes Risk',
-        btnCkd: '🏥 CKD Risk',
-        btnCancer: '🎗 Cancer Recurrence Risk'
+        btnDiabetes: '\uD83E\uDE7A Diabetes Risk',
+        btnCkd: '\uD83C\uDFE5 CKD Risk',
+        btnCancer: '\uD83C\uDF97 Cancer Recurrence Risk'
     };
     var KO = {
-        tooltip: '운동·건강 궁금증을 물어보세요!',
-        headerTitle: '전용관 AI',
+        tooltip: '\uC6B4\uB3D9\xB7\uAC74\uAC15 \uAD81\uAE08\uC99D\uC744 \uBB3C\uC5B4\uBCF4\uC138\uC694!',
+        headerTitle: '\uC804\uC6A9\uAD00 AI',
         headerSub: 'Evidence-based Exercise & Health Advisor',
-        welcomeTitle: '무엇이든 물어보세요',
-        welcomeDesc: '근거 기반 운동의학과 살루토제네시스 관점의<br>운동건강 AI 어드바이저입니다',
-        placeholder: '운동과 건강에 대해 물어보세요...',
-        disclaimer: '의학적 진단이나 치료를 대체하지 않습니다. 전문 의료진과 상담하세요.',
-        btnDiabetes: '🩺 당뇨 위험 평가',
-        btnCkd: '🏥 신부전 위험 평가',
-        btnCancer: '🎗 암 재발 위험 평가'
+        welcomeTitle: '\uBB34\uC5C7\uC774\uB4E0 \uBB3C\uC5B4\uBCF4\uC138\uC694',
+        welcomeDesc: '\uADFC\uAC70 \uAE30\uBC18 \uC6B4\uB3D9\uC758\uD559\uACFC \uC0B4\uB8E8\uD1A0\uC81C\uB124\uC2DC\uC2A4 \uAD00\uC810\uC758<br>\uC6B4\uB3D9\uAC74\uAC15 AI \uC5B4\uB4DC\uBC14\uC774\uC800\uC785\uB2C8\uB2E4',
+        placeholder: '\uC6B4\uB3D9\uACFC \uAC74\uAC15\uC5D0 \uB300\uD574 \uBB3C\uC5B4\uBCF4\uC138\uC694...',
+        disclaimer: '\uC758\uD559\uC801 \uC9C4\uB2E8\uC774\uB098 \uCE58\uB8CC\uB97C \uB300\uCCB4\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uC804\uBB38 \uC758\uB8CC\uC9C4\uACFC \uC0C1\uB2F4\uD558\uC138\uC694.',
+        btnDiabetes: '\uD83E\uDE7A \uB2F9\uB140 \uC704\uD5D8 \uD3C9\uAC00',
+        btnCkd: '\uD83C\uDFE5 \uC2E0\uBD80\uC804 \uC704\uD5D8 \uD3C9\uAC00',
+        btnCancer: '\uD83C\uDF97 \uC554 \uC7AC\uBC1C \uC704\uD5D8 \uD3C9\uAC00'
     };
 
     function applyWidgetLang() {
         var lang = document.documentElement.lang || 'en';
         var t = lang === 'ko' ? KO : EN;
+
+        // Try multiple selector patterns to find widget elements
         var tooltip = document.getElementById('jeon-ai-tooltip');
-        var header = document.querySelector('#jeon-ai-chat h3');
-        var headerP = document.querySelector('#jeon-ai-chat .jeon-ai-header p');
-        var welcomeH = document.querySelector('#jeon-ai-chat .jeon-welcome h4');
-        var welcomeP = document.querySelector('#jeon-ai-chat .jeon-welcome p');
-        var input = document.querySelector('#jeon-ai-input');
+        var chat = document.getElementById('jeon-ai-chat');
+        if (!chat) return false;
+
+        var header = chat.querySelector('h3');
+        var headerP = chat.querySelector('h3 + p') || chat.querySelector('.jeon-ai-header p') || chat.querySelector('header p');
+        var welcomeH = chat.querySelector('h4');
+        var welcomeP = welcomeH ? welcomeH.nextElementSibling : null;
+        var input = document.getElementById('jeon-ai-input') || chat.querySelector('input[type="text"]') || chat.querySelector('textarea');
         var disclaimer = document.getElementById('jeon-ai-disclaimer');
-        var btns = document.querySelectorAll('.jeon-assess-btn');
+        var btns = chat.querySelectorAll('.jeon-assess-btn') || [];
 
         if (tooltip) tooltip.textContent = t.tooltip;
         if (header) header.textContent = t.headerTitle;
-        if (headerP) headerP.textContent = t.headerSub;
+        if (headerP && headerP.tagName === 'P') headerP.textContent = t.headerSub;
         if (welcomeH) welcomeH.textContent = t.welcomeTitle;
-        if (welcomeP) welcomeP.innerHTML = t.welcomeDesc;
+        if (welcomeP && welcomeP.tagName === 'P') welcomeP.innerHTML = t.welcomeDesc;
         if (input) input.placeholder = t.placeholder;
         if (disclaimer) disclaimer.textContent = t.disclaimer;
         if (btns.length >= 3) {
@@ -3361,18 +3366,35 @@ if (savedLang === 'ko') setLang('ko');
             btns[1].innerHTML = t.btnCkd;
             btns[2].innerHTML = t.btnCancer;
         }
+        return true;
     }
 
-    // Apply after widget loads
-    setTimeout(applyWidgetLang, 500);
-    setTimeout(applyWidgetLang, 1500);
+    // Wait for widget to appear in DOM, then apply
+    var attempts = 0;
+    var interval = setInterval(function() {
+        if (applyWidgetLang() || attempts > 30) clearInterval(interval);
+        attempts++;
+    }, 500);
 
-    // Re-apply when language changes
-    var origSetLang = window.setLang;
-    window.setLang = function(lang) {
-        origSetLang(lang);
-        setTimeout(applyWidgetLang, 100);
-    };
+    // Also apply on chat toggle click (widget may lazy-render)
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#jeon-ai-toggle') || e.target.closest('[id*="jeon-ai"]')) {
+            setTimeout(applyWidgetLang, 200);
+            setTimeout(applyWidgetLang, 600);
+        }
+    });
+
+    // Re-apply when language changes - patch setLang
+    var _origSetLang = window.setLang;
+    if (_origSetLang) {
+        window.setLang = function(lang) {
+            _origSetLang(lang);
+            setTimeout(applyWidgetLang, 150);
+        };
+    }
+    // Also observe lang attribute changes
+    new MutationObserver(function() { setTimeout(applyWidgetLang, 100); })
+        .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 })();
 </script>
 
