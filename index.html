@@ -3307,7 +3307,34 @@ if (savedLang === 'ko') setLang('ko');
 </script>
 
 <!-- 전용관 AI 챗봇 -->
-<script>window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';</script>
+<script>
+window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';
+// Intercept fetch to add English instruction when language is EN
+(function() {
+    var origFetch = window.fetch;
+    window.fetch = function(url, opts) {
+        if (typeof url === 'string' && url.indexOf('/api/chat') !== -1 && opts && opts.body) {
+            var lang = document.documentElement.lang || 'en';
+            if (lang !== 'ko') {
+                try {
+                    var body = JSON.parse(opts.body);
+                    if (body.message) {
+                        body.message = '[Please respond in English] ' + body.message;
+                        opts = Object.assign({}, opts, { body: JSON.stringify(body) });
+                    } else if (body.messages && body.messages.length) {
+                        var last = body.messages[body.messages.length - 1];
+                        if (last.content) {
+                            last.content = '[Please respond in English] ' + last.content;
+                            opts = Object.assign({}, opts, { body: JSON.stringify(body) });
+                        }
+                    }
+                } catch(e) {}
+            }
+        }
+        return origFetch.call(this, url, opts);
+    };
+})();
+</script>
 <script src="https://jeon-ai-server.onrender.com/jeon-ai-widget.js"></script>
 <script>
 // Bilingual AI widget override
