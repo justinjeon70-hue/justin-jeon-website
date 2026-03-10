@@ -743,6 +743,93 @@
             display: inline-block;
             margin-right: 0.4rem;
         }
+        .oc-lifestyle-section {
+            margin: 1.5rem 0;
+        }
+        .oc-lifestyle-section > h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .oc-lifestyle-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+        .oc-lifestyle-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem;
+            border-top: 3px solid transparent;
+        }
+        .oc-lifestyle-card h5 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .oc-lifestyle-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .oc-lifestyle-card ul li {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding: 0.25rem 0;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+        .oc-lifestyle-card ul li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+        }
+        .oc-daily-routine {
+            margin-top: 1rem;
+            background: linear-gradient(135deg, rgba(0,122,255,0.04), rgba(175,82,222,0.04));
+            border: 1px solid rgba(0,122,255,0.1);
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+        }
+        .oc-daily-routine h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+        }
+        .oc-routine-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .oc-routine-item {
+            display: flex;
+            gap: 0.8rem;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+        .oc-routine-time {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 48px;
+            white-space: nowrap;
+        }
+        .oc-routine-desc {
+            color: var(--text-secondary);
+        }
+        @media (max-width: 600px) {
+            .oc-lifestyle-cards { grid-template-columns: 1fr; }
+        }
         .oc-status-box {
             background: var(--bg-secondary);
             padding: 1rem 1.2rem;
@@ -1376,8 +1463,9 @@ function submitAssessment() {
         }
 
         h += '<div class="oc-status-box" style="border-left:4px solid ' + qData.color + '"><p>' + recs.status + '</p></div>';
-        h += '<div class="rec-card"><h4>\u{1F3C3} ' + (currentLang === 'ko' ? '\uC6B4\uB3D9 \uAD8C\uACE0' : 'Exercise Recommendation') + '</h4><p>' + recs.exercise + '</p></div>';
-        h += '<div class="rec-card"><h4>\u{1F91D} ' + (currentLang === 'ko' ? '\uC0DD\uD65C\uC2B5\uAD00 \uAD8C\uACE0' : 'Lifestyle Recommendation') + '</h4><p>' + recs.lifestyle + '</p></div>';
+
+        // Personalized lifestyle prescription
+        h += buildLifestyleHTML(oxyScore, cortScore, quadrant, currentLang);
         h += '<div class="result-citation">\u{1F4DA} ' + (currentLang === 'ko' ? '\uADFC\uAC70: ' : 'Citation: ') + model.citation + '</div>';
         h += '<div class="result-disclaimer">' + (currentLang === 'ko'
             ? '\uC774 \uD3C9\uAC00\uB294 \uC790\uAC00 \uC810\uAC80\uC6A9 \uCC38\uACE0 \uB3C4\uAD6C\uC774\uBA70, \uC804\uBB38\uC801\uC778 \uC758\uD559\uC801 \uC9C4\uB2E8\uC744 \uB300\uCCB4\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.'
@@ -1496,6 +1584,283 @@ function shareResult() {
             setTimeout(function() { btn.textContent = orig; }, 2000);
         });
     }
+}
+
+// ===== Lifestyle Recommendations by Score Level =====
+function getOxyLevel(score) {
+    if (score >= 40) return 'abundant';
+    if (score >= 30) return 'sufficient';
+    if (score >= 20) return 'deficient';
+    return 'verylow';
+}
+function getCortLevel(score) {
+    if (score >= 40) return 'extreme';
+    if (score >= 30) return 'moderate';
+    if (score >= 20) return 'normal';
+    return 'verylow';
+}
+
+var LIFESTYLE_RECS = {
+    cortisol: {
+        en: {
+            extreme: {
+                title: 'Cortisol: Extreme Stress',
+                items: [
+                    'Practice 4-7-8 breathing: inhale 4s, hold 7s, exhale 8s, 3 times daily',
+                    'Limit caffeine to 1 cup before noon; avoid after 2pm',
+                    'Digital detox: no screens 1 hour before bed',
+                    'Set firm work boundaries \u2014 schedule a hard stop time daily',
+                    'Consider professional counseling or stress management program'
+                ]
+            },
+            moderate: {
+                title: 'Cortisol: Moderate Stress',
+                items: [
+                    'Do 10 minutes of mindful breathing or meditation daily',
+                    'Take 15-minute walks after lunch to reset cortisol rhythm',
+                    'Write in a journal for 5 minutes before bed',
+                    'Reduce screen time by 30 minutes per day',
+                    'Prioritize 7-8 hours of sleep with a consistent schedule'
+                ]
+            },
+            normal: {
+                title: 'Cortisol: Normal Range',
+                items: [
+                    'Maintain your current stress management routine',
+                    'Continue regular physical activity (150+ min/week)',
+                    'Keep a healthy sleep-wake cycle',
+                    'Build resilience through new challenges and learning'
+                ]
+            },
+            verylow: {
+                title: 'Cortisol: Very Low',
+                items: [
+                    'Low cortisol can indicate fatigue or burnout \u2014 assess your energy levels',
+                    'Try mild stimulating activities: morning sunlight, light exercise',
+                    'Eat balanced meals at regular times to support adrenal function',
+                    'If persistent fatigue, consider consulting a healthcare provider'
+                ]
+            }
+        },
+        ko: {
+            extreme: {
+                title: '\uCF54\uB974\uD2F0\uC194: \uADF9\uB3C4 \uC2A4\uD2B8\uB808\uC2A4',
+                items: [
+                    '4-7-8 \uD638\uD761\uBC95: \uD761\uC785 4\uCD08, \uCC38\uAE30 7\uCD08, \uB0B4\uC26C\uAE30 8\uCD08 \u2014 \uD558\uB8E8 3\uD68C \uC2E4\uCC9C',
+                    '\uCE74\uD398\uC778\uC740 \uC624\uC804 1\uC794\uB9CC, \uC624\uD6C4 2\uC2DC \uC774\uD6C4 \uAE08\uC9C0',
+                    '\uB514\uC9C0\uD138 \uB514\uD1A1\uC2A4: \uC7A0\uC790\uB9AC\uC5D0 \uB4E4\uAE30 1\uC2DC\uAC04 \uC804\uBD80\uD130 \uC2A4\uD06C\uB9B0 \uCC28\uB2E8',
+                    '\uC5C5\uBB34 \uACBD\uACC4 \uC124\uC815 \u2014 \uB9E4\uC77C \uD655\uC2E4\uD55C \uB9C8\uAC10 \uC2DC\uAC04\uC744 \uC815\uD558\uC138\uC694',
+                    '\uC804\uBB38 \uC0C1\uB2F4\uC774\uB098 \uC2A4\uD2B8\uB808\uC2A4 \uAD00\uB9AC \uD504\uB85C\uADF8\uB7A8\uC744 \uACE0\uB824\uD558\uC138\uC694'
+                ]
+            },
+            moderate: {
+                title: '\uCF54\uB974\uD2F0\uC194: \uC911\uAC04 \uC2A4\uD2B8\uB808\uC2A4',
+                items: [
+                    '\uB9E4\uC77C 10\uBD84 \uB9C8\uC74C\uCC59\uAE40 \uD638\uD761 \uB610\uB294 \uBA85\uC0C1 \uC2E4\uCC9C',
+                    '\uC810\uC2EC \uD6C4 15\uBD84 \uC0B0\uCC45\uC73C\uB85C \uCF54\uB974\uD2F0\uC194 \uB9AC\uB4EC \uC7AC\uC124\uC815',
+                    '\uC7A0\uC790\uB9AC\uC5D0 \uB4E4\uAE30 \uC804 5\uBD84 \uC77C\uAE30 \uC4F0\uAE30',
+                    '\uD558\uB8E8 \uC2A4\uD06C\uB9B0 \uC2DC\uAC04 30\uBD84 \uC904\uC774\uAE30',
+                    '7~8\uC2DC\uAC04 \uC218\uBA74, \uC77C\uC815\uD55C \uC218\uBA74 \uC2A4\uCF00\uC904 \uC720\uC9C0'
+                ]
+            },
+            normal: {
+                title: '\uCF54\uB974\uD2F0\uC194: \uC815\uC0C1 \uBC94\uC704',
+                items: [
+                    '\uD604\uC7AC\uC758 \uC2A4\uD2B8\uB808\uC2A4 \uAD00\uB9AC \uB8E8\uD2F4\uC744 \uC720\uC9C0\uD558\uC138\uC694',
+                    '\uADDC\uCE59\uC801\uC778 \uC2E0\uCCB4\uD65C\uB3D9 \uC720\uC9C0 (\uC8FC 150\uBD84 \uC774\uC0C1)',
+                    '\uAC74\uAC15\uD55C \uC218\uBA74-\uAE30\uC0C1 \uC8FC\uAE30 \uC720\uC9C0',
+                    '\uC0C8\uB85C\uC6B4 \uB3C4\uC804\uACFC \uD559\uC2B5\uC73C\uB85C \uD68C\uBCF5\uD0C4\uB825\uC131 \uAC15\uD654'
+                ]
+            },
+            verylow: {
+                title: '\uCF54\uB974\uD2F0\uC194: \uB9E4\uC6B0 \uB0AE\uC74C',
+                items: [
+                    '\uB0AE\uC740 \uCF54\uB974\uD2F0\uC194\uC740 \uD53C\uB85C\uB098 \uBC88\uC544\uC6C3\uC744 \uB098\uD0C0\uB0BC \uC218 \uC788\uC2B5\uB2C8\uB2E4 \u2014 \uC5D0\uB108\uC9C0 \uC218\uC900\uC744 \uC810\uAC80\uD558\uC138\uC694',
+                    '\uAC00\uBCBC\uC6B4 \uC790\uADF9 \uD65C\uB3D9: \uC544\uCE68 \uD587\uBE5B \uC950\uAE30, \uAC00\uBCBC\uC6B4 \uC6B4\uB3D9',
+                    '\uADDC\uCE59\uC801\uC778 \uC2DC\uAC04\uC5D0 \uADE0\uD615 \uC7A1\uD78C \uC2DD\uC0AC\uB85C \uBD80\uC2E0 \uAE30\uB2A5 \uC9C0\uC6D0',
+                    '\uC9C0\uC18D\uC801\uC778 \uD53C\uB85C\uAC10\uC774 \uC788\uC73C\uBA74 \uC758\uB8CC\uC9C4 \uC0C1\uB2F4 \uAD8C\uC7A5'
+                ]
+            }
+        }
+    },
+    oxytocin: {
+        en: {
+            abundant: {
+                title: 'Oxytocin: Abundant Connection',
+                items: [
+                    'You are well-connected \u2014 maintain your social bonds',
+                    'Share your energy: mentor someone or volunteer',
+                    'Deepen existing relationships with quality time',
+                    'Continue physical affection: hugs, handshakes, eye contact'
+                ]
+            },
+            sufficient: {
+                title: 'Oxytocin: Sufficient Connection',
+                items: [
+                    'Schedule at least 2 shared meals per week with loved ones',
+                    'Join one group activity: sports team, book club, choir',
+                    'Practice expressing gratitude daily \u2014 text or tell someone',
+                    'Spend 20+ minutes in face-to-face conversation daily'
+                ]
+            },
+            deficient: {
+                title: 'Oxytocin: Deficient \u2014 Needs Attention',
+                items: [
+                    'Reach out to one person today \u2014 a call, message, or visit',
+                    'Eat at least one meal per day with another person',
+                    'Try a group exercise class or community activity this week',
+                    'If you have a pet, spend 15 minutes of focused interaction daily',
+                    'Cook a meal for someone \u2014 preparing food for others boosts oxytocin'
+                ]
+            },
+            verylow: {
+                title: 'Oxytocin: Very Low \u2014 Urgent',
+                items: [
+                    'Isolation is a health emergency \u2014 take one small step today',
+                    'Start with low-barrier connection: smile at a neighbor, greet a shopkeeper',
+                    'Walk in a public place (park, market) for 20 minutes daily',
+                    'Consider joining a support group or counseling',
+                    'Physical touch matters: even self-massage or warm baths help',
+                    'Sing along to music \u2014 singing activates oxytocin pathways even alone'
+                ]
+            }
+        },
+        ko: {
+            abundant: {
+                title: '\uC625\uC2DC\uD1A0\uC2E0: \uCDA9\uBD84\uD55C \uC5F0\uACB0',
+                items: [
+                    '\uC798 \uC5F0\uACB0\uB418\uC5B4 \uC788\uC2B5\uB2C8\uB2E4 \u2014 \uC0AC\uD68C\uC801 \uC720\uB300\uB97C \uC720\uC9C0\uD558\uC138\uC694',
+                    '\uC5D0\uB108\uC9C0\uB97C \uB098\uB204\uC138\uC694: \uBA58\uD1A0\uB9C1\uC774\uB098 \uBD09\uC0AC\uD65C\uB3D9 \uCC38\uC5EC',
+                    '\uAE4A\uC740 \uB300\uD654\uC640 \uD568\uAED8\uD558\uB294 \uC2DC\uAC04\uC73C\uB85C \uAE30\uC874 \uAD00\uACC4 \uC2EC\uD654',
+                    '\uC2E0\uCCB4\uC801 \uC560\uC815 \uC9C0\uC18D: \uD3EC\uC639, \uC545\uC218, \uB208 \uB9DE\uCDA4'
+                ]
+            },
+            sufficient: {
+                title: '\uC625\uC2DC\uD1A0\uC2E0: \uCDA9\uBD84',
+                items: [
+                    '\uC8FC 2\uD68C \uC774\uC0C1 \uC0AC\uB791\uD558\uB294 \uC0AC\uB78C\uACFC \uD568\uAED8 \uC2DD\uC0AC\uD558\uAE30',
+                    '\uADF8\uB8F9 \uD65C\uB3D9 \uD558\uB098 \uCC38\uC5EC: \uC6B4\uB3D9 \uBAA8\uC784, \uB3C5\uC11C \uBAA8\uC784, \uD569\uCC3D\uB2E8',
+                    '\uB9E4\uC77C \uAC10\uC0AC \uD45C\uD604 \uC2E4\uCC9C \u2014 \uBB38\uC790\uB098 \uC9C1\uC811 \uC804\uD558\uAE30',
+                    '\uB9E4\uC77C 20\uBD84 \uC774\uC0C1 \uB300\uBA74 \uB300\uD654 \uC2DC\uAC04 \uD655\uBCF4'
+                ]
+            },
+            deficient: {
+                title: '\uC625\uC2DC\uD1A0\uC2E0: \uBD80\uC871 \u2014 \uAD00\uC2EC \uD544\uC694',
+                items: [
+                    '\uC624\uB298 \uD55C \uC0AC\uB78C\uC5D0\uAC8C \uC5F0\uB77D\uD558\uC138\uC694 \u2014 \uC804\uD654, \uBB38\uC790, \uBC29\uBB38',
+                    '\uD558\uB8E8 \uCD5C\uC18C 1\uB07C\uB294 \uB2E4\uB978 \uC0AC\uB78C\uACFC \uD568\uAED8 \uC2DD\uC0AC\uD558\uAE30',
+                    '\uC774\uBC88 \uC8FC\uC5D0 \uADF8\uB8F9 \uC6B4\uB3D9\uC774\uB098 \uCEE4\uBBA4\uB2C8\uD2F0 \uD65C\uB3D9 \uCC38\uC5EC\uD574 \uBCF4\uAE30',
+                    '\uBC18\uB824\uB3D9\uBB3C\uC774 \uC788\uB2E4\uBA74 \uB9E4\uC77C 15\uBD84 \uC9D1\uC911 \uAD50\uAC10 \uC2DC\uAC04',
+                    '\uB204\uAD70\uAC00\uB97C \uC704\uD574 \uC694\uB9AC\uD558\uAE30 \u2014 \uD0C0\uC778\uC744 \uC704\uD55C \uC74C\uC2DD \uC900\uBE44\uAC00 \uC625\uC2DC\uD1A0\uC2E0\uC744 \uB192\uC785\uB2C8\uB2E4'
+                ]
+            },
+            verylow: {
+                title: '\uC625\uC2DC\uD1A0\uC2E0: \uB9E4\uC6B0 \uBD80\uC871 \u2014 \uAE34\uAE09',
+                items: [
+                    '\uACE0\uB9BD\uC740 \uAC74\uAC15 \uBE44\uC0C1\uC785\uB2C8\uB2E4 \u2014 \uC624\uB298 \uC791\uC740 \uD55C \uAC78\uC74C\uC744 \uB0B4\uB514\uB514\uC138\uC694',
+                    '\uBD80\uB2F4 \uC5C6\uB294 \uC5F0\uACB0\uBD80\uD130: \uC774\uC6C3\uC5D0\uAC8C \uBBF8\uC18C, \uAC00\uAC8C \uC8FC\uC778\uACFC \uC778\uC0AC',
+                    '\uB9E4\uC77C 20\uBD84 \uACF5\uACF5\uC7A5\uC18C(\uACF5\uC6D0, \uC2DC\uC7A5)\uC5D0\uC11C \uAC77\uAE30',
+                    '\uC9C0\uC9C0 \uADF8\uB8F9\uC774\uB098 \uC0C1\uB2F4 \uCC38\uC5EC \uACE0\uB824',
+                    '\uC2E0\uCCB4 \uC811\uCD09\uC774 \uC911\uC694: \uC140\uD504 \uB9C8\uC0AC\uC9C0\uB098 \uB530\uB73B\uD55C \uBAA9\uC695\uB3C4 \uB3C4\uC6C0',
+                    '\uC74C\uC545\uC5D0 \uB9DE\uCDB0 \uB178\uB798 \uBD80\uB974\uAE30 \u2014 \uD63C\uC790\uC11C\uB3C4 \uC625\uC2DC\uD1A0\uC2E0 \uACBD\uB85C\uB97C \uD65C\uC131\uD654\uD569\uB2C8\uB2E4'
+                ]
+            }
+        }
+    },
+    dailyRoutine: {
+        en: {
+            thriving: [
+                { time: 'AM', desc: 'Morning sunlight + light exercise with a friend or partner' },
+                { time: 'Noon', desc: 'Shared lunch \u2014 eat with colleagues or family' },
+                { time: 'PM', desc: 'Group activity or hobby time' },
+                { time: 'Eve', desc: 'Gratitude journaling + quality time with loved ones' }
+            ],
+            resilient: [
+                { time: 'AM', desc: '4-7-8 breathing + 10 min meditation before starting work' },
+                { time: 'Noon', desc: '15 min walk after lunch + call a friend' },
+                { time: 'PM', desc: 'Set work stop time \u2014 do yoga or group exercise' },
+                { time: 'Eve', desc: 'No screens after 9pm \u2014 shared meal or conversation' }
+            ],
+            depleted: [
+                { time: 'AM', desc: 'Open curtains for sunlight \u2014 stretch for 5 minutes' },
+                { time: 'Noon', desc: 'Eat one meal with another person \u2014 even a coworker' },
+                { time: 'PM', desc: '20 min walk in a public place (park, market)' },
+                { time: 'Eve', desc: 'Send one message of gratitude \u2014 plan tomorrow\u2019s connection' }
+            ],
+            atrisk: [
+                { time: 'AM', desc: '4-7-8 breathing immediately upon waking \u2014 call someone' },
+                { time: 'Noon', desc: 'Walk outside for 15 min + eat with someone' },
+                { time: 'PM', desc: 'Join any group activity \u2014 even briefly' },
+                { time: 'Eve', desc: '5 min journal + warm bath \u2014 no screens, reach out to one person' }
+            ]
+        },
+        ko: {
+            thriving: [
+                { time: '\uC544\uCE68', desc: '\uC544\uCE68 \uD587\uBE5B + \uCE5C\uAD6C\uB098 \uD30C\uD2B8\uB108\uC640 \uAC00\uBCBC\uC6B4 \uC6B4\uB3D9' },
+                { time: '\uC810\uC2EC', desc: '\uD568\uAED8 \uC2DD\uC0AC \u2014 \uB3D9\uB8CC\uB098 \uAC00\uC871\uACFC \uC2DD\uC0AC' },
+                { time: '\uC624\uD6C4', desc: '\uADF8\uB8F9 \uD65C\uB3D9\uC774\uB098 \uCDE8\uBBF8 \uC2DC\uAC04' },
+                { time: '\uC800\uB141', desc: '\uAC10\uC0AC \uC77C\uAE30 + \uC0AC\uB791\uD558\uB294 \uC0AC\uB78C\uACFC \uD568\uAED8\uD558\uB294 \uC2DC\uAC04' }
+            ],
+            resilient: [
+                { time: '\uC544\uCE68', desc: '4-7-8 \uD638\uD761\uBC95 + 10\uBD84 \uBA85\uC0C1 \uD6C4 \uC77C \uC2DC\uC791' },
+                { time: '\uC810\uC2EC', desc: '\uC810\uC2EC \uD6C4 15\uBD84 \uC0B0\uCC45 + \uCE5C\uAD6C\uC5D0\uAC8C \uC804\uD654' },
+                { time: '\uC624\uD6C4', desc: '\uC5C5\uBB34 \uB9C8\uAC10 \uC2DC\uAC04 \uC124\uC815 \u2014 \uC694\uAC00\uB098 \uADF8\uB8F9 \uC6B4\uB3D9' },
+                { time: '\uC800\uB141', desc: '\uC624\uD6C4 9\uC2DC \uC774\uD6C4 \uC2A4\uD06C\uB9B0 \uAE08\uC9C0 \u2014 \uD568\uAED8 \uC2DD\uC0AC \uB610\uB294 \uB300\uD654' }
+            ],
+            depleted: [
+                { time: '\uC544\uCE68', desc: '\uCEE4\uD2BC \uC5F4\uC5B4 \uD587\uBE5B \uC950\uAE30 \u2014 5\uBD84 \uC2A4\uD2B8\uB808\uCE6D' },
+                { time: '\uC810\uC2EC', desc: '\uD55C \uB07C\uB294 \uB2E4\uB978 \uC0AC\uB78C\uACFC \uD568\uAED8 \uC2DD\uC0AC \u2014 \uB3D9\uB8CC\uB77C\uB3C4' },
+                { time: '\uC624\uD6C4', desc: '20\uBD84 \uACF5\uACF5\uC7A5\uC18C(\uACF5\uC6D0, \uC2DC\uC7A5)\uC5D0\uC11C \uAC77\uAE30' },
+                { time: '\uC800\uB141', desc: '\uAC10\uC0AC \uBB38\uC790 \uD55C \uD1B5 \uBCF4\uB0B4\uAE30 \u2014 \uB0B4\uC77C\uC758 \uC5F0\uACB0 \uACC4\uD68D' }
+            ],
+            atrisk: [
+                { time: '\uC544\uCE68', desc: '\uAE30\uC0C1 \uC9C1\uD6C4 4-7-8 \uD638\uD761\uBC95 \u2014 \uB204\uAD70\uAC00\uC5D0\uAC8C \uC804\uD654' },
+                { time: '\uC810\uC2EC', desc: '15\uBD84 \uBC14\uAE65 \uC0B0\uCC45 + \uB204\uAD70\uAC00\uC640 \uD568\uAED8 \uC2DD\uC0AC' },
+                { time: '\uC624\uD6C4', desc: '\uC5B4\uB5A4 \uADF8\uB8F9 \uD65C\uB3D9\uC774\uB4E0 \uCC38\uC5EC \u2014 \uC7A0\uAE50\uC774\uB77C\uB3C4' },
+                { time: '\uC800\uB141', desc: '5\uBD84 \uC77C\uAE30 + \uB530\uB73B\uD55C \uBAA9\uC695 \u2014 \uC2A4\uD06C\uB9B0 \uAE08\uC9C0, \uD55C \uC0AC\uB78C\uC5D0\uAC8C \uC5F0\uB77D' }
+            ]
+        }
+    }
+};
+
+function buildLifestyleHTML(oxyScore, cortScore, quadrant, lang) {
+    var oLvl = getOxyLevel(oxyScore);
+    var cLvl = getCortLevel(cortScore);
+    var oRec = LIFESTYLE_RECS.oxytocin[lang][oLvl];
+    var cRec = LIFESTYLE_RECS.cortisol[lang][cLvl];
+    var routine = LIFESTYLE_RECS.dailyRoutine[lang][quadrant];
+
+    var h = '<div class="oc-lifestyle-section">';
+    h += '<h4>' + (lang === 'ko' ? '\uD83C\uDF3F \uB9DE\uCDA4 \uB77C\uC774\uD504\uC2A4\uD0C0\uC77C \uCC98\uBC29' : '\uD83C\uDF3F Personalized Lifestyle Prescription') + '</h4>';
+
+    // Two cards side by side: cortisol strategies + oxytocin strategies
+    h += '<div class="oc-lifestyle-cards">';
+
+    // Cortisol card
+    h += '<div class="oc-lifestyle-card" style="border-top-color:#ff6b35">';
+    h += '<h5 style="color:#d63030">\uD83D\uDD25 ' + cRec.title + '</h5><ul>';
+    cRec.items.forEach(function(item) { h += '<li>' + item + '</li>'; });
+    h += '</ul></div>';
+
+    // Oxytocin card
+    h += '<div class="oc-lifestyle-card" style="border-top-color:#007aff">';
+    h += '<h5 style="color:#0066cc">\uD83D\uDC99 ' + oRec.title + '</h5><ul>';
+    oRec.items.forEach(function(item) { h += '<li>' + item + '</li>'; });
+    h += '</ul></div>';
+
+    h += '</div>';
+
+    // Daily routine
+    h += '<div class="oc-daily-routine">';
+    h += '<h5>' + (lang === 'ko' ? '\uD83D\uDCC5 \uC624\uB298\uBD80\uD130 \uC2E4\uCC9C\uD560 \uD558\uB8E8 \uB8E8\uD2F4' : '\uD83D\uDCC5 Your Daily Routine Starting Today') + '</h5>';
+    h += '<div class="oc-routine-timeline">';
+    routine.forEach(function(r) {
+        h += '<div class="oc-routine-item"><span class="oc-routine-time">' + r.time + '</span><span class="oc-routine-desc">' + r.desc + '</span></div>';
+    });
+    h += '</div></div>';
+
+    h += '</div>';
+    return h;
 }
 
 // ===== Quadrant SVG Builder =====
