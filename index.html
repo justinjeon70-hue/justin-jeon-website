@@ -3309,7 +3309,7 @@ if (savedLang === 'ko') setLang('ko');
 <!-- 전용관 AI 챗봇 -->
 <script>
 window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';
-// Intercept fetch to add English instruction when language is EN
+// Intercept fetch: force English response + inject system instruction
 (function() {
     var origFetch = window.fetch;
     window.fetch = function(url, opts) {
@@ -3318,16 +3318,14 @@ window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';
             if (lang !== 'ko') {
                 try {
                     var body = JSON.parse(opts.body);
+                    // Add system instruction to history
+                    if (!body.history) body.history = [];
+                    body.history.unshift({ role: 'system', content: 'You MUST respond in English only. Never respond in Korean.' });
+                    // Also modify message as backup
                     if (body.message) {
-                        body.message = '[Please respond in English] ' + body.message;
-                        opts = Object.assign({}, opts, { body: JSON.stringify(body) });
-                    } else if (body.messages && body.messages.length) {
-                        var last = body.messages[body.messages.length - 1];
-                        if (last.content) {
-                            last.content = '[Please respond in English] ' + last.content;
-                            opts = Object.assign({}, opts, { body: JSON.stringify(body) });
-                        }
+                        body.message = body.message + '\n\n(IMPORTANT: You must answer in English only.)';
                     }
+                    opts = Object.assign({}, opts, { body: JSON.stringify(body) });
                 } catch(e) {}
             }
         }
@@ -3479,6 +3477,62 @@ window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';
     // Also observe lang attribute changes
     new MutationObserver(function() { setTimeout(applyWidgetLang, 100); })
         .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // === New Chat button ===
+    function addNewChatBtn() {
+        var chat = document.getElementById('jeon-ai-chat');
+        if (!chat || document.getElementById('jeon-new-chat-btn')) return false;
+        var headerEl = chat.querySelector('.jeon-ai-header') || chat.querySelector('header') || (chat.querySelector('h3') ? chat.querySelector('h3').parentElement : null);
+        if (!headerEl) return false;
+
+        var btn = document.createElement('button');
+        btn.id = 'jeon-new-chat-btn';
+        btn.style.cssText = 'position:absolute;top:12px;right:40px;background:rgba(255,255,255,0.2);border:none;color:#fff;font-size:0.75rem;padding:4px 10px;border-radius:8px;cursor:pointer;z-index:10;';
+        btn.onmouseover = function() { btn.style.background = 'rgba(255,255,255,0.35)'; };
+        btn.onmouseout = function() { btn.style.background = 'rgba(255,255,255,0.2)'; };
+
+        function updateBtnText() {
+            var lang = document.documentElement.lang || 'en';
+            btn.textContent = lang === 'ko' ? '\uC0C8 \uB300\uD654' : 'New Chat';
+        }
+        updateBtnText();
+
+        btn.onclick = function() {
+            // Clear conversation history in sessionStorage
+            try { sessionStorage.removeItem('jeon-ai-chat-ko'); } catch(e) {}
+            // Clear messages in the chat
+            var msgs = chat.querySelectorAll('.jeon-msg, .jeon-message, [class*="msg"]');
+            msgs.forEach(function(m) { m.remove(); });
+            // Show welcome screen again
+            var welcome = document.getElementById('jeon-ai-welcome') || chat.querySelector('.jeon-welcome');
+            if (welcome) welcome.style.display = '';
+            // Show examples again
+            var examples = document.getElementById('jeon-ai-examples');
+            if (examples) examples.style.display = '';
+            // Re-render sample questions
+            if (typeof window.renderQuestions === 'function') window.renderQuestions();
+            // Re-apply language
+            setTimeout(function() { applyWidgetLang(); updateBtnText(); }, 200);
+        };
+
+        headerEl.style.position = 'relative';
+        headerEl.appendChild(btn);
+
+        // Update button text on lang change
+        new MutationObserver(function() { updateBtnText(); })
+            .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+        return true;
+    }
+
+    // Wait for widget then add button
+    var btnAttempts = 0;
+    var btnInterval = setInterval(function() {
+        if (addNewChatBtn() || btnAttempts > 30) clearInterval(btnInterval);
+        btnAttempts++;
+    }, 500);
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#jeon-ai-toggle')) setTimeout(addNewChatBtn, 300);
+    });
 })();
 </script>
 
