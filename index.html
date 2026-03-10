@@ -3309,6 +3309,72 @@ if (savedLang === 'ko') setLang('ko');
 <!-- 전용관 AI 챗봇 -->
 <script>window.JEON_AI_API_URL='https://jeon-ai-server.onrender.com/api/chat';</script>
 <script src="https://jeon-ai-server.onrender.com/jeon-ai-widget.js"></script>
+<script>
+// Bilingual AI widget override
+(function() {
+    var EN = {
+        tooltip: 'Ask about exercise & health!',
+        headerTitle: 'Justin AI',
+        headerSub: 'Evidence-based Exercise & Health Advisor',
+        welcomeTitle: 'Ask me anything',
+        welcomeDesc: 'Evidence-based exercise medicine &amp; salutogenesis<br>AI health advisor',
+        placeholder: 'Ask about exercise and health...',
+        disclaimer: 'This does not replace medical diagnosis or treatment. Please consult a healthcare professional.',
+        btnDiabetes: '🩺 Diabetes Risk',
+        btnCkd: '🏥 CKD Risk',
+        btnCancer: '🎗 Cancer Recurrence Risk'
+    };
+    var KO = {
+        tooltip: '운동·건강 궁금증을 물어보세요!',
+        headerTitle: '전용관 AI',
+        headerSub: 'Evidence-based Exercise & Health Advisor',
+        welcomeTitle: '무엇이든 물어보세요',
+        welcomeDesc: '근거 기반 운동의학과 살루토제네시스 관점의<br>운동건강 AI 어드바이저입니다',
+        placeholder: '운동과 건강에 대해 물어보세요...',
+        disclaimer: '의학적 진단이나 치료를 대체하지 않습니다. 전문 의료진과 상담하세요.',
+        btnDiabetes: '🩺 당뇨 위험 평가',
+        btnCkd: '🏥 신부전 위험 평가',
+        btnCancer: '🎗 암 재발 위험 평가'
+    };
+
+    function applyWidgetLang() {
+        var lang = document.documentElement.lang || 'en';
+        var t = lang === 'ko' ? KO : EN;
+        var tooltip = document.getElementById('jeon-ai-tooltip');
+        var header = document.querySelector('#jeon-ai-chat h3');
+        var headerP = document.querySelector('#jeon-ai-chat .jeon-ai-header p');
+        var welcomeH = document.querySelector('#jeon-ai-chat .jeon-welcome h4');
+        var welcomeP = document.querySelector('#jeon-ai-chat .jeon-welcome p');
+        var input = document.querySelector('#jeon-ai-input');
+        var disclaimer = document.getElementById('jeon-ai-disclaimer');
+        var btns = document.querySelectorAll('.jeon-assess-btn');
+
+        if (tooltip) tooltip.textContent = t.tooltip;
+        if (header) header.textContent = t.headerTitle;
+        if (headerP) headerP.textContent = t.headerSub;
+        if (welcomeH) welcomeH.textContent = t.welcomeTitle;
+        if (welcomeP) welcomeP.innerHTML = t.welcomeDesc;
+        if (input) input.placeholder = t.placeholder;
+        if (disclaimer) disclaimer.textContent = t.disclaimer;
+        if (btns.length >= 3) {
+            btns[0].innerHTML = t.btnDiabetes;
+            btns[1].innerHTML = t.btnCkd;
+            btns[2].innerHTML = t.btnCancer;
+        }
+    }
+
+    // Apply after widget loads
+    setTimeout(applyWidgetLang, 500);
+    setTimeout(applyWidgetLang, 1500);
+
+    // Re-apply when language changes
+    var origSetLang = window.setLang;
+    window.setLang = function(lang) {
+        origSetLang(lang);
+        setTimeout(applyWidgetLang, 100);
+    };
+})();
+</script>
 
 </body>
 </html>
