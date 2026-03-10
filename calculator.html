@@ -706,6 +706,43 @@
             color: var(--text-primary);
             margin-top: 0.2rem;
         }
+        .oc-score-guide {
+            margin: 1.2rem 0;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+        }
+        .oc-score-guide h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+        }
+        .oc-guide-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            font-size: 0.82rem;
+        }
+        .oc-guide-row:last-child { border-bottom: none; }
+        .oc-guide-range {
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 70px;
+        }
+        .oc-guide-label {
+            color: var(--text-secondary);
+            text-align: right;
+        }
+        .oc-guide-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
         .oc-status-box {
             background: var(--bg-secondary);
             padding: 1rem 1.2rem;
@@ -1320,6 +1357,24 @@ function submitAssessment() {
         h += '<div class="oc-score-item oc-score-cort"><span class="oc-score-name">' + (currentLang === 'ko' ? '\uCF54\uB974\uD2F0\uC194' : 'Cortisol') + '</span><span class="oc-score-val">' + cortScore + '/50</span></div>';
         h += '<div class="oc-score-item oc-score-risk"><span class="oc-score-name">' + (currentLang === 'ko' ? '\uAC74\uAC15\uC704\uD5D8\uC9C0\uC218' : 'Health Risk') + '</span><span class="oc-score-val">' + riskScore + '/100</span></div>';
         h += '</div>';
+
+        // Score interpretation guide
+        if (currentLang === 'ko') {
+            h += '<div class="oc-score-guide">';
+            h += '<h4>\uD83D\uDCCA \uC810\uC218 \uD574\uC11D \uAC00\uC774\uB4DC</h4>';
+            h += '<div class="oc-guide-row"><span class="oc-guide-range">\uD83D\uDC99 \uC625\uC2DC\uD1A0\uC2E0</span><span class="oc-guide-label"><span class="oc-guide-dot" style="background:#34c759"></span>40\uC774\uC0C1: \uCDA9\uB9CC &nbsp; <span class="oc-guide-dot" style="background:#ff9500"></span>30~39: \uCDA9\uBD84 &nbsp; <span class="oc-guide-dot" style="background:#ff6b35"></span>20~29: \uBD80\uC871 &nbsp; <span class="oc-guide-dot" style="background:#ff3b30"></span>19\uC774\uD558: \uB9E4\uC6B0 \uBD80\uC871</span></div>';
+            h += '<div class="oc-guide-row"><span class="oc-guide-range">\uD83D\uDD25 \uCF54\uB974\uD2F0\uC194</span><span class="oc-guide-label"><span class="oc-guide-dot" style="background:#ff3b30"></span>40\uC774\uC0C1: \uADF9\uB3C4 &nbsp; <span class="oc-guide-dot" style="background:#ff6b35"></span>30~39: \uC911\uAC04 &nbsp; <span class="oc-guide-dot" style="background:#ff9500"></span>20~29: \uC815\uC0C1 &nbsp; <span class="oc-guide-dot" style="background:#34c759"></span>19\uC774\uD558: \uB9E4\uC6B0 \uB0AE\uC74C</span></div>';
+            h += '<div class="oc-guide-row"><span class="oc-guide-range">\u26A0\uFE0F \uAC74\uAC15\uC704\uD5D8\uC9C0\uC218</span><span class="oc-guide-label"><span class="oc-guide-dot" style="background:#34c759"></span>0~20: \uCD5C\uC801 &nbsp; <span class="oc-guide-dot" style="background:#007aff"></span>21~40: \uC591\uD638 &nbsp; <span class="oc-guide-dot" style="background:#af52de"></span>41~60: \uC8FC\uC758 &nbsp; <span class="oc-guide-dot" style="background:#ff3b30"></span>61~100: \uC704\uD5D8</span></div>';
+            h += '</div>';
+        } else {
+            h += '<div class="oc-score-guide">';
+            h += '<h4>\uD83D\uDCCA Score Interpretation Guide</h4>';
+            h += '<div class="oc-guide-row"><span class="oc-guide-range">\uD83D\uDC99 Oxytocin</span><span class="oc-guide-label"><span class="oc-guide-dot" style="background:#34c759"></span>40+: Abundant &nbsp; <span class="oc-guide-dot" style="background:#ff9500"></span>30\u201339: Sufficient &nbsp; <span class="oc-guide-dot" style="background:#ff6b35"></span>20\u201329: Deficient &nbsp; <span class="oc-guide-dot" style="background:#ff3b30"></span>\u226419: Very Low</span></div>';
+            h += '<div class="oc-guide-row"><span class="oc-guide-range">\uD83D\uDD25 Cortisol</span><span class="oc-guide-label"><span class="oc-guide-dot" style="background:#ff3b30"></span>40+: Extreme &nbsp; <span class="oc-guide-dot" style="background:#ff6b35"></span>30\u201339: Moderate &nbsp; <span class="oc-guide-dot" style="background:#ff9500"></span>20\u201329: Normal &nbsp; <span class="oc-guide-dot" style="background:#34c759"></span>\u226419: Very Low</span></div>';
+            h += '<div class="oc-guide-row"><span class="oc-guide-range">\u26A0\uFE0F Health Risk</span><span class="oc-guide-label"><span class="oc-guide-dot" style="background:#34c759"></span>0\u201320: Optimal &nbsp; <span class="oc-guide-dot" style="background:#007aff"></span>21\u201340: Good &nbsp; <span class="oc-guide-dot" style="background:#af52de"></span>41\u201360: Caution &nbsp; <span class="oc-guide-dot" style="background:#ff3b30"></span>61\u2013100: At Risk</span></div>';
+            h += '</div>';
+        }
+
         h += '<div class="oc-status-box" style="border-left:4px solid ' + qData.color + '"><p>' + recs.status + '</p></div>';
         h += '<div class="rec-card"><h4>\u{1F3C3} ' + (currentLang === 'ko' ? '\uC6B4\uB3D9 \uAD8C\uACE0' : 'Exercise Recommendation') + '</h4><p>' + recs.exercise + '</p></div>';
         h += '<div class="rec-card"><h4>\u{1F91D} ' + (currentLang === 'ko' ? '\uC0DD\uD65C\uC2B5\uAD00 \uAD8C\uACE0' : 'Lifestyle Recommendation') + '</h4><p>' + recs.lifestyle + '</p></div>';
