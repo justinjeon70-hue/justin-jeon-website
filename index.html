@@ -1005,22 +1005,22 @@ layout: null
 
         /* ===== Mission Banner ===== */
         .mission-banner {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: rgba(255,255,255,0.92);
-            text-align: center;
-            padding: 0.7rem 2rem;
-            font-size: 0.82rem;
+            background: linear-gradient(135deg, rgba(15,52,96,0.08), rgba(44,83,100,0.08));
+            border: 1px solid rgba(44,83,100,0.12);
+            border-radius: 10px;
+            color: #2c5364;
+            padding: 0.6rem 1rem;
+            font-size: 0.78rem;
             font-weight: 500;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.01em;
             line-height: 1.5;
-            position: relative;
-            z-index: 999;
+            margin-bottom: 1.2rem;
         }
-        .mission-banner .mission-icon {
-            margin-right: 0.4rem;
+        @media (max-width: 768px) {
+            .mission-banner { text-align: center; }
         }
         @media (max-width: 600px) {
-            .mission-banner { font-size: 0.75rem; padding: 0.6rem 1.2rem; }
+            .mission-banner { font-size: 0.72rem; padding: 0.5rem 0.8rem; }
         }
 
         /* ===== Scroll Progress Bar ===== */
@@ -1795,12 +1795,6 @@ layout: null
 </head>
 <body>
 
-<!-- Mission Banner -->
-<div class="mission-banner">
-    <span class="mission-icon">&#x1F331;</span>
-    <span data-i18n="mission.text">Mission: To build a nurturing society that enables people to live healthier and happier lives through salutogenic lifestyles.</span>
-</div>
-
 <div class="scroll-progress" id="scroll-progress"></div>
 <button class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -1836,6 +1830,7 @@ layout: null
     <div class="hero-inner">
         <!-- Left: Text -->
         <div class="hero-text-side">
+            <div class="mission-banner fade-in" data-i18n="mission.text">&#x1F331; Mission: To build a nurturing society that enables people to live healthier and happier lives through salutogenic lifestyles.</div>
             <div class="hero-field-label fade-in" data-i18n="hero.field">Exercise Oncology</div>
             <h1 class="hero-name fade-in fade-in-delay-1" data-i18n="hero.name" data-i18n-html="true">
                 <span>Justin</span>
