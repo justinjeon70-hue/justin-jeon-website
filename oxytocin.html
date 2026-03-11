@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Oxytocin Story &mdash; Justin Jeon</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+.hero{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:90px 40px 75px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.2) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.15) 0%,transparent 60%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.hero-sub{font-size:13px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:22px}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero .tag{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:rgba(255,255,255,.8);margin-bottom:32px}
+.hero .auth{font-size:15px;color:rgba(255,255,255,.7);letter-spacing:.8px}
+.hero .auth strong{color:#fff;font-weight:600}
+
+.toc-card{max-width:700px;margin:-28px auto 0;padding:28px 36px;background:#fff;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.07);position:relative;z-index:2}
+.toc-card h3{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.toc-card ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+.toc-card a{color:var(--body);text-decoration:none;font-size:14px;transition:color .2s}
+.toc-card a:hover{color:var(--rose)}
+.toc-card a::before{content:'\2192\00a0';color:var(--coral);font-size:12px}
+
+.content{max-width:720px;margin:0 auto;padding:56px 40px 90px}
+.slabel{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.stitle{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:10px}
+.sintro{font-size:17px;color:var(--light);font-style:italic;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--divider)}
+h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+p{margin-bottom:18px;text-align:justify;hyphens:auto}
+
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px}
+
+.sign{text-align:right;font-family:'Playfair Display',serif;font-style:italic;color:var(--light);margin-top:44px;padding-top:28px;border-top:1px solid var(--divider);font-size:15px}
+
+.toc-section{margin-top:52px;padding-top:28px;border-top:1px solid var(--divider)}
+.toc-section h3{border-top:none;padding-top:0;margin-top:0;color:var(--dark);font-size:22px}
+.toc-part{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:24px;margin-bottom:8px}
+.toc-part:first-child{margin-top:0}
+.toc-chapter{color:var(--body);font-size:15.5px;margin-bottom:4px;padding-left:16px;line-height:1.6}
+
+.pdiv{text-align:center;padding:56px 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+
+@media(max-width:768px){
+.hero{padding:56px 22px 46px}.hero h1{font-size:36px}
+.content{padding:36px 22px 56px}.toc-card{margin:-18px 14px 0;padding:22px}
+.toc-card ul{grid-template-columns:1fr}.stitle{font-size:27px}h3{font-size:21px}
+.pq{font-size:18px;padding:22px 14px}}
+
+@media print{
+.hero{background:#fff;color:#000;padding:36px 0}.hero h1{color:#000}
+.toc-card{box-shadow:none;border:1px solid #ddd}body{font-size:12pt}}
+</style>
+</head>
+<body>
+
+<div style="background:#2C2C2C;padding:12px 40px;text-align:right">
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px">&larr; drjustinjeon.com</a>
+</div>
+
+<header class="hero">
+<div class="hero-inner">
+<div class="hero-sub">A Book by Justin Jeon</div>
+<h1>The Oxytocin Story</h1>
+<div class="tag">The Special Healing Power That Encompasses Body and Mind</div>
+<div class="auth"><strong>Justin Jeon</strong>, Ph.D. &mdash; Professor, Yonsei University</div>
+</div>
+</header>
+
+<nav class="toc-card">
+<h3>In This Preview</h3>
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#love">The Love Hormone</a></li>
+<li><a href="#social">Social Intelligence</a></li>
+<li><a href="#fidelity">A Question of Fidelity</a></li>
+<li><a href="#health">Oxytocin &amp; Physical Health</a></li>
+<li><a href="#meals">Meals, Gossip &amp; Eye Contact</a></li>
+<li><a href="#toc">Full Table of Contents</a></li>
+<li><a href="#closing">Closing</a></li>
+</ul>
+</nav>
+
+<main class="content">
+
+<!-- ═══════════════ INTRODUCTION ═══════════════ -->
+<section id="intro">
+<div class="slabel">Introduction</div>
+<h2 class="stitle">The Quiet Power of Oxytocin</h2>
+<p class="sintro">From heartbreak to hope &mdash; an exploration of the hormone that shapes our capacity for love, trust, and healing.</p>
+
+<p>Every day, the news brings us stories that are difficult to bear. A young man, exhausted after years of failed job applications, retreats into his apartment and slowly gives up on the world. An elderly woman dies alone in a rented room, and weeks pass before anyone notices she is gone. A child survives on convenience-store rice balls until he can survive no longer. A middle-aged man, paralyzed by social anxiety, slips through the cracks of society entirely. A mother, gravely ill, watches her disabled daughter die before her and finds herself wishing she had gone first. These stories break our hearts because they should.</p>
+
+<p>But the world also holds its opposite. A daughter carries on her late mother&rsquo;s tradition of serving one-dollar meals to the hungry &mdash; working the restaurant in the morning and selling insurance in the afternoon, all while raising her own family. A man plunges into a river, without hesitation, to pull a stranger from the current. A neighbor quietly leaves a basket of snacks on her doorstep every morning so that the delivery drivers rushing past never go hungry. Mothers pray for children who have moved to distant cities. Sons and daughters quietly sacrifice years of their own lives to care for parents with dementia. And everywhere, in the unremarkable fabric of daily life, there are couples who love each other tenderly &mdash; not spectacularly, just faithfully &mdash; without the world ever knowing.</p>
+
+<div class="pq">What is it that makes us capable of this kind of love? What enables us to trust a stranger, to feel another person&rsquo;s pain as our own, to choose generosity over self-interest? The answer, at least in part, is a hormone &mdash; and its name is oxytocin.</div>
+
+<p>This might sound like a reductive claim, and I understand the instinct to resist it. Love, after all, seems to belong to a different order of things than biochemistry. But science and wonder are not enemies. Since the first oxytocin-related paper was published in 1929, more than <strong>thirty-three thousand</strong> peer-reviewed studies have followed. This is not a fringe idea or a pop-science curiosity. It is one of the most rigorously examined subjects in modern biology. And the picture that has emerged is extraordinary.</p>
+</section>
+
+<!-- ═══════════════ LOVE HORMONE ═══════════════ -->
+<section id="love">
+<h3>Oxytocin: The Love Hormone</h3>
+
+<p>You may already have encountered oxytocin without realizing it. Mothers who have gone through induced labor will have received an oxytocin injection &mdash; the hormone triggers uterine contractions, and those contractions in turn signal the pituitary gland to release even more oxytocin. By the time a baby is born, the mother&rsquo;s oxytocin levels can be <strong>twenty to thirty times</strong> their normal baseline. It is oxytocin that floods the new mother with the overwhelming desire to hold her child, to nurse him, to protect her. The let-down reflex that releases breast milk &mdash; that, too, is oxytocin&rsquo;s doing.</p>
+
+<div class="hl"><strong>Key finding:</strong> When researchers selectively removed oxytocin function in mother mice, the mothers stopped caring for their pups entirely. More striking still: virgin mice that had never carried or nursed a litter, when administered oxytocin, began caring for the pups in front of them as if they were their own.</div>
+
+<p>In humans, oxytocin is also closely tied to romantic attachment. Couples in the early stages of a new relationship have measurably higher blood oxytocin levels than single individuals. More telling: the higher a couple&rsquo;s oxytocin during those first months together, the more likely they are to still be together six months later. Low early-stage oxytocin, by contrast, is a strong predictor of relationship failure. This is not simply because happy couples happen to have more of the hormone &mdash; it is because oxytocin actively drives the emotional attunement and physical affection that sustain relationships over time. The rush of closeness that couples feel after sexual intimacy? That, too, is a surge of oxytocin.</p>
+</section>
+
+<!-- ═══════════════ SOCIAL INTELLIGENCE ═══════════════ -->
+<section id="social">
+<h3>A Hormone of Social Intelligence</h3>
+
+<p>Oxytocin is far more than a love hormone. Recent research has revealed effects that, even to scientists, came as a genuine surprise.</p>
+
+<p>In a landmark double-blind study, children diagnosed with autism spectrum disorder were given either an oxytocin nasal spray or a placebo. The children who received oxytocin showed a significant and measurable improvement in their ability to read emotions from facial expressions &mdash; a social skill that had previously eluded them. Follow-up studies with neurotypical adolescents produced similar results. What had once been described simply as a &ldquo;love hormone&rdquo; began to reveal itself as something broader: a hormone of social perception, empathy, and relational intelligence.</p>
+
+<p>Some people are, it turns out, naturally lower in oxytocin than others. The gene <em>GTF2I</em> &mdash; sometimes called the &ldquo;sociality gene&rdquo; &mdash; is closely associated with oxytocin activity, and certain variants of the oxytocin receptor (known as <em>rs53576</em>) are linked to lower empathy. This is not a moral failing; it is biology. But it is biology we may be able to work with.</p>
+
+<div class="hl"><strong><em>Nature</em>, 2005 (cited 5,000+ times):</strong> Subjects who inhaled oxytocin trusted their investment partners significantly more and increased their investment by 27%. A separate experiment confirmed this was not increased risk appetite &mdash; it was specifically increased willingness to trust other people.</div>
+
+<p>Another study took a more domestic approach. Researchers recruited forty-nine couples who had been living together for at least a year, identified their most contentious recurring arguments, and filmed them fighting. But the couples who had inhaled oxytocin beforehand rarely managed to fight at all. They listened more. They acknowledged their partner&rsquo;s point of view. They used softer language. The researchers, it seems, were trying to start an argument &mdash; and oxytocin kept getting in the way.</p>
+</section>
+
+<!-- ═══════════════ FIDELITY ═══════════════ -->
+<section id="fidelity">
+<h3>A Question of Fidelity</h3>
+
+<p>Oxytocin&rsquo;s influence extends even into the complicated territory of fidelity. Prairie voles are famously monogamous &mdash; the males groom their young and remain closely bonded to a single mate. Montane voles, by contrast, are promiscuous, and the males show virtually no interest in their offspring. The key difference between these two closely related species? Oxytocin receptor distribution in the brain. When researchers engineered montane vole males to have functional oxytocin receptors, the males began caring for their pups.</p>
+
+<p>In humans, the evidence is more nuanced but no less fascinating. In one study, married men were given oxytocin or a placebo and then approached by an attractive woman who engaged them in light flirtation. The men were asked to indicate when her approach began to make them uncomfortable. The men who had received oxytocin reported discomfort when she was about <strong>seventy-one centimeters</strong> away. The placebo group did not feel uncomfortable until she was a full fifteen centimeters closer. Oxytocin, it appeared, had strengthened the men&rsquo;s instinct to protect their existing bond. Crucially, this effect disappeared entirely in unmarried men. For them, a woman&rsquo;s proximity was simply welcome. Which, as the researchers noted, is exactly what you would expect.</p>
+</section>
+
+<!-- ═══════════════ PHYSICAL HEALTH ═══════════════ -->
+<section id="health">
+<h3>Oxytocin and Physical Health</h3>
+
+<p>The implications of oxytocin reach well beyond relationships. Recent research has linked higher blood oxytocin levels to reduced risk of cancer, heart disease, obesity, and type 2 diabetes. That alone would be remarkable. But the science goes further. Oxytocin appears to slow cellular aging, accelerate the regeneration of nerve cells, promote bone density, speed the healing of muscle injuries and wounds, and &mdash; in early studies &mdash; even show promise in alleviating symptoms of dementia.</p>
+
+<p>At this point, the impatient reader might wonder whether oxytocin nasal spray is available without a prescription. But here is the good news: you don&rsquo;t need it. Oxytocin rises naturally in response to something far simpler and far more available than any pharmaceutical &mdash; physical touch.</p>
+
+<div class="pq">There is a reason that a mother&rsquo;s hand on a child&rsquo;s aching stomach seems to actually help. Physical touch stimulates the body&rsquo;s production of oxytocin, and rising oxytocin raises the pain threshold.</div>
+
+<p>When parents hold and touch their newborns frequently, the elevated oxytocin in the infant&rsquo;s brain contributes positively to emotional health and neurological development. It is not sentiment; it is physiology.</p>
+
+<p>Korean mothers have long understood something that Western child-development research is only recently catching up to. The traditional practice of carrying babies in a <em>podaegi</em> &mdash; a cloth carrier worn on the back &mdash; keeps infant and parent in near-constant physical contact throughout the day. Western parenting traditions, by contrast, have historically emphasized early independence, with babies given their own rooms and their own sleep schedules from a young age. Today, the podaegi has attracted genuine interest from parents around the world, and baby-wearing rental shops have appeared in Britain. The data, it turns out, was always on the Korean grandmother&rsquo;s side.</p>
+</section>
+
+<!-- ═══════════════ MEALS, GOSSIP, EYE CONTACT ═══════════════ -->
+<section id="meals">
+<h3>Meals, Gossip, and Eye Contact</h3>
+
+<p>Touch is not the only path to oxytocin. Sharing a meal with others is another. When chimpanzees were observed grooming one another &mdash; a primary social bonding behavior &mdash; their oxytocin levels rose only modestly. But when they shared food, urinary oxytocin levels climbed sharply. The implications for human social life are worth considering. If you need to build trust with a business partner, a long pitch deck is probably less effective than a shared plate of food. You are not just feeding them &mdash; you are, biochemically, inclined toward trust.</p>
+
+<div class="hl"><strong>On gossip:</strong> When one group shared emotionally meaningful personal stories, their cortisol dropped but oxytocin did not change. When another group simply gossiped, both cortisol fell <em>and</em> oxytocin rose. This may explain why gossip is nearly universal across human cultures, despite our ambivalence about it.</div>
+
+<p>And then there are pets. A 2015 study published in <em>Science</em> confirmed what dog owners have long suspected: when a person pets their dog and holds eye contact with it, oxytocin rises in both the human and the animal. When dogs were administered oxytocin directly, they became more sociable, more attentive to their owners, and sought more eye contact &mdash; which in turn raised oxytocin levels in the owners themselves. A simple loop of mutual recognition, biochemically sustained.</p>
+
+<div class="sign">From my lab in Sinchon,<br><strong>The Author</strong></div>
+</section>
+
+<!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
+<section id="toc" class="toc-section">
+<div class="slabel">The Full Book</div>
+<h2 class="stitle" style="font-size:28px;">The Oxytocin Odyssey &mdash; Table of Contents</h2>
+<p class="sintro" style="font-size:15px;">A comprehensive exploration across eight parts, thirty-six chapters, and an appendix.</p>
+
+<div class="toc-part">Part One: Understanding Oxytocin</div>
+<div class="toc-chapter">Chapter 1: The Science of Connection</div>
+<div class="toc-chapter">Chapter 2: Oxytocin 101 &mdash; The Hormone That Protects Humanity</div>
+
+<div class="toc-part">Part Two: Oxytocin and Mental Well-being</div>
+<div class="toc-chapter">Chapter 3: The Origins of Happiness</div>
+<div class="toc-chapter">Chapter 4: Healing from Trauma</div>
+<div class="toc-chapter">Chapter 5: Building Resilience</div>
+<div class="toc-chapter">Chapter 6: The Pain of Loneliness</div>
+<div class="toc-chapter">Chapter 7: Your Body&rsquo;s Natural Pain Relief</div>
+
+<div class="toc-part">Part Three: Becoming a Better Person</div>
+<div class="toc-chapter">Chapter 8: The Attachment Hormone &mdash; How We Bond</div>
+<div class="toc-chapter">Chapter 9: The Trust Hormone &mdash; Why We Believe in Others</div>
+<div class="toc-chapter">Chapter 10: The Altruism Hormone &mdash; The Science of Giving</div>
+<div class="toc-chapter">Chapter 11: Empathy and the Art of Understanding</div>
+<div class="toc-chapter">Chapter 12: Better Parenting Through Oxytocin</div>
+
+<div class="toc-part">Part Four: Enhancing Relationships</div>
+<div class="toc-chapter">Chapter 13: The Power of Eye Contact</div>
+<div class="toc-chapter">Chapter 14: Sustaining Long-term Relationships</div>
+<div class="toc-chapter">Chapter 15: Love, Loyalty, and Fidelity</div>
+<div class="toc-chapter">Chapter 16: Resolving Conflict Through Connection</div>
+
+<div class="toc-part">Part Five: Oxytocin and Physical Health</div>
+<div class="toc-chapter">Chapter 17: Heart Health and Cardiovascular Protection</div>
+<div class="toc-chapter">Chapter 18: Weight Management and Metabolic Health</div>
+<div class="toc-chapter">Chapter 19: Gut Health and Inflammation</div>
+<div class="toc-chapter">Chapter 20: Cancer Prevention and Supportive Care</div>
+<div class="toc-chapter">Chapter 21: Neurological Health and Development</div>
+<div class="toc-chapter">Chapter 22: The Medicine of Love &mdash; Clinical Applications</div>
+
+<div class="toc-part">Part Six: The Oxytocin Lifestyle &mdash; Body and Senses</div>
+<div class="toc-chapter">Chapter 23: The Healing Power of Touch</div>
+<div class="toc-chapter">Chapter 24: Intimacy and Physical Connection</div>
+<div class="toc-chapter">Chapter 25: The Communal Table &mdash; Dining Together</div>
+<div class="toc-chapter">Chapter 26: Move to Connect &mdash; Exercise and Oxytocin</div>
+<div class="toc-chapter">Chapter 27: Sing Together &mdash; Music, Voice, and Belonging</div>
+
+<div class="toc-part">Part Seven: The Oxytocin Lifestyle &mdash; Mind and Community</div>
+<div class="toc-chapter">Chapter 28: Our Animal Companions &mdash; The Science of Pet Bonding</div>
+<div class="toc-chapter">Chapter 29: The Gratitude Practice &mdash; Training the Grateful Brain</div>
+<div class="toc-chapter">Chapter 30: The Stories We Tell &mdash; Narrative as Medicine</div>
+<div class="toc-chapter">Chapter 31: Roots and Rituals &mdash; Community Involvement</div>
+<div class="toc-chapter">Chapter 32: Acts of Kindness &mdash; Generosity as Daily Practice</div>
+<div class="toc-chapter">Chapter 33: Creating Your Oxytocin-Rich Environment</div>
+
+<div class="toc-part">Part Eight: The Power of Narrative</div>
+<div class="toc-chapter">Chapter 34: Changing Your Story, Changing Your Life</div>
+<div class="toc-chapter">Chapter 35: From Stress to Connection &mdash; Rewiring the Brain</div>
+<div class="toc-chapter">Chapter 36: The Future of Oxytocin Science</div>
+
+<div class="toc-part">Appendix</div>
+<div class="toc-chapter">The Oxytocin / Cortisol Lifestyle Assessment</div>
+</section>
+
+<!-- ═══════════════ DIVIDER ═══════════════ -->
+<div class="pdiv"><span></span></div>
+
+<!-- ═══════════════ CLOSING ═══════════════ -->
+<section id="closing">
+<div class="slabel">Closing</div>
+<h2 class="stitle">The Health of a Nation</h2>
+<p class="sintro">A personal reflection on emotional contagion, the crisis of disconnection, and oxytocin as the path forward.</p>
+
+<p>Years ago, I made the mistake of reprimanding a graduate student who led my research lab. I had hoped to motivate the group, but what I delivered instead was barely controlled frustration. The student, taking their cue from me, passed that frustration along to their peers. The lab atmosphere soured quickly. Looking back honestly, I had not disciplined anyone. I had simply offloaded the stress of an overwhelming workload onto the person nearest to me. That student went home carrying something they did not come in with, and I suspect they passed it on in turn &mdash; to a sibling, a partner, a parent. The harm rippled outward.</p>
+
+<div class="pq">This is how emotional contagion works. We do not live in isolation; we live in circulation. Happiness spreads. So does despair.</div>
+
+<p>When you spend time with someone whose oxytocin is high, yours rises. When you are surrounded by someone running on chronic cortisol, your own stress hormones follow. The WHO identifies three pillars of health: physical, mental, and social. In South Korea today, all three are under pressure.</p>
+
+<p>The physical toll is visible in the rise of hypertension, diabetes, cancer, and inflammatory bowel disease. The mental toll is visible in the explosion of depression, anxiety disorders, insomnia, and schizophrenia. And the social toll &mdash; perhaps the least visible but most corrosive &mdash; is visible in the surging rates of single-person households, the collapse of the birth rate, the epidemic of elderly people dying alone in their apartments, and the grim distinction South Korea has held for over a decade: the highest suicide rate among OECD nations.</p>
+
+<p>It would be too simple to blame all of this on low oxytocin. But it would not be wrong to say that the conditions which deplete oxytocin &mdash; social isolation, contactless transactions, screens substituted for faces, meals eaten alone &mdash; are accelerating. The Korean word &ldquo;untact&rdquo; has entered common speech, describing a life organized around the avoidance of human contact. A television program called <em>I Live Alone</em> has become one of the country&rsquo;s most popular shows. These are not moral failings; they are symptoms. And oxytocin is part of what is missing.</p>
+
+<p>Imagine a single person &mdash; high in oxytocin &mdash; walking into a workplace. They listen more carefully to their colleagues. They approach disagreements with patience rather than defensiveness. They share food, make eye contact, give the benefit of the doubt. The effect is not contained within that person. It spreads. Oxytocin in one person has a way of finding its way into the people around them. This is not arithmetic growth. It compounds.</p>
+
+<p>My own path to oxytocin was, in some ways, shaped by circumstance. My doctoral research in Canada focused on the endocrine system, and my postdoctoral work at Harvard brought me deep into the hypothalamic-pituitary axis &mdash; the biological machinery through which hormones govern our inner lives. When I began reading the oxytocin literature, I could not stop. What first astonished me was the discovery that oxytocin was a social hormone, not merely a reproductive one. What astonished me again was the breadth of its reach into the diseases and disorders of contemporary life.</p>
+
+<div class="pq">Oxytocin is simply what compassion looks like from the inside.</div>
+
+<p>Whether you explain that through evolutionary biology &mdash; that kind individuals thrived because they received help in return &mdash; or through a theological lens &mdash; that we were made to flourish in love &mdash; the underlying truth is the same: we are designed for connection, and when connection breaks down, we get sick.</p>
+
+<p>Close this book. Call an old friend and suggest a drink. Leave a small gift for a neighbor you have been meaning to reconnect with. Look your partner in the eye across the dinner table. These are not large gestures. But they are, it turns out, the gestures that matter most &mdash; to our hearts, to our bodies, and to the people around us who are waiting, perhaps without knowing it, for someone to raise their oxytocin first.</p>
+
+<p>As I finished writing these pages, I noticed that something had shifted in me over the months of the project. I found myself listening more carefully in conversations. I held people&rsquo;s eyes a little longer. I called my parents more often. I was more patient with my students. I cannot claim the credit; the subject did the work. Knowledge, as I have always believed, changes behavior &mdash; but only when it lands somewhere that is ready for it. I hope it lands in you.</p>
+
+<div class="sign"><strong>Justin Jeon</strong><br>Sinchon, Seoul</div>
+</section>
+
+</main>
+
+<footer>
+<strong>The Oxytocin Story</strong> &mdash; by Justin Jeon, Professor, Yonsei University<br>
+<span style="font-size:11px;margin-top:6px;display:inline-block">English translation &mdash; Introduction, Table of Contents &amp; Closing</span>
+</footer>
+
+</body>
+</html>
