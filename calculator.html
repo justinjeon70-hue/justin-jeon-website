@@ -194,7 +194,7 @@
 
         .calc-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }
@@ -1621,7 +1621,8 @@ function submitAssessment() {
     document.getElementById('risk-label').textContent = level.emoji + ' ' + levelLabel + riskWord;
     document.getElementById('risk-label').style.color = level.color;
     document.getElementById('risk-score').textContent = (currentLang === 'ko' ? '\uC810\uC218: ' : 'Score: ') + score + ' / ' + model.maxScore;
-    document.getElementById('rec-exercise-text').textContent = EXERCISE_RECS[currentLang][levelLabel];
+    var levelKey = level.label.en;
+    document.getElementById('rec-exercise-text').textContent = EXERCISE_RECS[currentLang][levelKey];
     document.getElementById('rec-diet-text').textContent = DIET_RECS[currentLang][currentModel];
     document.getElementById('result-citation').textContent = (currentLang === 'ko' ? '\u{1F4DA} \uADFC\uAC70: ' : '\u{1F4DA} Citation: ') + model.citation;
 
@@ -1652,6 +1653,39 @@ function retryAssessment() {
     }
 }
 
+// ===== Share Helpers =====
+function copyToClipboard(text) {
+    var btn = document.querySelector('.btn-share');
+    var orig = btn.textContent;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = currentLang === 'ko' ? '복사됨!' : 'Copied!';
+            setTimeout(function() { btn.textContent = orig; }, 2000);
+        }).catch(function() {
+            fallbackCopy(text, btn, orig);
+        });
+    } else {
+        fallbackCopy(text, btn, orig);
+    }
+}
+
+function fallbackCopy(text, btn, orig) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand('copy');
+        btn.textContent = currentLang === 'ko' ? '복사됨!' : 'Copied!';
+    } catch(e) {
+        btn.textContent = currentLang === 'ko' ? '복사 실패' : 'Copy failed';
+    }
+    document.body.removeChild(ta);
+    setTimeout(function() { btn.textContent = orig; }, 2000);
+}
+
 // ===== Share =====
 function shareResult() {
     var level = document.getElementById('risk-label').textContent;
@@ -1663,13 +1697,8 @@ function shareResult() {
 
     if (navigator.share) {
         navigator.share({ title: title, text: text }).catch(function(){});
-    } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function() {
-            var btn = document.querySelector('.btn-share');
-            var orig = btn.textContent;
-            btn.textContent = currentLang === 'ko' ? '복사됨!' : 'Copied!';
-            setTimeout(function() { btn.textContent = orig; }, 2000);
-        });
+    } else {
+        copyToClipboard(text);
     }
 }
 
@@ -2006,13 +2035,8 @@ function shareOxyCort(oxy, cort, risk, quadrant) {
 
     if (navigator.share) {
         navigator.share({ title: title, text: text }).catch(function(){});
-    } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function() {
-            var btn = document.querySelector('.btn-share');
-            var orig = btn.textContent;
-            btn.textContent = currentLang === 'ko' ? '\uBCF5\uC0AC\uB428!' : 'Copied!';
-            setTimeout(function() { btn.textContent = orig; }, 2000);
-        });
+    } else {
+        copyToClipboard(text);
     }
 }
 
