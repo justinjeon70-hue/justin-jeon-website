@@ -503,6 +503,25 @@
 
         .btn-share:hover { background: #1e3a47; }
 
+        .btn-kakao {
+            flex: 1;
+            padding: 0.7rem;
+            background: #FEE500;
+            color: #191919;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .btn-kakao:hover { background: #F5D800; }
+
         /* ===== Disclaimer Section ===== */
         .disclaimer-section {
             max-width: 700px;
@@ -659,7 +678,13 @@
             transition: background 0.2s;
         }
         .oc-likert-option:hover { background: rgba(0, 0, 0, 0.03); }
-        .oc-likert-option input[type="radio"] { display: none; }
+        .oc-likert-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+        }
         .oc-likert-bubble {
             width: 24px;
             height: 24px;
@@ -883,6 +908,7 @@
             }
         }
     </style>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -1479,11 +1505,21 @@ function submitAssessment() {
         });
 
         if (!valid) {
+            var firstUnanswered = null;
             document.querySelectorAll('.oc-question').forEach(function(q) {
                 var radio = q.querySelector('input[type="radio"]:checked');
-                if (!radio) q.classList.add('oc-unanswered');
-                else q.classList.remove('oc-unanswered');
+                if (!radio) {
+                    q.classList.add('oc-unanswered');
+                    if (!firstUnanswered) firstUnanswered = q;
+                } else {
+                    q.classList.remove('oc-unanswered');
+                }
             });
+            if (firstUnanswered) {
+                firstUnanswered.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            var msg = currentLang === 'ko' ? '모든 문항에 응답해 주세요.' : 'Please answer all questions.';
+            alert(msg);
             return;
         }
 
@@ -1532,6 +1568,7 @@ function submitAssessment() {
         h += '<div class="result-actions">';
         h += '<button class="btn-retry" onclick="retryAssessment()">' + (currentLang === 'ko' ? '\uB2E4\uC2DC \uD3C9\uAC00\uD558\uAE30' : 'Try Again') + '</button>';
         h += '<button class="btn-share" onclick="shareOxyCort(' + oxyScore + ',' + cortScore + ',' + riskScore + ',\'' + quadrant + '\')">' + (currentLang === 'ko' ? '\uACB0\uACFC \uACF5\uC720\uD558\uAE30' : 'Share Result') + '</button>';
+        h += '<button class="btn-kakao" onclick="shareKakaoOxyCort(' + oxyScore + ',' + cortScore + ',' + riskScore + ',\'' + quadrant + '\')">' + (currentLang === 'ko' ? '\uCE74\uCE74\uC624\uD1A1 \uACF5\uC720' : 'KakaoTalk') + '</button>';
         h += '</div>';
 
         rc.innerHTML = h;
@@ -2052,6 +2089,56 @@ window.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('scroll', function() {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
+
+// ===== Kakao SDK Init =====
+if (window.Kakao && !Kakao.isInitialized()) {
+    Kakao.init('a869a9e08bfab537cfb1aee1e3772e8b');
+}
+
+function shareKakao(title, description, scores) {
+    if (!window.Kakao || !Kakao.isInitialized()) {
+        alert(currentLang === 'ko' ? '카카오 SDK를 불러오는 중입니다. 잠시 후 다시 시도해 주세요.' : 'Loading Kakao SDK. Please try again.');
+        return;
+    }
+    Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+            title: title,
+            description: description,
+            imageUrl: 'https://drjustinjeon.com/images/oxycort-share.png',
+            link: {
+                mobileWebUrl: 'https://drjustinjeon.com/calculator.html',
+                webUrl: 'https://drjustinjeon.com/calculator.html'
+            }
+        },
+        itemContent: {
+            items: scores
+        },
+        buttons: [{
+            title: currentLang === 'ko' ? '나도 평가하기' : 'Take Assessment',
+            link: {
+                mobileWebUrl: 'https://drjustinjeon.com/calculator.html',
+                webUrl: 'https://drjustinjeon.com/calculator.html'
+            }
+        }]
+    });
+}
+
+
+function shareKakaoOxyCort(oxy, cort, risk, quadrant) {
+    var model = RISK_MODELS.oxycort;
+    var qLabel = getLabel(model.quadrants[quadrant].label);
+    var title = getLabel(model.title) + (currentLang === 'ko' ? ' 결과' : ' Result');
+    var description = model.quadrants[quadrant].emoji + ' ' + qLabel + ' - ' +
+        (currentLang === 'ko' ? '건강위험지수: ' : 'Health Risk: ') + risk + '/100';
+    var scores = [
+        { item: (currentLang === 'ko' ? '옥시토신' : 'Oxytocin'), itemOp: oxy + '/50' },
+        { item: (currentLang === 'ko' ? '코르티솔' : 'Cortisol'), itemOp: cort + '/50' },
+        { item: (currentLang === 'ko' ? '건강위험지수' : 'Health Risk'), itemOp: risk + '/100' }
+    ];
+    shareKakao(title, description, scores);
+}
+
 </script>
 
 </body>
