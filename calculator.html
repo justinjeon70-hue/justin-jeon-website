@@ -622,6 +622,7 @@
             line-height: 1.6;
         }
         .oc-section { margin-bottom: 1.5rem; }
+        #oc-cortisol-section { scroll-margin-top: 60px; }
         .oc-section-title {
             font-size: 1rem;
             font-weight: 700;
@@ -1347,10 +1348,11 @@ function selectModel(modelKey) {
     renderForm(modelKey);
     document.getElementById('form-container').classList.add('visible');
 
-    // Scroll to form
+    // Scroll to form (for oxycort, scroll to cortisol section specifically)
     setTimeout(() => {
-        document.getElementById('form-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+        var scrollTarget = document.getElementById('oc-cortisol-section') || document.getElementById('form-container');
+        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
 }
 
 // ===== Render Form =====
@@ -1374,7 +1376,7 @@ function renderForm(modelKey) {
             '</p>';
 
         // Cortisol section
-        fieldsHTML += '<div class="oc-section">';
+        fieldsHTML += '<div class="oc-section" id="oc-cortisol-section">';
         fieldsHTML += '<h4 class="oc-section-title oc-cortisol-title">' +
             (currentLang === 'ko' ? '\uD83D\uDD25 \uC2A4\uD2B8\uB808\uC2A4 (\uCF54\uB974\uD2F0\uC194) \uD3C9\uAC00' : '\uD83D\uDD25 Stress (Cortisol) Assessment') + '</h4>';
         model.cortisolFields.forEach(function(f, i) {
