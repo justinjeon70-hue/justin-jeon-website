@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 16: Oxytocin and Theory of Mind &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 16: Oxytocin and Theory of Mind from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Four: The Oxytocin That Makes Us More Loving</div>
+        <h1 class="chapter-title">Chapter 16: Oxytocin and Theory of Mind</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>--- Do You Really Know Oxytocin?</p>
+<div class="hl"><strong>Theory of mind</strong> is a branch of psychology that refers to the ability to recognize that other people's thoughts may differ from our own, and to infer what someone else might be thinking in a given situation. Put simply, it is the ability to read other people's minds. We constantly guess how the other person is interpreting and feeling about what we've just said, and we use those guesses to steer the conversation. But if you were completely unable to understand or predict how the other person feels, normal conversation would become impossible. You might keep rambling on about a boring topic while your listener yawns repeatedly, or you might cheerfully go on about a subject that's making the other person deeply uncomfortable.
+In severe cases of autism spectrum disorder, a person may be unable to distinguish between people and objects, may fail to empathize with others' emotions, and even when they do recognize what someone else is feeling, may not know how to respond appropriately. When someone cannot understand others' minds and exhibits unusual behavior, building social relationships becomes extremely difficult. This social isolation, in turn, drives oxytocin levels even lower. However, oxytocin enhances the ability to understand, empathize with, and cooperate with others &mdash; which means that even people with poor social skills, people who are often told they "can't read the room," or people who struggle to understand others' feelings could see their oxytocin rise and their social abilities improve simply by choosing an oxytocin-rich lifestyle.</div>
+<h3>An Unlikely Love Professor</h3>
+<p>"Do You Really Know What Love Is?" The provocative title of this chapter echoes the title of a book I wrote back in 2011. I married my wife &mdash; whom I met during my exchange-student days &mdash; at the age of twenty-two. After the wedding, starting at twenty-six, I appointed myself a "love guru" and began gathering students a couple of years my junior to teach what I grandly called "Introduction to the Science of Romance." Looking back, it's honestly hilarious. What could a kid that age possibly know about love? But the funny thing is, pretending to teach romance forced me to actually read several books on the subject. Through the various theories I picked up, I gradually developed my own framework for understanding love. Riding that momentum, I took my ideas to public lectures and university classrooms. In 2005, I was fortunate enough to be appointed as a professor at my alma mater, Yonsei University, where I created a course with the rather grandiose title "Do You Know What Love Is: Practical Advice for Successful Romance."<sup>1</sup></p>
+<p>A remarkable number of Yonsei students enrolled. Students suffering from the sting of a first love gone wrong. Students too afraid to date after a premature confession led to rejection. Students tormented by a relentless admirer. Students tangled up in unwanted love triangles. The range of experiences that passed through that classroom was extraordinary. Over the course of teaching, I arrived at my own definition of love: <em>Love is giving, and giving again, and then looking back to see if there's still something the other person needs.</em> True love means giving unconditionally &mdash; even at a cost to yourself, even when you're not receiving as much love as you'd like in return. Love begins with empathizing with the other person's heart and circumstances, and it culminates in selfless action. At that point in my life, I had no idea what oxytocin was, let alone that it was intimately linked to attachment, empathy, and altruism. Perhaps oxytocin was part of my destiny all along.</p>
+<h3>The Love Equation That Even Mice Understand</h3>
+<p>Without love, the human race would go extinct. Love may be the most powerful emotion we possess &mdash; the force that propels us through even the most impossible hardships. Across the vast sweep of human history and the grand arc of civilization, people have loved, married, and raised children. Even today, when South Korea's total fertility rate has fallen to just 0.74 children per woman, dozens of couples still join hands every single day in convention-center wedding halls, pledging eternal love as they cross the finish line into marriage. The K-pop artist Rain (Bi) captured this beautifully in his song "I Do":</p>
+<div class="pq"><em>Walking hand in hand, matching our steps,</em>
+<em>Feeling whether we can be together forever.</em>
+<em>And I need to know &mdash; am I the only one who feels this way?</em>
+<em>Or do you, too, dream of being together forever?</em>
+<em>I do, I do &mdash; that promise to be together forever, I do.</em>
+<em>Every time I'm with you, you quietly enter my heart.</em></div>
+<p>As most readers will recognize, "I do" comes from the wedding vows. When the officiant asks, "Do you promise to love each other forever, till death do you part?" the bride and groom each declare, "I do." Short, but perhaps the most beautiful and sacred words in the world. Every married couple hopes that their "I do" will remain an unbroken promise. But what if I told you that oxytocin plays a profound role in helping people keep that vow?</p>
+<p>I should ask your forgiveness in advance for shifting from the sacred topic of wedding ceremonies to the subject of rodents. Mice, as it turns out, share a remarkable number of traits with humans &mdash; from their social grouping instincts and eating habits to their mating patterns and approaches to birthing and parenting. Small and unassuming as they are, there's a very good reason why biology labs around the world have relied so heavily on mice for research. Now, look at the image below and tell me: can you tell which one is the prairie vole and which one is the montane vole?</p>
+<p>Honestly, to the human eye, they're nearly indistinguishable. They look like the same mouse. But if you look closely, there's a hint hidden in the photos. The one on the left is the prairie vole, and the one on the right is the montane vole. How can you tell? The prairie vole couple in the left photo is tenderly nestled together with their pups. The montane voles on the right? Not even close. Despite looking virtually identical, these two species display radically different mating and parenting behaviors. Prairie voles maintain strict, lifelong monogamy, and the males actively participate in raising their young. Montane voles, by contrast, have no fixed partner; they mate with as many partners as possible. The males shoulder none of the parenting burden, and the females abandon their pups just ten days after birth. True to their name, prairie voles appear to be the romantics of the rodent world.<sup>2</sup></p>
+<h3>Love Potion: Oxytocin<sup>3</sup></h3>
+<p>Dr. Larry Young, a professor at Emory University in Atlanta, spent more than twenty years comparing these two vole species to understand what role oxytocin plays in human love, parenting, and friendship. By analyzing the brains of both species, Dr. Young discovered that prairie voles have oxytocin receptors in the prefrontal cortex and the nucleus accumbens &mdash; but montane voles do not. The brain regions where oxytocin receptors are densely concentrated happen to be the same areas associated with dopamine, the reward circuit, and addiction. Some researchers believe that sex activates the brain's reward circuit as a form of pleasure, driving the continued pursuit of sexual activity. They argue that oxytocin facilitates the caring, empathetic, and tender behaviors that emerge through sexual intimacy. In fact, during animal mating, dopamine release in the nucleus accumbens increases by about fifty percent. When a dopamine antagonist is injected into the nucleus accumbens, the animal stops mating altogether. Dopamine exerts an enormous influence on animal mating behavior. So when researchers administered an antagonist that blocked both oxytocin and vasopressin receptors in the otherwise faithful prairie voles, those monogamous couples stopped staying together.</p>
+<p>If oxytocin truly influenced prairie voles' monogamy, could genetic engineering transform the promiscuous montane vole into a faithful partner, like its prairie cousin? Dr. Young did exactly that. Through genetic manipulation, he induced oxytocin receptor expression in montane voles &mdash; and the genetically modified montane voles transformed into devoted lovers, mating exclusively with a single partner, just like prairie voles. When he then blocked dopamine activity in the brain, the montane voles reverted to their old philandering ways. Dr. Young had confirmed that dopamine is essential for oxytocin to function in the brain's reward circuit.</p>
+<p>Of course, mice and humans are different, so these experimental results can't be directly applied to people. Still, consider what we do know: couples with higher oxytocin levels are more likely to remain together six months after their "Day One"; oxytocin surges when couples hug or engage in physical affection, and especially during orgasm; humans are the only mammals that experience nipple stimulation as a sexual stimulus, and nipple stimulation triggers oxytocin release in the brain. All of this tells us that oxytocin is deeply involved in the formation of romantic attachment in humans, too.</p>
+<p>The American R&B group The Clovers released a pop song in 1959 called "Love Potion Number Nine." In the song, the narrator drinks a love potion and, no longer knowing day from night, kisses everything in sight. Oxytocin is, in many ways, a real-life love potion. As Larry Young puts it: "Love is a kind of chemical reaction, and that reaction originates from a remarkable chemical substance called oxytocin. The Creator may have added oxytocin as a natural additive to our hormonal cocktail, to make us more loving, more caring, and more compassionate human beings."</p>
+<div class="hl"><strong>Everyday Oxytocin Boost:</strong> Try making food for someone you love. Cooking together is even better. Then sit down and share the meal you've made. Set the mood &mdash; put on some nice music, light a candle.</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="15-force-that-keeps-relationships-going.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 15: The Force That Keeps Relationships Going</span></a>
+    <a href="17-oxytocin-that-keeps-you-faithful.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 17: The Oxytocin That Keeps You Faithful</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

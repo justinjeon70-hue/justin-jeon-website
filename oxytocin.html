@@ -12,12 +12,17 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 
 .hero{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:90px 40px 75px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.2) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.15) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(74,26,42,.3),transparent);pointer-events:none}
 .hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .hero-sub{font-size:13px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:22px}
 .hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;line-height:1.15;margin-bottom:14px}
 .hero .tag{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:rgba(255,255,255,.8);margin-bottom:32px}
-.hero .auth{font-size:15px;color:rgba(255,255,255,.7);letter-spacing:.8px}
+.hero .auth{font-size:15px;color:rgba(255,255,255,.7);letter-spacing:.8px;margin-bottom:36px}
 .hero .auth strong{color:#fff;font-weight:600}
+
+/* CTA Button */
+.cta-btn{display:inline-block;padding:16px 42px;font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:600;letter-spacing:1px;color:#fff;background:linear-gradient(135deg,var(--coral),var(--rose));border:none;border-radius:50px;text-decoration:none;transition:all .3s ease;box-shadow:0 4px 20px rgba(139,58,74,.3)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(139,58,74,.4);background:linear-gradient(135deg,#e07f70,#9B4A5A)}
 
 .toc-card{max-width:700px;margin:-28px auto 0;padding:28px 36px;background:#fff;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.07);position:relative;z-index:2}
 .toc-card h3{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
@@ -25,6 +30,17 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .toc-card a{color:var(--body);text-decoration:none;font-size:14px;transition:color .2s}
 .toc-card a:hover{color:var(--rose)}
 .toc-card a::before{content:'\2192\00a0';color:var(--coral);font-size:12px}
+
+/* Overview figure card */
+.overview-card{max-width:700px;margin:32px auto 0;padding:0;background:#fff;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.07);overflow:hidden;position:relative;z-index:2}
+.overview-card img{width:100%;display:block}
+.overview-card-caption{padding:18px 28px;text-align:center}
+.overview-card-caption p{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose);font-style:italic;margin:0}
+
+/* Available now banner */
+.available-banner{max-width:700px;margin:28px auto 0;padding:20px 32px;background:linear-gradient(135deg,rgba(139,58,74,.08),rgba(196,148,74,.08));border:1px solid var(--divider);border-radius:10px;text-align:center;position:relative;z-index:2}
+.available-banner .badge{display:inline-block;padding:4px 14px;background:var(--rose);color:#fff;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:20px;margin-bottom:10px}
+.available-banner p{font-family:'Playfair Display',serif;font-size:18px;color:var(--dark);margin:0}
 
 .content{max-width:720px;margin:0 auto;padding:56px 40px 90px}
 .slabel{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
@@ -41,11 +57,16 @@ p{margin-bottom:18px;text-align:justify;hyphens:auto}
 
 .sign{text-align:right;font-family:'Playfair Display',serif;font-style:italic;color:var(--light);margin-top:44px;padding-top:28px;border-top:1px solid var(--divider);font-size:15px}
 
+/* TOC Section - Updated with links */
 .toc-section{margin-top:52px;padding-top:28px;border-top:1px solid var(--divider)}
 .toc-section h3{border-top:none;padding-top:0;margin-top:0;color:var(--dark);font-size:22px}
 .toc-part{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:24px;margin-bottom:8px}
 .toc-part:first-child{margin-top:0}
-.toc-chapter{color:var(--body);font-size:15.5px;margin-bottom:4px;padding-left:16px;line-height:1.6}
+.toc-chapter{margin-bottom:4px;padding-left:16px;line-height:1.6}
+.toc-chapter a{color:var(--body);text-decoration:none;font-size:15.5px;transition:color .2s,padding-left .2s}
+.toc-chapter a:hover{color:var(--rose);padding-left:4px}
+.toc-chapter a::before{content:'\2192\00a0';color:var(--coral);font-size:12px;opacity:0;transition:opacity .2s}
+.toc-chapter a:hover::before{opacity:1}
 
 .pdiv{text-align:center;padding:56px 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
@@ -53,16 +74,24 @@ p{margin-bottom:18px;text-align:justify;hyphens:auto}
 
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
 footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Subtle shimmer animation for hero */
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero{background-size:200% 200%;animation:shimmer 12s ease infinite;background-image:linear-gradient(135deg,#8B3A4A 0%,#7B3040 20%,#6B2A3A 40%,#5A2030 60%,#4A1A2A 80%,#5A2030 100%)}
 
 @media(max-width:768px){
 .hero{padding:56px 22px 46px}.hero h1{font-size:36px}
 .content{padding:36px 22px 56px}.toc-card{margin:-18px 14px 0;padding:22px}
 .toc-card ul{grid-template-columns:1fr}.stitle{font-size:27px}h3{font-size:21px}
-.pq{font-size:18px;padding:22px 14px}}
+.pq{font-size:18px;padding:22px 14px}
+.overview-card{margin:24px 14px 0}.available-banner{margin:20px 14px 0}
+.cta-btn{padding:14px 32px;font-size:15px}}
 
 @media print{
 .hero{background:#fff;color:#000;padding:36px 0}.hero h1{color:#000}
-.toc-card{box-shadow:none;border:1px solid #ddd}body{font-size:12pt}}
+.toc-card{box-shadow:none;border:1px solid #ddd}body{font-size:12pt}
+.cta-btn{display:none}}
 </style>
 </head>
 <body>
@@ -75,15 +104,16 @@ footer strong{color:rgba(255,255,255,.9)}
 <div class="hero-inner">
 <div class="hero-sub">A Book by Justin Jeon</div>
 <h1>The Oxytocin Story</h1>
-<div class="tag">The Special Healing Power That Encompasses Body and Mind</div>
+<div class="tag">The Hidden Hormone That Can Transform Your Health and Happiness</div>
 <div class="auth"><strong>Justin Jeon</strong>, Ph.D. &mdash; Professor, Yonsei University</div>
+<a href="book/00-introduction.html" class="cta-btn">Read the Full Book Online &rarr;</a>
 </div>
 </header>
 
 <nav class="toc-card">
-<h3>In This Preview</h3>
+<h3>On This Page</h3>
 <ul>
-<li><a href="#intro">Introduction</a></li>
+<li><a href="#intro">Introduction Preview</a></li>
 <li><a href="#love">The Love Hormone</a></li>
 <li><a href="#social">Social Intelligence</a></li>
 <li><a href="#fidelity">A Question of Fidelity</a></li>
@@ -93,6 +123,20 @@ footer strong{color:rgba(255,255,255,.9)}
 <li><a href="#closing">Closing</a></li>
 </ul>
 </nav>
+
+<!-- Overview Figure -->
+<div class="overview-card">
+<img src="book/figures/fig05_oxytocin_effects.png" alt="The many effects of oxytocin on body and mind" loading="lazy">
+<div class="overview-card-caption">
+<p>Oxytocin touches every dimension of health &mdash; physical, mental, and social.</p>
+</div>
+</div>
+
+<!-- Now Available Banner -->
+<div class="available-banner">
+<span class="badge">Now Available</span>
+<p>The complete English translation is available to read online &mdash; all 37 chapters.</p>
+</div>
 
 <main class="content">
 
@@ -109,6 +153,8 @@ footer strong{color:rgba(255,255,255,.9)}
 <div class="pq">What is it that makes us capable of this kind of love? What enables us to trust a stranger, to feel another person&rsquo;s pain as our own, to choose generosity over self-interest? The answer, at least in part, is a hormone &mdash; and its name is oxytocin.</div>
 
 <p>This might sound like a reductive claim, and I understand the instinct to resist it. Love, after all, seems to belong to a different order of things than biochemistry. But science and wonder are not enemies. Since the first oxytocin-related paper was published in 1929, more than <strong>thirty-three thousand</strong> peer-reviewed studies have followed. This is not a fringe idea or a pop-science curiosity. It is one of the most rigorously examined subjects in modern biology. And the picture that has emerged is extraordinary.</p>
+
+<p style="text-align:center;margin-top:28px"><a href="book/00-introduction.html" style="color:var(--coral);text-decoration:none;font-weight:600;font-size:15px">Continue reading the full Introduction &rarr;</a></p>
 </section>
 
 <!-- ═══════════════ LOVE HORMONE ═══════════════ -->
@@ -177,63 +223,68 @@ footer strong{color:rgba(255,255,255,.9)}
 <!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
 <section id="toc" class="toc-section">
 <div class="slabel">The Full Book</div>
-<h2 class="stitle" style="font-size:28px;">The Oxytocin Odyssey &mdash; Table of Contents</h2>
-<p class="sintro" style="font-size:15px;">A comprehensive exploration across eight parts, thirty-six chapters, and an appendix.</p>
+<h2 class="stitle" style="font-size:28px;">Table of Contents</h2>
+<p class="sintro" style="font-size:15px;">A comprehensive exploration across eight parts and thirty-seven chapters. Every chapter is now available to read online.</p>
 
-<div class="toc-part">Part One: Understanding Oxytocin</div>
-<div class="toc-chapter">Chapter 1: The Science of Connection</div>
-<div class="toc-chapter">Chapter 2: Oxytocin 101 &mdash; The Hormone That Protects Humanity</div>
+<div class="toc-chapter" style="padding-left:0;margin-bottom:14px"><a href="book/00-introduction.html" style="font-weight:600">Introduction: If You Want to Be Happy and Healthy, Oxytocin</a></div>
 
-<div class="toc-part">Part Two: Oxytocin and Mental Well-being</div>
-<div class="toc-chapter">Chapter 3: The Origins of Happiness</div>
-<div class="toc-chapter">Chapter 4: Healing from Trauma</div>
-<div class="toc-chapter">Chapter 5: Building Resilience</div>
-<div class="toc-chapter">Chapter 6: The Pain of Loneliness</div>
-<div class="toc-chapter">Chapter 7: Your Body&rsquo;s Natural Pain Relief</div>
+<div class="toc-part">Part One: What Is Oxytocin?</div>
+<div class="toc-chapter"><a href="book/01-secret-of-roseto.html">Chapter 1: The Secret of Roseto</a></div>
+<div class="toc-chapter"><a href="book/02-oxytocin-101.html">Chapter 2: Oxytocin 101 &mdash; The Hormone That Has Protected Humanity</a></div>
+<div class="toc-chapter"><a href="book/03-hormone-101.html">Chapter 3: Hormone 101 &mdash; The Vast Chemical Factory Called the Human Body</a></div>
 
-<div class="toc-part">Part Three: Becoming a Better Person</div>
-<div class="toc-chapter">Chapter 8: The Attachment Hormone &mdash; How We Bond</div>
-<div class="toc-chapter">Chapter 9: The Trust Hormone &mdash; Why We Believe in Others</div>
-<div class="toc-chapter">Chapter 10: The Altruism Hormone &mdash; The Science of Giving</div>
-<div class="toc-chapter">Chapter 11: Empathy and the Art of Understanding</div>
-<div class="toc-chapter">Chapter 12: Better Parenting Through Oxytocin</div>
+<div class="toc-part">Part Two: Oxytocin for the Soul</div>
+<div class="toc-chapter"><a href="book/04-origins-of-happiness.html">Chapter 4: The Origins of Happiness</a></div>
+<div class="toc-chapter"><a href="book/05-power-that-conquers-trauma.html">Chapter 5: The Power That Conquers Trauma</a></div>
+<div class="toc-chapter"><a href="book/06-oxytocin-and-resilience.html">Chapter 6: Oxytocin and Resilience</a></div>
+<div class="toc-chapter"><a href="book/07-loneliness-makes-you-sick.html">Chapter 7: Loneliness Makes You Sick</a></div>
+<div class="toc-chapter"><a href="book/08-oxytocin-the-pain-killer.html">Chapter 8: Oxytocin, the Pain Killer</a></div>
 
-<div class="toc-part">Part Four: Enhancing Relationships</div>
-<div class="toc-chapter">Chapter 13: The Power of Eye Contact</div>
-<div class="toc-chapter">Chapter 14: Sustaining Long-term Relationships</div>
-<div class="toc-chapter">Chapter 15: Love, Loyalty, and Fidelity</div>
-<div class="toc-chapter">Chapter 16: Resolving Conflict Through Connection</div>
+<div class="toc-part">Part Three: The Oxytocin That Makes Us Better People</div>
+<div class="toc-chapter"><a href="book/09-attachment-hormone.html">Chapter 9: Oxytocin, the Attachment Hormone</a></div>
+<div class="toc-chapter"><a href="book/10-hormone-that-believes-in-you.html">Chapter 10: Oxytocin, the Hormone That Believes in You</a></div>
+<div class="toc-chapter"><a href="book/11-altruistic-hormone.html">Chapter 11: Oxytocin, the Altruistic Hormone</a></div>
+<div class="toc-chapter"><a href="book/12-its-okay-to-not-be-okay.html">Chapter 12: It&rsquo;s Okay to Not Be Okay</a></div>
+<div class="toc-chapter"><a href="book/13-becoming-a-better-parent.html">Chapter 13: Oxytocin for Becoming a Better Parent</a></div>
 
-<div class="toc-part">Part Five: Oxytocin and Physical Health</div>
-<div class="toc-chapter">Chapter 17: Heart Health and Cardiovascular Protection</div>
-<div class="toc-chapter">Chapter 18: Weight Management and Metabolic Health</div>
-<div class="toc-chapter">Chapter 19: Gut Health and Inflammation</div>
-<div class="toc-chapter">Chapter 20: Cancer Prevention and Supportive Care</div>
-<div class="toc-chapter">Chapter 21: Neurological Health and Development</div>
-<div class="toc-chapter">Chapter 22: The Medicine of Love &mdash; Clinical Applications</div>
+<div class="toc-part">Part Four: The Oxytocin That Makes Us More Loving</div>
+<div class="toc-chapter"><a href="book/14-magic-of-eye-contact.html">Chapter 14: The Magic of Eye Contact</a></div>
+<div class="toc-chapter"><a href="book/15-force-that-keeps-relationships-going.html">Chapter 15: The Force That Keeps Relationships Going</a></div>
+<div class="toc-chapter"><a href="book/16-oxytocin-and-theory-of-mind.html">Chapter 16: Oxytocin and Theory of Mind</a></div>
+<div class="toc-chapter"><a href="book/17-oxytocin-that-keeps-you-faithful.html">Chapter 17: The Oxytocin That Keeps You Faithful</a></div>
+
+<div class="toc-part">Part Five: Oxytocin for a Healthier You</div>
+<div class="toc-chapter"><a href="book/18-heart-beat-cardiovascular.html">Chapter 18: The Hormone That Makes Your Heart Beat</a></div>
+<div class="toc-chapter"><a href="book/19-keeps-you-slim-obesity-diabetes.html">Chapter 19: The Hormone That Keeps You Slim</a></div>
+<div class="toc-chapter"><a href="book/20-healing-inflammatory-bowel.html">Chapter 20: Oxytocin for Healing Inflammatory Bowel Disease</a></div>
+<div class="toc-chapter"><a href="book/21-cancer-fighter.html">Chapter 21: Oxytocin as a Cancer Fighter</a></div>
+<div class="toc-chapter"><a href="book/22-autism-fighter.html">Chapter 22: The Autism Fighter</a></div>
+<div class="toc-chapter"><a href="book/23-love-is-the-medicine.html">Chapter 23: Love Is the Medicine</a></div>
 
 <div class="toc-part">Part Six: The Oxytocin Lifestyle &mdash; Body and Senses</div>
-<div class="toc-chapter">Chapter 23: The Healing Power of Touch</div>
-<div class="toc-chapter">Chapter 24: Intimacy and Physical Connection</div>
-<div class="toc-chapter">Chapter 25: The Communal Table &mdash; Dining Together</div>
-<div class="toc-chapter">Chapter 26: Move to Connect &mdash; Exercise and Oxytocin</div>
-<div class="toc-chapter">Chapter 27: Sing Together &mdash; Music, Voice, and Belonging</div>
+<div class="toc-chapter"><a href="book/24-power-of-touch.html">Chapter 24: The Power of Touch</a></div>
+<div class="toc-chapter"><a href="book/25-pleasure-principle.html">Chapter 25: The Pleasure Principle &mdash; How Sex Raises Oxytocin</a></div>
+<div class="toc-chapter"><a href="book/26-eat-your-way-up.html">Chapter 26: Eat Your Way Up &mdash; How Food Raises Oxytocin</a></div>
+<div class="toc-chapter"><a href="book/27-master-your-gut.html">Chapter 27: Master Your Gut, Master Your Oxytocin</a></div>
+<div class="toc-chapter"><a href="book/28-move-it-or-lose-it.html">Chapter 28: Move It or Lose It &mdash; How Exercise Raises Oxytocin</a></div>
 
 <div class="toc-part">Part Seven: The Oxytocin Lifestyle &mdash; Mind and Community</div>
-<div class="toc-chapter">Chapter 28: Our Animal Companions &mdash; The Science of Pet Bonding</div>
-<div class="toc-chapter">Chapter 29: The Gratitude Practice &mdash; Training the Grateful Brain</div>
-<div class="toc-chapter">Chapter 30: The Stories We Tell &mdash; Narrative as Medicine</div>
-<div class="toc-chapter">Chapter 31: Roots and Rituals &mdash; Community Involvement</div>
-<div class="toc-chapter">Chapter 32: Acts of Kindness &mdash; Generosity as Daily Practice</div>
-<div class="toc-chapter">Chapter 33: Creating Your Oxytocin-Rich Environment</div>
+<div class="toc-chapter"><a href="book/29-dish-it-out-gossip.html">Chapter 29: Dish It Out, and It Goes Up &mdash; Gossip vs. Backstabbing</a></div>
+<div class="toc-chapter"><a href="book/30-sing-it-out.html">Chapter 30: Sing It Out, and It Goes Up &mdash; Skip the Solo, Join the Chorus</a></div>
+<div class="toc-chapter"><a href="book/31-lock-eyes-gift-your-dog.html">Chapter 31: Lock Eyes, and It Goes Up &mdash; The Gift Your Dog Gives You</a></div>
+<div class="toc-chapter"><a href="book/32-be-grateful.html">Chapter 32: Be Grateful, and It Goes Up &mdash; The Secret of Gratitude</a></div>
+<div class="toc-chapter"><a href="book/33-listen-up-storytelling.html">Chapter 33: Listen Up, and It Goes Up &mdash; The Power of Storytelling</a></div>
+<div class="toc-chapter"><a href="book/34-forget-cortisol.html">Chapter 34: Forget Cortisol &mdash; Choose the Oxytocin Lifestyle</a></div>
 
 <div class="toc-part">Part Eight: The Power of Narrative</div>
-<div class="toc-chapter">Chapter 34: Changing Your Story, Changing Your Life</div>
-<div class="toc-chapter">Chapter 35: From Stress to Connection &mdash; Rewiring the Brain</div>
-<div class="toc-chapter">Chapter 36: The Future of Oxytocin Science</div>
+<div class="toc-chapter"><a href="book/35-change-your-narrative.html">Chapter 35: Change Your Narrative, Change Your Life</a></div>
+<div class="toc-chapter"><a href="book/36-from-freud-to-adler.html">Chapter 36: From Freud to Adler</a></div>
+<div class="toc-chapter"><a href="book/37-from-insulin-to-oxytocin.html">Chapter 37: From Insulin to Oxytocin &mdash; Love Is Medicine</a></div>
 
-<div class="toc-part">Appendix</div>
-<div class="toc-chapter">The Oxytocin / Cortisol Lifestyle Assessment</div>
+<div class="toc-part">Back Matter</div>
+<div class="toc-chapter"><a href="book/37-afterword.html">Afterword: The Health of Our Nation Is at Risk</a></div>
+<div class="toc-chapter"><a href="book/38-appendix.html">Appendix: The Oxytocin &amp; Cortisol Lifestyle Questionnaires</a></div>
+<div class="toc-chapter"><a href="book/39-references.html">References</a></div>
 </section>
 
 <!-- ═══════════════ DIVIDER ═══════════════ -->
@@ -273,15 +324,12 @@ footer strong{color:rgba(255,255,255,.9)}
 </main>
 
 <div style="max-width:720px;margin:0 auto;padding:0 40px 48px;text-align:center">
-<div style="background:#fff;border:1px solid var(--divider);border-radius:10px;padding:32px 36px;box-shadow:0 2px 12px rgba(0,0,0,.04)">
-<p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--rose);margin-bottom:10px;font-weight:600">English edition coming soon.</p>
-<p style="font-size:15px;color:var(--light);margin-bottom:0">Publishers interested in the English version, please contact<br><a href="mailto:jjeon@yonsei.ac.kr" style="color:var(--coral);text-decoration:none;font-weight:600">jjeon@yonsei.ac.kr</a></p>
-</div>
+<a href="book/00-introduction.html" class="cta-btn" style="font-size:17px;padding:18px 48px">Start Reading Chapter 1 &rarr;</a>
 </div>
 
 <footer>
-<strong>The Oxytocin Story</strong> &mdash; by Justin Jeon, Professor, Yonsei University<br>
-<span style="font-size:11px;margin-top:6px;display:inline-block">English translation &mdash; Introduction, Table of Contents &amp; Closing</span>
+<strong>The Oxytocin Story</strong> &mdash; by <a href="/">Justin Jeon</a>, Professor, Yonsei University<br>
+<span style="font-size:11px;margin-top:6px;display:inline-block">English translation &mdash; Complete book now available online</span>
 </footer>
 
 </body>

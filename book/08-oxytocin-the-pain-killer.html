@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8: Oxytocin, the Pain Killer &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 8: Oxytocin, the Pain Killer from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Two: Oxytocin for the Soul</div>
+        <h1 class="chapter-title">Chapter 8: Oxytocin, the Pain Killer</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>"I want to endure my failures purely on my own. If I must fail, let me fail by myself. I'm an adult. Father, I don't want you constantly barging into my life and shielding me even from failure. Please stop." This was a line from the 2022 Korean drama <em>Extraordinary Attorney Woo</em> that moved me deeply. Korean parents tend to cherish their children as if they were made of gold and jade &mdash; sometimes to a fault. Every parent aches when their child aches, hurts when their child hurts. And perhaps, in trying to absorb their children's pain, they end up trying to feel it for them.</p>
+<p>But pain is an essential sensation for a child's growth. You have to hurt to grow. No flower blooms without being shaken by the wind; no young creature matures without growing pains. You become an adult through suffering, and you grow wiser in proportion to how much you've endured.</p>
+<p>Yet recently, a troubling new attitude toward pain has taken hold. The impossible ideal of "happiness without suffering" has become a cultural trend, spawning a new generation of pleasure-seekers who want comfort without cost. Parents heap praise on their children for fear of wounding them; teachers hesitate to discipline students for fear of complaints or reports. When correction disappears from schools and homes, children may suffer fewer immediate hurts &mdash; but they also lose the strength to overcome them.</p>
+<h3>Pleasure and Pain Are Two Sides of the Same Coin</h3>
+<p>Anna Lembke, author of <em>Dopamine Nation</em>, argues that by overprotecting children from adversity, we have made them afraid of even minor difficulties. By praising them dishonestly and hiding our own sacrifices to boost their self-esteem, we have created a new hedonistic era in which children are impatient, entitled, and blind to their own flaws. A generation that can no longer endure hardship and pain increasingly turns to whatever can most quickly and easily boost their mood &mdash; binge-watching dramas, popping painkillers, or seeking out various addictive substances.</p>
+<p>In the United States, the misuse of painkillers has grown exponentially. Since 2000, more than one million people have died from opioid overdoses &mdash; more than from gun violence. And here is a remarkable fact: the brain regions that process pain and pleasure are the very same. Isn't that astonishing? Pleasure and pain are separated by the thinnest of lines. When we relentlessly chase pleasure to escape life's pain &mdash; or depend on opioid painkillers &mdash; we end up destroying even our capacity for ordinary, everyday happiness.</p>
+<p>People today are growing lonelier. The COVID-19 pandemic, which enforced social isolation, only accelerated the trend. Loneliness causes pain; pain makes you withdraw further; withdrawal deepens isolation &mdash; a brutal cycle. A recent Australian study of 12,517 respondents, 927 of whom suffered from chronic pain, examined the relationship between social connection, pain, and physical activity. Participants were asked: "When I need help, can I find someone to help me?" and "Do I have many friends?" The results showed that greater social support was associated with greater physical activity. The intriguing finding was that pain mediated this relationship. In simpler terms: people with more friends felt less pain, and because they felt less pain, they were more physically active.<sup>1</sup></p>
+<p>It is already well established that doing things with others raises your pain threshold.* Rowing &mdash; one of the most grueling sports &mdash; is significantly less painful when done with teammates than alone. People who exercise with friends or colleagues tolerate twice as much pain afterward. We feel less pain singing together than singing alone. We laugh more and feel less pain watching a funny video with someone than watching it by ourselves. The old sayings ring true: "A burden shared is a burden halved."<sup>2</sup></p>
+<p class="footnote">\*The higher your pain threshold, the more pain you can tolerate before it registers. For example, if your threshold is 5, you won't feel pain at an intensity of 4. But if your threshold is 3, an intensity of 4 becomes constant, potentially chronic pain.</p>
+<h3>Oxytocin Is a Natural Painkiller</h3>
+<p>Can boosting oxytocin through behavior actually relieve pain? I've already discussed the effects of oxytocin on mothers during childbirth. Oxytocin reduces the perception of pain in both the brain and spinal cord while simultaneously helping us forget the pain we've experienced. In animal studies, twenty-nine out of thirty-three experiments confirmed that oxytocin raises the pain threshold.<sup>3</sup></p>
+<p>Human studies tell a similar story. One particularly interesting experiment was conducted in Germany in 2020. Eighty couples who had been living together for at least a year were divided into four groups. The first group inhaled oxytocin only. The second inhaled a placebo but also received training in positive communication techniques, which they practiced twice daily. The third group both inhaled real oxytocin and practiced positive communication. The fourth group did neither. Researchers then measured wound healing and pain levels across all four groups. The results were striking: for men, inhaled oxytocin was more effective at reducing pain; for women, positive communication with their partner was more effective.</p>
+<p>This isn't entirely surprising, given that women already have four to five times more oxytocin than men. The additional oxytocin inhalation made a bigger difference for men, who started with lower levels. But the finding that women experienced less pain through positive conversation with their partners is truly intriguing. In another study, participants inhaled oxytocin and were then subjected to needle pricks and laser pulses to induce pain. Oxytocin significantly reduced the pain they reported. In the scientific community, oxytocin's analgesic properties are now considered well established, and current research is actively exploring the precise mechanisms by which it relieves pain.<sup>4</sup></p>
+<p>For patients diagnosed with "chronic pain syndrome" &mdash; a label doctors resort to when tests reveal no clear physical cause &mdash; the situation is particularly poignant. "Chronic pain syndrome" sounds clinical, but it essentially means the medical establishment has thrown up its hands. These patients are typically referred to neurology on the assumption that if nothing is wrong with the body, the problem must be in the mind. If someone you love &mdash; a child, a spouse, a parent &mdash; suffers from chronic pain syndrome, please know that dismissing them as lazy, weak, or faking it will only make things worse. Sometimes a warm word, holding their hand, giving them a massage, driving to a nearby town for a good meal together &mdash; these simple acts can be more effective than most medications.</p>
+<p>My ninety-one-year-old mother sometimes calls to say she has a headache. I rush over and massage her shoulders and neck. She immediately smiles and says she feels better. My sisters tease that Mom was just faking it because she missed her son. But maybe &mdash; just maybe &mdash; her pain really did improve because her son came, shared a meal with her, held her hands, and rubbed her shoulders, boosting her oxytocin.</p>
+<p>If you know someone suffering from chronic pain, please encourage them to go out and see people &mdash; even when it hurts. Meeting friends, sharing good food, watching a movie and laughing together, doing some light exercise side by side &mdash; these may be the best painkillers available. If it's true that humans are social animals, then we can only feel genuine happiness when we connect with others, exchange emotions, and share our inner lives. Yes, relationships can also bring hurt and pain. But if we lock ourselves away to escape the pain of human connection, we may end up feeling far more pain than we ever would have faced. Let us all summon the courage to cherish the people close to us a little more, and to reach out &mdash; slowly, gently &mdash; to those we don't yet know. Oxytocin will surely help you take that step.</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="07-loneliness-makes-you-sick.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 7: Loneliness Makes You Sick</span></a>
+    <a href="09-attachment-hormone.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 9: Oxytocin, the Attachment Hormone</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

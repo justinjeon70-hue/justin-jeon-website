@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 17: The Oxytocin That Keeps You Faithful &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 17: The Oxytocin That Keeps You Faithful from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Four: The Oxytocin That Makes Us More Loving</div>
+        <h1 class="chapter-title">Chapter 17: The Oxytocin That Keeps You Faithful</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>Korean <em>ajumma</em> (middle-aged women) are real-life superheroes. When a passenger stands up from a back seat on a packed bus, the <em>ajumma</em> hurls her handbag across the aisle to claim the spot before anyone else can sit down. Her personal space has just expanded by way of a flying accessory. It seems every Korean <em>ajumma</em> is equipped with Inspector Gadget's extendable arm. But seat-saving isn't limited to <em>ajumma</em>. Gen-Z luxury shoppers line up their bags in front of department store boutiques during early-morning "open runs," and foodies queue up for numbered tickets under the blazing sun at popular restaurants. Marking territory, it turns out, isn't just an animal behavior. Our personal territory becomes the reference point for our fight-or-flight response and even establishes the baseline &mdash; the zero point &mdash; for how we define our relationships with others. But what could physical space possibly have to do with infidelity?</p>
+<h3>One Hundred Meters Before Meeting Her</h3>
+<p>There's a well-known Korean pop song by Lee Sang-woo called "One Hundred Meters Before Meeting Her." The lyrics go: <em>"The image of her filling my mind seems to be drawing closer. Could that cloud in the sky be cotton candy? Maybe I should jump up and try it... The road feels so much longer today. One hundred meters before the place where I meet her."</em></p>
+<p>Having endured a long-distance relationship with my wife, I know this feeling well. Some people feel close no matter how far apart they are. Lovers press so tightly together that not even a sheet of paper could slip between them. On the other hand, some people feel uncomfortable even at a considerable distance. A scientist actually studied the distances between people in a rigorous, systematic way.</p>
+<p>His name was Edward T. Hall, an American cultural anthropologist. Hall argued that human relationships can be defined by four distinct types of distance. The first is <strong>intimate distance</strong> &mdash; the closest range, reserved for family members and romantic partners. According to Hall, this is anything within forty-six centimeters (about eighteen inches). The second is <strong>personal distance</strong> &mdash; the space between you and close friends or acquaintances you've chosen to let in &mdash; forty-six to one hundred twenty centimeters (roughly eighteen inches to four feet). The third is <strong>social distance</strong> &mdash; the range people typically maintain in everyday professional and social interactions &mdash; one hundred twenty to three hundred sixty centimeters (four to twelve feet). Finally, there's <strong>public distance</strong> &mdash; the space between you and strangers, or the distance maintained during speeches, lectures, and stage performances &mdash; three hundred sixty centimeters and beyond (twelve feet or more). In his book <em>The Hidden Dimension</em>, Hall argued that just as animals mark territory to secure their space from other animals, humans maintain their own territorial boundaries according to the nature of their relationships. He coined the term <strong>proxemics</strong> to describe this concept, and it is widely applied today in sociology and marketing.<sup>1</sup></p>
+<p>Intimate distance is a boundary that defines your physical and emotional limits with others. No matter how close two people are, it should not be violated lightly. This space represents the minimum personal zone for defending oneself against external intrusion, and when someone enters it without permission, it can trigger instinctive revulsion or fear. Conversely, allowing someone into this space means you've essentially identified them with yourself &mdash; you've determined that they pose no threat and harbor no ill intent. Personal distance, on the other hand, is roughly the circle your outstretched arms would make &mdash; the boundary between formality and informality, the edge of intimacy. Those who enter this zone are people who make you feel personally comfortable. Social distance is the space allocated for professional interactions, reflecting status and hierarchy. Public distance is the most formal and ceremonial of all.</p>
+<h3>Shrinking the Distance with Oxytocin</h3>
+<p>What does neuroscience have to say about Edward Hall's proxemics? As we discussed, intimate distance &mdash; within forty-six centimeters &mdash; is the zone reserved exclusively for close family and romantic partners. But people with damage to the amygdala feel no discomfort at all when a stranger enters their space from as close as thirty-four centimeters. Their amygdala is misjudging both intimacy and distance. By contrast, in people with a functioning amygdala, the amygdala automatically activates as someone approaches, and discomfort sets in the moment the person crosses the forty-six-centimeter threshold. As we discussed earlier, the amygdala is essentially the brain's emotional command center. Sitting next to the hippocampus &mdash; which handles short-term memory &mdash; it assigns emotional meaning to the people we meet and the events we experience. Memories infused with this emotional significance are then stored in the hippocampus for future recall. Perhaps that's why the amygdala is so deeply connected to social behavior. If you know someone who seems to have an unusually large number of friends or whose relationships are needlessly complicated, you can bet their amygdala is larger than average.<sup>2</sup></p>
+<p>Now, for romantic partners, married couples, or parent-child relationships, this close distance is obviously no issue at all. It's perfectly natural to want to be nearer to the person you love, to stay close for as long as possible. But in my experience, when someone of the opposite sex who isn't a family member gets too close, it just feels uncomfortable. I'd rather they talked to me from a bit farther away. On this very topic, a fascinating experiment was conducted at the University of Bonn in Germany. Twenty-seven single men and thirty married men participated. A young, attractive woman approached each man, and the researchers measured how close she could get before the man felt uncomfortable. One group inhaled oxytocin; the other inhaled a placebo.</p>
+<p>The results were remarkable. Married men who had inhaled oxytocin preferred to keep the woman about fifteen centimeters farther away compared to married men who had inhaled the placebo. But here's the intriguing part: this effect appeared only in married men. The single men? As the woman got closer, they felt no discomfort whatsoever &mdash; only excitement. The researchers concluded that oxytocin plays a crucial role in helping married couples maintain a healthy monogamous relationship. Now do you see the connection between territorial boundaries and fidelity?<sup>3</sup></p>
+<p>This study is one of the reasons oxytocin has been called the "morality hormone." Remember the promiscuous montane voles? When scientists made their oxytocin receptors function properly, they suddenly became faithful to a single mate for life and started raising their young together. Given that oxytocin receptors are linked to moral behavior, it's not a stretch to imagine that oxytocin might enhance moral sensibility in humans as well.<sup>4</sup> What an extraordinary hormone! Some of you might be tempted to sneak oxytocin into your husband's soup. But there's really no need. Physical affection with your partner, shared meals, and exercising together all raise oxytocin naturally. So why not find enjoyable activities that boost it for both of you? Among the best options for couples are ballroom dancing and couples' yoga &mdash; truly the ultimate relationship workouts. When you exercise together, oxytocin levels rise in both partners, deepening your love, consideration, and &mdash; yes &mdash; faithfulness to each other.</p>
+<div class="hl"><strong>Everyday Oxytocin Boost:</strong> When you're feeling down or blue, try eating something comforting &mdash; ballroom dancing, hiking, tennis, badminton, or golf can all raise the oxytocin levels between couples. A sweet piece of cake, some hot chocolate, or maybe even the chicken bone broth your mom used to make...</div>
+<h3>Oxytocin and Married Life</h3>
+<p><em>Does the relationship deteriorate because physical affection decreases? Or does physical affection decrease because the relationship has deteriorated?</em> The answer is: both. Physical affection between spouses activates oxytocin release. When oxytocin levels in the body rise, couples become more affectionate, more generous, and more loving toward each other. So how can you build an ideal "oxytocin marriage"?</p>
+<p>If at all possible, start an activity together that increases physical contact between you. For example, when couples learn ballroom dancing together, physical touch naturally increases and shared stories multiply, strengthening the marital bond. Joint outdoor activities like hiking, tennis, badminton, or golf also bring couples closer. Even restaurant hopping or going to the movies together &mdash; while not quite as effective as exercising together &mdash; still boosts a couple's oxytocin.</p>
+<p>If physical affection has already been absent for a significant period and things feel awkward between you, adopting a dog can be a surprising breakthrough. Walking with a dog, making eye contact with a dog, and petting a dog all raise oxytocin. Finally, one of the most powerful tools in the oxytocin toolkit for couples is making a daily habit of finding reasons to express gratitude to each other. Pair that gratitude with a genuine, lingering hug, and the effect is even greater. It may feel stilted and unnatural at first, but keep at it &mdash; before long, it will feel perfectly normal, your oxytocin levels will be brimming, and you'll notice that your relationship has quietly, profoundly improved.</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="16-oxytocin-and-theory-of-mind.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 16: Oxytocin and Theory of Mind</span></a>
+    <a href="18-heart-beat-cardiovascular.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 18: The Hormone That Makes Your Heart Beat</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

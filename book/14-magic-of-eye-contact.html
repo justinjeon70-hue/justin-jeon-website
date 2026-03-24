@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 14: The Magic of Eye Contact &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 14: The Magic of Eye Contact from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Four: The Oxytocin That Makes Us More Loving</div>
+        <h1 class="chapter-title">Chapter 14: The Magic of Eye Contact</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>— The Eye Contact Hormone, Oxytocin</p>
+<p>In Korean, we have a vivid expression for falling in love: <em>nun-i mat-da</em> &mdash; literally, "the eyes met." It captures something universal about human connection &mdash; that spark when two gazes lock.</p>
+<p>When we're walking down the street and accidentally make eye contact with a stranger, most of us instinctively look away. Back when I was in college, it wasn't unusual to see two men whose eyes happened to meet on the street, and when neither one looked away, the tension would escalate: "What are you looking at?" &mdash; followed by fists. A pointless standoff, really. I'm a bit embarrassed to admit it, but I've been there myself. During my military service, I was at a bar when my eyes met those of a passerby. I didn't look away fast enough, and he snapped something at me before throwing a punch out of nowhere. I instinctively hit back &mdash; and ended up having to pay his medical bills.</p>
+<p>But when the person on the other end of that eye contact is someone of the opposite sex, the story can be completely different. What body part do men and women look at first when meeting someone for the first time? In 2018, a British company that manufactures eye drops surveyed 1,000 British men and women about which body part they notice first in a person of the opposite sex. Both men and women gave the same answer: the eyes come first. Men ranked what they notice in women as follows: eyes, smile, breasts, hair, weight, legs, clothing, buttocks, height, and skin. Women ranked men by: eyes, smile, height, hair, clothing, weight, skin, face shape, buttocks, and nose. Contrary to popular belief, men who said they look at a woman's breasts first came in only third place. A company spokesperson told a British newspaper, "This study completely shatters the stereotype that men look at a woman's breasts first." Though I did have a reasonable suspicion &mdash; perhaps, as a company that makes artificial tears, they had a vested interest in steering the results toward eyes.</p>
+<h3>A Culture Shock in Eye Contact</h3>
+<p>Shortly after that bar incident, I went to Canada for a language program, and I experienced a profound culture shock. In Korea at the time, if your eyes met those of a stranger on the street, your options were limited: you could glare back aggressively, quickly avert your gaze, or cast your eyes downward. But Canadians? When they made eye contact on the street, they'd smile and say, "Hi!" About two weeks after I arrived in Canada, a blonde woman passing by looked me right in the eye and said, "Hi!" Having never encountered this before, I made the embarrassing assumption that she might be interested in me and followed her for about twenty meters. A hilarious memory now.</p>
+<p>When two people of the opposite sex make eye contact and neither looks away &mdash; when they hold each other's gaze with a quiet awareness &mdash; a process of self-referential cognition begins. Locking eyes stimulates each person's emotions, drawing them into deeper focus on the other and, ultimately, into a feeling of attraction. Eye contact itself is a form of nonverbal communication; through it, a wealth of emotional information flows between two people.<sup>1</sup></p>
+<h3>Tuning Your Gaze with Oxytocin</h3>
+<p>So does oxytocin influence first impressions when we look at someone of the opposite sex? Dr. Andrew Bauer and his research team at the University of Bonn had eighteen men in their twenties inhale oxytocin, then showed them photographs of 302 women they had never met, each photo displayed for just three seconds. Throughout this process, the researchers analyzed the men's brains using MRI and PET scans. The men rated each woman's attractiveness on a scale of one to nine while the researchers observed their dopamine release patterns. The result? Men who had inhaled oxytocin rated the women as significantly more attractive. In other words, when oxytocin levels go up, women literally look more beautiful to men.</p>
+<p>Another study with fifty-two male participants revealed that inhaling oxytocin makes men gaze longer at the eyes of someone of the opposite sex. We read other people's hearts through their gaze &mdash; through the movement of their pupils and the rhythm of their blinking. When oxytocin levels are artificially elevated, men spend more time looking into a woman's eyes, trying to read her mind. One hallmark of people diagnosed with autism spectrum disorder is difficulty making eye contact. Because they struggle to hold someone's gaze, reading others' emotions becomes much harder for them. But when oxytocin levels increase, the ability to read facial expressions and emotions improves &mdash; even in people with autism spectrum disorder. In plain language, oxytocin makes you more perceptive. To put it more generously, it gives you a perfect sense of social timing.<sup>2</sup></p>
+<p>Here's where it gets even more interesting: eye contact itself raises oxytocin levels. While appearance certainly matters in first impressions, looks alone don't determine whether someone finds you appealing. When you truly listen to what the other person is saying, empathize with them, and respond thoughtfully, their oxytocin rises. And this principle extends far beyond romance. In job interviews, researchers have found that applicants typically maintain eye contact with the interviewer for forty-five to sixty percent of the total interview time. When applicants were instructed to make very little eye contact (less than forty-five percent), a great deal of eye contact (more than eighty percent), or a moderate amount (forty-five to sixty percent), the results were telling: interviewers gave more negative evaluations to applicants who made too little eye contact, but also to those who stared too intensely, compared to those who struck the right balance.<sup>3</sup></p>
+<p>We communicate through language. Yet Tolstoy once observed that "language is not an adequate tool for communication." He even went so far as to say that language is, in many cases, a lie. Though he wrote voluminously, he understood the limits of words. Tolstoy explored the meaning of nonverbal communication &mdash; especially eye contact &mdash; throughout his works. In <em>War and Peace</em>, he writes: "Davout raised his eyes and gazed intently at Pierre. For several seconds they looked at each other, and that gaze transcended all the conditions of war and the courtroom, establishing a human connection between them. In that instant, both of them dimly felt an infinite number of things, and they realized that they were both children of humanity, that they were brothers." Though separated by language, the most powerful form of communication was the gaze &mdash; the meeting of eyes.</p>
+<p>In another Tolstoy masterpiece, <em>Anna Karenina</em>, we find this passage: "Levin met Kitty's gaze. And through her eyes, he knew that she was thinking the very same thing he was." "Her emotions had somehow crossed over into him. He, too, felt as bright and joyful as she did." "The flame of joy burning on Kitty's face seemed to spread to everyone in the synagogue."</p>
+<p>If nonverbal communication &mdash; especially the language of the eyes &mdash; is this important in human connection, then the significance of oxytocin becomes even more pronounced. You, the reader of this book: do you want to win someone's affection? Then look them gently in the eyes and let your oxytocin levels rise. Your love battery will recharge in no time.</p>
+<h3>The Day She Entered My Heart</h3>
+<p>The story of how I met my wife began during my language study in Canada, at the home of an elder from a Korean church. A group of Korean-Canadian students, most of them a couple of years younger than me, were all gathered in one room, chatting and laughing in English. At the time, I could barely speak English, and since they were all female students, I felt too awkward to join in. I just bowed hello and sat quietly in the corner like a sack of potatoes. My wife had just graduated from high school and completed her first semester at a local nursing school &mdash; a fresh-faced college freshman. We exchanged greetings, but honestly, neither of us was particularly drawn to the other. During that year in Canada, I regularly attended the Korean church because I missed the warmth of Korean community, and I naturally became friends with my future wife. But there was no romantic interest or curiosity whatsoever.</p>
+<p>A year passed, and I returned to my university in Korea. We both carried on as though nothing had happened while I finished my third year. Then, in my fourth year, an opportunity arose &mdash; by coincidence &mdash; to go back to the very same city in Canada, this time as an exchange student. I went, and I saw my wife again. But still, neither of us felt any attraction or spark.</p>
+<p>As my exchange semester drew to a close, I felt I wanted to stay longer and extended for another semester. That decision turned out to be the defining moment of my life.</p>
+<p>One summer day, I was sitting by a window in a quiet library, imagining what my life would look like in ten years and mapping out my future. "In ten years, I'll be a professor, working on a mission field somewhere." To achieve that dream, I needed to become a professor, which meant I needed a PhD, and before that, a master's degree. As I decided I'd like to pursue both here in Canada, the faces of older Korean students I knew &mdash; single expats aging alone in a foreign land &mdash; suddenly flashed through my mind, one after another. I resolved that I should get married relatively early. Given that I was only twenty-three at the time, this was, in retrospect, a rather bold ambition. Walter Trobisch's book <em>I Married You</em> advises that couples should experience at least all four seasons together before getting married. By that math, I needed to start meeting someone right away if I was going to check that box within a year.</p>
+<p>Lost in these audacious daydreams, I paused to pray. "Please let me meet the person who will be my life partner. If that person is already nearby, please help me recognize her." The moment I finished praying, my future wife's face floated into my mind as clearly as a full harvest moon. Young as I was, I'd always carried a mental picture of my ideal spouse. First, since I had no musical talent, she needed to be musical. She had to be beautiful &mdash; obviously. And ideally, she'd be someone who shared my dream, someone willing to go abroad for mission work together.</p>
+<p>Then it hit me. My wife's father was a pastor; she'd been playing piano for church services since childhood. After finishing nursing school, she planned to pursue a music degree in piano performance. And now that I was really looking &mdash; wasn't she quite lovely, with a graceful elegance I'd somehow overlooked? She was the perfect match for the partner I'd always imagined. How had I been so blind?</p>
+<p>Even after this epiphany, our first actual date didn't happen until three full months later, in October. One day during choir practice at church &mdash; I sang bass &mdash; she sat down next to me and helped me go through the music line by line. After we'd practiced enough, I mustered the courage to ask, "What did you do for your birthday last week?" As if she'd been waiting for the question, she replied, "Why? If I say I didn't do anything, are you going to take me to a movie?" Green light! I clenched my fist under the table and whispered a silent <em>Yes!</em></p>
+<p>A few days later, we went to see <em>It Could Happen to You</em>, starring Nicolas Cage, at a downtown theater, then had dinner together, talking about everything &mdash; hobbies, favorite music, books that had left an impression. Over the course of the conversation, I casually asked what she wanted to do after graduation, and whether she'd ever thought about living abroad and serving others. Her answers confirmed the last item on my mental checklist: "someone who won't just love me, but will love my work too." I have no idea what her oxytocin levels were at that point, but mine must have shot straight through the roof and into the sky. From that evening until I returned to Korea in February &mdash; roughly four months &mdash; I was probably drunk on oxytocin the entire time. The whole world looked beautiful, and every person in it seemed lovable.</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="13-becoming-a-better-parent.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 13: Oxytocin for Becoming a Better Parent</span></a>
+    <a href="15-force-that-keeps-relationships-going.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 15: The Force That Keeps Relationships Going</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

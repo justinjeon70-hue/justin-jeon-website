@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 30: Sing It Out, and It Goes Up -- Skip the Solo, Join the Chorus &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 30: Sing It Out, and It Goes Up -- Skip the Solo, Join the Chorus from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Seven: The Oxytocin Lifestyle -- Mind and Community</div>
+        <h1 class="chapter-title">Chapter 30: Sing It Out, and It Goes Up -- Skip the Solo, Join the Chorus</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>, and It Goes Up &mdash; Skip the Solo, Join the Chorus</p>
+<p>A man who introduced himself as a mobile phone salesman from London stepped onto a stage. It was 2007, on the set of the hit British TV audition show <em>Britain's Got Talent</em>. He appeared to be an utterly ordinary, unremarkable man fresh from the countryside. But the moment he opened his mouth and sang the first phrase of "Nessun Dorma," every judge in the room, every audience member, and every viewer across Britain gasped in awe. His voice was a heavenly instrument &mdash; impossible to believe it belonged to a door-to-door salesman who had never received a single day of formal vocal training.</p>
+<p>You already know who this is: Paul Potts. "When I stood on that stage, I surrendered my body and soul to the music. From that moment on, music became the core of my life." Until then, Paul was a complete unknown. With a single aria, he turned the <em>Britain's Got Talent</em> stage upside down, moved judges and audience members to tears, and went on to become a global star. His music gave hope and comfort to countless people, and his passion showed the world that any dream can become reality.</p>
+<p>Music has a magical power to burrow into our hearts. We laugh, cry, and find hope in despair &mdash; all through a single song. But what if that song is not a solo but a chorus?</p>
+<h3>Want to Get Close to Someone? Look No Further Than a Choir</h3>
+<p>There is an expression: "icebreaking." It refers to the conversation, games, or light activities people engage in when meeting strangers for the first time &mdash; that phase where everyone is still sizing each other up, thinking, "What kind of person is this?" Some people try to break the awkward silence with a few dad jokes they picked up somewhere, only to freeze the atmosphere even further. But when it comes to building social bonds, few things work as beautifully as singing together.</p>
+<p>There is a fascinating study on this from the University of Oxford. Researchers compared people who chose choir singing as their community activity with those who chose crafts or creative writing, measuring how close participants felt to one another and how their pain thresholds changed. They measured these at one month, three months, and seven months after the activities began.</p>
+<p>The results showed that people in the choir group felt significantly closer to one another at the one-month mark compared to those in crafts and writing. However, this difference disappeared at three and seven months. The reason the gap closed was not that the choir lost its effect &mdash; rather, people in the other groups had also naturally grown closer over time. The authors of this study suggested oxytocin and endorphins as the likely mechanisms, though they did not directly measure these hormones.<sup>1</sup></p>
+<p>So was the sense of bonding among choir members due to singing <em>together</em>, or does singing itself raise oxytocin? Another fascinating study, this one conducted in Toronto, Canada, addressed exactly this question. Researchers took nine elderly choir members and had them sing solo on one occasion and in chorus on another. Oxytocin increased only when they sang in chorus. Furthermore, the choral singers reported experiencing far more positive moods and emotions. However, both choral and solo singing reduced cortisol levels, confirming that singing in any form lowers stress.</p>
+<p>Additionally, when researchers examined the correlation between positive emotions and oxytocin and cortisol, positive emotions correlated only with oxytocin. Given that even eye contact alone can raise oxytocin levels, it makes sense: when you sing together, constantly checking each other's pitch and volume, making eye contact with the conductor and fellow singers, adjusting your own tone &mdash; of course your oxytocin levels will climb. Indeed, there is also research showing that pain thresholds rise during choral singing.<sup>2</sup></p>
+<h3>Song for You: A Movie That Captures It All</h3>
+<p>There is a wonderful film that beautifully illustrates these research findings: <em>Song for You</em> (also released as <em>Unfinished Song</em>). I happened to watch it on a plane, and because I had recently lost my youngest sister, I cried so much it was embarrassing for the person sitting next to me.</p>
+<p>The film tells the story of Arthur (Terence Stamp), an almost impossibly cantankerous husband, and Marion (Vanessa Redgrave), his wife who loves to sing and is active in a community choir. Arthur typically drives Marion to choir practice and waits outside. But when Marion is diagnosed with terminal cancer, her dying wish is for him to sing in the choir with her.</p>
+<p>The choir members patiently embrace the stubborn Arthur, coaxing him into rehearsals. Ultimately, after Marion's death, Arthur takes her place and enters a choral competition. I cannot say more without spoiling it &mdash; and that frustrates me. The dynamic between the energetic young choir leader Elizabeth and Arthur's strained relationship with his son James adds another compelling layer.</p>
+<p>This film is one of my all-time favorites. Even as I write this, I pulled up the trailer on YouTube and tears streamed down my face. In any case, I did not know this when I first watched it, but after learning that choral singing raises oxytocin more than solo singing, every scene in the film took on new meaning. I began to understand why singing together enhances our sociality and strengthens our immune systems. Beyond this film, there are many other movies and stories about the healing power of music and choir. The Korean film <em>Harmony</em> is one, and the Whoopi Goldberg classic <em>Sister Act</em> is another.</p>
+<p>During our dating years, my wife and I would invite friends over for dinner. Afterward, everyone would gather around the piano she was playing, harmonize, and sing together, eyes meeting across the room. I remember practicing a church duet with my wife's second brother &mdash; now my brother-in-law &mdash; laughing hysterically when we went off-key, bursting with happiness. Those emotions are still vivid in my memory. I wonder now whether the church elders in our immigrant community, struggling through the hardships of life abroad, were lowering their cortisol and raising their oxytocin during those choir rehearsals. I cautiously venture the thought: "Music is medicine."</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="29-dish-it-out-gossip.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 29: Dish It Out, and It Goes Up -- Gossip vs. Backstabbing</span></a>
+    <a href="31-lock-eyes-gift-your-dog.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 31: Lock Eyes, and It Goes Up -- The Gift Your Dog Gives You</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

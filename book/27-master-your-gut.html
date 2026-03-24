@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 27: Master Your Gut, Master Your Oxytocin &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 27: Master Your Gut, Master Your Oxytocin from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Six: The Oxytocin Lifestyle -- Body and Senses</div>
+        <h1 class="chapter-title">Chapter 27: Master Your Gut, Master Your Oxytocin</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+    <figure class="chapter-figure">
+        <img src="figures/fig03_autism_fmt.png" alt="Fig03 Autism Fmt" loading="lazy">
+    </figure>
+<p>, Master Your Oxytocin</p>
+<p>You might think this sounds like a non sequitur. Earlier, I explained how the Korean proverb "When your cousin buys land, your stomach hurts" is actually backed by science. Well, one of the hottest topics in the scientific world right now is the gut microbiome &mdash; the vast community of bacteria living in your intestines, commonly called the microbiome. If the human body contains roughly 30 trillion cells, the bacteria residing in your gut number approximately 38 trillion. More bacteria live inside your intestines than there are cells making up your entire body. Moreover, these 38 trillion bacteria comprise about 1,000 different species &mdash; a stunning display of diversity. When you analyze the genetic material of these bacteria, they possess roughly 100 to 150 times more genes than the human genome itself. It makes you wonder: am I living inside these bacteria, or are they living inside me? All told, these microorganisms weigh a mere 200 grams or so. So why has this tiny community sent the global scientific world into a frenzy? Let us find out.</p>
+<h3>A Shocking Revelation from Fat Microbiomes</h3>
+<p>My own interest in the microbiome was first sparked by media reports of so-called "obesity bacteria." A landmark 2013 study published in <em>Science</em> explained why even among genetically identical twins, one can be obese while the other is slim. In simple terms, the researchers transplanted microbiome samples from the feces of an obese twin and a lean twin into laboratory mice. The mice that received the obese twin's microbiome became fat, and those that received the lean twin's microbiome stayed thin. When I first read this paper, I thought, "Come on, that can't be right." Body composition is determined by so many factors that I dismissed it as an experimental artifact.<sup>1</sup></p>
+<p>But when I read the paper more carefully, I discovered the experimental conditions had been rigorously controlled. And the follow-up experiments were even more striking. When the researchers housed the fat-microbiome mice and lean-microbiome mice together in the same cage, the fat mice started losing weight. "Wait, what? Weight loss can be <em>this</em> easy?" Reading further, I finally understood the mechanism. In a shared cage, there is no separate bathroom &mdash; the mice defecate wherever they happen to be. They step on each other's feces and inadvertently consume them, causing their gut bacteria to intermingle. The fat mice were essentially ingesting the lean mice's microbiome. The result? The obese mice slimmed down. If this principle could be harnessed commercially, it could revolutionize the multi-billion-dollar diet industry overnight.</p>
+<h3>Autism and the Microbiome</h3>
+<p>Even more captivating than the obesity research was the emerging link between the microbiome and autism. While numerous studies have investigated the relationship between antibiotic use and autism, the scientific community remains split &mdash; roughly half support a connection, half do not. I find this entirely predictable. Autism has both genetic and environmental causes.*</p>
+<p>The hallmark of autism spectrum disorder is impaired social functioning. As I discussed earlier, individuals with autism struggle to make eye contact, cannot read emotions from facial expressions, and even when they do pick up on emotions, they have difficulty empathizing. Given the established relationship between oxytocin and autism &mdash; where low oxytocin levels or mutations in the oxytocin receptor are associated with reduced empathy and increased risk of autism &mdash; the gut-brain connection becomes highly relevant. Multiple genes related to the oxytocin receptor have been identified, and the number of variants an individual carries can predict the severity of symptoms.</p>
+<p>So why might antibiotic treatment be linked to autism symptoms? Because of the microbiome. About 70 percent of people with autism spectrum disorder are known to have gastrointestinal problems. A research team in Arizona first treated children with autism with antibiotics for two weeks, then transplanted healthy microbiome samples over a period of 7 to 8 weeks and observed the results.</p>
+<p>The results were nothing short of stunning. Gastrointestinal symptoms improved by approximately 80 percent, and autism symptoms also showed partial improvement. Two years later, the same team published a follow-up tracking the children who had received the transplants. Of the 18 participants, a significant number had seen their autism symptoms either disappear entirely or diminish to mild levels. When fecal samples from 16 of the 18 participants were analyzed, <em>Bifidobacterium</em> and <em>Prevotella</em> &mdash; two beneficial bacterial genera &mdash; had increased substantially. This means that changes in the gut microbiome alone produced dramatic improvements not only in gastrointestinal health but also in the social functioning of children with autism.<sup>2</sup></p>
+<p class="footnote">\* Genetic factors account for only about 10-20 percent of autism spectrum disorder. In cases where autism arises from environmental or acquired factors, genetics plays a triggering role. For example, when an individual already carries many autism-related genetic variants, it is difficult to attribute autism symptoms solely to antibiotic use. Conversely, in the rare case where no autism-related genetic variants are present, antibiotic use alone might theoretically trigger symptoms &mdash; though this requires further scientific verification.</p>
+<h3>Change Your Life to Master Your Gut</h3>
+<p>So the natural question follows: could changes in the microbiome improve social functioning even in people without autism? Some university hospitals in Korea are already conducting selective clinical studies on this very question. But we do not all need microbiome transplants. Changing what we eat three times a day is enough.</p>
+<p>The foods that support a thriving gut microbiome are surprisingly ordinary. The primary fuel for gut bacteria is carbohydrates &mdash; specifically, the kind that are not absorbed in the small intestine and make it all the way to the large intestine. These are vegetables and dietary fiber. This is precisely why we need to eat more vegetables. Second, reduce your intake of processed foods. Among your gut bacteria, there are beneficial and harmful species, and maintaining their balance is paramount. Processed foods increase harmful bacteria and decrease beneficial ones because they contain virtually no fiber. Diets rich in processed foods and sugar disrupt the balance between beneficial and harmful bacteria, potentially leading to chronic inflammation and a weakened immune system.</p>
+<p>Third, adopt a healthier overall lifestyle. Regular exercise, avoiding excessive alcohol and tobacco, getting adequate sleep, and maintaining a healthy weight all contribute to a thriving gut environment. For exercise, aim to include brisk walking (power walking), cycling, and strength training &mdash; activities that get you breathing hard. Of course, choose activities appropriate for your joint health, and for the sake of oxytocin, exercise with others whenever possible rather than alone. Alcohol and smoking are devastating to gut health. This is so obvious that I will spare you the detailed explanation.</p>
+<p>Adequate sleep and time-restricted eating are absolutely essential for gut health. These two factors are especially critical because irregular eating habits &mdash; particularly the Korean culture of heavy late-night snacking (<em>yasik</em>) &mdash; wreak havoc on both gut health and sleep quality. Look at the chemical formula of carbohydrates (C6H12O6): glucose is essentially carbon with water molecules attached. When you wake up in the middle of the night after a carb-heavy late snack, it is because the water released during carbohydrate metabolism needs to be expelled. Moreover, carbohydrates raise blood insulin, and elevated insulin triggers wakefulness, preventing restful sleep. But is protein any better? Protein requires far more energy to digest, forcing your stomach and intestines to keep working instead of resting &mdash; so excessive protein as a late-night snack can actually be worse.<sup>3</sup></p>
+<div class="hl"><strong>Oxytocin Boost:</strong> Avoid spicy, salty, and processed foods. Embrace a diet rich in vegetables, fruits, and dietary fiber. If overhauling your entire diet feels overwhelming, start with just one healthy meal a day.</div>
+<h3>The Microbiome-Oxytocin Connection</h3>
+<p>The mechanisms by which the microbiome and oxytocin influence social behavior are remarkably similar. When you take antibiotics that kill gut bacteria, oxytocin levels drop, and sociability declines with them. Among gut bacteria, beneficial strains like <em>Lactobacillus reuteri</em> not only increase oxytocin production but also enhance social behavior. In fact, <em>L. reuteri</em>'s benefits extend far beyond sociability &mdash; it has anti-cancer, anti-inflammatory, antidepressant, immune-boosting, anti-obesity, and wound-healing properties. These effects overlap strikingly with oxytocin's own benefits.</p>
+<p>So what happens when you give <em>Lactobacillus reuteri</em> to animals that lack functional oxytocin receptors? Fascinatingly, when oxytocin cannot function properly, <em>Lactobacillus</em>'s wound-healing, immune-boosting, and anti-obesity effects are dramatically reduced or disappear entirely. And when the vagus nerve &mdash; the main parasympathetic pathway &mdash; is severed, both oxytocin's and <em>Lactobacillus</em>'s effects plummet. These intriguing findings dovetail with recent research showing that stimulating the parasympathetic nervous system through meditation, exercise, and even electrical stimulation can influence depression and various other mental health conditions. The bottom line: master your gut, and you master your oxytocin. That is no exaggeration.<sup>4</sup></p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="26-eat-your-way-up.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 26: Eat Your Way Up -- How Food Raises Oxytocin</span></a>
+    <a href="28-move-it-or-lose-it.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 28: Move It or Lose It -- How Exercise Raises Oxytocin</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

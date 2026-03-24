@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afterword: The Health of Our Nation Is at Risk &mdash; The Oxytocin Story</title>
+<meta name="description" content="Afterword: The Health of Our Nation Is at Risk from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Afterword</div>
+        <h1 class="chapter-title">Afterword: The Health of Our Nation Is at Risk</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+    <figure class="chapter-figure">
+        <img src="figures/fig07_oxytocin_boosters.png" alt="Fig07 Oxytocin Boosters" loading="lazy">
+    </figure>
+<p>The World Health Organization identifies three pillars of health: not only physical health, but mental health and social health as well. Among physical ailments, conditions like hypertension, diabetes, and cancer continue to surge, alongside rapidly increasing inflammatory bowel disease. Meanwhile, alarm bells are ringing for mental and social health too. Depression and bipolar disorder have become commonplace, and conditions such as schizophrenia, anxiety disorders, sleep disorders, and obsessive-compulsive disorder are rising sharply. As the number of single-person households grows and rates of marriage, birth, and population growth decline, social isolation and the severing of human connection have led to alarming rates of elderly people living and dying alone. For more than a decade, South Korea has held the grim distinction of having the highest suicide rate among OECD nations. Television is filled with programs depicting marital conflicts and generational divides, and beyond the usual tensions between neighbors, regions, and genders, the social distancing imposed by COVID-19 has compounded these threats to the nation's health on every front.</p>
+<p>"Are we truly happy right now?"</p>
+<p>Let me share something that happened long ago. One day, I scolded the senior student representative in my lab. What I had hoped was that the student would rally the team, encouraging everyone to buckle down and do their best. Instead, the student I had reprimanded took out their frustration on fellow students, blaming and snapping at each other. The lab atmosphere predictably nosedived. I told myself I had been rational and controlled, but the truth is that I was overwhelmed by my own workload and had vented my irritation. The student just happened to be in the line of fire. My pointless outburst became one of the worst precedents in my memory. Those graduate students who bore the brunt of my frustration may well have gone home and turned their anger on parents, siblings, or partners, tangling their own relationships in turn.</p>
+<p>This is how life works. We do not live alone &mdash; we live in relationship with others. Our emotions are contagious. When you are around a happy person, their happiness rubs off on you. When you are around someone depressed, you start feeling down too. Being around someone with high oxytocin raises your own oxytocin levels, and living with someone whose cortisol is chronically elevated sends your own cortisol on a roller coaster.</p>
+<p>Imagine a person with high oxytocin joining a workplace. This person listens attentively to supervisors, trusts colleagues, and is kind to everyone. They share food, make eye contact during conversations, and consistently show consideration for others. When a gem like this joins a team, oxytocin levels across the entire department would skyrocket. Even when difficulties arise or unexpected obstacles appear, work life would feel joyful and fulfilling. And the ripple effect would extend to other departments, to those employees' families, and even to partner companies.</p>
+<p>This actually happens around us all the time. Nicholas Christakis and James Fowler, authors of <em>Connected</em>, tracked over 12,067 people across more than 50,000 social network connections over many years. They found that obesity spreads not just to friends but to friends of friends, and even to friends of friends of friends. If all of you reading this book practice the oxytocin lifestyle in your homes, you could exert an infinite positive influence &mdash; not only on your spouse, parents, friends, and colleagues, not only on strangers you meet today, but on the groups and communities you belong to, and ultimately on society itself. And this does not grow arithmetically; it grows <em>exponentially</em>.</p>
+<p>Recently, I met Professor Seo Eun-guk, author of <em>The Origin of Happiness</em>, and we had a long conversation about the link between extraversion and happiness, weaving in what I know about oxytocin. He shrugged and admitted he had not been aware of all the connections between oxytocin and social relationships, physical health, and mental health described in this book &mdash; but added that he was not at all surprised that oxytocin is involved in all of them. Oxytocin is the hormone of compassion, empathy, and heart-to-heart connection. Whether you explain this from a social-evolutionary perspective &mdash; that kind individuals learned through evolution to survive by securing help from others &mdash; or from a creationist perspective &mdash; that we were designed to love and care for one another, and therefore experience true happiness only when we do &mdash; does not change the core fact: oxytocin is at the heart of it all. Which of these two perspectives is correct lies beyond the scope of this book. But if more people had high oxytocin, and if more people shared that power with those around them, how much more beautiful and happy would our nation become?</p>
+<p>Carrying this rosy vision, I &mdash; as a health researcher &mdash; have long been thinking about how to improve individual health and community well-being through lifestyle changes. Along the way, I discovered the hormone oxytocin. It was serendipitous that my doctoral research in Canada focused on the endocrine system, and my postdoctoral work at Harvard centered on the feeding center-hypothalamus-pituitary axis &mdash; both of which gave me a strong foundation for understanding oxytocin. As I read paper after paper, I could not help but fall for this remarkable hormone. What first amazed me was that oxytocin is a hormone of sociality and connection. What amazed me a second time was the link between oxytocin and modern disease.</p>
+<h3>"Let us meet, share, and love &mdash; earnestly."</h3>
+<p>Oxytocin is produced when we meet people, look into each other's eyes, talk, touch, and love. When oxytocin is deficient, we do not just become unhappy &mdash; we become <em>ill</em>. The sad truth is that people in our society are gradually losing the ability to meet, converse, and love. The incidence of chronic diseases and mental illness is climbing steeply. Through the COVID-19 pandemic, isolation and separation were actually <em>encouraged</em>, and as hyper-aging and automation advance simultaneously, ordering a bowl of soup at a restaurant now means using a kiosk, and having a single dish of noodles delivered to your home is entirely contactless. It is heartbreaking. The enormous popularity of the Korean variety show <em>I Live Alone</em> reflects how many people relate to a solitary existence. The coining of the word "untact" (contactless) signals that we stand at the tail end of a dystopian legacy in which meeting other human beings has become <em>awkward</em>.</p>
+<p>All life and all happiness begin with human touch. No matter how far society advances into social networks, the metaverse, and cutting-edge IT, one truth remains unchanged: every meeting and relationship rooted in our physical bodies gave rise to the vast structure we call civilization. In the film <em>Ready Player One</em>, Dr. Halliday's parting words to the protagonist Parzival ring with meaning: "Go back to reality. That's the only place where you can get a decent meal." In an era that has moved beyond the nuclear family into the age of the "nuclear individual," we must rewrite the narrative of connection &mdash; the oxytocin story &mdash; to build healthier individuals and happier communities. Close this book right now and call up a friend you have not seen in ages for a drink. Share a plate of Korean pancakes with a neighbor you have been distant from. Take your spouse &mdash; the one you have been sleeping in separate rooms from &mdash; on a proper date downtown. That is what I want to see.</p>
+<p>As I wrap up this book, I realize that during the six months I devoted to writing, my own oxytocin levels were probably higher than ever. Looking back, I find that I was unconsciously listening more attentively to my elders, looking more deeply into the eyes of the people I spoke with, treating my family more kindly, hugging them more often, and showing greater care and consideration to my colleagues and students. As I finish the manuscript, I think of the saying: knowledge is power, and you see as much as you know. I sincerely hope that this book broadens your horizons and helps make our wonderful country a happier place. And I pray that this book &mdash; even if only as much as a speck of dust, as small as a single mustard seed &mdash; contributes to building a healthier, happier nation. Thank you.</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="37-from-insulin-to-oxytocin.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 37: From Insulin to Oxytocin -- Love Is Medicine</span></a>
+    <a href="38-appendix.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Appendix: The Oxytocin &amp; Cortisol Lifestyle Questionnaires</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

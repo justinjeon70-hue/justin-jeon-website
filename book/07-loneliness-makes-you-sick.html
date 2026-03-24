@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7: Loneliness Makes You Sick &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 7: Loneliness Makes You Sick from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Two: Oxytocin for the Soul</div>
+        <h1 class="chapter-title">Chapter 7: Loneliness Makes You Sick</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>During my years as an international student, whenever someone in our community fell ill, we would say, "It's hard enough being alone in a foreign country &mdash; we can't let them be sick on top of it." We would visit, cook meals, and pray for them. And the bedridden student, somehow energized by the company, would often bounce back remarkably quickly. For years, the COVID-19 pandemic made hospital visits impossible, forcing us into social distancing. But in our culture, when you hear someone is sick, you make time to visit &mdash; no matter how busy you are.</p>
+<h3>The Destructive Power of Loneliness</h3>
+<p>The Japanese word <em>hikikomori</em> describes people who withdraw from society entirely, confining themselves to their homes for extended periods. In Korea, the equivalent term is <em>eundunhyeong oettori</em> &mdash; "reclusive loners." A 2023 government report surveyed fifteen thousand households of young adults aged 19 to 34 and found that 2.4 percent were hikikomori-type recluses with no specific reason such as pregnancy or childbirth for staying home. Applied to the broader youth population, that translates to roughly 244,000 people &mdash; a staggering number. In 2021, recognizing the severity of the problem, the Korean Ministry of Gender Equality and Family announced a support program offering up to 650,000 won (approximately $500) per month in living expenses, medical costs, and educational support to help recluses reenter society.</p>
+<p>What is the difference between isolation and solitude? If isolation means being involuntarily alone and feeling its sting, solitude is a chosen state of being present with yourself. Isolation breeds negative emotions; solitude nurtures positive ones. Put differently, we feel lonely when we desire connection but experience it too infrequently or too superficially. Isolation should be avoided whenever possible; solitude, if you can embrace it, should be savored.</p>
+<p>The health consequences of loneliness are devastating. Social isolation has been compared to smoking fifteen cigarettes a day or drinking six glasses of soju (a Korean distilled spirit, comparable to downing several cocktails). Isolation raises the risk of premature death in adults more than physical inactivity or obesity does.<sup>1</sup></p>
+<p>Early research on loneliness and cardiovascular disease found that unmarried men and women had a 50 percent higher rate of cardiovascular disease and an 18 percent higher mortality rate than their married counterparts. At the time, the connection between loneliness and disease was still debated. But recent studies have steadily shown that loneliness weakens the immune system, increases cardiovascular disease risk, and raises cancer incidence and mortality. The evidence is now considered established. The studies are too numerous to count. One examined two hundred breast cancer patients and found that those who reported feeling lonely experienced significantly more pain, more depression, and greater fatigue than those who did not.<sup>2</sup></p>
+<p>People who feel lonely are at greater risk for a wide range of diseases, and their mortality rates are considerably higher. Experts once attributed this to elevated stress hormones, increased systemic inflammation, and the unhealthy habits of isolated individuals. But more recently, a new theory has gained traction: loneliness erodes social skills, and that erosion deepens isolation &mdash; creating a vicious cycle that drives up disease and death rates.<sup>3</sup></p>
+<h3>Oxytocin: A Friend in Loneliness</h3>
+<p>What role does oxytocin play in combating isolation? Experts agree that low oxytocin levels may be the "trigger" by which loneliness leads to disease. The lonelier and more socially isolated a person is, the lower their oxytocin &mdash; and low oxytocin further reduces sociability and reinforces negative emotions, sabotaging both new relationships and existing ones. This is not a virtuous cycle but a vicious one.</p>
+<p>Do people with genetic mutations in their oxytocin receptor feel more loneliness? According to a 2009 German study, yes. Those with receptor mutations reported greater social loneliness and isolation. Considering that the partners of people with low empathy also tend to feel lonelier, it becomes clear that oxytocin influences whether healthy relationships are formed and maintained &mdash; which in turn significantly affects the prevalence and mortality of various diseases.<sup>4</sup></p>
+<p>Conversely, the more people you meet, the more meaningful relationships you build, and the more you engage in mutually supportive activities, the more your oxytocin levels rise. And that rising oxytocin will rescue you from loneliness &mdash; and from the cascade of health problems it causes.</p>
+<p>An Israeli research team invited sixty-three elderly participants to play a "mirror game," which stimulates mirror neurons and builds empathy by having participants mimic each other's movements. The fascinating result was that every single participant found the game so enjoyable that they forgot their loneliness &mdash; and these emotional shifts correlated precisely with the changes in oxytocin levels measured in their saliva. Moreover, the effect varied depending on how close and familiar participants felt toward their game partners. As oxytocin levels rose, loneliness decreased &mdash; and the closer participants felt to their partners, the greater the effect.<sup>5</sup></p>
+<p>Given all of this, I can say with confidence that the best way to break the vicious cycle of loneliness and disease today is to increase the oxytocin in our bodies. To those who say, "I'm just naturally introverted. I probably have a mutation in my oxytocin receptors. I'll never be happy. I'll just live and die alone" &mdash; please don't give up. Research shows that even naturally reserved and introverted people feel more joy and happiness when they do enjoyable activities with others.<sup>6</sup></p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="06-oxytocin-and-resilience.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 6: Oxytocin and Resilience</span></a>
+    <a href="08-oxytocin-the-pain-killer.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 8: Oxytocin, the Pain Killer</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

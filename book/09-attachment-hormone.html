@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 9: Oxytocin, the Attachment Hormone &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 9: Oxytocin, the Attachment Hormone from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Three: The Oxytocin That Makes Us Better People</div>
+        <h1 class="chapter-title">Chapter 9: Oxytocin, the Attachment Hormone</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>I first met my wife when I went to Canada for a language program. At church, we were simply an older brother figure and a younger sister figure to each other &mdash; nothing more. It was only when I returned to the University of Alberta as an exchange student that we began dating. When I decided to extend my stay by one more semester beyond the original plan, my life changed in more ways than I could have imagined. My relationship with my wife set off an enormous butterfly effect in my life. From October 1994, we dated with marriage in mind, getting to know each other deeply, and until the following March, when I had to return to Korea, we spent nearly every moment together. Then I left her behind in Canada and went back to Korea to finish my senior year of college.</p>
+<p>That was when the agonizing long-distance relationship began &mdash; every morning, I wrote her a letter, and every night, I ended my day listening to her voice on an outrageously expensive international phone call. I had to juggle three different part-time jobs just to pay the phone bills.</p>
+<p>I missed her so terribly I thought it might kill me. Looking back now, I realize that the separation anxiety and emptiness were making me physically and emotionally ill. The one saving grace was that this painful time apart lasted only three months, cut short by my sudden decision to go abroad for graduate school. In April of that year, I decided to pursue my studies overseas. By May, I had received my admissions letter and, in a whirlwind, obtained both families' blessing for our marriage. It all happened so fast it felt like roasting beans over a lightning bolt, as the Korean saying goes. In June, my wife flew to Korea for the wedding. We married in July, and by August, we were heading back to Canada together. I had entered the country alone, but I left it as part of a family. That September, I began my master's program, launching what would become eight years of life as a student in Canada.</p>
+<p>This desire to be with the person you love, this sense of stability that comes from being together &mdash; it is not merely a psychological theory. It is, in fact, a biologically proven phenomenon. Scientists call it <em>attachment theory</em>. Attachment takes many forms: between parent and child, between siblings, between friends, and between romantic partners. These attachments exert a lasting influence on a person's personality and temperament, and they are important enough to affect both psychological and physical health.</p>
+<h3>The Importance of Attachment</h3>
+<p>John Bowlby, the British psychiatrist who founded attachment theory, drew on both his childhood experiences and his clinical work treating adolescents with personality disorders. When Bowlby was born, the British upper class believed that physical affection and emotional expression would spoil children. In most households, nannies raised the children rather than the parents themselves. Bowlby's parents lived apart from each other, and his mother would leave her children behind to spend half the year with her husband.</p>
+<p>The absence of his mother left a deep wound in young Bowlby's heart. Until the age of four, he was cared for by a kind-hearted nanny, but when she left, he was raised by a much colder and stricter replacement. Bowlby later wrote that losing this nanny felt as devastating as losing his own mother. Then, when Bowlby was just five years old, he received the shattering news that his father &mdash; whom he had rarely seen &mdash; had been killed in the Second Boer War. Through the shock of losing his parents, Bowlby came to understand just how critical attachment is for a child.</p>
+<p>As an adult, Bowlby established a psychiatric practice in London, where he discovered that children who had been separated from their parents during World War II to escape German bombing raids later developed personality disorders. Based on these observations, he published <em>Forty-Four Juvenile Thieves</em>. In this work, Bowlby classified children into six types: normal, depressive, circular, hypomanic, affectionless, and schizoid. Among the forty-four children he studied, seventeen had been separated from their parents for more than six months before age five. Of the fourteen classified as "affectionless," twelve had experienced such separation. These observations were instrumental in establishing attachment theory &mdash; the idea that early caregiving methods, environment, and the process of forming bonds with parents profoundly shape a child's character.</p>
+<p>Bowlby's attachment theory had a profound impact on the American psychologist Harry Harlow. Harlow is best known for his research on rhesus monkeys, though he did not originally set out to study primates. When he was hired as an assistant professor at the University of Wisconsin, the animal laboratory had been dismantled, leaving him without a place to conduct experiments. He began by observing monkeys at the local zoo and eventually launched his primate research program. When the zoo monkeys kept dying from infectious diseases, Harlow had no choice but to separate the infant monkeys from their mothers immediately after birth.</p>
+<p>He noticed that these motherless baby monkeys not only showed poor social skills but also became obsessively attached to cloth diapers in their cages. This observation sparked what became his famous wire-and-cloth surrogate mother experiment. The study aimed to determine whether an infant loves its mother because she provides food for survival, or for some other reason. To find out, Harlow placed infant monkeys in cages with two surrogate mothers &mdash; one made of wire and one covered in soft cloth. The wire surrogate was fitted with a bottle so that the monkey had to go to it for milk, while the cloth surrogate offered the warmth and comfort of a mother's embrace. Harlow then observed which surrogate the infant monkeys spent more time with.</p>
+<p>The results were striking. The baby monkeys spent overwhelmingly more time clinging to the cloth mother, visiting the wire mother only when they needed to feed. It was a clear victory for the cloth surrogate. Harlow then pushed the experiment further. He introduced a frightening robot monkey into the cage and watched to see whether the terrified infants would run to the wire mother or the cloth one. Once again, the cloth mother won decisively &mdash; the baby monkeys scrambled into her soft embrace and clung to her tightly. But then something happened that even Harlow had not anticipated. Once safely nestled against the cloth mother, the baby monkey turned toward the robot and began shrieking at it &mdash; as if it now had a powerful ally backing it up. It was like a child who is always intimidated by a bigger kid suddenly standing up to the bully the moment his mother takes his hand. Bowlby and Harlow not only cited each other's findings to complete their respective theories but actually met in person in 1958. It goes without saying that both men immediately recognized each other as steadfast allies.<sup>1</sup></p>
+<h3>Attachment Is Made of Oxytocin</h3>
+<p>When Bowlby and Harlow published their research on attachment theory and the importance of physical touch, the only known function of oxytocin was its role in uterine contractions. No one yet realized that it was the very hormone directly involved in forming human bonds. In truth, oxytocin is intimately connected to attachment. Mice that lack oxytocin receptors neglect their own pups, but when oxytocin is administered to a virgin female mouse that has never given birth, she suddenly begins caring for newborn pups as if they were her own. Conversely, when an oxytocin antagonist is given to a nursing mother mouse who has been attentively caring for her young, she abandons her pups entirely. These findings tell us that oxytocin plays a crucial role in forming the attachment between a mother and her offspring.<sup>2</sup></p>
+<p>Similar patterns emerge in humans. Mothers with higher oxytocin levels bond more deeply with their unborn babies during pregnancy and show greater affection after birth. They respond far more sensitively to their baby's sounds, even while sleeping, and are better at making eye contact and emotionally connecting with their child. The fact that physical touch between mother and child is vital for normal brain development has been confirmed by numerous studies in both animals and humans. Oxytocin is not only important for the mother-child bond &mdash; it matters equally for fathers. In an experiment involving thirty-three fathers and their infants aged four to eight months, fathers who inhaled oxytocin engaged in significantly more physical touch and social interaction with their children, and their children's oxytocin levels rose in response. The children gazed at their fathers more, smiled more, touched them more, and even showed more adventurous behavior by exploring unfamiliar objects. When a father's oxytocin increases, the entire father-child relationship becomes profoundly more meaningful.<sup>3</sup></p>
+<p>The influence of oxytocin on attachment extends well beyond the parent-child relationship. Numerous studies have demonstrated that oxytocin promotes positive emotions, gratitude, and healthier interpersonal relationships. You do not even need to look at dense academic papers to see this &mdash; the popular book <em>Whale Done!</em> illustrates how praising animals or people improves relationships, a result that is, in many ways, intuitively obvious.</p>
+<p>Now imagine applying that same spirit of praise and gratitude to your romantic relationship. How much happier and more positive could it become? Research shows that couples with higher oxytocin levels exhibit greater mutual empathy, mutual interest, positive emotions, and physical affection. Moreover, higher blood oxytocin levels are strongly correlated with more frequent hugging between partners, and women who hugged more showed more stable blood pressure. Oxytocin does not merely enhance the romantic dimension of a relationship &mdash; it actively safeguards both partners' health.<sup>4</sup></p>
+<div class="hl"><strong>Oxytocin Booster:</strong> If you have young children, hold them tight. If there is someone you love nearby, give them a long hug. If you are alone, a pet, a cushion, or even a stuffed animal will do.</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="08-oxytocin-the-pain-killer.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 8: Oxytocin, the Pain Killer</span></a>
+    <a href="10-hormone-that-believes-in-you.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 10: Oxytocin, the Hormone That Believes in You</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

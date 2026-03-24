@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 11: Oxytocin, the Altruistic Hormone &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 11: Oxytocin, the Altruistic Hormone from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Three: The Oxytocin That Makes Us Better People</div>
+        <h1 class="chapter-title">Chapter 11: Oxytocin, the Altruistic Hormone</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>O. Henry's short story "The Gift of the Magi" teaches us something profound about selflessness. James and Della were desperately poor, yet they loved each other more deeply than anyone. With Christmas approaching and no money for gifts, they scrambled to find a way to buy each other something unforgettable. In the end, James sold his most treasured heirloom &mdash; a gold pocket watch passed down through generations &mdash; to buy Della a set of ornamental combs. Della, in turn, cut and sold her long, lustrous golden hair &mdash; hair that would have made a fairy-tale princess weep with envy &mdash; to buy James a platinum watch chain. Each sacrificed what was most precious to them for the sake of the other. By a cruel twist of fate, each gift became useless &mdash; combs for hair that was gone, a chain for a watch that had been sold.</p>
+<p>When James sees the tangled irony of their gifts, he says to his weeping wife: "Darling, let's put our presents away for now. They are too beautiful to use just yet." O. Henry reportedly said of his story: "I have told the tale of two young people who most unwisely sacrificed for each other the greatest treasures of their home. But let me speak a final word to the wise: of all who give gifts, these two were the wisest. Of all who give and receive gifts, such as they are the wisest. They are the magi."</p>
+<h3>How Altruistic Are We?</h3>
+<p>How altruistic can we truly be? The willingness to sacrifice part of what you have so that someone else might thrive &mdash; that is what we commonly call altruism. What would happen if spouses, teachers and students, employers and employees all treated each other with genuine altruism? How many people could say, like Moses in the Bible, "Blot my name out of your book" if it meant saving others from destruction? How many could do what Captain Robert F. Scott did during his Antarctic expedition &mdash; telling his companions, "I am already done for; eat my body and survive this blizzard"?</p>
+<p>There is a fascinating experiment related to altruism: game theory, born from the prisoner's dilemma. The prisoner's dilemma has been featured on television shows worldwide &mdash; including the beloved Korean variety show <em>Running Man</em>, where similar games are a regular feature. In this classic scenario, two accomplices are arrested, but the police lack evidence and must rely on confessions to prosecute. The suspects are placed in separate cells and each is offered a deal: confess and your sentence will be reduced to two years. But you must weigh the risk that if you confess and your partner stays silent, you will bear the full burden of guilt. Of course, your partner in the next cell is thinking the exact same thing. Sound familiar? This is exactly the kind of dilemma that gave rise to <em>game theory</em>, proposed by John Nash &mdash; the subject of the film <em>A Beautiful Mind</em>. Through repeated rounds, all participants eventually gravitate not toward the best possible outcome but toward avoiding the worst one, reaching what is known as a <em>Nash equilibrium</em>.^</p>
+<p>In 2010, psychologist Carsten De Dreu of the University of Amsterdam published three intriguing experiments in <em>Science</em>, all based on game theory. The first asked: "Does oxytocin promote altruism toward members of one's own group?" The second: "Does altruistic behavior occur only in people who are naturally cooperative, or does it also emerge in those who are typically uncooperative?" The third: "How does altruism affect aggressive behavior carried out in the name of self-defense?"</p>
+<p>The results were remarkably interesting. When participants inhaled oxytocin, they were more willing to share their resources with members of their own group. This effect appeared universally, regardless of participants' baseline tendency toward cooperation. On the other hand, oxytocin did <em>not</em> increase <em>parochial altruism</em> &mdash; aggressive behavior directed at outsiders in the name of protecting one's own group. The fundamental spirit of true altruism lies in sacrificing oneself for others. By that logic, some of the most "altruistic" figures in history might be terrorists &mdash; people who kill citizens of other nations in the name of their homeland. Fortunately, oxytocin promotes only genuine, pure altruism &mdash; not the narrow, tribal kind.<sup>1</sup></p>
+<h3>Elevate Your Altruistic Happiness with Oxytocin</h3>
+<p>When do we feel happier &mdash; when we act selfishly or when we act altruistically? You do not need a research paper to know the answer. When I provide something my loved one needs and watch them light up with happiness, my own happiness swells. That is simply human nature. When a child's birthday approaches, no parent complains about "wasting money" on a family restaurant party. Just watching your child joyfully devour the food you bought is enough to make a parent happy. As the Korean saying goes, "A parent feels full just watching food go into their child's mouth."</p>
+<p>For me, the happiest moments as a professor come when I receive a research grant and can give scholarships to my students. The next happiest is seeing a student's face light up when I tell them their paper has been accepted for publication as first author. Altruistic acts push us toward the most intense forms of happiness. The Korean singer and philanthropist Sean &mdash; widely known for his tireless charity work and donations &mdash; once said that the happiness he feels from helping others unconditionally is "like a drug." That drug, it turns out, is oxytocin.</p>
+<p>Happiness cannot be bought with money. Beyond what is needed for basic subsistence, money often marks the beginning of unhappiness, not its cure. Ironically, the more people think about money, the unhappier they become, and the wealthier they are, the more time they spend alone rather than giving. Money ends up pushing people away.</p>
+<p>Elizabeth Dunn, a professor at the University of British Columbia, and Michael Norton, a professor at Harvard Business School, carefully examined the happiness levels, annual incomes, and spending patterns of 632 people. They looked specifically at how much participants spent on basic necessities versus <em>prosocial spending</em> &mdash; money spent on socializing and doing things with others &mdash; and how these related to happiness. The amount spent on oneself showed no correlation with happiness whatsoever, but prosocial spending was strongly correlated with happiness.</p>
+<p>These findings were later published in the book <em>Happy Money</em>. To further test their hypothesis, Dunn and Norton surveyed employees who received bonuses of approximately $5,000, examining how they spent the money before and six to eight weeks after receiving it, in relation to their happiness. The results were the same. The amount people spent on others was strongly correlated with happiness. We experience genuine happiness when we share what we have with others, or when we witness someone else's joy at our generosity. Humans are simply wired that way.<sup>2</sup></p>
+<p>Does oxytocin play a role in this kind of giving? Paul Zak's research team divided ninety-six students into three groups. The first group received massages while playing a trust game. The second group received only massages. The third group played the trust game without any massage. Students in the first two groups received fifteen-minute professional massages. The results showed that massage alone did not significantly raise oxytocin levels, but the combination of massage and the trust game activated oxytocin secretion. As expected, oxytocin levels were directly proportional to how much participants trusted their game partners and invested.</p>
+<p>After the experiment, participants were invited to make voluntary donations. Students who received both massage and played the trust game donated an average of $17.36. Those who received only a massage donated $6.85. Those who played the trust game alone donated just $2.00. The group that experienced both trust and physical touch donated nearly three times as much as the massage-only group. As oxytocin levels rose, the tendency to give increased &mdash; an effect that was even more pronounced in women than in men. The conclusion is clear: the higher our oxytocin levels, the more we trust others, the kinder we become, and the happier we feel. This is the altruistic happiness that oxytocin teaches us.<sup>3</sup></p>
+<div class="hl"><strong>Oxytocin Booster:</strong> Take a look at your spending. How much goes toward experiences shared with others, and how much toward charitable giving? If these numbers are low, consider redirecting some of your spending toward shared experiences with friends and neighbors.</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="10-hormone-that-believes-in-you.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 10: Oxytocin, the Hormone That Believes in You</span></a>
+    <a href="12-its-okay-to-not-be-okay.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 12: It's Okay to Not Be Okay</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

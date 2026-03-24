@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 37: From Insulin to Oxytocin -- Love Is Medicine &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 37: From Insulin to Oxytocin -- Love Is Medicine from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Eight: The Power of Narrative</div>
+        <h1 class="chapter-title">Chapter 37: From Insulin to Oxytocin -- Love Is Medicine</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<h3>Love Is Medicine</h3>
+<div class="hl"><strong>Oxytocin Leadership</strong>
+When we do something we enjoy, we feel joy and experience less stress. When we are forced to do something we dislike, the same task generates far more stress. Yet even when the work is unwelcome, having autonomy over <em>when</em>, <em>where</em>, and <em>by when</em> it must be done significantly reduces stress. The worst case is doing something you dislike, involuntarily and under stress. Add competition with colleagues to the mix, and the situation worsens further. An extreme example is the military-style "first across the line" run. It strips away all autonomy and control. Even when everyone runs the same distance, each person's exercise intensity and stress level will differ. Even the winner gains nothing meaningful, because the person they defeated was not an enemy but a teammate.
+Some leaders treat their teams the way a drill sergeant runs a race &mdash; pitting people against each other. This is poor leadership. In contrast, some leaders operate from a foundation of compassion, trusting and caring for their team members. Instead of saying "Back in my day..." and piling on unreasonable demands, they consider each person's challenges and lead with empathy. The mere knowledge that someone trusts you is enough to raise your oxytocin. Leaders should encourage rather than surveil, support rather than direct, help rather than scold when work falters, create environments that enable success, and empower self-direction. Build a team culture of mutual care &mdash; but let the leader sacrifice first. If someone must take a loss, let it be the leader. This is <em>oxytocin leadership</em>.</div>
+<p>There are two types of diabetes. In type 1 diabetes, the body cannot produce insulin. In type 2, the problem is not a lack of insulin but its failure to function properly &mdash; a condition called insulin resistance, which is typically worsened by obesity and physical inactivity. Our cells need energy to function, and they derive that energy from carbohydrates, fat, and protein. For cells to absorb carbohydrates (glucose) and convert them to energy, they need the hormone insulin. In type 1 diabetes, without insulin's help, cells cannot absorb glucose, so blood sugar levels soar dangerously. Starved of energy, the body wastes away and eventually dies. To solve this problem, Frederick Banting and Charles Best isolated insulin from dogs and made it available for human use, earning the 1923 Nobel Prize in Medicine. However, the insulin used at the time was extracted mainly from animal pancreases, making mass production difficult and duration of action short &mdash; a new solution was needed.<sup>1</sup></p>
+<h3>From Insulin Research to Discovering Oxytocin</h3>
+<p>In 1923, twenty-two-year-old Vincent du Vigneaud heard about the discovery of insulin from Professor Johnstone Rose, who had just returned from meeting Banting and Best. Deeply inspired, du Vigneaud began researching insulin. Originally interested in insulin synthesis as well as the amino acid cysteine and its disulfide bonds, he eventually turned to synthesizing oxytocin &mdash; a far smaller protein than insulin. What began as insulin research led du Vigneaud to the synthesis of oxytocin, earning him the 1955 Nobel Prize in Chemistry. The prize recognized oxytocin as the first peptide hormone ever synthesized by humans.* The ability to produce synthetic oxytocin meant it could be administered by injection, helping mothers during childbirth and saving countless lives of mothers and newborns.<sup>1</sup></p>
+<p class="footnote">\* Most hormones in our body are either peptide hormones like oxytocin and insulin, or steroid hormones like sex hormones.</p>
+<p>Though my own achievements are incomparable to du Vigneaud's, I too have recently expanded from insulin research to oxytocin. I began my master's degree at the University of Alberta, Canada, in 1995, focusing on diabetes and insulin resistance. I studied why spinal cord injury patients &mdash; who face three to five times the diabetes risk &mdash; develop the disease at such high rates, and I conducted the first studies characterizing their insulin production and secretion capacity. I was also present for the first successful islet cell transplantation, a technique proposed by Dr. Edmond Ryan as an alternative to full pancreas transplants for treating type 1 diabetes without insulin injections. I conducted pre- and post-exercise insulin secretion tests on spinal cord injury patients to verify the effects of exercise. During my doctoral work, I expanded from insulin to leptin, the hormone that regulates obesity. At Harvard, I investigated how leptin acts on peripheral cells through the brain and autonomic nervous system. After joining Yonsei University's faculty in 2005, I pursued diverse research on obesity, insulin resistance, and exercise in collaboration with Severance Hospital.<sup>2</sup></p>
+<h3>Knocking on Death's Door with Oxytocin</h3>
+<p>Then one day in 2009, while teaching a class on therapeutic recreation, I said something off the cuff: "Wouldn't a cancer patient with six months to live have better quality of life spending that time doing things they enjoy, rather than lying in a hospital bed hooked up to IV lines waiting to die?" Then a thought flashed through my mind: if they lived more joyfully, might they also live <em>longer</em>? It was a completely spontaneous, unrehearsed idea. But I convinced myself with my own lecture, rushed to the lab, and typed the keywords "exercise," "cancer," and "mortality" into a medical database. The results were stunning. Breast cancer patients who walked three hours a week cut their recurrence in half. Colon cancer patients who walked six hours a week halved their recurrence. I shouted "Eureka!" inside. Exercise truly is the best medicine. Exercise is the ultimate prevention.<sup>3</sup></p>
+<p>Then another thought occurred to me: <em>Why</em> does exercise reduce cancer recurrence by half? In obese patients, cancer incidence and recurrence are higher, and the mechanism closely mirrors the way obesity causes diabetes. Intriguingly, it also overlapped with the mechanism by which exercise improves diabetes. I slapped my knee and resolved: this is my research to do. From 2011 to 2012, I returned to Harvard as a visiting professor to pursue cancer research, and I have continued studying exercise and cancer ever since. I have demonstrated that exercise accelerates recovery after colon cancer surgery, restores upper limb function in breast cancer patients within a month, and resolves bowel dysfunction in rectal cancer patients &mdash; all through multiple clinical studies, resulting in over one hundred published papers. In particular, I showed that exercise's improvement of insulin resistance plays a key role in preventing cancer recurrence. Of course, cancer was not my only focus; I also studied spinal cord injury patients, cardiac rehabilitation patients, Parkinson's patients, diabetes patients, obesity patients, pediatric epilepsy patients, and many others.</p>
+<p>If I had to summarize my research in one sentence, it would be: I verify that "exercise is medicine." Based on those findings, I develop optimal exercise programs to treat specific conditions across diverse patient populations, validate their effectiveness, and make them available in forms anyone can follow on their own. Today, as a professor in Yonsei University's Department of Sport and Leisure Studies, with concurrent appointments at the Severance Cancer Hospital Cancer Prevention Center and the Graduate School of Artificial Intelligence, I have come to understand more clearly that <em>who you exercise with</em> and <em>when you exercise</em> matter as much as the type of exercise. And the reason is oxytocin. Oxytocin is released when we exercise <em>together</em>, not alone. Exercise that involves physical touch is even better. Exercise that involves eye contact and cooperation? That is the best of all.</p>
+<p>In 2020, Larry Young, one of the world's foremost authorities on oxytocin, quoted Karl Menninger in one of his papers: "Love is medicine. It is medicine for both the one who gives it and the one who receives it." Young wrote that if Menninger were alive today, he would surely support the growing body of research on the relationship between oxytocin and disease. That is right. Exercise is medicine. But there is an even better medicine: love. Oxytocin is proving it. I hope that readers of this book will raise their oxytocin through the oxytocin lifestyle, meet more people, and become happier. Perhaps this is exactly the method Menninger was seeking when he tried to embrace the life instinct of love and erase hatred.</p>
+<div class="hl"><strong>Oxytocin in Action:</strong> Reflective travel is best done alone, but travel that raises oxytocin should be taken with the people you cherish. If you list the oxytocin-boosting lifestyle habits &mdash; eating delicious food with others, exercising together, gossiping, making eye contact, and doing enjoyable activities with other people &mdash; there is one activity that encompasses all of them: traveling with someone you love.</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="36-from-freud-to-adler.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 36: From Freud to Adler</span></a>
+    <a href="37-afterword.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Afterword: The Health of Our Nation Is at Risk</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

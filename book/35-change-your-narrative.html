@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 35: Change Your Narrative, Change Your Life &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 35: Change Your Narrative, Change Your Life from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Eight: The Power of Narrative</div>
+        <h1 class="chapter-title">Chapter 35: Change Your Narrative, Change Your Life</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>, Change Your Life</p>
+<p>Narrative is story. Not just any story, but the story that tells how a person has lived. Of course, many of the narratives we encounter in daily life are closer to fiction. Movies are like that, theater is like that, paintings are like that, and sometimes music is like that. I am no expert in the arts, but I recently found myself dragged by my graduate students to an exhibition of works by Lee Jung-seob, one of Korea's most beloved painters, famous especially for his iconic paintings of bulls. I went in with high expectations. But as I looked at tiny, palm-sized sketches scrawled on postcards, I thought to myself, "I could draw something like this."</p>
+<p>Then I started looking at the paintings he made while living on Jeju Island with his wife, and something struck me as unusual. When I saw his drawings of children on cigarette foil wrappers, something stirred in my heart. I immediately pulled out my phone to learn more about Lee Jung-seob, and the moment I began to grasp the meaning behind his work, that small ripple of emotion became a tidal wave that shook me to my core.</p>
+<p>Lee Jung-seob was born into a wealthy family during the Japanese colonial occupation of Korea. He showed early talent in art and went to Japan to study, where he met and fell deeply in love with a Japanese woman. Returning to Korea &mdash; a country seething with contempt for the Japanese &mdash; he worked as a teacher while navigating the awkward tension between neighbors who resented his Japanese wife and a wife who felt their hostility. When the North fell to communism, he was persecuted as bourgeoisie. Then the Korean War erupted, and he fled with his entire family across life-and-death battle lines, all the way to Jeju Island at the southern tip of the peninsula. There was a brief spell of happiness when the family caught crabs on the beach because there was nothing else to eat. But eventually, unable to escape the grip of poverty, he sent his wife and children to Japan &mdash; her homeland &mdash; vowing he would soon follow. Nearly every day, he wrote letters and drew pictures on postcards to his beloved wife and children, soothing his loneliness and dreaming of the day they would be together again. But his life only grew more tangled. He fell into alcoholism, his health deteriorated sharply, and he died tragically, having spent his final days pouring his longing for his family into tears and paint.</p>
+<p>As I encountered his letters and his narrative, something inside me began to crack open. Suddenly his paintings looked completely different from before. Lee Jung-seob felt guilty about the crabs his family had to catch and eat to survive, so he painted them, begging the crabs for forgiveness through his art. When I saw the painting of him fishing with his children, and the one of the whole family holding hands in a circle with radiant smiles, I could not hold back my tears. I tried to sit in a corner so my students would not see, tried to pull myself together, but the grief rushed through my entire body and I wept helplessly. As a father and provider myself, I bowed my head instinctively before the weight of life that Lee Jung-seob had to carry, before the endurance of a man who bore pain and heartbreak with his whole body in an era when nothing was certain. And though my situation was incomparable to his, memories of my own year as a "wild goose father" &mdash; a Korean term for fathers who live apart from their families sent abroad for the children's education &mdash; came flooding back. I had left my family in Canada, and even though I had plenty of everything materially, everything felt insufficient. The extreme loneliness and solitude pierced me to the marrow. The narrative of life expressed in Lee Jung-seob's paintings went beyond understanding &mdash; I felt it with my entire being.</p>
+<h3>The Experiencing Self and the Remembering Self</h3>
+<p>It was the power of narrative. That experience was so profound that I brought my wife and son back for a second visit. Lee Jung-seob moved me again, and I found myself seeking out his other works. Through this experience, I was reminded of Daniel Kahneman, the Nobel Prize-winning founder of behavioral economics. Kahneman famously divided the human psyche into the <em>experiencing self</em> and the <em>remembering self</em>. He confessed that happiness researchers had been conducting flawed studies for years because they failed to distinguish between these two selves. The experiencing self is the self that feels things in the moment &mdash; savoring a delicious meal, feeling happy on a date with your spouse, feeling the thrill of hang-gliding together on vacation.</p>
+<p>But imagine that your spouse cheated on you and you divorced. After the breakup, you discovered that during that very vacation, she was already carrying on an affair with another man. In that case, the trip would no longer be a happy memory. On the other hand, consider a man who was so physically and mentally tormented during his military service that he contemplated suicide. Yet decades after his discharge, he still talks about his army days at every opportunity. Why? Because he found meaning in that suffering. The self that assigns narrative to past experiences &mdash; that is the remembering self.<sup>1</sup></p>
+<p>Daniel Kahneman called the remembering self by another name: the <em>storyteller</em>. More recently, Professor Kim Joo-hwan, whose book <em>Inner Communication</em> has generated enormous response from both the public and academia, goes further still, describing what he calls the <em>background self</em>. The background self interprets the various events that happen to us within the complex context of our lives, assigns meaning to them, and stores them as episodes in our memory. I completely agree. But we do not live alone. Our narratives are not monologues featuring only ourselves. Great films always have a villain alongside the hero, and good things alternate with bad. The narrative of Professor Lee Ji-sun, who overcame full-body burns to become a professor at her alma mater, is like that. She describes her story simply: "I met with an accident, and then I successfully parted ways with it." With those words, she has moved countless people. She was in a car with her brother on the way home when a drunk driver struck them. The car exploded, burning her entire body. Perhaps she survived because her remembering self was resilient.<sup>2</sup></p>
+<p>The reason I could empathize so deeply with Professor Lee Ji-sun's experience was that I, too, suffered full-body burns in an accident during my freshman year of college and stood at death's door. Even after recovering physically, it took considerable time to become psychologically free from the scars. This is how someone else's narrative meets our own and constructs a new narrative. And those narratives become reality &mdash; I first met Professor Lee Ji-sun in person in 2003, and twenty years later we still share a meaningful relationship.</p>
+<h3>The Story That Changes Your Life</h3>
+<p>Narrative changes our lives. I was born the youngest son &mdash; and only boy &mdash; with five older sisters. As a child, I had a severe inferiority complex about my appearance and drifted along at school. My grades were always mediocre at best. The one thing I was good at was sports and fighting, but one day a classmate swung his fist squarely into my jaw, shattering the bone and landing me in the hospital. It was humiliating. I did not even want to see the boy's mother, who came every day with a pot of bone broth, begging me to forgive her son. I dreaded returning to school to face the miserable reality &mdash; the loser who ended up in the hospital after losing a fight. The night before my discharge, I wished the world would just end.</p>
+<p>One source of my childhood inferiority was my parents' education level. Born in the 1930s in rural Korea, they had almost no formal schooling. My father finished elementary school but could not continue due to the family's circumstances, so he studied Chinese classics at the village schoolhouse instead. But he always trusted me. Even when I was a high schooler frequenting nightclubs, he would hand me pocket money and only ask that I not come home too late.</p>
+<p>The same applied to my studies. Because I was a poor student growing up, I understand deeply how it feels when something just does not click. That is why I am exceptionally good at getting through to students who struggle academically. As a result, I received Yonsei University's Outstanding Faculty Award for Teaching &mdash; given to only about seven professors each year &mdash; three times, and I became only the second recipient of the Supreme Teaching Excellence Award, which is given to those who have earned the base award three times. The ADHD that once tormented me became an asset, enabling me to multitask. My tendency to grow bored easily with one thing drove me to develop expertise across a wide range of fields &mdash; adaptive sports, exercise psychology, exercise physiology, exercise medicine, and artificial intelligence.</p>
+<p>Thanks to this breadth, I hold concurrent professorships at Yonsei University not only in my home department of Sport and Leisure Studies but also in the Cancer Prevention Center of the College of Medicine and the Graduate School of Artificial Intelligence &mdash; a rare arrangement even at Yonsei. Moreover, long before interdisciplinary research became fashionable, I was already conducting collaborative research across departments of kinesiology, rehabilitation medicine, medicine, and engineering during my graduate school years in Canada. Looking back, every one of my shortcomings became a strength, and because of them, I became the person I am today &mdash; flaws and all. I sometimes wonder what kind of person I would have become if my parents had been highly educated. They probably would have meddled more in my schoolwork, criticized my low grades, and nagged me constantly. Given that I strongly dislike nagging, I might well have gone off the rails entirely.</p>
+<p>Recently, my eldest son &mdash; who has been caring for his younger brother, a high school senior in Canada &mdash; came to Korea and gave me two gifts. One was introducing me intellectually to Robert Sapolsky and Daniel Kahneman. The other was a copy of Viktor Frankl's <em>Man's Search for Meaning</em>. In that book, there is a parable about a chess master: "Master, what is the single most important move in chess?" What a foolish question. Chess is a game where you respond to your opponent's moves with brilliant ones of your own.</p>
+<p>Our lives are the same. "What is the most meaningful thing in your life?" &mdash; the answer will be different for each person, for each situation, and I believe it <em>should</em> be different. Every one of us living in this world must have our own reason for being here. If you do not have one, you must search for it. That is why the original title of Frankl's book is <em>Man's Search for Meaning</em>. Through meaning, Frankl healed his psychological wounds, a process he called <em>logotherapy</em>. When you find that meaning, a new narrative for your life begins. You must reinterpret your past. You must reinterpret the meaning of today's failure from the vantage point of tomorrow. Only then can you write a new narrative for your future.<sup>3</sup></p>
+<p>I firmly believe that oxytocin can help us write our narratives. I am not telling you to snort oxytocin through your nose. I am talking about the lifestyle that raises oxytocin. Meet more people. Share meals. Have conversations. Act more selflessly. Volunteer. Look out for the people around you. Share more physical affection. Express more gratitude. Exercise together. Laugh together until your sides ache. Watch great movies together. Seek out wonderful restaurants. Listen to powerful narratives whenever you can. And the most important thing of all? Create your own narrative. Because our lives &mdash; yesterday, today, and tomorrow &mdash; are bundles of events and stories waiting for meaning. When my narrative meets your narrative and becomes <em>our</em> narrative, we can live a happier, more meaningful life.</p>
+<p>Now it is your turn to write your oxytocin story &mdash; your narrative.</p>
+<div class="hl"><strong>Oxytocin in Action:</strong> Why not write your own narrative right now? Just as TV dramas organize storylines into episodes, decide how many episodes your narrative will have, and give each one a title.</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="34-forget-cortisol.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 34: Forget Cortisol -- Choose the Oxytocin Lifestyle</span></a>
+    <a href="36-from-freud-to-adler.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 36: From Freud to Adler</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

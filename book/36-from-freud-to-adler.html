@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 36: From Freud to Adler &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 36: From Freud to Adler from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Eight: The Power of Narrative</div>
+        <h1 class="chapter-title">Chapter 36: From Freud to Adler</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<h3>From the Amygdala to the Prefrontal Cortex</h3>
+<p>"Is physical activity good for depression?" If you asked most people, the answer would naturally be "Yes." But according to a study recently published by our lab, the truth is not so straightforward. Physical activity at work actually <em>increases</em> the prevalence of depression by up to threefold as it increases, while leisure-time physical activity <em>halves</em> the risk of depression as it increases. Another paper from our lab found that sedentary time also affects mental health differently depending on its purpose. Time spent sitting for studying showed no association with depression or suicidal ideation, while increased time on mobile devices for social media &mdash; especially among female adolescents &mdash; was linked to a higher risk of depressive feelings and suicidal impulses. When we perform a behavior, the impact it has on our health depends on the value we assign to it.<sup>1</sup></p>
+<h3>How to Turn Labor into Exercise</h3>
+<p>There are two ways to make a mouse exercise: a treadmill and a running wheel. Researchers compared mice exercised by both methods against sedentary mice to see which group died first. The treadmill mice died earliest, followed by the sedentary mice, and the running-wheel mice survived the longest. Why?</p>
+<p>Running on a treadmill was not the mouse's choice. A researcher placed the mouse on the machine, set the speed, and simply turned it on. The researcher even decided how long the mouse had to run. If the mouse refused to run or was too exhausted, an electric shock awaited at the back of the belt. On top of that, mice are naturally nocturnal, but the human researchers conducted experiments during the day to suit their own schedules. Translated into human terms, imagine a drill sergeant barging into your barracks at two in the morning, dragging you out to the parade ground in your underwear, and forcing you to do calisthenics. Refuse, and you get beaten.</p>
+<p>By contrast, the running-wheel mice treated running as play. They decided when, how fast, and how long they ran. If they did not feel like running, they simply did not. They could sprint all-out until they hit a runner's high,<em> or hop off the wheel before breaking a sweat. They could run right after eating, or take a long nap instead. No electric shocks for quitting, no missed meals. In one of my own studies, mice measuring just eight or nine centimeters ran over forty kilometers a week &mdash; farther than the distance from Sinchon intersection, where Yonsei University stands, to Seoul National University at the foot of Gwanak Mountain and back. If you *forced</em> them to run that distance, running would no longer be exercise &mdash; it would be labor. Exactly. Physical activity at work is labor; leisure-time physical activity is enjoyment.<sup>2</sup> Even when the activity is identical, what matters is whether it was chosen freely.</p>
+<p>Here is another example. Imagine one hundred people running a marathon. Generally, the better you place, the higher your testosterone rises after the race.* So does the person who finishes fiftieth have lower testosterone than the one who finishes second? The answer: "It depends." The fiftieth-place finisher might be running their first marathon, thrilled just to finish, and elated to discover fifty people came in behind them. Meanwhile, the runner-up might have trained intensely for a year aiming for first place, and be deeply stressed about falling short. The point? Depending on the context and the meaning we assign, the same physical stress affects our minds and bodies in very different ways.</p>
+<p>Alia Crum, a professor at Stanford University, conducted a study during her graduate years at Harvard that would profoundly influence the field. She informed hotel housekeepers that their daily labor actually qualified as exercise, then surveyed how much exercise they felt they were doing and measured their weight and blood pressure. The housekeepers who received this information perceived themselves as exercising more, and their weight and blood pressure decreased significantly. Crum went further: she created equally stressful situations for two groups. One group was taught that stress helps us overcome challenges; the other was told that stress is harmful and should be avoided. Then she measured their hormone levels. The group taught that stress could be beneficial showed more positive emotions, greater cognitive flexibility, and elevated DHEA &mdash; a hormone known to prevent depression, improve immune function, and strengthen bones and muscles. The group told to simply avoid stress showed none of these positive changes.<sup>3</sup></p>
+<p>There is a saying: "If you can't avoid it, enjoy it." At least based on these findings, this adage is scientifically valid. When we cannot escape a stressful situation, simply <em>knowing</em> that stress can be beneficial is enough to help us cope more effectively.</p>
+<p>The brain regions that first respond to our environment are the amygdala and the hippocampus. Running raises the heart rate, accelerates breathing, and causes sweating &mdash; physically, it is a significant stressor. This is true for everyone. But whether running feels enjoyable or agonizing depends on <em>why</em> you are doing it. During my military service, the mandatory group runs were excruciating. The reason was simple: I had no say in the matter, no idea when it would end, senior soldiers cursing at anyone who fell behind, and the threat of ten extra laps if even one person dropped back. Meanwhile, the senior leading the run was perfectly comfortable &mdash; he ran at whatever pace he chose, stopped whenever he wanted, and could head back to the barracks the moment he felt tired. The amygdala reacts reflexively to bodily signals and environmental cues (threats, coercion), but it is the prefrontal cortex that provides context, assigns meaning, and enables an appropriate <em>response</em> rather than a mere <em>reaction</em>.</p>
+<p>The structure of the brain is revealing: the amygdala sits right next to the hippocampus. This is because the emotions we feel about the people and situations we encounter need to be immediately stored and remembered. Threatening situations, people who intend us harm, dangerous places &mdash; remembering these things is essential for survival. Animals with damaged amygdalae cannot react instantly to threats and have dramatically lower survival rates in the wild. Robert Sapolsky recently appeared on several programs reflecting that he spent his entire career studying stress and the hippocampus, when he should have been studying the prefrontal cortex. Because ultimately, the contextual interpretation of any given situation is the prefrontal cortex's job. The prefrontal cortex matters. We must shift from the reptilian brain to the modern human brain. No matter how many times you resolve not to lose your temper, when a triggering situation arises, anger fires anyway.</p>
+<p>Freud viewed trauma as the cause of hysteria and saw healing as a process of uncovering the memories and emotions that triggered the trauma. He sought to find the connections between the amygdala, the hippocampus, and long-term memory and resolve the underlying problem. This process involved psychoanalysis &mdash; a long and laborious journey back to the original wound. Adler, by contrast, advised rejecting the trauma narrative and offered a future-oriented approach. In a nutshell: "Stumbling blocks can become stepping stones."</p>
+<h3>From Freud to Adler</h3>
+<p>I want to illustrate this point with Moses, the protagonist of the Disney animated film <em>The Prince of Egypt</em>, a movie almost every Korean has seen. Moses was born a Hebrew in the Egyptian empire. At the time, all Hebrew infants under one year old were to be killed, so Moses' mother, unable to bring herself to kill her own child, placed her newborn in a reed basket coated with pitch and set it adrift on the Nile. The baby was discovered by an Egyptian princess and raised in the palace as an Egyptian prince &mdash; a dramatic reversal.</p>
+<p>Then, around the age of forty, Moses killed an Egyptian official with his bare hands for abusing Hebrew slaves. Perhaps he felt it was his duty to stand up for his people &mdash; the self-consciousness of a hero. But the next day, when he tried to break up a fight between two Hebrews, one of them snapped, "What, are you going to kill us like you killed that Egyptian?" Terrified &mdash; the murder had already spread through the grapevine &mdash; Moses fled into the wilderness.</p>
+<p>He ran for days without looking back. There he met Zipporah, married her, and had a son he named <em>Gershom</em> &mdash; meaning "I have become an alien in a foreign land."<em> The name drips with self-pity and despair, perfectly capturing Moses' state of mind. Then came a second son, whom he named *Eliezer</em> &mdash; meaning "God rescued me from the sword of Pharaoh." At the time of this second birth, Moses was still in the middle of nowhere, tending not even his own sheep but his father-in-law's flock &mdash; the very picture of a life going nowhere. Yet in that desperate circumstance, Moses attempted an entirely new interpretation. A new context. Shortly after naming his second son Eliezer, Moses saw a burning bush on Mount Sinai and received the great calling to lead the Hebrews out of Egypt.</p>
+<p>Nothing about his situation had changed. But the moment he reinterpreted his past, a new future came into view. At first, Moses had blamed the Hebrews who did not appreciate his intentions, Pharaoh, and God. But through this reframing, he saw that everything &mdash; all of it &mdash; had been part of a larger design to liberate the Hebrews from slavery. With that vision, his future and purpose crystallized. If his first son Gershom represented Moses' reflexive reaction to his circumstances (the amygdala), then his second son Eliezer represented the meaning and purpose he discovered through contextual reinterpretation (the prefrontal cortex). This was not past-oriented psychoanalytic trauma treatment (Freud) but future-oriented reinterpretation of the past (Adler). When Moses' narrative changed, his wife changed, his family changed, his people changed, and world history changed.</p>
+<p>We must move from Freud to Adler. Not the amygdala's reflexive reactions, but the prefrontal cortex's contextual interpretation and meaning-making &mdash; that is what redirects our lives toward the future. Adler himself regarded his congenital disability and the inferiority of always being compared to his brother as forces that propelled him to become a better person. Instead of thinking, "I didn't receive enough love and nurturing as a child, so my oxytocin is low, and that's why I can't be a good father or husband," the mental shift must happen: "Despite that &mdash; no, <em>because of that</em> &mdash; I will love my children and my spouse, and I will build a brighter, better family." We must live the oxytocin lifestyle. And we must dream of a brighter, more love-filled future.</p>
+<div class="hl"><strong>Oxytocin in Action:</strong> Think back to the most difficult moment in your life and try assigning it a new meaning. You may begin to see perspectives and directions you never noticed before.</div>
+<p class="footnote">\* "Gershom" conveys the sense: "I am an alien in a foreign land."</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="35-change-your-narrative.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 35: Change Your Narrative, Change Your Life</span></a>
+    <a href="37-from-insulin-to-oxytocin.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 37: From Insulin to Oxytocin -- Love Is Medicine</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

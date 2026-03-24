@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 23: Love Is the Medicine &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 23: Love Is the Medicine from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Five: Oxytocin for a Healthier You</div>
+        <h1 class="chapter-title">Chapter 23: Love Is the Medicine</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>-- The Oxytocin Effect</p>
+<p>The American sociologist Ira Reiss once described the four stages of love as a turning wheel. Though the theory dates back a few decades, his <em>Wheel Theory of Love</em> was one of the first relational development models to conceptualize the entire process by which two people meet, court, deepen their relationship, and ultimately choose each other as partners. According to Reiss, as a couple moves toward greater intimacy, they pass through a cyclical and sequential process with four interlocking stages &mdash; like the spokes of a wheel: rapport, self-revelation, mutual dependency, and personality need fulfillment. First, the couple discovers shared experiences and similarities, building rapport. Then, seeking a more satisfying relationship, they move into the stage of self-revelation &mdash; opening up to each other. As they come to know each other deeply, they grow increasingly dependent on one another, until they reach the stage where they fulfill each other's needs and desires. Reiss believed that every love relationship follows this path.</p>
+<p>Looking back at my own life, I can see that I traveled along this very wheel of love &mdash; meeting my wife as a complete stranger, falling in love, and eventually making it to the altar. It started with curiosity, then love pulled me in, and now we've become indispensable to each other. "For the one carelessly discarded like me, the only one who cried for me &mdash; I want to lean on those broad shoulders. Don't wake me from that dream." These are lyrics from "All I Know Is Love," a signature song by the beloved Korean singer Sim Su-bong. In an interview, she once revealed that she grew up without a father and had never been loved by a man &mdash; her husband was the first man to ever show her love. Human beings stake everything on love, make great sacrifices for love. Love is our greatest vulnerability and, at the same time, our greatest strength. Love is the one ability God placed within us. That's why Rumi, the great Sufi master, said, "Love is the symbol of God's great beauty."</p>
+<h3>Love, That Mighty Force</h3>
+<p>In 1942, Karl A. Menninger wrote in his book <em>Love Against Hate</em>: "Science is merely our servant. We use it to make guns, and we use it to make fever reducers. We use it to build bridges, and we use it to build bombs." Menninger went on to say that when a psychologist speaks about science, it's like "a voice crying in the wilderness." He argued that because so many of the world's diseases originate in the mind, psychology and psychoanalysis are about healing the mind that causes those diseases. And the medicine that heals the mind, he declared, is <em>love</em>.</p>
+<p>In his book, he quoted Freud, who reportedly said near the end of his life: "The idea that love can cure hatred is an entirely new perspective. And it seems no one has yet dared to actually try it."[<sup>22</sup>-1]</p>
+<p>When Menninger wrote this book, World War II was raging, and nations were competing to build ever more effective weapons for killing on a massive scale. Even considering the harshness of the times, his insight &mdash; that human disease can arise from personality, thought patterns, and daily attitudes &mdash; is both fascinating and almost mystical. He went further still, essentially making a claim that sounds like something from scripture &mdash; "Love heals all sorrow" &mdash; but framing it in the language of science. Could the greed and personality flaws of national leaders, their insecurities and fragile self-esteem, be what drive wars between nations? Such wars have claimed countless lives. Someone lost a son, someone a husband, someone a father, someone a mother. Innumerable people lost parts of their bodies and live the rest of their lives with disabilities. Even more live with the lifelong trauma that war inflicts. Menninger prescribed love as the cure for all of it. Could it be that Menninger already knew about the power of oxytocin before anyone else?</p>
+<h3>Love Through the Lens of Oxytocin</h3>
+<p>Of course, Menninger was talking about how love can heal individual psychological problems and even mental illness. And indeed, oxytocin heals PTSD, repairs the damage caused by stress-related diseases, resolves the psychological problems born of loneliness, makes us more likable and optimistic, and mends broken relationships by rebuilding trust. When you consider that stress actually causes stomach ulcers, hypertension, cardiovascular disease, and diabetes &mdash; and can even trigger cancer &mdash; oxytocin starts to look like something close to a universal cure.</p>
+<p>In South Korea, suicide is the number one cause of death for people in their teens through thirties. When you account for the fact that oxytocin could potentially address all of the country's top five causes of death, the implications are staggering. Jesus said, "Love your neighbor as yourself." To love our neighbors, we must first love our own bodies. The fact that people who attempt suicide have significantly lower oxytocin levels than those who don't &mdash; what does this tell us about South Korea, a country that leads the world in suicide rates?[<sup>22</sup>-2]</p>
+<p>As a researcher who has spent his entire career in this field, I have devoted my life to proving a deceptively simple concept: <em>exercise is medicine</em>. I've spent years studying how to help more people become healthier and happier through physical activity. Along the way, I encountered oxytocin &mdash; and the more I learned about it, the more I studied its effects on health, the more I found myself drawn past the motto of "exercise is medicine" toward a new, even more fundamental truth: <em>love is medicine</em>.</p>
+<p>Love. Love with everything you have. And you will live.</p>
+<h3>References</h3>
+<p><strong>Chapter 17</strong></p>
+<p>[<sup>17</sup>-1]: Friedman, M. <em>Type A Behavior and Your Heart</em>. Ballantine Books, 1974. See also: Friedman M, Rosenman RH. Type A Behavior Pattern: its association with coronary heart disease. <em>Ann Clin Res</em>. 1971;3(6):300-312.</p>
+<p>[<sup>17</sup>-2]: Alley J, Diamond LM, Lipschitz DL, Grewen K. Associations between oxytocin and cortisol reactivity and recovery in response to psychological stress and sexual arousal. <em>Psychoneuroendocrinology</em>. 2019;106:47-56. See also: Le Dorze C, et al. Emotional remodeling with oxytocin durably rescues trauma-induced behavioral and neuro-morphological changes in rats. <em>Transl Psychiatry</em>. 2020;10(1):27; Blume A, et al. Oxytocin reduces anxiety via ERK1/2 activation. <em>Eur J Neurosci</em>. 2008;27(8):1947-1956.</p>
+<p>[<sup>17</sup>-3]: Lang RE, et al. Oxytocin unlike vasopressin is a stress hormone in the rat. <em>Neuroendocrinology</em>. 1983;37(4):314-316. See also: Nishioka T, et al. Stress increases oxytocin release within the hypothalamic paraventricular nucleus. <em>Brain Res</em>. 1998;781(1-2):57-61; Seltzer LJ, et al. Stress-induced elevation of oxytocin in maltreated children. <em>Child Dev</em>. 2014;85(2):501-512; Petersson M, et al. Oxytocin decreases carrageenan-induced inflammation in rats. <em>Peptides</em>. 2001;22(9):1479-1484.</p>
+<p>[<sup>17</sup>-4]: Light KC, Grewen KM, Amico JA. More frequent partner hugs and higher oxytocin levels are linked to lower blood pressure and heart rate in premenopausal women. <em>Biol Psychol</em>. 2005;69(1):5-21. See also: Faghihi M, et al. The role of nitric oxide, reactive oxygen species, and protein kinase C in oxytocin-induced cardioprotection in ischemic rat heart. <em>Peptides</em>. 2012;37(2):314-319; Dyavanapalli J, et al. Activation of Oxytocin Neurons Improves Cardiac Function in a Pressure-Overload Model of Heart Failure. <em>JACC Basic Transl Sci</em>. 2020;5(5):484-497.</p>
+<p><strong>Chapter 18</strong></p>
+<p>[<sup>18</sup>-1]: Duckworth WC, Jallepalli P, Solomon SS. Glucose intolerance in spinal cord injury. <em>Arch Phys Med Rehabil</em>. 1983;64(3):107-110. See also: Jeon JY, et al. Reduced plasma glucose and leptin after 12 weeks of functional electrical stimulation-rowing exercise training in spinal cord injury patients. <em>Arch Phys Med Rehabil</em>. 2010;91(12):1957-1959.</p>
+<p>[<sup>18</sup>-2]: Jeon JY, Steadward RD, Wheeler GD, Bell G, McCargar L, Harber V. Intact sympathetic nervous system is required for leptin effects on resting metabolic rate in people with spinal cord injury. <em>J Clin Endocrinol Metab</em>. 2003;88(1):402-407. See also: Jeon JY, et al. MCH-/- mice are resistant to aging-associated increases in body weight and insulin resistance. <em>Diabetes</em>. 2006;55(2):428-434.</p>
+<p>[<sup>18</sup>-3]: Leng G, et al. Oxytocin and appetite. <em>Prog Brain Res</em>. 2008;170:137-151. See also: Verbalis JG, et al. Oxytocin secretion in response to cholecystokinin and food: differentiation of nausea from satiety. <em>Science</em>. 1986;232(4756):1417-1419.</p>
+<p>[<sup>18</sup>-4]: Danziger S, Levav J, Avnaim-Pesso L. Extraneous factors in judicial decisions. <em>Proc Natl Acad Sci U S A</em>. 2011;108(17):6889-6892.</p>
+<p>[<sup>18</sup>-5]: Lawson EA, et al. Oxytocin reduces caloric intake in men. <em>Obesity (Silver Spring)</em>. 2015;23(5):950-956.</p>
+<p>[<sup>18</sup>-6]: Liu J, Tong J, Blevins JE. Oxytocin as an Anti-obesity Treatment. <em>Front Neurosci</em>. 2021;15:743546.</p>
+<p><strong>Chapter 19</strong></p>
+<p>[<sup>19</sup>-1]: Xu S, et al. Oxytocin inhibited stress-induced visceral hypersensitivity, enteric glial cells activation, and release of proinflammatory cytokines in maternal separated rats. <em>Eur J Pharmacol</em>. 2018;818:578-584.</p>
+<p>[<sup>19</sup>-2]: Schneider KM, et al. The enteric nervous system relays psychological stress to intestinal inflammation. <em>Cell</em>. 2023;186(13):2823-2838.</p>
+<p>[<sup>19</sup>-3]: Louvel D, et al. Oxytocin increases thresholds of colonic visceral perception in patients with irritable bowel syndrome. <em>Gut</em>. 1996;39(5):741-747. See also: Tang Y, et al. Oxytocin system alleviates intestinal inflammation by regulating macrophages polarization in experimental colitis. <em>Clin Sci (Lond)</em>. 2019;133(18):1977-1992; Yu Y, et al. Oxytocin suppresses epithelial cell-derived cytokines production and alleviates intestinal inflammation in food allergy. <em>Biochem Pharmacol</em>. 2022;195:114867.</p>
+<p><strong>Chapter 20</strong></p>
+<p>[<sup>20</sup>-1]: Kroenke CH, et al. Social networks, social support, and burden in relationships, and mortality after breast cancer diagnosis in the LACE study. <em>Breast Cancer Res Treat</em>. 2013;137(1):261-271. See also: Martinez ME, et al. Prognostic significance of marital status in breast cancer survival. <em>PLoS One</em>. 2017;12(5):e0175515; Pinquart M, Duberstein PR. Associations of social networks with cancer mortality: a meta-analysis. <em>Crit Rev Oncol Hematol</em>. 2010;75(2):122-137.</p>
+<p>[<sup>20</sup>-2]: Naderi A, et al. Persistent effects of pair bonding in lung cancer cell growth in monogamous <em>Peromyscus californicus</em>. <em>Elife</em>. 2021;10. See also: Ford CL, Young LJ. Harnessing the healing power of love. <em>Trends Mol Med</em>. 2021;27(9):833-834.</p>
+<p>[<sup>20</sup>-3]: Cassoni P, et al. Oxytocin Inhibits Proliferation of Human Breast-Cancer Cell-Lines. <em>Virchows Arch</em>. 1994;425(5):467-472. See also: Cassoni P, et al. Oxytocin inhibits the proliferation of MDA-MB231 human breast-cancer cells via cyclic adenosine monophosphate and protein kinase A. <em>Int J Cancer</em>. 1997;72(2):340-344; Khori V, et al. Oxytocin effects on the inhibition of the NF-kB/miR195 pathway in mice breast cancer. <em>Peptides</em>. 2018;107:54-60.</p>
+<p>[<sup>20</sup>-4]: Uvnas-Moberg K, et al. Breastfeeding: physiological, endocrine and behavioural adaptations caused by oxytocin and local neurogenic activity in the nipple and mammary gland. <em>Acta Paediatr</em>. 1996;85(5):525-530. See also: Pan S, et al. Stimulation of hypothalamic oxytocin neurons suppresses colorectal cancer progression in mice. <em>Elife</em>. 2021;10; Mankarious A, et al. The pro-social neurohormone oxytocin reverses the actions of the stress hormone cortisol in human ovarian carcinoma cells in vitro. <em>Int J Oncol</em>. 2016;48(5):1805-1814.</p>
+<p><strong>Chapter 21</strong></p>
+<p>[<sup>21</sup>-1]: Claude Steiner. <em>Emotional Literacy: Intelligence with a Heart</em>. Personhood Press, 2003.</p>
+<p>[<sup>21</sup>-2]: Karla McLaren. <em>The Language of Emotions</em> (Korean edition: <em>Gamjeong Ilgi</em>, trans. Jeon Hye-young. Jisik-ui Sup, 2014).</p>
+<p>[<sup>21</sup>-3]: Vellante M, Baron-Cohen S, et al. The "Reading the Mind in the Eyes" test: Systematic review of psychometric properties and a validation study in Italy. <em>Cogn Neuropsychiatry</em>. 2013;18(4):326-354. See also: Baron-Cohen S, et al. The "Reading the Mind in the Eyes" Test: Complete Absence of Typical Sex Difference in ~400 Men and Women with Autism. <em>PLoS One</em>. 2015;10(8).</p>
+<p>[<sup>21</sup>-4]: Domes G, et al. Effects of Intranasal Oxytocin on the Neural Basis of Face Processing in Autism Spectrum Disorder. <em>Biol Psychiatry</em>. 2013;74(3):164-171. See also: Guastella AJ, et al. Intranasal Oxytocin Improves Emotion Recognition for Youth with Autism Spectrum Disorders. <em>Biol Psychiatry</em>. 2010;67(7):692-694.</p>
+<p>[<sup>21</sup>-5]: Ford CL, Young LJ. Refining oxytocin therapy for autism: context is key. <em>Nat Rev Neurol</em>. 2022;18(2):67-68.</p>
+<p><strong>Chapter 22</strong></p>
+<p>[<sup>22</sup>-1]: Karl Menninger. <em>Love Against Hate</em> (Korean edition: <em>Sarang-gwa Mium</em>, trans. Lee Yong-ho. Baekjo Publishing, 1986).</p>
+<p>[<sup>22</sup>-2]: Warrener CD, et al. The role of oxytocin signaling in depression and suicidality in returning war veterans. <em>Psychoneuroendocrinology</em>. 2021;126:105085. See also: Sharma SR, et al. What's Love Got to do with it: Role of oxytocin in trauma, attachment and resilience. <em>Pharmacol Ther</em>. 2020;214:107602.</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="22-autism-fighter.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 22: The Autism Fighter</span></a>
+    <a href="24-power-of-touch.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 24: The Power of Touch</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

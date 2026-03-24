@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5: The Power That Conquers Trauma &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 5: The Power That Conquers Trauma from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Two: Oxytocin for the Soul</div>
+        <h1 class="chapter-title">Chapter 5: The Power That Conquers Trauma</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>-- Oxytocin</p>
+<p>In September 2001, I was a doctoral student in Canada, heading to work at the Steadward Centre, a disability athletics facility on campus. The moment I walked through the door, everyone was staring gravely at a large TV monitor mounted on the wall. The air felt different &mdash; cold and heavy, nothing like a normal morning. <em>What's going on?</em> I looked up at the screen. Black smoke was billowing from one of the World Trade Center towers. <em>A fire?</em> I thought casually, and turned to walk toward my office. Just as I reached for the door handle, a woman's piercing scream cut through the room behind me.</p>
+<p>I spun around. The people gathered around the TV were gasping &mdash; "Oh! Oh! Oh!" &mdash; and right there on the screen, a plane slammed into the upper floors of the second tower. Cries of "Oh my God!" erupted everywhere. I stood there, frozen, unable to speak. Everyone stared at the monitor in stunned silence. Some began to pray. Moments later, both towers crumbled like sandcastles. Just like that, the world was divided into before and after 9/11.</p>
+<h3>How We Face Catastrophe</h3>
+<p>In the days that followed, watching the relentless news coverage, I was overwhelmed by fear and helplessness. The rescue workers' desperate efforts saved many lives. But 343 New York City firefighters died in the process, and most of the surviving firefighters were subsequently haunted by survivor's guilt and post-traumatic stress disorder (PTSD). Some took their own lives after losing their colleagues. In addition, thirty-seven Port Authority police officers, twenty-three NYPD officers, eight paramedics, and one patrol officer also perished. Not only the responders themselves, but everyone who loved them endured collective trauma. According to a 2017 U.S. report, the number of firefighters who died by suicide was more than double the number who died in the line of duty. A 2015 journal article found that among four thousand paramedics surveyed, a staggering 37 percent had contemplated suicide, and roughly 7 percent had actually attempted it.<sup>1</sup></p>
+<p>Recently, a study examined the mental health of 4,815 people who experienced 9/11, twenty years after the attacks. It found that 13.44 percent still suffer from PTSD, and those with trauma experience more than three times the cognitive and physical impairment of those without. Grip strength and lower-body muscle strength were notably reduced. Trauma is not an imaginary condition; it manifests in the body. PTSD doesn't just cause emotional disturbance and muscle weakness &mdash; it elevates systemic inflammation and increases the risk of metabolic syndrome, atherosclerosis, cardiovascular disease, type 2 diabetes, and cancer. A recent Harvard School of Public Health study of nurses found that women who experienced PTSD symptoms and depression had nearly four times the mortality risk of those who did not.<sup>2</sup></p>
+<h3>Oxytocin: A New Treatment for Trauma</h3>
+<p>Childhood emotional and physical abuse leaves lifelong scars. Such trauma increases the risk of depression, mental illness, physical disease, and premature death during adolescence and adulthood. The word "trauma" itself comes from the Greek word for "wound." Wounds don't only form on the body &mdash; and so we came to call wounds of the heart "trauma" as well. Body and mind are not separate entities, as Descartes suggested, but intimately interconnected. A wound to the body can scar the soul, and a wound to the soul can cause real physical disease. The DSM-5 defines trauma as "an extremely frightening, dangerous, or shocking event that is directly experienced or witnessed and that threatens health or causes impairment."<sup>3</sup></p>
+<p>But recently, a compelling new concept has emerged. When people successfully navigate situations severe enough to cause PTSD, they can actually grow from the experience. This is called Post-Traumatic Growth (PTG). In the late 1980s, psychologist Richard Tedeschi was studying psychological relief in people with disabilities and their families. During this work, he observed that some individuals experienced growth and positive change even under extreme stress, such as fighting cancer. In the early 1990s, Tedeschi met Lawrence Calhoun, who was independently researching disaster and loss, and together they formalized the concept of post-traumatic growth. While traditional psychology focused on resilience &mdash; restoring patients to their pre-trauma state &mdash; Tedeschi and Calhoun discovered that people could find positive meaning even in experiences as devastating as rape, incest, cancer, heart attacks, AIDS, the death of a loved one, war, and the Holocaust. They found that some individuals actually grew more as human beings <em>after</em> their trauma than they had been before it.<sup>4</sup></p>
+<p>Tedeschi and Calhoun categorized these experiences into three types. First, self-perception: people who had undergone life-changing events reported personal growth. Second, relationships: many expressed gratitude for the family and friends who had stood by them through illness or hardship, and they came to appreciate just how precious these people were. Remarkably, even some survivors of sexual assault became more proactive in caring for themselves and more intentional in their relationships. Third, philosophy of life: people who had survived cancer or unexpected catastrophe began to value their lives more deeply. They discovered their true priorities. Where wealth and success might have been paramount before, they now put spending time with loved ones and traveling the world with family at the top of the list. This seminal paper attracted explosive global interest upon publication and has been cited more than eight thousand times.</p>
+<p>So is post-traumatic growth related to oxytocin? People who were abused as children face higher risks of impaired social functioning, disease, suicidal ideation, and death from cardiovascular disease or cancer as adults. Research shows that people with mutations in their oxytocin receptor gene are at increased risk for depression and PTSD when they have experienced childhood abuse. A study of sixty-three adults with social anxiety found that those with oxytocin receptor mutations showed a correlation between emotional trauma and reduced hippocampal size. But &mdash; and this is critical &mdash; among those who had received strong social support, the hippocampus did not shrink. These findings suggest that oxytocin is directly linked to PTSD risk, and that even people with receptor mutations can significantly reduce that risk if they receive sufficient support from the people around them.</p>
+<p>Can inhaling oxytocin actually improve PTSD symptoms? Yes. When PTSD patients were given oxytocin to inhale over eight days, those with the most severe symptoms showed notable improvement. Another study found that even a single dose of inhaled oxytocin reduced PTSD symptoms and increased feelings of well-being. Multiple additional studies have confirmed that oxytocin genuinely alleviates PTSD symptoms.</p>
+<p>I have personally conducted numerous studies with cancer patients, particularly examining symptom relief through exercise. I have seen breast cancer patients recover upper-limb function within a single month of exercise &mdash; a recovery that typically takes at least a year. I have witnessed colorectal cancer patients who had to sit on the toilet more than thirty times a day return to normal bowel function after just six weeks of exercise. And of course, the dramatic improvement in patients' mental health and quality of life through exercise is a bonus.<sup>5</sup></p>
+<p>Until recently, I assumed these improvements were 100 percent attributable to exercise itself. But now I wonder: could some of the symptom relief and quality-of-life gains be driven by oxytocin? If so, exercising with others &mdash; rather than alone &mdash; might amplify the benefits. It is certainly a hypothesis worth investigating.</p>
+<div class="hl"><strong>Oxytocin in Everyday Life:</strong> Want to go for a run together? Exercise boosts oxytocin, and when you run with someone while encouraging each other, your worries and anxieties can melt away before you know it. If running isn't your thing, try joining a neighborhood badminton group or a local sports club.</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="04-origins-of-happiness.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 4: The Origins of Happiness</span></a>
+    <a href="06-oxytocin-and-resilience.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 6: Oxytocin and Resilience</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

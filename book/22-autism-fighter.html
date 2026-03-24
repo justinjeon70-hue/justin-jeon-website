@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 22: The Autism Fighter &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 22: The Autism Fighter from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Five: Oxytocin for a Healthier You</div>
+        <h1 class="chapter-title">Chapter 22: The Autism Fighter</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+    <figure class="chapter-figure">
+        <img src="figures/fig02_rme_test.png" alt="Fig02 Rme Test" loading="lazy">
+    </figure>
+<p>-- Oxytocin as a Potential Treatment for Autism</p>
+<p>Aristotle famously called human beings "social (political) animals." The idea that humans are social creatures is something most of us can agree with &mdash; though the word "animal" in the phrase tends to make us just a bit uncomfortable. In <em>The Origins of Happiness</em>, Professor Seo-eun Guk argues that happiness is not the goal of life but rather a tool for survival. In other words, happy people are more likely than unhappy people to survive the hardships of this world. Professor Seo describes humans as "100% animals" and contrasts Aristotle's metaphysical idealism with Charles Darwin's theory of evolution. His provocative framing &mdash; <em>Aristotle or Darwin?</em> &mdash; stirred heated debate. But ultimately, he argues that what matters most for happiness is sharing our emotions and thoughts with others and maintaining meaningful relationships.</p>
+<h3>The "Reading the Mind in the Eyes" Test</h3>
+<p>Emotion is one of the most critical elements of our inner world. Before we are rational and logical beings, we are creatures of emotion. When we can't read our own emotions or those of others, we fall into what might be called emotional illiteracy. The American psychotherapist Claude Steiner argued early on that just as humans need the ability to read and write words, we also possess <em>emotional literacy</em> &mdash; the capacity to read other people's emotions. Emotional literacy is not just the ability to understand your own feelings; it's the ability to empathize with others' emotions and express them productively. Adults with strong emotional literacy don't impose their feelings on others, don't throw tantrums when their emotions aren't accommodated, and don't fall into the trap of demanding emotional comfort while refusing genuine communication. They can manage their emotions in ways that enhance inner strength and quality of life &mdash; improving relationships, mediating conflicts, creating space for affection, and fostering a sense of community belonging.[<sup>21</sup>-1]</p>
+<p>Similarly, Karla McLaren writes in <em>The Language of Emotions</em> that a healthy social human being is one who can read others' emotions and communicate accordingly. McLaren argues that modern people need the social skill of honestly expressing their own emotions first, then blending them with the emotions of others. She observes that through the constant barrage of media and advertising, we've come to treat emotions as the primary culprit behind relationship problems &mdash; an unnecessary nuisance in human interaction. We've learned to treat public displays of emotion as taboo, believing we must always maintain positive emotions and keep our feelings under control, while simultaneously living as spies, constantly monitoring others' emotional states. But these myths shatter the moment we confront emotional disconnection, communication breakdown, or mental illness.[<sup>21</sup>-2]</p>
+<p>The German poet Christian Friedrich Hebbel once said, "The eye is the point where body and soul meet." The information our eyes provide is a signal sent from the depths of the heart. The reason children with autism struggle to exchange emotions is that they cannot make eye contact. In 2001, Professor Simon Baron-Cohen developed the <em>Reading the Mind in the Eyes Test</em> (RME Test) as one tool for identifying autism spectrum conditions.[<sup>21</sup>-3]</p>
+<h3>Oxytocin Taught Them to Read Eyes</h3>
+<p>A fascinating study recently demonstrated that oxytocin can enhance the ability to read others' minds. Healthy adult men aged twenty-one to thirty were tested at least one week apart &mdash; once after inhaling oxytocin and once after inhaling a placebo &mdash; and then given the RME Test. Because the RME Test was originally designed for people with autism and could be too easy for neurotypical adults (a potential <em>ceiling effect</em>), the researchers divided the thirty-six questions into easy and difficult categories. On the easy questions, there was no significant difference between groups. But on the difficult questions, participants who had inhaled real oxytocin scored significantly higher than those who had received the placebo. In simple terms, oxytocin sharpened their emotional perception.</p>
+<p>A study was also conducted with actual autism spectrum patients. In 2013, a research team at the University of Sydney recruited sixteen boys with autism spectrum disorder, aged twelve to nineteen, with a mental age of at least twelve. One group inhaled oxytocin while the other inhaled a placebo, and both groups then took the RME Test. As in the previous study, questions were divided by difficulty to refine the assessment. The results: the oxytocin group scored significantly higher than the control group on the test overall, with particularly large differences on the easier questions. On the more difficult questions, the difference between groups was not significant. Children with autism had begun reading emotions from facial expressions &mdash; with oxytocin's help.[<sup>21</sup>-4]</p>
+<p><em>(RME Sample Test Answer: A: Insisting, B: Tentative, C: Serious, D: Cautious)</em></p>
+<p>Because there is currently no definitive treatment for autism spectrum disorder, these findings created enormous excitement. Researchers have since launched studies testing oxytocin's effects across a wider range of autism spectrum patients. Among recent findings, facial recognition difficulties are closely linked to oxytocin, and oxytocin interventions have been shown to improve social relationships in individuals with high-functioning autism. These are thrilling results. However, it should be noted that this research is still in its early stages, and there are studies showing that inhaled oxytocin does <em>not</em> significantly improve social functioning in some autistic individuals. The relationship between oxytocin and autism remains a subject of debate. But given that genetic variations in the oxytocin receptor are associated with reduced social functioning and higher autism risk, it's hard to dismiss oxytocin's influence. As interest in adult autism grows, combining oxytocin inhalation with an oxytocin-boosting lifestyle may offer meaningful symptom improvement.[<sup>21</sup>-5]</p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="21-cancer-fighter.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 21: Oxytocin as a Cancer Fighter</span></a>
+    <a href="23-love-is-the-medicine.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 23: Love Is the Medicine</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

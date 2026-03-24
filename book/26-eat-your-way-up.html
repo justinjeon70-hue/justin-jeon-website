@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 26: Eat Your Way Up -- How Food Raises Oxytocin &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 26: Eat Your Way Up -- How Food Raises Oxytocin from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Six: The Oxytocin Lifestyle -- Body and Senses</div>
+        <h1 class="chapter-title">Chapter 26: Eat Your Way Up -- How Food Raises Oxytocin</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>-- How Food Raises Oxytocin</p>
+<h3>The Rise of Foodie Culture</h3>
+<p>These days, restaurant hopping &mdash; or <em>matjip tambang</em> as Koreans call it &mdash; is all the rage. Young couples and friends plan entire outings around tracking down the most delicious dishes featured on social media. In Korea, "Have you eaten?" is such a common greeting that it practically functions as "How are you?" Until recently, food carried little meaning beyond filling your stomach. But today, young people willingly stand in long lines to eat exactly what they crave. This shift likely reflects a generational desire for diversity and innovation, for finding the sweet spot between luxury and affordability. Taste &mdash; this exquisite sense &mdash; is a kind of magic that enriches our lives. The hidden gems of Korean street food captivate our taste buds and set our hearts racing. Take <em>tteokbokki</em> (spicy rice cakes) and <em>twigim</em> (tempura-style fritters) &mdash; these quintessential Korean snacks, with their addictive sweet-salty-spicy flavor profile, have come to represent the essence of Korean taste.</p>
+<p>But flavor is no longer just about sustenance. It has become about style, about the experience. Thanks to Instagram and other social media platforms, the ritual of photographing your meal and sharing it has become commonplace. In Korea, taste has become aesthetic.</p>
+<p>Alongside restaurant hopping, <em>mukbang</em> &mdash; the uniquely Korean phenomenon of broadcasting yourself eating large quantities of food &mdash; has become a global cultural export. The term has entered English unchanged: "mukbang." These broadcasts are more than mere eating; they are experiences of empathy, sharing, and even healing. Tzuyang, a legendary figure in the mukbang world, has spoken about how cancer patients undergoing fasting therapy told her they found comfort in watching her eat.</p>
+<p>And it goes beyond that. Solo diners &mdash; people who eat alone, known in Korean as <em>honbap-reo</em> &mdash; watch mukbang broadcasts for inspiration and solace, finding a sense of warmth and belonging, as though they are sharing a meal with a friend. Recently, high-fidelity ASMR mukbang, which captures the intimate sounds of chewing through professional microphones, has become wildly popular &mdash; a testament to the power of these vicarious dining experiences. So tonight, you too might find yourself watching a mukbang and unconsciously putting a pot of water on the stove for ramen.</p>
+<h3>Lonely and Getting Heavier?</h3>
+<p>Whether it is restaurant hopping or watching mukbang, it is all enjoyable &mdash; but we cannot ignore the effect on our waistlines. And with more people dining alone these days, one has to wonder: are they consuming loneliness along with their meals? A sobering recent study found exactly this: loneliness increases appetite and leads to weight gain. As if being lonely were not miserable enough, you get heavier on top of it. It feels almost unfair.</p>
+<p>Eating more than just calories is at stake when you eat alone. While oxytocin reduces appetite and helps prevent diabetes, the act of eating itself can also raise oxytocin. Research has shown that consuming carbohydrates and foods like chocolate triggers the release of oxytocin and serotonin, making eating inherently pleasurable. The truth is, humanity's concern about obesity is a relatively recent development. For most of human history, gorging whenever food was available was a survival strategy, and a bit of a belly was a symbol of prosperity. The Korean economic miracle &mdash; the rapid industrialization and urbanization of the 1980s and '90s &mdash; was when Koreans first began worrying about weight-related diseases. So our drive to eat is deeply wired for survival. But the world has changed. We are growing lonelier and heavier. Paradoxically, we are eating more yet feeling less happy about it.<sup>1</sup></p>
+<h3>The Oxytocin Dinner: Eating Together</h3>
+<p>The best food for raising oxytocin, as I have mentioned, is fiber-rich vegetables that feed your gut microbiome. So make it a rule to always include vegetables with your meals. Vegetables are carbohydrates too. Unless they are processed &mdash; like canned corn &mdash; eating them raw or lightly steamed is ideal. Because vitamin C plays a critical role in the enzyme PAM (<em>peptidylglycine alpha-amidating monooxygenase</em>), which is essential for oxytocin production, citrus fruits are an excellent choice. Vitamin D also supports oxytocin synthesis. Since vitamin D deficiency can lead to various health problems, supplementing under your doctor's guidance is wise. And because sunlight exposure promotes vitamin D synthesis, outdoor activities &mdash; especially hiking and cycling &mdash; are doubly beneficial.<sup>2</sup></p>
+<p>But what you eat is only half the equation. <em>Who</em> you eat with matters just as much. A meal shared with family and close friends is an irreplaceable health tonic. No matter how simple the table, food shared with someone you love is the most powerful medicine &mdash; and the most precious elixir &mdash; for stimulating oxytocin release. Choose shared meals over eating alone whenever you can. Solo dining exposes your body to obesity and a host of other health risks. Perhaps the single best dietary habit you can cultivate is regularly cooking a meal and inviting friends over. Imagine freshly steamed rice sending up curls of fragrant steam, a pot of <em>doenjang-jjigae</em> (Korean fermented soybean stew) bubbling away on the table &mdash; and across from you, someone you truly care about. That is a feast for the soul, not just the stomach. Of course, cooking itself should not become another source of stress....</p>
+<div class="hl"><strong>The Oxytocin Way of Eating</strong>
+Oxytocin is deeply connected to food. The types of food matter, but so does <em>how</em> you eat. Sharing a meal raises oxytocin. Even if you are sitting at the same table, eating individual dishes is not the same as sharing from a communal pot &mdash; a Korean-style hot pot, for instance, or trading bites from each other's plates. Think back to school days, when everyone pushed their desks together in a circle, opened their lunchboxes, and traded side dishes. Your oxytocin was undoubtedly surging. Sharing your food with others is the beginning of community.
+And it is not just <em>who</em> you eat with but <em>what</em> you eat. Diversity in your gut microbiome matters, and among beneficial bacteria, <em>Lactobacillus reuteri</em> in particular is known to enhance oxytocin function, boosting immunity and sociability. Many other beneficial gut bacteria similarly improve our physical, mental, and social health through oxytocin. These gut bacteria feed primarily on undigested plant carbohydrates &mdash; dietary fiber &mdash; and produce short-chain fatty acids, which strengthen immunity and promote the production of brain substances like BDNF (brain-derived neurotrophic factor) that improve mental health.
+Among vegetables, those especially rich in dietary fiber &mdash; chicory, Jerusalem artichoke, and onion &mdash; are particularly beneficial. There is an old saying (perhaps not entirely scientifically grounded) that people who eat only meat and no vegetables tend to be more irritable and aggressive. If there is any truth to it, it may be because their guts lack the beneficial bacteria needed for oxytocin to function properly.</div>
+<div class="hl"><strong>Oxytocin Boost:</strong> Tonight, go on your own foodie adventure. Or order something you saw on a mukbang, sit down with a friend or someone you love, and enjoy it together over good conversation. A slice of cake, a bowl of pumpkin porridge, that chicken soup your mother used to make....</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="25-pleasure-principle.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 25: The Pleasure Principle -- How Sex Raises Oxytocin</span></a>
+    <a href="27-master-your-gut.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 27: Master Your Gut, Master Your Oxytocin</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

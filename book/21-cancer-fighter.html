@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 21: Oxytocin as a Cancer Fighter &mdash; The Oxytocin Story</title>
+<meta name="description" content="Chapter 21: Oxytocin as a Cancer Fighter from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Part Five: Oxytocin for a Healthier You</div>
+        <h1 class="chapter-title">Chapter 21: Oxytocin as a Cancer Fighter</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+<p>-- The Anti-Cancer Effect</p>
+<p>In the spring of 2013, when crimson azaleas were shyly unfurling their buds, my office phone rang. It was Professor Yusik Yom from the Department of Sociology at Yonsei University. He told me that several professors from different departments were forming an interdisciplinary research team and asked if I would join. "You'd include me? Of course I will!" I accepted on the spot and became a member of the team that same day.</p>
+<p>The lineup was impressive: Professor Yusik Yom from Sociology, Professor Yongchan Kim from Communication, Professor Yumi Lee from Endocrinology, Professor Hyunchang Kim from Preventive Medicine, Professor On Lee from Psychiatry, and me &mdash; six professors in total. Together, the six of us co-taught a single course, with graduate students from multiple departments designing projects and writing papers together. It was a genuinely <em>interdisciplinary</em> class in every sense of the word.</p>
+<p>I don't think anything quite like it had been done before in Korea. Sure, there had been courses where multiple professors delivered lectures in modules with one professor coordinating, but never one where six professors all registered it as their own course and participated directly in teaching, research, and evaluation. I was proud to be part of this pioneering effort. The premise of the course was what truly excited me: to examine how social-environmental factors &mdash; the presence or absence of close friends, a spouse, and various lifestyle habits &mdash; affect individual health, using quantitative data from university students' campus lives. Designing research with experts from such different fields and sitting in on my colleagues' lectures was deeply stimulating.</p>
+<h3>More Friends, Fewer Diseases</h3>
+<p>As the saying goes, wisdom grows when it's shared. The concept of <em>social capital</em> emerged in academic circles in the 1990s, born from a growing alarm that industrialization and urbanization were transforming social relationships in irreversible ways. Social capital refers to the relationships, networks, and ongoing exchanges within a community &mdash; the bonds formed through school, hometown, or professional connections. Unlike physical capital such as real estate, savings, or cash, social capital is the intangible wealth generated through friendship, goodwill, solidarity, belonging, and mutual empathy. Since the 1970s, social scientists have conceptualized it through the lenses of trust, norms, awareness, and networks that facilitate cooperation and exchange. More recently, medical researchers have demonstrated that social capital has a significant impact on both mental and physical health.</p>
+<p>What struck me most was this: among breast cancer patients, those who are single, divorced, or widowed have lower remission rates, higher recurrence risks, and higher mortality rates compared to married patients. The finding that patients with no one to call during difficult times face greater mortality risk than those with close friends nearby may seem obvious &mdash; but at the time, it hit me like a thunderbolt. The fairy-tale-like notion that having lots of close friends can ward off disease was more than enough to ignite my curiosity. <em>What a fascinating research topic! But is it really true? And if so, why?</em> These questions found partial answers in Professor Yongchan Kim's lectures on health communication and health literacy, and in Professor Hyunchang Kim's lectures on how social-environmental factors influence disease onset, treatment, and prognosis. But the precise biological mechanisms remained a mystery.[<sup>20</sup>-1]</p>
+<h3>Oxytocin's Declaration of War: Cancer, Stand Aside</h3>
+<p>Then I discovered oxytocin, and everything clicked. Searching the literature, I found that oxytocin doesn't just affect cancer onset and recurrence &mdash; it also profoundly influences the symptoms experienced by cancer survivors. In a recent study, researchers injected cancer cells into monogamous mice and then separated the bonded pairs. The cancer developed faster, and the tumors grew more aggressively. Oxytocin experts Larry Young and Dr. Ford called this the "oxytocin effect."[<sup>20</sup>-2]</p>
+<p>But does oxytocin directly inhibit cancer cell growth? In 1994, Professor Cassoni's research team cultured breast cancer cells and introduced oxytocin into the cell environment. Not only did the number of cancer cells decrease, but their proliferation was also suppressed. By 1997, they had identified the mechanism: cyclic adenosine monophosphate (cAMP) and protein kinase A were involved. The next question was obvious: would oxytocin shrink tumors in living animals? Scientists injected oxytocin into mice with breast cancer and observed that the tumors shrank. Since then, the anti-cancer effects of oxytocin have been confirmed multiple times in animal studies.[<sup>20</sup>-3]</p>
+<p>Of course, conducting such studies in humans is no simple matter. But we can draw plausible inferences from the situations in which oxytocin is most abundantly produced &mdash; childbirth and breastfeeding. If breastfeeding triggers massive oxytocin release, then women who breastfeed should have lower rates of breast cancer. And indeed, a 1994 study published in a world-leading medical journal confirmed that breastfeeding reduces a mother's breast cancer risk, with longer breastfeeding durations corresponding to even lower risk. A 2002 study surveying approximately 50,000 women across thirty countries corroborated these findings. Even more remarkably, recent research has shown that breastfeeding reduces the incidence of cancers in organs not directly involved in breastfeeding at all &mdash; including the esophagus, stomach, and pancreas. Subsequent studies have demonstrated that oxytocin influences the development, growth, and recurrence of not only breast cancer but also esophageal cancer, pancreatic cancer, colorectal cancer, and ovarian cancer.[<sup>20</sup>-4]</p>
+<p>While I haven't yet published these findings in a journal, for the past seven years I've been collaborating with the Severance Colorectal Cancer Center to study the positive effects of regular exercise on bowel function in rectal cancer patients who experience bowel dysfunction. About six weeks after starting an exercise program, the vast majority of patients showed improvement in bowel function &mdash; and some even lost their chronic constipation. These changes were statistically significant compared to the non-exercise control group. I've seen patients who used to go to the bathroom thirty times a day, patients who had to wear diapers to bed because of nighttime leakage, patients whose eyes were bloodshot from straining on the toilet all day, and patients tormented by bloating and gas &mdash; all of them showed dramatic improvement once they began exercising.</p>
+<div class="hl"><strong>Oxytocin Lifestyle Tip:</strong> If you're visiting a sick friend or loved one in the hospital and can't find the right words of comfort or encouragement, how about simply holding their hand or rubbing their feet?</div>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <a href="20-healing-inflammatory-bowel.html" class="nav-prev"><span class="nav-arrow">&larr;</span><span class="nav-label">Previous</span><span class="nav-title">Chapter 20: Oxytocin for Healing Inflammatory Bowel Disease</span></a>
+    <a href="22-autism-fighter.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 22: The Autism Fighter</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>

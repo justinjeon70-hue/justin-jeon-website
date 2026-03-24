@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction: If You Want to Be Happy and Healthy, Oxytocin &mdash; The Oxytocin Story</title>
+<meta name="description" content="Introduction: If You Want to Be Happy and Healthy, Oxytocin from The Oxytocin Story by Justin Jeon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
+
+/* Top nav */
+.top-nav{background:var(--dark);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+.top-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.5px;transition:color .2s}
+.top-nav a:hover{color:#fff}
+.top-nav .book-title{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Chapter header */
+.chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
+.chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
+
+/* Content */
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
+.content p{margin-bottom:18px;text-align:justify;hyphens:auto}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3:first-child{border-top:none;padding-top:0;margin-top:0}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
+.content a:hover{border-color:var(--coral)}
+.content sup{font-size:11px;color:var(--gold);font-weight:600}
+.content em{font-style:italic}
+.content strong{font-weight:600;color:var(--dark)}
+
+/* Pull quote */
+.pq{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--rose);text-align:center;padding:28px 36px;margin:36px 0;line-height:1.55}
+.pq::before,.pq::after{content:'';display:block;width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent);margin:0 auto}
+.pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
+
+/* Highlight box */
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
+.hl strong{color:var(--dark)}
+
+/* Footnotes */
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:28px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
+.table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
+
+/* Chapter figure */
+.chapter-figure{margin:36px 0;text-align:center}
+.chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+
+/* Chapter nav */
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
+.chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
+.nav-prev{text-align:left}
+.nav-next{text-align:right}
+.nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
+.nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
+.nav-disabled{visibility:hidden;flex:1}
+
+/* Divider */
+.pdiv{text-align:center;padding:48px 0 0}
+.pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:var(--coral);text-decoration:none}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.content>*{opacity:0;transform:translateY(12px)}
+
+/* Responsive */
+@media(max-width:768px){
+    .chapter-header{padding:44px 22px 38px}
+    .chapter-title{font-size:28px}
+    .content{padding:36px 22px 36px}
+    .content h3{font-size:21px}
+    .pq{font-size:18px;padding:22px 14px}
+    .chapter-nav{padding:28px 22px 36px;gap:12px}
+    .chapter-nav a{padding:14px 16px}
+    .nav-title{font-size:13px}
+    .top-nav{padding:10px 18px}
+    .top-nav .book-title{display:none}
+}
+@media(max-width:480px){
+    .chapter-header{padding:36px 16px 30px}
+    .chapter-title{font-size:24px}
+    .content{padding:28px 16px 28px}
+    .chapter-nav{flex-direction:column}
+    .chapter-nav a{max-width:100%}
+    .nav-disabled{display:none}
+}
+@media print{
+    .top-nav,.progress-bar,.chapter-nav{display:none}
+    .chapter-header{background:#fff;color:#000;padding:24px 0}
+    .chapter-title{color:#000}
+    body{font-size:12pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="top-nav">
+    <a href="../oxytocin.html">&larr; The Oxytocin Story</a>
+    <span class="book-title">The Oxytocin Story &mdash; Justin Jeon</span>
+    <a href="../oxytocin.html#toc">Table of Contents</a>
+</nav>
+
+<header class="chapter-header">
+    <div class="chapter-header-inner fade-in">
+        <div class="part-label">Introduction</div>
+        <h1 class="chapter-title">Introduction: If You Want to Be Happy and Healthy, Oxytocin</h1>
+    </div>
+</header>
+
+<main class="content" id="chapterContent">
+
+    <figure class="chapter-figure">
+        <img src="figures/fig05_oxytocin_effects.png" alt="Fig05 Oxytocin Effects" loading="lazy">
+    </figure>
+<p>Turn on the news these days, and heartbreaking stories hit you one after another. A young man who, after years of failed job searches, locked himself in his room and eventually gave up on life. An elderly mother found dead in a tiny rented room months after she passed away alone, waiting for children who never came. A child who died of malnutrition after surviving on convenience-store rice balls. A middle-aged man who died alone, isolated like an outcast because he struggled with social skills. A sick mother who couldn't bring herself to follow her disabled daughter into death. Stories like these weigh heavily on all of us.</p>
+<p>But the world isn't made up of only sad, heartbreaking tales. There's the daughter who took over her late mother's "thousand-won restaurant" &mdash; a place that had served meals for just one thousand won (less than a dollar) to those who couldn't afford to eat. After her mother passed away from cancer following five years of running the restaurant, this remarkable young woman now runs the restaurant in the morning and sells insurance in the afternoon. There's the Superman-like man who risked his own car and his life to rescue people drowning in floodwaters. The neighbor who left a basket of snacks by the front door for a taxi driver too busy to stop for water. The mothers who pray day and night for children who've moved away to the city. The devoted sons and daughters who sacrifice their own lives to care for parents with dementia. The countless couples who may never make headlines but quietly love and cherish each other. The lovers who cling to each other through poverty with a tenderness that aches. In this same world, stories of warmth are everywhere.</p>
+<p>Oxytocin is the hormone that warms our hearts. It is the hormone that enables us to trust and love one another more deeply. Now, when I say it like that, you might think oxytocin sounds like some unscientific feel-good chemical. Far from it. Since the first oxytocin-related paper was published in 1929, a staggering 33,423 research papers on oxytocin had been published by December 2023. So &mdash; shall we take a closer look at what oxytocin is all about?</p>
+<p>## Oxytocin: The Love Hormone</p>
+<p>Have you ever heard the word <em>oxytocin</em>? Some of you might be nodding, while others may be shaking your heads. If you've ever had an induced labor, you've likely received an oxytocin injection. Oxytocin causes the uterus to contract, and a contracting uterus triggers the pituitary gland to release even more oxytocin. As oxytocin levels rise, the uterus contracts more forcefully. Through this self-reinforcing cycle, a mother's oxytocin levels during childbirth can surge to 20 to 30 times their normal level. Oxytocin creates an intense feeling of maternal love. It makes a mother want to hold her baby close and nurse. When the mother's breasts fill with milk and she instinctively brings her baby to her breast, that is the work of this remarkable hormone. In fact, oxytocin also plays a direct role in releasing milk from the breast. It drives a mother to care for her child with love. And this has been proven experimentally: researchers discovered that when oxytocin was removed from mother rats, they completely stopped caring for their pups. Conversely, when virgin rats &mdash; who had no offspring of their own &mdash; were given oxytocin, they began nurturing pups placed in front of them as if the babies were their own.</p>
+<p>Oxytocin is also intimately connected to romance. Couples in new relationships have higher blood oxytocin levels compared to single individuals. Couples whose oxytocin levels rose sharply in the early stages of their relationship were far more likely to still be together six months later, while those whose levels remained low were much more likely to have broken up. In other words, early-relationship oxytocin levels are a powerful predictor of whether a couple will stay together. As we'll explore further, emotional connection and physical touch between partners raise oxytocin &mdash; so it's hardly surprising that couples with high early oxytocin levels tend to last. Oxytocin is also released during sexual intercourse, which explains the sudden spike in attachment partners feel after sharing an orgasm.</p>
+<p>## It Raises Your Social Intelligence</p>
+<p>Oxytocin doesn't stop at being a love hormone. Recent research has revealed effects that scientists never previously imagined. One of the most striking discoveries is that oxytocin profoundly influences the social development of children. In one groundbreaking experiment, children on the autism spectrum inhaled an oxytocin nasal spray and, unlike before, began reading emotions from other people's facial expressions &mdash; something close to a miracle. This study, which excited scientists around the world, was a double-blind trial: children with autism spectrum disorder who inhaled real oxytocin were significantly better at detecting others' eye movements and facial expressions compared to those who received a placebo. Follow-up experiments with neurotypical adolescents yielded similar results, and this finding is now widely accepted as established science. Put simply, oxytocin has been recognized as more than a love hormone &mdash; it is a <em>relationship hormone</em>, a <em>social hormone</em>.</p>
+<p>So, are there people who are naturally low in oxytocin? Yes, there are. Oxytocin is closely linked to the gene "GTF2I," sometimes called the "sociability gene." People with a variation in the oxytocin receptor known as "rs53576" have been reported to show reduced empathy compared to the general population. Come to think of it, don't we all know someone like that? Picture the office dinner: the junior staff politely say, "Boss, stay a little longer!" &mdash; and the boss, completely oblivious, sits back down with a grin: "Oh, if you insist." Then he picks up his glass and launches into a classic "Back in my day..." speech. Totally clueless. Everyone at the table knows that what the employees actually want isn't their boss's company &mdash; they want the company credit card. The socially savvy move? Leave the card on the table and make yourself scarce. In reality, oxytocin is the social hormone that can turn someone's social radar up to maximum sensitivity.</p>
+<p>Here's another fascinating experiment. Researchers had subjects inhale oxytocin and then play an investment game. The group that inhaled oxytocin trusted their investment partners significantly more and increased their investments by 27 percent. To make sure this wasn't simply a greater appetite for risk, the researchers ran additional experiments and found no difference in risk-taking behavior between the oxytocin and placebo groups. This captivating study was published in the prestigious journal <em>Nature</em> in 2005 and has since been cited more than 5,000 times.</p>
+<p>There's another entertaining study along these lines. Researchers selected 49 couples who had been living together for at least a year and deliberately had them argue about topics that typically sparked conflict between them. (Yes, some experiments really are that creative.) The arguments were videotaped and analyzed. Both men and women in the oxytocin group argued in a significantly more constructive manner &mdash; more positive, more empathetic, more committed to nonviolent communication. The researchers had tried to start a fight, but the couples treated with oxytocin simply couldn't manage it.</p>
+<p>## Is Oxytocin a Morality Hormone?</p>
+<p>There's even research on infidelity. Prairie voles are monogamous &mdash; males and females devote themselves to a single partner. Montane voles, on the other hand, are promiscuous. Apparently, not all rodents are created equal. Male prairie voles groom their pups (licking and tidying their fur) and actively participate in child-rearing, while male montane voles ignore their offspring entirely. But when researchers genetically modified montane vole males so that their oxytocin receptors functioned normally, those formerly indifferent fathers suddenly began caring for their pups. This line of research is so important that we'll explore it in much greater detail later in the book.</p>
+<p>The magic of oxytocin has been confirmed in human experiments as well. In one study, married men inhaled oxytocin and then an attractive young woman was sent to approach them flirtatiously. The men were asked how close the woman could get before they felt uncomfortable. The men who had inhaled oxytocin said they became uncomfortable when the woman was about 71 centimeters away. But those who had inhaled a placebo didn't feel uncomfortable until she was just 56 centimeters away &mdash; meaning the placebo group allowed the woman significantly deeper into their personal space. The truly interesting finding? This effect only appeared in married men. Unmarried men, whether they had inhaled oxytocin or not, were perfectly happy to have an attractive woman get close. Not exactly a surprise, is it?</p>
+<p>## The Skin-to-Skin Hormone</p>
+<p>And that's not all. Oxytocin also has profound physical health benefits. Recent research has found that oxytocin is linked to cancer, cardiovascular disease, obesity, diabetes, and even aging. Higher levels of oxytocin in the body are associated with a greater likelihood of preventing cancer, heart disease, obesity, and diabetes. Beyond alleviating chronic disease, it appears to slow the aging process, accelerate the generation of nerve cells, promote bone growth to prevent osteoporosis, and speed the healing of muscle damage and wounds. Some research even suggests that raising blood oxytocin levels can improve the symptoms of dementia. At this point, some of you might be impatiently asking, "Where can I buy oxytocin spray?"</p>
+<p>You don't need to buy anything. There is a way to dramatically raise your oxytocin levels without spraying anything up your nose. Can you guess what it is?</p>
+<p>Physical touch. When you were little and your stomach hurt, you ran straight to your mother. She would gently rub your belly, saying the Korean equivalent of "Mommy's hands are magic hands" &mdash; and somehow, miraculously, the pain went away. This kind of skin-to-skin contact stimulates the release of oxytocin in the body. When blood oxytocin levels rise, they raise our pain threshold. Our bodies are wonderfully sophisticated &mdash; they don't transmit every sensation to the brain. Below a certain level, stimuli and pain are simply filtered out at the peripheral nerve stage. Research has shown that the more physical contact parents have with newborns, the higher the oxytocin levels in the baby's brain, which plays a positive role in emotional well-being and brain development.</p>
+<p>Korean mothers traditionally carried their babies close to their bodies. Even when going out to work, they strapped their babies to their backs using a <em>podaegi</em> &mdash; a traditional Korean baby carrier. In contrast, Western parenting culture has historically emphasized independence: giving babies their own room, teaching them to sleep alone from an early age. But recently, the Korean mother's approach to physical closeness has been attracting worldwide attention. The <em>podaegi</em> itself has become a global phenomenon. There are even <em>podaegi</em> rental shops in England &mdash; I looked it up, and renting one for a month costs about 10 British pounds. You can feel the effort Western mothers are making to increase skin-to-skin contact with their babies.</p>
+<p>Another way to raise oxytocin is simply eating with other people. This was demonstrated in a chimpanzee study. When chimps only groomed each other, oxytocin levels didn't rise very much. But when they shared food together, large amounts of oxytocin were detected in their urine. So if you need to win over a business client or build a relationship with a key contact, maybe skip the long-winded presentations. Instead, share a meal. It may be the single best way to raise the oxytocin levels of the person sitting across from you. If that person is your spouse, hold each other close, enjoy some intimate physical affection, and share a delicious meal together. If it's a business or academic contact, shake hands with warmth and intention, dine somewhere memorable, and then get down to business. And the next time you say to a friend, "We should grab a meal sometime," don't just say it &mdash; make time, sit down together, talk and laugh over a real meal.</p>
+<p>## The Gossip Hormone</p>
+<p>Gossip is yet another way to raise oxytocin. Does oxytocin spike when you achieve something great in life? When you get into college, land a job, or make a fortune? No, it doesn't. Those moments raise serotonin and dopamine &mdash; but oxytocin stays flat. Surprisingly, oxytocin rises when people gather together and gossip. When coworkers huddle to vent about that insufferable manager, that obnoxious executive, or that impossible customer, oxytocin is dancing.</p>
+<p>There's actual research to back this up. One group was asked to share emotionally empathetic stories with each other, while another group was encouraged to gossip. In the first group, cortisol decreased but oxytocin didn't change. In the gossip group, cortisol decreased <em>and</em> oxytocin went up.</p>
+<p>## The Eye-Contact Hormone</p>
+<p>Another simple way to raise oxytocin is owning a pet. When you stroke and cuddle a dog, oxytocin levels surge in both the owner and the dog. Pet your dog while making eye contact. Eye contact and emotional connection are among the most effective oxytocin boosters. Don't just take my word for it &mdash; this was published in <em>Science</em> in 2015. There have even been experiments where dogs were given oxytocin directly. Dogs with elevated oxytocin became more obedient, more sociable, and made more eye contact with their owners. And here's the fascinating part: when that happened, the owner's oxytocin rose too. Isn't that remarkable?</p>
+<p>In recent years, as nuclear families, single-person households, and eating alone have become the norm, oxytocin levels across the population have been steadily declining. In Korea, a new word has even been coined &mdash; <em>haek-gaein</em> (literally, "nuclear individual") &mdash; to describe this extreme individualization. I believe this trend is deeply connected to the rise in school bullying, depression, suicide, mental illness, inflammatory bowel disease, and lifestyle-related diseases. Oxytocin is not just good for your body &mdash; it is a secret weapon for your entire life. What if, instead of eating alone, we shared more meals with the people we care about? What if we chatted and gossiped more, exercised together, played together, visited our parents more often? I want to share with you how oxytocin comforts our hearts, how it makes us better people, how it makes us more lovable, and how it transforms us into more responsible human beings. Will you hear me out? Meeting oxytocin changed my life. It solved many of my problems and made my life immeasurably richer. It is my heartfelt wish that through this book, your life too will become happier, richer, and more beautiful.</p>
+<p>From my lab in Sinchon, The Author</p>
+<p><em>Imagine a wonder drug. One pill, and you suddenly become kinder. You see the positive side of others rather than the negative. When someone makes a mistake, you understand their perspective, forgive them, and respond with generosity. Better yet, this drug prevents obesity, diabetes, cardiovascular disease, and even cancer. It treats chronic pain, sleep disorders, anxiety, depression, and inflammatory bowel disease. And if a teenager on the autism spectrum takes it, they begin reading facial expressions for the very first time. If such a miracle drug existed, would you want to know about it? This drug is real. It is oxytocin &mdash; secreted by the posterior pituitary gland of the hypothalamus. In Part 1, I'm going to tell you everything about this miraculous substance.</em></p>
+</main>
+
+<div class="pdiv"><span></span></div>
+
+<nav class="chapter-nav">
+    <span class="nav-prev nav-disabled"></span>
+    <a href="01-secret-of-roseto.html" class="nav-next"><span class="nav-label">Next</span><span class="nav-arrow">&rarr;</span><span class="nav-title">Chapter 1: The Secret of Roseto</span></a>
+</nav>
+
+<footer>
+    <strong>The Oxytocin Story</strong> &mdash; by <a href="../">Justin Jeon</a>, Professor, Yonsei University<br>
+    <span style="font-size:11px;margin-top:6px;display:inline-block">&copy; Justin Jeon. English translation.</span>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll',function(){
+    var h=document.documentElement,b=document.body;
+    var st=h.scrollTop||b.scrollTop;
+    var sh=h.scrollHeight||b.scrollHeight;
+    var ch=h.clientHeight;
+    var pct=(st/(sh-ch))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+});
+// Scroll-triggered fade-in for content elements
+(function(){
+    var els=document.querySelectorAll('#chapterContent > *');
+    var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.style.opacity='1';
+                e.target.style.transform='translateY(0)';
+                e.target.style.transition='opacity .5s ease, transform .5s ease';
+                observer.unobserve(e.target);
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){observer.observe(el);});
+})();
+</script>
+
+</body>
+</html>
