@@ -96,7 +96,7 @@
     // Reverb (warm hall)
     reverbNode = createReverb(3.5, 1.8);
     var reverbMix = ctx.createGain();
-    reverbMix.gain.value = 0.35;
+    reverbMix.gain.value = 0.5;
     reverbNode.connect(reverbMix);
     reverbMix.connect(masterGain);
 
@@ -114,7 +114,7 @@
 
     // Dry signal
     var dryGain = ctx.createGain();
-    dryGain.gain.value = 0.6;
+    dryGain.gain.value = 0.8;
     dryGain.connect(masterGain);
 
     // Store refs for routing
@@ -126,7 +126,7 @@
   // Piano-like tone using multiple harmonics
   function playPiano(freq, time, duration, velocity) {
     if (!ctx || !isPlaying) return;
-    vel = velocity || 0.04;
+    var vel = velocity || 0.08;
 
     // Fundamental + harmonics for piano timbre
     const harmonics = [
@@ -144,9 +144,9 @@
 
     // Piano envelope: quick attack, gradual decay
     noteGain.gain.setValueAtTime(0, time);
-    noteGain.gain.linearRampToValueAtTime(vel, time + 0.008);
-    noteGain.gain.setTargetAtTime(vel * 0.6, time + 0.008, 0.15);
-    noteGain.gain.setTargetAtTime(vel * 0.3, time + duration * 0.4, duration * 0.3);
+    noteGain.gain.linearRampToValueAtTime(vel, time + 0.005);
+    noteGain.gain.setTargetAtTime(vel * 0.7, time + 0.05, 0.2);
+    noteGain.gain.setTargetAtTime(vel * 0.4, time + duration * 0.4, duration * 0.3);
     noteGain.gain.linearRampToValueAtTime(0, time + duration);
 
     harmonics.forEach(function(h) {
@@ -184,8 +184,8 @@
     filter.frequency.value = 400;
 
     gain.gain.setValueAtTime(0, time);
-    gain.gain.linearRampToValueAtTime(0.05, time + 0.02);
-    gain.gain.setTargetAtTime(0.035, time + 0.1, 0.3);
+    gain.gain.linearRampToValueAtTime(0.12, time + 0.02);
+    gain.gain.setTargetAtTime(0.08, time + 0.1, 0.3);
     gain.gain.linearRampToValueAtTime(0, time + duration);
 
     osc.connect(filter);
@@ -216,14 +216,14 @@
       // === Jazz Piano Comping (syncopated) ===
       // Play chord on beat 1
       chord.notes.forEach(function(note, ni) {
-        playPiano(note, chordStart + ni * 0.015, chordDur * 0.85, 0.025);
+        playPiano(note, chordStart + ni * 0.015, chordDur * 0.85, 0.065);
       });
 
       // Syncopated re-hit on "and of 2" (jazz comp)
       if (Math.random() > 0.3) {
         var rehitTime = chordStart + beatDur * 1.5;
         chord.notes.forEach(function(note, ni) {
-          playPiano(note, rehitTime + ni * 0.01, beatDur * 1.5, 0.018);
+          playPiano(note, rehitTime + ni * 0.01, beatDur * 1.5, 0.055);
         });
       }
 
@@ -231,7 +231,7 @@
       if (Math.random() > 0.6) {
         var ghostTime = chordStart + beatDur * 3.5;
         chord.notes.slice(1, 3).forEach(function(note) {
-          playPiano(note, ghostTime, beatDur * 0.4, 0.012);
+          playPiano(note, ghostTime, beatDur * 0.4, 0.04);
         });
       }
 
@@ -253,7 +253,7 @@
           var swing = mi % 2 === 0 ? 0 : beatDur * 0.15;
           var mTime = melStart + mi * (beatDur * 0.5) + swing;
           var mDur = beatDur * (0.4 + Math.random() * 0.6);
-          playPiano(mNote, mTime, mDur, 0.02 + Math.random() * 0.015);
+          playPiano(mNote, mTime, mDur, 0.06 + Math.random() * 0.03);
         }
       }
     });
