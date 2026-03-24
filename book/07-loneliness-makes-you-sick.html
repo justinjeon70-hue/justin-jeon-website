@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,19 +138,19 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>During my years as an international student, whenever someone in our community fell ill, we would say, "It's hard enough being alone in a foreign country &mdash; we can't let them be sick on top of it." We would visit, cook meals, and pray for them. And the bedridden student, somehow energized by the company, would often bounce back remarkably quickly. For years, the COVID-19 pandemic made hospital visits impossible, forcing us into social distancing. But in our culture, when you hear someone is sick, you make time to visit &mdash; no matter how busy you are.</p>
+<p>During my years as an international student, whenever someone in our community fell ill, we would gather around them with a kind of instinctive urgency. "Being alone in a foreign country is hard enough," we would say. "Being alone and sick is unbearable." We visited. We cooked. We prayed. And the student who had been bedridden, groaning under the covers, would often rise with surprising speed — as if the mere presence of others had returned something essential to their body. For years, COVID-19 made such visits impossible, replacing human warmth with mandated distance. But in our culture, hearing that someone is unwell has always been a summons: you find the time, and you go.</p>
 <h3>The Destructive Power of Loneliness</h3>
-<p>The Japanese word <em>hikikomori</em> describes people who withdraw from society entirely, confining themselves to their homes for extended periods. In Korea, the equivalent term is <em>eundunhyeong oettori</em> &mdash; "reclusive loners." A 2023 government report surveyed fifteen thousand households of young adults aged 19 to 34 and found that 2.4 percent were hikikomori-type recluses with no specific reason such as pregnancy or childbirth for staying home. Applied to the broader youth population, that translates to roughly 244,000 people &mdash; a staggering number. In 2021, recognizing the severity of the problem, the Korean Ministry of Gender Equality and Family announced a support program offering up to 650,000 won (approximately $500) per month in living expenses, medical costs, and educational support to help recluses reenter society.</p>
-<p>What is the difference between isolation and solitude? If isolation means being involuntarily alone and feeling its sting, solitude is a chosen state of being present with yourself. Isolation breeds negative emotions; solitude nurtures positive ones. Put differently, we feel lonely when we desire connection but experience it too infrequently or too superficially. Isolation should be avoided whenever possible; solitude, if you can embrace it, should be savored.</p>
-<p>The health consequences of loneliness are devastating. Social isolation has been compared to smoking fifteen cigarettes a day or drinking six glasses of soju (a Korean distilled spirit, comparable to downing several cocktails). Isolation raises the risk of premature death in adults more than physical inactivity or obesity does.<sup>1</sup></p>
-<p>Early research on loneliness and cardiovascular disease found that unmarried men and women had a 50 percent higher rate of cardiovascular disease and an 18 percent higher mortality rate than their married counterparts. At the time, the connection between loneliness and disease was still debated. But recent studies have steadily shown that loneliness weakens the immune system, increases cardiovascular disease risk, and raises cancer incidence and mortality. The evidence is now considered established. The studies are too numerous to count. One examined two hundred breast cancer patients and found that those who reported feeling lonely experienced significantly more pain, more depression, and greater fatigue than those who did not.<sup>2</sup></p>
-<p>People who feel lonely are at greater risk for a wide range of diseases, and their mortality rates are considerably higher. Experts once attributed this to elevated stress hormones, increased systemic inflammation, and the unhealthy habits of isolated individuals. But more recently, a new theory has gained traction: loneliness erodes social skills, and that erosion deepens isolation &mdash; creating a vicious cycle that drives up disease and death rates.<sup>3</sup></p>
+<p>The Japanese coined the word <em>hikikomori</em> to describe people who withdraw from society entirely, sealing themselves inside their homes for months or years. In Korea, the equivalent term is <em>eundunhyeong oettori</em> — "reclusive loner." A 2023 Korean government report surveyed fifteen thousand households of young adults aged nineteen to thirty-four and found that 2.4 percent qualified as recluses with no medical reason — no pregnancy, no disability — for staying home. Extrapolated to the broader youth population, that figure translates to roughly 244,000 people. In 2021, alarmed by the scale of the problem, the Ministry of Gender Equality and Family announced a support package offering up to 650,000 won per month — approximately five hundred U.S. dollars — in living expenses, medical costs, and educational support to help these young people re-enter society.</p>
+<p>What is the difference between isolation and solitude? Isolation is the state of being alone against your will — and feeling the sting of it. Solitude is a state you choose, a deliberate retreat into your own company. Isolation breeds negative emotion; solitude nurtures positive growth. We feel lonely when we crave connection but experience it too seldom or too superficially. Isolation should be avoided wherever possible. Solitude, if you can learn to embrace it, should be savored.</p>
+<p>The health consequences of loneliness are devastating. Social isolation has been likened to smoking fifteen cigarettes a day, or to drinking six glasses of <em>soju</em> — Korea's clear distilled spirit, each one as potent as a stiff cocktail. Loneliness raises the risk of premature death more than physical inactivity or obesity.<sup>1</sup></p>
+<p>Early research linking loneliness to cardiovascular disease found that unmarried men and women had a 50 percent higher rate of heart disease and an 18 percent higher mortality rate than their married counterparts. At the time, the connection was debated. It is debated no longer. Study after study has demonstrated that loneliness weakens the immune system, elevates cardiovascular risk, and increases both cancer incidence and cancer mortality. The evidence is now considered established fact. One study examined two hundred breast cancer patients and found that those who reported feeling lonely experienced significantly greater pain, deeper depression, and more crushing fatigue.<sup>2</sup></p>
+<p>People who feel lonely face elevated risk for a broad spectrum of diseases, and their mortality rates are considerably higher. For years, experts attributed this to familiar suspects — elevated stress hormones, chronic systemic inflammation, the poor lifestyle habits of people with no one watching. But a newer, more unsettling theory has gained traction: loneliness erodes the very social skills a person needs to escape it. The erosion deepens the isolation, the isolation deepens the erosion, and a vicious downward spiral carries the lonely person further from health and connection with every turn.<sup>3</sup></p>
 <h3>Oxytocin: A Friend in Loneliness</h3>
-<p>What role does oxytocin play in combating isolation? Experts agree that low oxytocin levels may be the "trigger" by which loneliness leads to disease. The lonelier and more socially isolated a person is, the lower their oxytocin &mdash; and low oxytocin further reduces sociability and reinforces negative emotions, sabotaging both new relationships and existing ones. This is not a virtuous cycle but a vicious one.</p>
-<p>Do people with genetic mutations in their oxytocin receptor feel more loneliness? According to a 2009 German study, yes. Those with receptor mutations reported greater social loneliness and isolation. Considering that the partners of people with low empathy also tend to feel lonelier, it becomes clear that oxytocin influences whether healthy relationships are formed and maintained &mdash; which in turn significantly affects the prevalence and mortality of various diseases.<sup>4</sup></p>
-<p>Conversely, the more people you meet, the more meaningful relationships you build, and the more you engage in mutually supportive activities, the more your oxytocin levels rise. And that rising oxytocin will rescue you from loneliness &mdash; and from the cascade of health problems it causes.</p>
-<p>An Israeli research team invited sixty-three elderly participants to play a "mirror game," which stimulates mirror neurons and builds empathy by having participants mimic each other's movements. The fascinating result was that every single participant found the game so enjoyable that they forgot their loneliness &mdash; and these emotional shifts correlated precisely with the changes in oxytocin levels measured in their saliva. Moreover, the effect varied depending on how close and familiar participants felt toward their game partners. As oxytocin levels rose, loneliness decreased &mdash; and the closer participants felt to their partners, the greater the effect.<sup>5</sup></p>
-<p>Given all of this, I can say with confidence that the best way to break the vicious cycle of loneliness and disease today is to increase the oxytocin in our bodies. To those who say, "I'm just naturally introverted. I probably have a mutation in my oxytocin receptors. I'll never be happy. I'll just live and die alone" &mdash; please don't give up. Research shows that even naturally reserved and introverted people feel more joy and happiness when they do enjoyable activities with others.<sup>6</sup></p>
+<p>What role does oxytocin play in combating this spiral? Experts increasingly agree that low oxytocin may be the trigger — the match that lights the fuse — by which loneliness translates into disease. The lonelier and more isolated a person becomes, the lower their oxytocin falls. And low oxytocin further weakens sociability, amplifies negative emotions, and undermines both the formation of new relationships and the maintenance of existing ones. This is not a virtuous cycle. It is a trap.</p>
+<p>Do people with genetic mutations in their oxytocin receptors experience more loneliness? A 2009 German study confirmed that they do: those with receptor mutations reported significantly greater social loneliness and isolation. And because the partners of people with low empathy also tend to feel lonelier, oxytocin's reach extends beyond the individual. It shapes whether healthy relationships form and endure — which in turn affects disease prevalence and mortality in ways we are only beginning to quantify.<sup>4</sup></p>
+<p>The hopeful corollary is this: the more people you meet, the more meaningful relationships you cultivate, and the more you engage in activities of mutual support, the higher your oxytocin climbs. And that rising oxytocin will rescue you — from loneliness, and from the cascade of illness it leaves in its wake.</p>
+<p>An Israeli research team invited sixty-three elderly participants to play a "mirror game" — a deceptively simple exercise designed to stimulate the brain's mirror neurons by having partners mimic each other's movements. Every single participant enjoyed the game so thoroughly that they forgot, at least for a while, that they had been lonely. And here is the elegant finding: the emotional shift correlated precisely with changes in salivary oxytocin. As oxytocin rose, loneliness fell. The effect varied, however, depending on how close and familiar participants felt toward their game partners. The closer the perceived bond, the more dramatic the oxytocin surge — and the more completely loneliness receded.<sup>5</sup></p>
+<p>Given all of this, I can say with confidence that the most powerful way to break the vicious cycle of loneliness and disease is to raise the oxytocin in our bodies. To anyone who says, "I'm just naturally introverted — I probably have a mutation in my oxytocin receptors — happiness was never in the cards for me — I'll just live alone and be done with it" — please, do not give up. Research shows that even people who are naturally reserved and introverted experience more joy and happiness when they do enjoyable things with other people.<sup>6</sup></p>
 </main>
 
 <div class="pdiv"><span></span></div>

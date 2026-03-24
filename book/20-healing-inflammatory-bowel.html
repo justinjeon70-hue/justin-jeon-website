@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,20 +138,7 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>Disease</p>
-<div class="pq"><strong>Sidebar: Oxytocin and Diabetes Insipidus</strong>
-Among illicit drugs, there is a substance called "ecstasy" (MDMA). One of ecstasy's defining characteristics is that it floods the user with intense feelings of intimacy and belonging toward the people around them. This happens because MDMA dramatically spikes oxytocin levels in the body. Oxytocin is secreted from the posterior pituitary, which also produces another hormone called vasopressin &mdash; also known as antidiuretic hormone (ADH). When vasopressin secretion is impaired, the body loses its ability to reabsorb water from urine, resulting in excessive urination &mdash; a condition called <em>diabetes insipidus</em>. The term <em>diabetes</em> is shared with <em>diabetes mellitus</em> (the more common form of diabetes related to blood sugar), because both involve excessive urination, but the underlying mechanisms are entirely different.
-When researchers administered MDMA to both diabetes insipidus patients and healthy controls, oxytocin levels rose significantly in the healthy group but barely increased in the diabetes insipidus patients. This finding has contributed to a growing discussion about whether MDMA-assisted therapy should be legalized for treating PTSD, with counseling alongside controlled MDMA administration. Of course, there is significant opposition to legalizing MDMA even for therapeutic purposes. What do you think? Personally, I believe that cultivating a lifestyle that naturally supports oxytocin production &mdash; without the side effects &mdash; is the most reliable solution.</div>
-<p>If you're reading this book while struggling with gut troubles, I want you to know you're not alone. Sudden abdominal pain, chronic diarrhea, a stomach that won't stop gurgling at the most inconvenient times &mdash; these things make it hard for many people to leave the house with confidence. Imagine being on a long-distance bus when your gut starts churning, your sphincter begins to relax, and all you can do is grip your belly, wipe the cold sweat from your forehead, and pray for the next rest stop. We've all been there.</p>
-<p>Inflammatory bowel disease (IBD), commonly known as Crohn's disease and ulcerative colitis, is a rare and intractable condition that affects over five million people worldwide. In South Korea, the numbers have been climbing sharply in recent years. According to the Health Insurance Review and Assessment Service, over the past decade, the number of ulcerative colitis patients has jumped from 16,136 to 37,439, and Crohn's disease patients from 7,700 to 18,463. Medical costs have increased more than fivefold, with social costs climbing in tandem. Once IBD develops, it brings abdominal pain, diarrhea, vomiting, and weight loss, and when symptoms are severe, quality of life deteriorates to the point where normal daily activities become nearly impossible.</p>
-<h3>When Your Cousin Buys Land, Your Stomach Hurts</h3>
-<p>There's a Korean proverb that says, "When your cousin buys a piece of land, your stomach hurts." It's a colorful way of describing the envy and stress we feel when someone close to us succeeds &mdash; and as it turns out, there's real science behind it. When your cousin succeeds and your own situation pales in comparison, stress hits hard. Psychologists call this <em>upward comparison</em> &mdash; comparing yourself to someone you perceive as better off &mdash; and research across multiple journals has shown that it's far more damaging to emotional well-being than <em>downward comparison</em> (comparing yourself to someone worse off). We are <em>Homo comparativus</em> &mdash; creatures wired to compare. And it doesn't stop there. Subtle pressure from a spouse amplifies the stress further. As stress builds, cortisol surges, and cortisol stimulates glial cells in the gut to release inflammatory substances. This prevents intestinal cells from growing properly, severely impairing gut function. That's the real cycle behind the proverb &mdash; when your cousin buys land, your stomach literally hurts.[<sup>19</sup>-1]</p>
-<p>A related but distinct condition that's been rising steeply among young adults is irritable bowel syndrome (IBS). Though IBS and IBD have different causes, they share similar symptoms, which often leads IBS patients to fear they have IBD. Both conditions are worsened by stress and poor lifestyle habits. Even people without either diagnosis can experience diarrhea or constipation when they're tense or stressed. For those who actually have IBD, losing a job, going through a divorce, or experiencing the death of a loved one can cause a dramatic worsening of symptoms.</p>
-<p>Recently, a research team from the University of Pennsylvania published a landmark study in <em>Cell</em>, one of science's most prestigious journals, revealing the mechanism by which cortisol &mdash; secreted through the hypothalamic-pituitary-adrenal axis under psychological stress &mdash; disrupts gut function. To simplify the complex mechanisms: cortisol directly stimulates glial cells connecting the neurons in the gut, causing them to release inflammatory substances. Cortisol also stunts the development of immature intestinal cells, preventing the gut from functioning properly. These findings were deeply unsettling to the scientific community because cortisol is known for its short-term immune-boosting effects, which is why corticosteroid drugs (glucocorticoids) had long been prescribed to IBD patients. However, long-term use of these medications can cause weight gain, mood swings, anxiety disorders, insomnia, further deterioration of gut health, and weakened immune function.[<sup>19</sup>-2]</p>
-<h3>Oxytocin Knows the Answer</h3>
-<p>But there's no need to despair. Oxytocin has the answer. Think back to your childhood: when you had a stomachache, your mother would place her hands on your belly and say, "Mommy's hands are magic hands," gently rubbing your tummy. And somehow, the pain would vanish as if by magic. No pills, no medicine &mdash; just Mom's hands, and the ache was gone. One of the most effective ways to raise oxytocin is massage. Massage from someone you trust &mdash; whether your mother or your partner &mdash; lowers cortisol, stimulates robust oxytocin secretion, raises the pain threshold, and reduces perceived pain. When you consider that oxytocin is the very hormone that enables mothers to endure the extreme agony of childbirth, it makes perfect sense that abdominal massage would diminish pain.</p>
-<p>This has been demonstrated in IBD research as well. Professor Delvaux's research team in France had IBD patients inhale oxytocin and then measured their pain thresholds. Oxytocin significantly raised those thresholds, noticeably reducing pain and discomfort. And that's not all. A psychiatry research team at Columbia University studied the effects of oxytocin on gut function, inflammation markers, and intestinal permeability in mice. They found that oxytocin not only promotes the growth and survival of intestinal cells but also suppresses inflammation, leading to a dramatic recovery of gut function. While the abundant presence of oxytocin receptors in the gut had long suggested a connection between oxytocin and digestive health, this was the first time it had been definitively demonstrated through rigorous research. More recent studies continue to confirm that oxytocin is especially beneficial for gut health among the various stress-related conditions it addresses.[<sup>19</sup>-3]</p>
-<p>Could the dramatic rise of IBD and IBS among people in their twenties and thirties in South Korea be linked to the stress of academic and employment competition and workplace pressure? Diet certainly plays a role &mdash; declining vegetable consumption and the shift toward processed foods are contributing factors. But the growing number of single-person households, the increasingly isolated lives people lead without the positive, oxytocin-boosting lifestyle habits that come from human connection &mdash; could that be the deeper cause? For those living with IBD, the prescription is clear: reduce everyday stress, meet more people, exercise together, and swap solo meals for shared ones. That's the oxytocin lifestyle.</p>
+
 </main>
 
 <div class="pdiv"><span></span></div>

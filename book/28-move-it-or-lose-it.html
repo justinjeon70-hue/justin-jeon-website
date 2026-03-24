@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,49 +138,7 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>-- How Exercise Raises Oxytocin</p>
-<p>"Exercise is Medicine." No &mdash; for modern humans, exercise <em>has</em> to be medicine. Why? Because the diseases plaguing contemporary life are overwhelmingly caused by eating too much and moving too little. A recent study of 155,722 people across 21 countries found that 26.5 percent of all deaths were attributable to lifestyle factors, and 41.2 percent to metabolic problems. Since most metabolic issues are themselves caused by insufficient exercise and poor dietary habits, adopting appropriate exercise and lifestyle changes alone could address the majority of diseases afflicting modern society.</p>
-<p>Of course, infectious diseases like COVID-19 and pneumonia are driven by compromised immunity &mdash; but given that regular exercise strengthens the immune system, physical activity can serve as medicine even against epidemics. What about cancer, the leading cause of death in South Korea? Exercise not only helps prevent cancer but also reduces the risk of recurrence in cancer survivors and improves the myriad side effects and health complications caused by treatment. Exercise truly deserves to be called a "cure-all."<sup>1</sup></p>
-<h3>Exercise and Oxytocin</h3>
-<p>So what effect does exercise have on oxytocin? In a word: exercise promotes oxytocin release. Exercise can raise blood oxytocin levels acutely, and sustained regular exercise can actually increase the density of oxytocin receptors in the brain. In one study, researchers placed running wheels in the cages of one group of mice while leaving another group in bare cages with no exercise equipment. The mice with access to running wheels voluntarily ran an average of 2.4 kilometers per day &mdash; roughly 2 hours and 20 minutes of running. After six weeks, researchers compared oxytocin levels in the brains and blood of both groups. The exercising mice showed significantly elevated oxytocin in both the brain and bloodstream. As their oxytocin rose, their anxiety decreased and their capacity for empathy with other mice improved.<sup>2</sup></p>
-<p>Studies like this abound. In another experiment, mice that ran at a low speed on treadmills showed increased expression of oxytocin receptors in their brains compared to sedentary controls, along with reduced anxiety behaviors and increased exploratory activity. A study on exercise and breast cancer found that when tumor-bearing mice either exercised or received oxytocin injections, the cellular signaling pathways that promote tumor growth were suppressed, and tumor size decreased. But when an oxytocin antagonist was administered, the anti-cancer effects of both exercise and oxytocin were dramatically diminished. Crucially, the exercising mice showed significantly elevated blood oxytocin levels.<sup>3</sup></p>
-<p>While human research is still limited, one study found that just 10 minutes of running more than doubled salivary oxytocin levels in both men and women. Notably, the exercise-induced oxytocin increase was even more pronounced in women than in men. Ladies, let us get moving! In this same study, the oxytocin increase from exercise was comparable to the levels participants experienced during orgasm achieved through masturbation. Another study found that grappling sports like jiu-jitsu raised oxytocin levels &mdash; but only when the exercise involved direct body contact. Non-contact exercise did not raise oxytocin, while contact-based exercise raised it substantially.<sup>4</sup></p>
-<h3>Shall We Dance?</h3>
-<p>What about ballroom dancing? In 2011, our research team had five cancer-survivor couples participate in 12 sessions of ballroom dance over six weeks. The reduction in marital conflict was striking &mdash; particularly in areas related to in-laws, relatives, siblings, and social activities. The dancing couples showed better communication, greater willingness to understand their partner's perspective, and more effort to see things from the other side. Although this study involved only five couples (10 participants total), making statistical significance hard to establish, the improvement in interpersonal dynamics after just six weeks was unmistakable &mdash; likely driven by rising oxytocin levels. The dance sessions boosted self-confidence, a sense of accomplishment, flow states, and joy. For couples who could not stand the sight of each other: start dancing the tango today! What is <em>Scent of a Woman</em>? Tonight, you become Al Pacino.<sup>5</sup></p>
-<p>Here are some reflections from couples who participated in the ballroom dance program:</p>
-<div class="pq"><em>"We have neighbors who joined a ballroom dance club. At first I wondered, how can a married couple learn ballroom dancing together? Would it even be fun? I'm the type who hates singing and dancing. But that couple &mdash; they match their outfits, they perform at showcases &mdash; honestly, I'm jealous. And since they started dancing together, their relationship has gotten so much better. These days, they're practically glowing."</em> (From an interview with participant H)</div>
-<div class="pq"><em>"It was awkward at first, but gradually I began to feel this warmth between us as a couple. Like going back to the early days of dating.... Week after week, you could see the husband start to lead naturally &mdash; executing turns, adjusting his stride. When they danced in place and he lengthened his step, she might have struggled to keep up, but even their hold became more natural."</em> (From the researcher's observation journal)</div>
-<div class="pq"><em>"Dancing together... you end up touching each other, and it makes you feel this tenderness. These days, even just looking at her face, she looks beautiful. It's kind of like dating again, you know?"</em> (From an interview with participant E)</div>
-<p>This study was conceived with Masayo Naruse, a Japanese graduate student who was passionate about ballroom dance. Having heard that cancer treatment often deteriorates the relationship between spouses, we designed the study together &mdash; though neither of us anticipated the results would be this powerful. Considering that oxytocin release is stimulated by physical touch, eye contact, and synchronized movement (like singing in harmony), ballroom dance may be the single best exercise for raising oxytocin, because it incorporates all of these elements.</p>
-<p>While writing this book, I called Naruse to ask why she had emphasized eye contact so strongly in the dance instruction. Her answer was wonderfully straightforward: "Just because! You once told me that in ballroom dance, you're taught to look into your partner's eyes, not at the floor." Before teaching dance to the cancer-survivor couples, she had each pair hold hands tightly and gaze into each other's eyes for one full minute &mdash; as though she instuitively knew that eye contact would send oxytocin levels soaring. Seeing is believing. Here is an excerpt from Naruse's own writing:</p>
-<div class="pq"><em>"The couples' transformation could be observed through the dance, and with each session they grew noticeably more comfortable. Particularly for busy couples, it was remarkable to see how naturally they began to acknowledge each other's emotions and make eye contact. Moreover, recognizing the positive effects and the value of dancing together, they expressed a desire to continue with ballroom dance and came to feel a renewed need for their partner (spouse)."</em> (From Masayo Naruse's master's thesis)</div>
-<p>Some couples even arrived at class having just had an argument. But by the end of the session, without anyone suggesting reconciliation, they would leave arm in arm, bodies pressed close, beaming at each other as though the fight had never happened. Watching them walk away together like that &mdash; I cannot tell you how gratifying it was. While rigorous research on whether ballroom dance specifically raises oxytocin has yet to be conducted, given what we know &mdash; that oxytocin enhances empathy, promotes consideration for others, facilitates positive communication, and builds attachment &mdash; it is easy to predict that couples dancing together, or practicing partner yoga, would stimulate oxytocin release in both partners.</p>
-<p>There used to be a saying in Korea that nothing was more dangerous than catching the "dancing bug" &mdash; you would lose your body, your money, and your family. But what if both spouses caught the dancing bug <em>for each other</em>? I suspect their home would become the happiest place on earth.</p>
-<div class="hl"><strong>Oxytocin Boost:</strong> Learn the tango with someone you love. Tonight, you become Al Pacino.</div>
-<h3>References</h3>
-<p><strong>Chapter 23</strong></p>
-<p>1. Camerino C. The Long Way of Oxytocin from the Uterus to the Heart in 70 Years from Its Discovery. <em>Int J Mol Sci</em>. 2023;24(3). / Branchi I, Curley JP, D'Andrea I, et al. Early interactions with mother and peers independently build adult social skills and shape BDNF and oxytocin receptor brain levels. <em>Psychoneuroendocrinology</em>. 2013;38(4):522-532.</p>
-<p>2. Li Q, Becker B, Wernicke J, et al. Foot massage evokes oxytocin release and activation of orbitofrontal cortex and superior temporal sulcus. <em>Psychoneuroendocrinology</em>. 2019;101:193-203. / Tsuji S, Yuhi T, Furuhara K, et al. Salivary oxytocin concentrations in seven boys with autism spectrum disorder received massage from their mothers: a pilot study. <em>Front Psychiatry</em>. 2015;6:58. / Uvnas-Moberg K, Handlin L, Petersson M. Self-soothing behaviors with particular reference to oxytocin release induced by non-noxious sensory stimulation. <em>Front Psychol</em>. 2014;5:1529.</p>
-<p>3. Rash JA, Aguirre-Camacho A, Campbell TS. Oxytocin and pain: a systematic review and synthesis of findings. <em>Clin J Pain</em>. 2014;30(5):453-462. / Lopes S, Osorio FL. Effects of intranasal oxytocin on pain perception among human subjects: A systematic literature review and meta-analysis. <em>Horm Behav</em>. 2023;147:105282.</p>
-<p><strong>Chapter 24</strong></p>
-<p>1. Carmichael MS, Humbert R, Dixen J, et al. Plasma oxytocin increases in the human sexual response. <em>J Clin Endocrinol Metab</em>. 1987;64(1):27-31.</p>
-<p>2. Murphy MR, Seckl JR, Burton S, Checkley SA, Lightman SL. Changes in oxytocin and vasopressin secretion during sexual activity in men. <em>J Clin Endocrinol Metab</em>. 1987;65(4):738-741.</p>
-<p>3. Cao C, Yang L, Xu T, et al. Trends in Sexual Activity and Associations With All-Cause and Cause-Specific Mortality Among US Adults. <em>J Sex Med</em>. 2020;17(10):1903-1913. / Cohen G, Nevo D, Hasin T, et al. Resumption of sexual activity after acute myocardial infarction and long-term survival. <em>Eur J Prev Cardiol</em>. 2022;29(2):304-311.</p>
-<p>4. Behnia B, Heinrichs M, Bergmann W, et al. Differential effects of intranasal oxytocin on sexual experiences and partner interactions in couples. <em>Horm Behav</em>. 2014;65(3):308-318.</p>
-<p><strong>Chapter 25</strong></p>
-<p>1. Nelson EE, Alberts JR, Tian Y, Verbalis JG. Oxytocin is elevated in plasma of 10-day-old rats following gastric distension. <em>Brain Res Dev Brain Res</em>. 1998;111(2):301-303. / Hajek A, Kretzler B, Konig HH. The Association Between Obesity and Social Isolation as Well as Loneliness in the Adult Population: A Systematic Review. <em>Diabet Metab Synd Ob</em>. 2021;14:2765-2773.</p>
-<p>2. Luck MR, Jungclas B. The time-course of oxytocin secretion from cultured bovine granulosa cells, stimulated by ascorbate and catecholamines. <em>J Endocrinol</em>. 1988;116(2):247-258. / Patrick RP, Ames BN. Vitamin D hormone regulates serotonin synthesis. Part 1: relevance for autism. <em>FASEB J</em>. 2014;28(6):2398-2413.</p>
-<p><strong>Chapter 26</strong></p>
-<p>1. Ridaura VK, Faith JJ, Rey FE, et al. Gut Microbiota from Twins Discordant for Obesity Modulate Metabolism in Mice. <em>Science</em>. 2013;341(6150):1079-1049.</p>
-<p>2. Kang DW, Adams JB, Coleman DM, et al. Long-term benefit of Microbiota Transfer Therapy on autism symptoms and gut microbiota. <em>Sci Rep</em>. 2019;9. / Kang DW, Adams JB, Gregory AC, et al. Microbiota Transfer Therapy alters gut ecosystem and improves gastrointestinal and autism symptoms: an open-label study. <em>Microbiome</em>. 2017;5.</p>
-<p>3. Pasolli E, Asnicar F, Manara S, et al. Extensive Unexplored Human Microbiome Diversity Revealed by Over 150,000 Genomes from Metagenomes Spanning Age, Geography, and Lifestyle. <em>Cell</em>. 2019;176(3):649-662.</p>
-<p>4. Huang M, Liu K, Wei Z, et al. Serum Oxytocin Level Correlates With Gut Microbiome Dysbiosis in Children With Autism Spectrum Disorder. <em>Front Neurosci</em>. 2021;15:721884. / Sgritta M, Dooling SW, Buffington SA, et al. Mechanisms Underlying Microbial-Mediated Changes in Social Behavior in Mouse Models of Autism Spectrum Disorder. <em>Neuron</em>. 2019;101(2):246-259. / Poutahidis T, Kearney SM, Levkovich T, et al. Microbial symbionts accelerate wound healing via the neuropeptide hormone oxytocin. <em>PLoS One</em>. 2013;8(10):e78898.</p>
-<p><strong>Chapter 27</strong></p>
-<p>1. Yusuf S, Joseph P, Rangarajan S, et al. Modifiable risk factors, cardiovascular disease, and mortality in 155,722 individuals from 21 high-income, middle-income, and low-income countries (PURE): a prospective cohort study. <em>Lancet</em>. 2020;395(10226):795-808. / Je Y, Jeon JY, Giovannucci EL, Meyerhardt JA. Association between physical activity and mortality in colorectal cancer: A meta-analysis of prospective cohort studies. <em>Int J Cancer</em>. 2013;133(8):1905-1913.</p>
-<p>2. Yuksel O, Ates M, Kizildag S, et al. Regular Aerobic Voluntary Exercise Increased Oxytocin in Female Mice: The Cause of Decreased Anxiety and Increased Empathy-Like Behaviors. <em>Balkan Med J</em>. 2019;36(5):257-262.</p>
-<p>3. He FQ, Fan MY, Hui YN, et al. Effects of treadmill exercise on anxiety-like behavior in association with changes in estrogen receptors and oxytocin of C57BL/6J female mice. <em>IBRO Neurosci Rep</em>. 2021;11:164-174. / Alizadeh AM, Heydari Z, Rahimi M, et al. Oxytocin mediates the beneficial effects of the exercise training on breast cancer. <em>Exp Physiol</em>. 2018;103(2):222-235.</p>
-<p>4. Torner L, Plotsky PM, Neumann ID, de Jong TR. Forced swimming-induced oxytocin release into blood and brain. <em>Psychoneuroendocrinology</em>. 2017;77:165-174. / Jong TR, Menon R, Bludau A, et al. Salivary oxytocin concentrations in response to running, sexual self-stimulation, breastfeeding and the TSST. <em>Psychoneuroendocrinology</em>. 2015;62:381-388. / Rassovsky Y, Harwood A, Zagoory-Sharon O, Feldman R. Martial arts increase oxytocin production. <em>Sci Rep</em>. 2019;9.</p>
-<p>5. Naruse Masayo, master's thesis, Yonsei University. Naruse M, Jeong JY, Jeon YK. 2015. Effects of Dance Sports Participation on Marital Conflict, Communication, and Psychological Well-being of Cancer Patient Couples. <em>Korean Journal of Women's Physical Education</em>. 29:209-222.</p>
+
 </main>
 
 <div class="pdiv"><span></span></div>

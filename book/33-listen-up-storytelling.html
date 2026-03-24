@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,25 +138,7 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>, and It Goes Up &mdash; The Power of Storytelling</p>
-<p>Humans are storytellers. The history of our species was built through the power of storytelling &mdash; civilizations rose, religions were invented, cities were constructed, all on the backbone of narrative. Storytelling is a human instinct, a fundamental attribute. Ever since humans began using language, storytelling has been woven into our nature. We love transmitting information in the form of myths and legends, and through these stories, communities share ideas, experiences, and knowledge. Civilization is not passed down through great buildings alone. What a father bequeaths to his son is a story: who we are, where we came from, where we are going &mdash; a sacred narrative handed down through generations. We construct our identities and values through stories, and every art form &mdash; literature, visual art, film, music &mdash; builds its cultural foundation on storytelling. From <em>The Iliad</em> and <em>The Odyssey</em> to countless hero tales, revolutionary sagas, and political slogans, stories have been the kindling that unites and divides societies across classes and peoples.</p>
-<h3>The Power of Storytelling</h3>
-<p>At some point, I began opening my public lectures with personal stories. The reason is simple: people love stories. In the beginning, I would list my education and achievements, trying to assure the audience: "You can trust my lecture." The reaction was invariably a look that said, "Good for you, big shot." But when I told stories about struggling with ADHD, being a terrible student, or getting my jaw broken in a pointless fight with a friend and ending up in the hospital &mdash; not a single person in the audience dozed off. Every eye was bright and alert. They were empathizing with my story.</p>
-<p>The moment I get greedy and try to cram in one more didactic point, my lecture falls apart. But when I weave in personal anecdotes, the audience's concentration could bore a hole through the chalkboard in front of them. There is a reason schoolteachers occasionally share their first-love stories during class &mdash; it is the same principle. Personal stories create the atmosphere that allows an audience to swallow more technical, dense material without resistance.</p>
-<p>I believe every lecture should be an act of storytelling. The pivotal moment that convinced me of this came while listening to a lecture by Dr. Ronald C. Kahn, director of the Joslin Diabetes Center in Boston. Dr. Kahn lectures primarily on obesity, insulin, and the pathogenesis of diabetes, and his storytelling is masterful. For the entire hour, it feels like watching a documentary. By the climax, I am covered in goosebumps, electricity running through my body. After several of his lectures, I nearly leapt to my feet in a one-person standing ovation. Watching him take medical topics that could easily be dry or tedious and transform them into compelling narratives by weaving in his own experiences and patients' stories, I thought: "A master is truly a master." Stories create infinite energy, connecting the emotions of speaker and listener, writer and reader.</p>
-<h3>How Stories and Oxytocin Conspire Inside Your Body</h3>
-<p>Does telling someone a moving story or showing them an emotionally resonant short film actually raise their oxytocin? In a hospital in Brazil, researchers divided 81 pediatric patients (average age 7) in the intensive care unit into two groups: one heard engaging, narrative stories, while the other was given story-free riddles. Blood samples were drawn to analyze oxytocin, cortisol, and pain levels, and the children were also asked about their feelings toward the hospital and their treatment.</p>
-<p>Fascinatingly, cortisol and pain decreased in both groups. But oxytocin rose only in the group that heard the stories. Furthermore, the children who received storytelling showed more positive feelings toward doctors, nurses, and the hospital itself. In other words, their trust in the medical team increased. Could these positive emotions have helped the children tolerate treatment better and achieve better outcomes?<sup>1</sup></p>
-<p>The power of storytelling to trigger oxytocin is not limited to hospitalized patients. Professor Pollak at the University of Wisconsin School of Medicine conducted a remarkably interesting study with girls aged 7 to 12 and their mothers. First, the girls were stressed by being asked to give a public presentation and solve difficult math problems. Then one group met their mothers in person, while another group spoke with their mothers only by phone.</p>
-<p>As expected, the children who met their mothers face-to-face and received physical comfort showed increased oxytocin. But even the children who only spoke with their mothers on the phone &mdash; without any physical contact &mdash; also showed elevated oxytocin after a period of conversation. In moments of anxiety and distress, a mother's warm words and reassuring voice provide a child with a profound sense of security.<sup>2</sup></p>
-<p>Although the research has not yet been done, I wonder: does oxytocin rise only in young children who hear their mother's voice? What about the mother who endures a lonely day at home, picking up and putting down the phone dozens of times, wanting to call her child but afraid of being a bother? And then, when a call finally comes, all she can manage is, "Did you eat today, honey?" &mdash; before her tears start flowing. Would her oxytocin not rise too? When "Mom" appears on your phone screen, pick up without hesitation: "Mom! Have you eaten? What did you do today?" Answer with warmth and joy.</p>
-<p>Even if it is not family, sharing your story with someone you trust, listening to theirs, crying together when things are hard, commiserating when things are unfair, and jointly cursing the person who wronged them &mdash; all of this counts.</p>
-<p>What if there is no one around to confide in? Watching a good movie from time to time is a fine substitute. In my estimation, action-packed blockbusters and thrillers probably raise dopamine, but to boost oxytocin, romantic comedies and heartwarming human dramas are the way to go. Just be careful not to get hooked on binge-watching an entire series &mdash; sleep deprivation and lethargy could raise your cortisol and depression instead.</p>
-<h3>The Healing Power of Music</h3>
-<p>There is a saying that music is a second language. The finest singers, they say, sing the way they talk. In that sense, music can be considered another form of storytelling. Intriguingly, research shows that music also raises oxytocin. In a study of patients recovering from open-heart surgery, playing soothing music increased both oxytocin and oxygen saturation levels while stabilizing the patients psychologically.</p>
-<p>In another study, 26 healthy Japanese men listened to slow-tempo music and fast-tempo music, and researchers measured their oxytocin and cortisol levels. Slow-tempo music raised oxytocin; fast-tempo music did not. Conversely, fast-tempo music lowered cortisol, while slow-tempo music did not. The study also found that slow-tempo music lowered adult heart rates and activated the parasympathetic nervous system.<sup>3</sup></p>
-<p>Music may be the most accessible, affordable therapy available &mdash; something you can do anytime, anywhere. The most common diseases afflicting modern people &mdash; cancer, diabetes, cardiovascular disease &mdash; are rooted in insulin resistance, which improves when the parasympathetic nervous system is activated. Parasympathetic activation also alleviates mental health conditions like anxiety and depression.<sup>4</sup> Therefore, listening to calm music that raises oxytocin and activates the parasympathetic nervous system could serve as a genuine therapeutic intervention.</p>
-<p>Next time you are stressed at work or school, try putting in your earphones and listening to slow-tempo music (60--80 bpm). As I write this, I searched YouTube for songs at 60--80 bpm, and Norah Jones started playing. Her understated voice delivers a gentle, dewy emotion that tickles my eardrums mercilessly. A listening room is nothing fancy, really. And pairing a beautiful poem with the music would make the experience even lovelier.</p>
+
 </main>
 
 <div class="pdiv"><span></span></div>

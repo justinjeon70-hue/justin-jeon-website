@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,24 +138,24 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>, and It Goes Up &mdash; The Gift Your Dog Gives You</p>
+<p>, and It Goes Up &mdash; The Gift a Dog Gives You</p>
 <div class="hl"><strong>Oxytocin and Family Health</strong>
-Oxytocin is the guardian that protects family health. A loving hug between spouses lowers the partner's blood pressure, suppresses excessive appetite, and reduces stress &mdash; all because that affectionate embrace stimulates oxytocin release. Elevated oxytocin makes couples more generous of spirit, heightens feelings of love, and deepens the marital bond. Hugging between parents and children also raises oxytocin. When hugs are accompanied by expressions of gratitude and love, oxytocin rises further, stabilizing the child's amygdala, activating the prefrontal cortex, and enhancing memory, concentration, reasoning, and problem-solving abilities.
-I once had a friend who insisted on eating dinner at home no matter what, practically sprinting home every evening. At the time, I resented being abandoned. Now I think he was a thousand times right. When the whole family sits down together for a meal, oxytocin levels go up. During family meals &mdash; as long as you are not nagging or complaining &mdash; expressions of gratitude are great, celebrity gossip is fine, and just chatting about the day works too. TV talk is perfectly acceptable.
-Having the whole family sing together in a choir or play in a band is wonderful. But that requires at least two or three musically inclined family members. If that is not possible, going to a karaoke room after dinner and belting out songs together works just as well. And raising a dog together, with everyone's agreement, is another excellent way to boost the family's oxytocin. Of course, this requires careful deliberation, proper training, and sufficient knowledge about dog care before adoption. It is also important to match the dog's temperament with the family's characteristics &mdash; otherwise, you might end up raising stress instead of oxytocin.</div>
-<p>In 2015, a truly fascinating paper was published in <em>Science</em>: simply making eye contact with your dog can stimulate oxytocin release. Personally, one of the most deeply satisfying moments in life is petting a dog while looking into its eyes.</p>
-<p>When I was growing up, dogs lived outside, chained up all day. Their purpose was to guard the house. There was no such thing as dog food &mdash; dogs ate whatever the family left over from their meals. Dogs in those days were anything but "companion animals." After my parents moved to an apartment and I left for graduate school abroad, I never had a dog. Then, five years ago, my second son started singing the "I want a dog" song. My wife disliked not just dogs but animals in general, so the idea of a pet in our home was unimaginable.</p>
-<p>But no parent can win against their child forever. Our second son escalated his campaign to a full-blown siege, and as my wife grew exhausted from his relentless pleading, we happened to watch a Korean TV show called <em>Dogs Are Wonderful</em>. The show shifted our perspective: raising a dog teaches children responsibility while offering emotional bonding. Eventually, my wife and I made our son solemnly promise to walk the dog twice a day, and we adopted a puppy. That is how "Gureum" (Cloud) became a member of our family. Of course, all subsequent walks and caregiving duties fell to my wife and me. I loved Gureum from the start &mdash; the way he came scurrying to greet me when I got home from work, tail wagging furiously. Raising him alongside our two boys brought a different kind of joy entirely.</p>
+Oxytocin is the quiet sentinel that guards a family's well-being. A loving embrace between spouses does more than feel good &mdash; it lowers the partner's blood pressure, curbs excessive appetite, and dials down stress, because that tender hug stimulates oxytocin release. The oxytocin that floods the body in response makes each partner more generous, more loving, drawing the marital bond tighter still. Hugging between parents and children raises oxytocin too. When those embraces carry spoken words of gratitude and love, oxytocin climbs further, calming the child's amygdala, firing up the prefrontal cortex, and sharpening memory, concentration, reasoning, and the ability to solve problems.
+I once had a friend who insisted on eating dinner at home every single night, practically bolting for the door the moment the workday ended. I resented being left behind at the time. Now I think he was wiser than any of us. When a family gathers around the table for a shared meal, oxytocin levels rise. Family dinners are best filled not with nagging or complaint but with expressions of gratitude &mdash; though celebrity gossip works perfectly well, and so does ordinary talk about the day. Conversation about whatever is on television is fine too.
+If the whole family can sing together in a choir or play in a band, wonderful. But that requires at least two or three musically inclined members. When the ensemble is not there, a trip to the local karaoke room after dinner &mdash; belting out songs together at the top of your lungs &mdash; works beautifully. And raising a dog as a family, with everyone's wholehearted agreement, is another powerful way to boost everyone's oxytocin. This requires careful deliberation, proper training, and thorough knowledge about caring for an animal. It is also essential that the dog's temperament and the family's personality align &mdash; otherwise, you may end up raising cortisol instead of oxytocin.</div>
+<p>In 2015, a paper appeared in <em>Science</em> that stopped me in my tracks: simply gazing into your dog's eyes can trigger oxytocin release. Speaking for myself, one of the most quietly perfect moments in life is sitting beside a dog, stroking its fur, and meeting its gaze.</p>
+<p>When I was a boy in Korea, dogs lived outside, tethered to a post all day. Their job was to guard the house, nothing more. Dog food did not exist &mdash; dogs ate whatever the family scraped from its plates. A "companion animal" was a concept that would have drawn blank stares. After my parents moved to an apartment and I left for graduate school overseas, I went decades without a dog. Then, five years ago, my younger son launched his campaign. He wanted a dog with a longing so fierce it bordered on the operatic. My wife, who harbored a deep aversion not merely to dogs but to animals in general, considered the proposition roughly as appealing as an earthquake.</p>
+<p>But no parent ultimately wins a war of attrition against a determined child. Our second son escalated his siege to levels that would have impressed a medieval general, and as my wife's defenses crumbled, we happened to watch a Korean television program called <em>Dogs Are Wonderful</em>. The show tilted something in us: raising a dog, it argued, teaches children responsibility while offering a kind of emotional bond no other experience can replicate. We extracted from our son the solemn vow that he would walk the dog twice a day, every day, and adopted a puppy. That is how "Gureum" &mdash; Cloud &mdash; joined our family. Every walk and act of care, of course, promptly became my wife's job and mine. I loved Cloud from the first day. The way he came scampering to the door when I got home from work, tail whipping back and forth in ecstatic circles &mdash; it was a joy entirely different from raising two boys, and no less profound.</p>
 <h3>How Eye Contact Raises Oxytocin</h3>
-<p>When Gureum was young, he would sit beside me wanting to be petted but kept avoiding my eyes. "Do dogs just not make eye contact?" I thought, and did not think much of it. But as Gureum grew, he began to meet my gaze. When we locked eyes for a long time, it felt as though something was passing between us &mdash; a genuine connection.</p>
-<p>After reading the <em>Science</em> paper, I began to understand the process behind this. Dr. Nagasawa brought 30 dogs and their 30 owners into a laboratory, allowed them to interact, and then measured oxytocin levels. Dr. Nagasawa had already shown in 2009 that the deeper the bond between dog and owner, the longer they maintained eye contact. This new study focused on whether oxytocin was the determining factor in that bond and eye-contact duration.</p>
-<p>Sure enough, the longer the eye contact between dog and owner, the higher the owner's oxytocin levels climbed. And it was not just the owners &mdash; the dogs' oxytocin levels rose in tandem with their owners'. What made this study especially interesting was that when the same experiment was conducted with wolves and their handlers, oxytocin levels did not increase. More recently, researchers even demonstrated that oxytocin is involved when dogs shed tears upon reuniting with their owners after a period of separation.<sup>1</sup></p>
-<p>To confirm that the oxytocin increase in humans was specifically due to eye contact with dogs, the researchers artificially raised the dogs' oxytocin levels and then observed the interaction between the dogs and their owners. The results were exactly as predicted: the dogs' elevated oxytocin extended the duration of eye contact with their owners and even raised the owners' oxytocin levels. This finding is entirely consistent with earlier research showing that when fathers inhaled oxytocin, their eye-contact time with their children increased, and the children's oxytocin levels rose as well.</p>
-<p>When we meet, communicate, and connect with others, some people leave us feeling energized and warm, while others leave us irritated, drained, and regretting we ever bothered to meet them. Could the reason we feel this way be oxytocin? It is a question worth taking seriously. When we consider MRI studies showing that brain networks governing emotion, reward, and attachment activate both when mothers see photos of their children and when they see photos of their pets, perhaps our companion animals have already become true members of the family. Nagasawa's research suggests that therapy dogs may be effective for people with autism, PTSD, depression, and anxiety disorders.<sup>2</sup></p>
-<h3>The Gift Your Dog Gives You</h3>
-<p>One day, I gave a lecture on oxytocin to retired and senior professors at Yonsei University, and afterward we sat down for lunch together. One of the professors came up to me and said: "I think you're right, Professor. I adopted a dog that had been returned by a previous owner. At first, she couldn't make eye contact with me. But once she started sleeping in my bed, she began looking into my eyes &mdash; as if she trusted me. And she stopped barking at other dogs, too."</p>
-<p>Of course, it is possible that the dog simply became more emotionally stable after finding a loving owner, which naturally made her calmer. But given the research showing that raising a dog's oxytocin levels increases loyalty and sociality, his observation rings true. And when I see people who cannot utter a word to strangers chatting effortlessly with other dog owners during walks, I cautiously wonder whether dog lovers might simply have higher oxytocin levels.</p>
-<div class="hl"><strong>Everyday Oxytocin Boost:</strong> Today, try making eye contact with the dog who has been waiting for you all day. If you do not have a dog, why not consider adopting one? Of course, adoption should only happen after thorough learning and careful deliberation about what it takes to care for a companion animal.</div>
+<p>When Cloud was a puppy, he would press his body against my side, begging to be petted, yet persistently avoid my eyes. <em>Do dogs simply not make eye contact?</em> I wondered, and thought no more of it. But as Cloud grew, he began to hold my gaze. When we sat together and looked into each other's eyes for a long, unhurried moment, something passed between us &mdash; wordless, unmistakable, as close to a conversation as silence can get.</p>
+<p>Then I read the <em>Science</em> paper and understood the mechanism behind the magic. Dr. Miho Nagasawa brought 30 dogs and their 30 owners into a laboratory, allowed them to interact freely, and measured their oxytocin levels. Nagasawa had already demonstrated in 2009 that the deeper the bond between dog and owner, the longer the two would hold mutual gaze. This new study tested a more daring hypothesis: that oxytocin itself was the chemical currency of that bond and that gaze.</p>
+<p>The results were elegant. The longer the eye contact between dog and owner, the higher the owner's oxytocin climbed. And the effect was not one-directional: the dogs' oxytocin rose in lockstep with their owners'. What made the study genuinely startling, though, was the control. When the identical protocol was conducted with wolves and their handlers, oxytocin did not budge. Something unique had happened in the evolutionary journey from wolf to dog &mdash; a hijacking of the same hormonal pathway that binds human parents to their infants. More recently, researchers have demonstrated that oxytocin is even involved when dogs shed tears upon reuniting with their owners after separation.<sup>1</sup></p>
+<p>To confirm that the human oxytocin spike was specifically driven by the dog's gaze, the researchers artificially elevated the dogs' oxytocin and then observed what happened. The prediction held perfectly: dogs with boosted oxytocin held eye contact with their owners for longer, and the owners' oxytocin levels rose in turn. This finding dovetails with earlier work showing that when fathers inhaled oxytocin, they spent more time gazing at their children &mdash; and the children's oxytocin rose too.</p>
+<p>We all have the experience of meeting certain people and walking away feeling warmer, more energized, more human &mdash; and of meeting others who leave us drained, irritable, regretting the encounter entirely. Could the invisible hand behind these vastly different aftereffects be oxytocin? It is a question worth sitting with. MRI studies have shown that the same brain networks governing emotion, reward, and attachment light up when a mother sees a photograph of her child <em>and</em> when she sees a photograph of her dog. Perhaps our companion animals have crossed some threshold and become genuine members of the family. Nagasawa's findings hint that therapy dogs may offer meaningful help to people living with autism, PTSD, depression, and anxiety disorders.<sup>2</sup></p>
+<h3>The Gift a Dog Gives You</h3>
+<p>One afternoon, I delivered a lecture on oxytocin to a group of retired and current senior professors at Yonsei University. Afterward, over lunch, one of the professors approached me. "I think you are right, Professor," he said. "I adopted a dog that had been returned by a previous owner. At first, she would not look me in the eye. But once she began sleeping in my bed, she started holding my gaze &mdash; as if she had decided to trust me. And she stopped barking at other dogs too."</p>
+<p>It is possible, of course, that the dog simply grew calmer as she settled into a loving home. But given the research showing that raising a dog's oxytocin increases its loyalty and sociability toward its owner, the professor's story carries real weight. And when I watch people who can barely utter a word to strangers striking up easy conversation with fellow dog walkers at the park, I cannot help but wonder: do dog lovers walk through the world with higher baseline oxytocin?</p>
+<div class="hl"><strong>Everyday Oxytocin Boost:</strong> Tonight, sit down and truly look into the eyes of the dog who has been waiting for you all day. If you do not have a dog, this might be the moment to consider adopting one. But please &mdash; only after careful thought, proper preparation, and a genuine understanding of what it means to share your life with another living creature.</div>
 </main>
 
 <div class="pdiv"><span></span></div>

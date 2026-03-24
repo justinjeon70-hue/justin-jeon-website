@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,20 +138,7 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>-- How Physical Contact Raises Oxytocin</p>
-<p>The word "oxytocin" comes from the Greek for "quick birth." Originally, scientists believed oxytocin was simply a hormone released when a mother's uterus needed to contract during labor. Soon after, they discovered it also played a role in stimulating breast milk production. Subsequent research confirmed that when a nursing infant stimulates the mother's nipple with its gums, even more oxytocin is released. In short, oxytocin does far more than trigger milk production &mdash; it alleviates the pain a mother experiences during childbirth and helps regulate and heal the many changes her body undergoes postpartum. This is why breastfeeding not only provides the newborn with essential immunity and nutrition for survival but also has profoundly positive effects on the mother's own recovery and well-being.</p>
-<p>"I usually move fast in relationships, but with this person I haven't even stayed overnight yet. How many days in do you guys usually go for a cheek kiss or a lip kiss?" This was a post on a Korean online dating forum. Scrolling through the replies, one comment caught my eye: "Move fast? I kissed first and <em>then</em> we started dating." Browse YouTube and you can read the pulse of young people's attitudes toward physical affection. Men and women described the stages of physical intimacy quite differently &mdash; men tended to mention specific body parts, while women spoke more indirectly and abstractly, focusing on the mood, the setting, and their partner's attitude rather than explicit physical contact. Perhaps if couples simply aligned their approach and pacing when it comes to physical touch, they would find much greater compatibility.</p>
-<h3>Breastfeeding: Oxytocin for Two</h3>
-<p>When a mother nurses her baby after birth, the act is vital for the infant's survival, but it is equally an act that elevates the mother's oxytocin. As I discussed earlier in relation to oxytocin and cancer, the longer a mother breastfeeds, the lower her risk of cancer and various other diseases &mdash; and oxytocin appears to play a key role in this protective effect. But here is the remarkable part: breastfeeding does not just raise the mother's oxytocin. It raises the baby's oxytocin too. Of course, this could partly be due to the probiotics found in breast milk. But what matters even more is the skin-to-skin contact with the mother.</p>
-<p>In one study, researchers arranged for three mother rats to give birth simultaneously. In one group, a single mother raised her pups alone. In the other, all three mothers lived together, and the pups were in constant physical contact with one another and multiple adults. The result? Compared to pups raised only by their own mother, the communally raised pups showed significant changes in their brains &mdash; particularly in the hippocampus and prefrontal cortex &mdash; and exhibited markedly higher expression of oxytocin receptors. The implication is clear: physical contact with people beyond just one's mother is critical for normal brain development in early life. It calls to mind the African proverb: "It takes a village to raise a child."<sup>1</sup></p>
-<p>Of course, a single study cannot definitively tell us whether it was the physical contact specifically or the broader social interaction that drove the brain development. So what about massage? One research team had 40 adult men receive 10-minute foot massages &mdash; either by hand or by machine &mdash; and then measured their blood oxytocin levels and brain oxygen concentrations using fNIRS. The results were fascinating. Both types of massage increased oxytocin, but the hand massage raised oxytocin levels more. Before and after the massage, participants were also assessed for autistic tendencies and consumer behavior &mdash; specifically, how much they would be willing to pay for certain items. The massage not only reduced autistic tendencies but also changed spending patterns.</p>
-<p>A separate study examined what happened when mothers massaged their children with autism and measured the resulting changes in oxytocin. Sure enough, the mother's massage stimulated oxytocin release in the child &mdash; and it raised the mother's oxytocin levels as well. Remarkably, even stimulating the skin with a brush-like instrument increased oxytocin. Beyond these studies, a wealth of research has confirmed that massage and touch elevate oxytocin, and that hugging and physical affection between couples not only raise oxytocin but also lower blood pressure and accelerate wound healing.<sup>2</sup></p>
-<h3>Just One Hug, Please</h3>
-<p>From this perspective, a particularly intriguing study examined how Brazilian jiu-jitsu &mdash; a sport in which opponents are locked in constant physical contact, grappling and wrestling throughout the entire match &mdash; affects oxytocin levels. If you follow combat sports, you know that mixed martial arts (MMA) features both stand-up striking and ground techniques. Korean fighters like Kim Dong-hyun and Yoshihiro Akiyama (known as "Choo Sung-hoon" in Korea) have made their mark on the global MMA stage. And while he ultimately lost, the thrilling stand-up performance of "The Korean Zombie" Chan Sung Jung in his farewell fight in Las Vegas left fans breathless. But here is what is fascinating: when fighters engaged in stand-up striking, their oxytocin levels did not rise. When they moved to the ground game, however &mdash; grappling, clinching, and wrestling &mdash; oxytocin surged. Even though this is a combat sport where the goal is to overpower your opponent, the ground techniques naturally involve extensive body-to-body contact, which sent oxytocin levels soaring.</p>
-<p>Our research team once had five cancer-survivor couples participate in ballroom dancing &mdash; styles like tango and waltz &mdash; where they held hands, placed arms around each other's waists, and danced together for over an hour per session. The couples began making more eye contact, developed greater intimacy and sociability, and showed remarkable improvements in empathy and mutual consideration. This, too, was driven by the extensive physical touch involved in dance &mdash; the caressing, the holding, the contact. At the same time, cancer patients who had been unable to sleep without painkillers found their pain diminishing, finally allowing them restful sleep. As their oxytocin levels rose through physical contact, their pain tolerance &mdash; their pain threshold &mdash; rose with it. They developed a resilience to pain that had not been there before.<sup>3</sup></p>
-<p>That said, please do not go around trying to initiate physical contact with just anyone. You will be misunderstood, to put it mildly. The best approach is affectionate contact with parents, a spouse, children, or close friends &mdash; holding hands, looking into each other's eyes, and engaging in warm conversation. Even with a spouse, suddenly grabbing their hand out of nowhere might prompt a bewildered "What has gotten into you?" Instead, I recommend finding a sport or hobby you can do together that naturally involves physical contact. Team activities are better than solo ones. Sports where you high-five after scoring, embrace in celebration, or hold hands &mdash; these are easy to find if you look. If intense exercise is not your style, how about hiking together? Share a picnic at the summit, lend a hand on the trail, and sit on a rock to rest and really listen to what your partner has to say.</p>
-<p>If you ask me, one of the best places on earth for raising oxytocin is the Korean public bathhouse &mdash; the <em>jjimjilbang</em>. A visit to a traditional Korean bathhouse activates your parasympathetic nervous system through warm soaking, draws out salt through the sauna, and if you surrender yourself to the hands of a <em>seshinsa</em> (a professional body scrubber), you get not only an oxytocin boost but a drop in cortisol, a reduction in systemic inflammation, and lower blood pressure. And who knows? Lying there while the scrubber chats with you about the state of the world &mdash; that conversation is a bonus.</p>
-<div class="hl"><strong>Oxytocin Boost:</strong> Head to your local spa or bathhouse and let a massage therapist work their magic. If you can afford it, spring for the full-body massage &mdash; it is worth every penny.</div>
+
 </main>
 
 <div class="pdiv"><span></span></div>

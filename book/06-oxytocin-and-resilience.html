@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,30 +138,7 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>"History is the dynamic of challenge and response." That was the theme of a course I taught to Canadian students for more than a year, some twenty years ago. A nation's history is determined by how it responds to the challenges it faces.</p>
-<p>Consider this example from Korean history: as the Ming dynasty weakened and the Jurchen tribes of the north grew powerful, Korea's Joseon dynasty failed to read the shifting geopolitical landscape. It stubbornly clung to its loyalty to Ming China. After Gwanghaegun's pragmatic diplomacy was overturned by a coup, the Joseon court doubled down on its support for the crumbling Ming. The result was the first Manchu invasion, which swept across the Korean peninsula. Even then, Joseon failed to recalibrate. It was ultimately invaded again by Hong Taiji &mdash; who had by then conquered the Ming and established the Qing dynasty. The result was the humiliation at Samjeondo and the capture of three hundred thousand innocent Koreans as prisoners of war. Korea's response to the challenge of a rising power on its border was a catastrophic failure.</p>
-<h3>When Failure Comes Knocking</h3>
-<p>The same principle applies to our personal histories. How we respond to the challenges of entrance exams, job loss, marriage and divorce, entrepreneurship, further education, illness, and aging &mdash; these responses determine the history of our lives.</p>
-<p>In 2011, after completing my first six-year term as a professor at Yonsei University and contributing to the successful bid for the PyeongChang Winter Olympics, I went to Harvard as a visiting scholar with big dreams. I had previously spent two years as a postdoctoral fellow at Harvard's Joslin Diabetes Center, so I felt confident, and the prospect of spending a year as a visiting professor at the Dana-Farber Cancer Institute next door filled me with excitement. Joint research with some of the world's top cancer researchers was planned. I was determined to produce publications worthy of the world's best journals.</p>
-<p>My first semester at Harvard began. On my very first day, I ran into a professor I knew from the Diabetes Center, and he invited me to give a special lecture at their Wednesday seminar &mdash; a prestigious, long-running event I had attended faithfully during my postdoc in 2003. I was thrilled. <em>Dreams really do come true</em>, I thought, and eagerly accepted. My confidence was sky-high. I'm embarrassed to admit it now, but I even rehearsed a hypothetical TV interview in my head: "I give all the glory to God. I have done nothing on my own."</p>
-<p>And then the suffering began. To make a long story short: during that entire year at Harvard, I submitted thirteen papers to journals. Not a single one was accepted. For twelve months, all I did was huddle in the corner of an office I shared with two other people, teach myself new statistical methods, write papers, submit them, get rejected, write again, get rejected again &mdash; thirteen times. Then as now, the cost of living in Boston was outrageous. After paying my children's tuition, fixing things around the apartment, I often had less than a hundred dollars left. Looking back, it was a miserable existence. Here is something I wrote at the time:</p>
-<div class="pq"><em>About a year after coming to America, I'd spent all my money on a car, apartment repairs, and my kids' tuition. Balance: sixty dollars. Payday was still a week away. I was sick of packing lunch every day, so I decided to go to a seminar that served free bread &mdash; might as well save on lunch, I grumbled. I was so hungry that I scraped together the coins in my pocket and bought a single Boston cream doughnut. I held it in my hand with such satisfaction. The moment I raised it to my mouth, I dropped it on the ground like an idiot.</em>
-<em>Damn.</em>
-<em>I looked around to make sure no one was watching, snatched the doughnut off the ground, and stuffed it in my mouth. Two thoughts came to me:</em>
-<em>Delicious.</em>
-<em>Pathetic.</em>
-<em>To this day, whenever I feel down, I buy a Boston cream doughnut and eat it while looking at the hospital where I worked. The world looks different. You don't have to do something crazy to break out of a rut. Be grateful that you can afford a doughnut. Be grateful you have children whose tuition you can pay. Be grateful for the sabbatical that brought you abroad. Be grateful for the routine waiting for you when you return.</em></div>
-<h3>The Relationship Between Resilience and Oxytocin</h3>
-<p>Even now, rereading this makes my chest tighten. When paper after paper was rejected, I told myself: <em>Maybe I'm just not cut out for research. Maybe I should quit being a professor. What must my colleagues at the hospital think of me? "The loser from Asia?"</em> I was on the verge of depression. And then I remembered myself, enthusiastically lecturing those Canadian students: "History is the dynamic of challenge and response!" I also recalled something from a book called <em>Cushion</em>: the word "responsibility" is a compound of "response" and "ability."<sup>1</sup></p>
-<p>It's true. When something happens to us, we can simply <em>react</em> &mdash; get angry at frustrating things, sink deeper when depressed, crumble when exhausted, give up when tempted to quit. But we can also <em>respond</em> deliberately. Instead of saying, "I'm worthless," we can tell ourselves, "This happened so I could learn humility." The ability to find something positive when hardship strikes and get back on your feet &mdash; that is responsibility, isn't it?</p>
-<p>After this realization, I read Professor Joo-Hwan Kim's book <em>Resilience</em> and practically slapped my knee. It hit me: "response + ability" might be the very definition of resilience. The strength to rise again when you fall, to try again when you fail, to turn the stumbling blocks of life into stepping stones &mdash; that is resilience.</p>
-<p>What's even more fascinating is that Emmy E. Werner, the psychologist who gave the concept of resilience its formal definition, summarized her landmark forty-year study of children on the Hawaiian island of Kauai like this: "Every person has the capacity to overcome adversity, and that capacity is resilience. But resilience varies from person to person. Children who received devoted love and trust from their parents or family showed higher resilience."<sup>2</sup></p>
-<p>When I reread Werner's <em>Overcoming the Odds</em>, I could barely contain my excitement. If children who receive devoted love and trust from their parents produce more oxytocin &mdash; and of course they do &mdash; then that elevated oxytocin must profoundly influence their resilience. And indeed, recent studies have confirmed a strong link between oxytocin and resilience. A search for "oxytocin" and "resilience" on major medical research databases returns over a hundred papers. Some researchers are even investigating the biological mechanism of resilience through oxytocin.</p>
-<p>Evolutionary biologist Paul MacLean divided the human brain into three parts &mdash; the so-called "triune brain" theory. The reptilian brain governs survival: breathing, heartbeat, appetite, blood pressure. The mammalian brain, also called the emotional brain, handles the fight-or-flight response, sexual drive, and appetite &mdash; among other things. Imagine walking to the bathroom late at night and spotting a dark shape. It could be your brother in a black shirt, or it could be an intruder in a ski mask. Your amygdala immediately sends a signal to the prefrontal cortex, raises your heart rate, and makes you step backward. Meanwhile, the neocortex &mdash; the "new brain" &mdash; synthesizes the amygdala's signal with contextual information: what your brother was wearing, comparing his build to the shape's size, and concludes it's your brother. The amygdala makes us <em>react</em>; the prefrontal cortex enables us to <em>respond</em> appropriately.<sup>3</sup></p>
-<p>The brain region with the highest concentration of oxytocin receptors is the amygdala. Oxytocin acts on the amygdala to transform negative emotions into positive ones. The next most receptor-dense areas are the anterior cingulate cortex, the nucleus accumbens, and the prefrontal cortex &mdash; all regions involved in reward, motivation, decision-making, and moral reasoning. It seems plausible that oxytocin underpins the very mechanism of "response + ability" by calming the amygdala (which makes us react impulsively) and activating the anterior cingulate cortex and nucleus accumbens (which help us respond thoughtfully).</p>
-<p>Professor Kim identifies two keys to building resilience: self-regulation (emotional regulation + impulse control + causal analysis) and interpersonal skills (communication + empathy + self-expansion). These are precisely the functions that oxytocin directly influences.</p>
-<p>The hallmark of highly resilient people is a positive attitude &mdash; the tendency to interpret whatever happens to them in the most constructive light possible. I will discuss this further in a later chapter on narrative, but the ability to assign meaning to life events is primarily a prefrontal cortex function, and a positively reframed personal narrative can further stimulate oxytocin production. Ultimately, resilience and oxytocin form a virtuous cycle, helping us become better people.</p>
-<div class="hl"><strong>Oxytocin in Everyday Life:</strong> Close your eyes for a moment and picture the faces of the people you love most.</div>
+
 </main>
 
 <div class="pdiv"><span></span></div>

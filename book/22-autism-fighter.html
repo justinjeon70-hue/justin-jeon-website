@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -141,17 +141,17 @@ footer a{color:var(--coral);text-decoration:none}
     <figure class="chapter-figure">
         <img src="figures/fig02_rme_test.png" alt="Fig02 Rme Test" loading="lazy">
     </figure>
-<p>-- Oxytocin as a Potential Treatment for Autism</p>
-<p>Aristotle famously called human beings "social (political) animals." The idea that humans are social creatures is something most of us can agree with &mdash; though the word "animal" in the phrase tends to make us just a bit uncomfortable. In <em>The Origins of Happiness</em>, Professor Seo-eun Guk argues that happiness is not the goal of life but rather a tool for survival. In other words, happy people are more likely than unhappy people to survive the hardships of this world. Professor Seo describes humans as "100% animals" and contrasts Aristotle's metaphysical idealism with Charles Darwin's theory of evolution. His provocative framing &mdash; <em>Aristotle or Darwin?</em> &mdash; stirred heated debate. But ultimately, he argues that what matters most for happiness is sharing our emotions and thoughts with others and maintaining meaningful relationships.</p>
-<h3>The "Reading the Mind in the Eyes" Test</h3>
-<p>Emotion is one of the most critical elements of our inner world. Before we are rational and logical beings, we are creatures of emotion. When we can't read our own emotions or those of others, we fall into what might be called emotional illiteracy. The American psychotherapist Claude Steiner argued early on that just as humans need the ability to read and write words, we also possess <em>emotional literacy</em> &mdash; the capacity to read other people's emotions. Emotional literacy is not just the ability to understand your own feelings; it's the ability to empathize with others' emotions and express them productively. Adults with strong emotional literacy don't impose their feelings on others, don't throw tantrums when their emotions aren't accommodated, and don't fall into the trap of demanding emotional comfort while refusing genuine communication. They can manage their emotions in ways that enhance inner strength and quality of life &mdash; improving relationships, mediating conflicts, creating space for affection, and fostering a sense of community belonging.[<sup>21</sup>-1]</p>
-<p>Similarly, Karla McLaren writes in <em>The Language of Emotions</em> that a healthy social human being is one who can read others' emotions and communicate accordingly. McLaren argues that modern people need the social skill of honestly expressing their own emotions first, then blending them with the emotions of others. She observes that through the constant barrage of media and advertising, we've come to treat emotions as the primary culprit behind relationship problems &mdash; an unnecessary nuisance in human interaction. We've learned to treat public displays of emotion as taboo, believing we must always maintain positive emotions and keep our feelings under control, while simultaneously living as spies, constantly monitoring others' emotional states. But these myths shatter the moment we confront emotional disconnection, communication breakdown, or mental illness.[<sup>21</sup>-2]</p>
-<p>The German poet Christian Friedrich Hebbel once said, "The eye is the point where body and soul meet." The information our eyes provide is a signal sent from the depths of the heart. The reason children with autism struggle to exchange emotions is that they cannot make eye contact. In 2001, Professor Simon Baron-Cohen developed the <em>Reading the Mind in the Eyes Test</em> (RME Test) as one tool for identifying autism spectrum conditions.[<sup>21</sup>-3]</p>
+<p>--- Oxytocin as a Potential Treatment</p>
+<p>Aristotle famously declared human beings <em>zoon politikon</em> &mdash; social, or political, animals. Most of us nod along at the first half of that formulation while feeling quietly uneasy about the second word: <em>animal.</em> In <em>The Origins of Happiness</em>, Professor Seo-eun Guk argues that happiness is not life's ultimate goal but rather a survival tool &mdash; that happy people outlast unhappy ones in the long struggle of existence. Professor Seo describes humans as "one hundred percent animal" and stages a provocative contest between Aristotle's metaphysical idealism and Darwin's evolutionary theory. The framing ignited debate. But his conclusion circles back to common ground: what matters most for human happiness is the sharing of emotions and thoughts with others, and the maintenance of meaningful, enduring relationships.</p>
+<h3>Reading the Mind in the Eyes</h3>
+<p>Emotion is among the most fundamental elements of our inner architecture. Before we are rational beings, before we are logical, we are creatures of feeling. When we cannot read our own emotions or decipher those of others, we fall into a state that might be called emotional illiteracy. The American psychotherapist Claude Steiner argued early on that just as literacy means the ability to read and write, <em>emotional literacy</em> means the capacity to perceive another person's emotions and express one's own in productive ways. An emotionally literate adult does not weaponize feelings, does not throw tantrums when emotions go unvalidated, does not demand comfort while refusing genuine dialogue. Such a person can channel emotion toward inner growth, conflict resolution, deeper affection, and a stronger sense of belonging.[<sup>21</sup>-1]</p>
+<p>Karla McLaren, in <em>The Language of Emotions</em>, makes a complementary argument: a socially healthy human being is one who can read others' emotions and respond in kind. McLaren observes that modern culture &mdash; saturated by media messaging &mdash; has taught us to treat emotion as the chief saboteur of relationships, an inconvenience best suppressed. We learn to regard public displays of feeling as taboo, to project constant positivity, to keep our inner weather locked behind a serene facade &mdash; all while covertly surveilling the emotional states of those around us, like spies in our own lives. These myths, McLaren argues, collapse the moment we confront real emotional loss, communication failure, or mental illness.[<sup>21</sup>-2]</p>
+<p>The German poet Christian Friedrich Hebbel once wrote: "The eye is the point where body and soul meet." The information conveyed by a human gaze is a dispatch from the deepest chambers of the self. And this is precisely the channel that autism disrupts. Children on the autism spectrum struggle to make eye contact, and without eye contact, the emotional world of others remains opaque. In 2001, Professor Simon Baron-Cohen developed the <em>Reading the Mind in the Eyes Test</em> (RME Test) as a tool for identifying autism spectrum conditions &mdash; a deceptively simple assessment in which subjects view photographs of eyes alone and attempt to identify the emotion being expressed.[<sup>21</sup>-3]</p>
 <h3>Oxytocin Taught Them to Read Eyes</h3>
-<p>A fascinating study recently demonstrated that oxytocin can enhance the ability to read others' minds. Healthy adult men aged twenty-one to thirty were tested at least one week apart &mdash; once after inhaling oxytocin and once after inhaling a placebo &mdash; and then given the RME Test. Because the RME Test was originally designed for people with autism and could be too easy for neurotypical adults (a potential <em>ceiling effect</em>), the researchers divided the thirty-six questions into easy and difficult categories. On the easy questions, there was no significant difference between groups. But on the difficult questions, participants who had inhaled real oxytocin scored significantly higher than those who had received the placebo. In simple terms, oxytocin sharpened their emotional perception.</p>
-<p>A study was also conducted with actual autism spectrum patients. In 2013, a research team at the University of Sydney recruited sixteen boys with autism spectrum disorder, aged twelve to nineteen, with a mental age of at least twelve. One group inhaled oxytocin while the other inhaled a placebo, and both groups then took the RME Test. As in the previous study, questions were divided by difficulty to refine the assessment. The results: the oxytocin group scored significantly higher than the control group on the test overall, with particularly large differences on the easier questions. On the more difficult questions, the difference between groups was not significant. Children with autism had begun reading emotions from facial expressions &mdash; with oxytocin's help.[<sup>21</sup>-4]</p>
-<p><em>(RME Sample Test Answer: A: Insisting, B: Tentative, C: Serious, D: Cautious)</em></p>
-<p>Because there is currently no definitive treatment for autism spectrum disorder, these findings created enormous excitement. Researchers have since launched studies testing oxytocin's effects across a wider range of autism spectrum patients. Among recent findings, facial recognition difficulties are closely linked to oxytocin, and oxytocin interventions have been shown to improve social relationships in individuals with high-functioning autism. These are thrilling results. However, it should be noted that this research is still in its early stages, and there are studies showing that inhaled oxytocin does <em>not</em> significantly improve social functioning in some autistic individuals. The relationship between oxytocin and autism remains a subject of debate. But given that genetic variations in the oxytocin receptor are associated with reduced social functioning and higher autism risk, it's hard to dismiss oxytocin's influence. As interest in adult autism grows, combining oxytocin inhalation with an oxytocin-boosting lifestyle may offer meaningful symptom improvement.[<sup>21</sup>-5]</p>
+<p>A fascinating recent study demonstrated that oxytocin can sharpen the ability to decode another person's emotional state. Healthy men aged twenty-one to thirty were tested at least one week apart &mdash; once after inhaling oxytocin, once after inhaling a placebo &mdash; and then administered the RME Test. Because the test was originally designed for individuals with autism and might prove too easy for neurotypical adults (a potential <em>ceiling effect</em>), the researchers divided the thirty-six items into easy and difficult categories. On the easy items, no significant difference emerged. But on the difficult items &mdash; the ones requiring genuine perceptual subtlety &mdash; participants who had inhaled oxytocin scored meaningfully higher. In plain terms: oxytocin sharpened their emotional radar.</p>
+<p>The study was then extended to individuals on the autism spectrum. In 2013, a team at the University of Sydney recruited sixteen boys with autism spectrum disorder, aged twelve to nineteen, each with a mental age of at least twelve. One group inhaled oxytocin; the other received a placebo. Both then took the RME Test, with questions again separated by difficulty. The oxytocin group scored significantly higher overall, with the most dramatic gains on the easier items. On the harder items, the gap between groups narrowed. But the implication was unmistakable: children with autism had begun reading emotions from photographs of eyes &mdash; with oxytocin's assistance.[<sup>21</sup>-4]</p>
+<p><em>(RME Sample Test &mdash; Correct Answer: A: Insisting, B: Tentative, C: Serious, D: Cautious)</em></p>
+<p>Because no definitive treatment for autism spectrum disorder currently exists, these findings sent waves of excitement through the research community. Subsequent studies have tested oxytocin's effects across a broader range of autism presentations. Among the most promising results: facial recognition deficits are closely linked to oxytocin signaling, and oxytocin interventions have been shown to improve social relationships in individuals with high-functioning autism. These are genuinely stirring findings. It should be noted, however, that the field is still young, and some studies have found that inhaled oxytocin does <em>not</em> significantly improve social functioning in all autistic individuals. The relationship between oxytocin and autism remains an active area of debate. Yet the fact that genetic variants in the oxytocin receptor gene are associated with diminished social functioning and elevated autism risk makes it difficult to dismiss oxytocin's role. As awareness of adult autism grows, combining targeted oxytocin supplementation with an oxytocin-promoting lifestyle may offer a meaningful path toward symptom improvement.[<sup>21</sup>-5]</p>
 </main>
 
 <div class="pdiv"><span></span></div>

@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -178,11 +178,11 @@ footer a{color:var(--coral);text-decoration:none}
 <p>1. Du Vigneaud V. Trail of sulfur research: from insulin to oxytocin. <em>Science</em>. 1956;123(3205):967-974. 2. Ryan EA, Lakey JR, Rajotte RV, et al. Clinical outcomes and insulin secretion after islet transplantation with the Edmonton protocol. <em>Diabetes</em>. 2001;50(4):710-719. - Shapiro J, Ryan E, Warnock GL, et al. Could fewer islet cells be transplanted in type 1 diabetes? Insulin independence should be dominant force in islet transplantation. <em>BMJ</em>. 2001;322(7290):861. - Jeon JY, Weiss CB, Steadward RD, et al. Improved glucose tolerance and insulin sensitivity after electrical stimulation-assisted cycling in people with spinal cord injury. <em>Spinal Cord</em>. 2002;40(3):110-117. - Jeon JY, Harber VJ, Steadward RD. Leptin response to short-term fasting in sympathectomized men: role of the SNS. <em>Am J Physiol Endocrinol Metab</em>. 2003;284(3):E634-640. - Jeon JY, Steadward RD, Wheeler GD, Bell G, McCargar L, Harber V. Intact sympathetic nervous system is required for leptin effects on resting metabolic rate in people with spinal cord injury. <em>J Clin Endocrinol Metab</em>. 2003;88(1):402-407. - Jeon JY, Hettinga D, Steadward RD, Wheeler GD, Bell G, Harber V. Reduced plasma glucose and leptin after 12 weeks of functional electrical stimulation-rowing exercise training in spinal cord injury patients. <em>Arch Phys Med Rehabil</em>. 2010;91(12):1957-1959. - Jeon JY, Bradley RL, Kokkotou EG, et al. MCH-/- mice are resistant to aging-associated increases in body weight and insulin resistance. <em>Diabetes</em>. 2006;55(2):428-434. - Kokkotou E, Jeon JY, Wang X, et al. Mice with MCH ablation resist diet-induced obesity through strain-specific mechanisms. <em>Am J Physiol Regul Integr Comp Physiol</em>. 2005;289(1):R117-124. 3. Holmes MD, Chen WY, Feskanich D, Kroenke CH, Colditz GA. Physical activity and survival after breast cancer diagnosis. <em>JAMA</em>. 2005;293(20):2479-2486. - Meyerhardt JA, Giovannucci EL, Holmes MD, et al. Physical activity and survival after colorectal cancer diagnosis. <em>J Clin Oncol</em>. 2006;24(22):3527-3534. - Meyerhardt JA, Heseltine D, Niedzwiecki D, et al. Impact of physical activity on cancer recurrence and survival in patients with stage III colon cancer: findings from CALGB 89803. <em>J Clin Oncol</em>. 2006;24(22):3535-3541.</p>
 <p><em>Note: References are organized by chapter as they appear in the original Korean edition of</em> 옥시토신 이야기 <em>(The Oxytocin Story) by Yong-Gwan Jeon (전용관), published by Phytoncide Press, 2024. Numbered entries (1, 2, 3...) indicate primary references for each chapter, while indented entries with dashes mark additional supporting references cited alongside the primary reference. Korean-language sources are marked with [in Korean].</em></p>
 <h3>Chapter 34: Change Your Narrative, Change Your Life</h3>
-<p>1. Kahneman D. Thinking, Fast and Slow. Fortune. 2015;172(1):20-20. 2. 김주한. 내면소통. 인플루엔설; 2023. - 이지선. 꽤 괜찮은 해피엔딩. 문학동네; 2022. 3. Frankl, V. Man's Search for Meaning. 1959, Beacon Press.</p>
+<p>1. Kahneman D. <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux; 2011. 2. Kim JH. <em>Inner Communication</em> [내면소통]. Influential; 2023. - Lee JS. <em>A Pretty Good Happy Ending</em> [꽤 괜찮은 해피엔딩]. Munhakdongne; 2022. 3. Frankl V. <em>Man's Search for Meaning</em>. Beacon Press; 1959.</p>
 <h3>Chapter 35: From Freud to Adler</h3>
-<p>1. Ryu J, Jeong A, Min JH, et al. The relationship between domain-specific physical activity and depressive symptoms in Korean adults: Analysis of the Korea National Health and Nutrition Examination Survey. J Affect Disord. 2022;302:428-434. - Goo SY, Lee TH, Lim H, Lee EY, Kim JY, Jeon JY. Associations between different types of sedentary behavior and mental health: Gender-stratified analyses among 97,171 South Korean adolescents. Ment Health Phys Act. 2023;25. 2. Narath E, Skalicky M, Viidik A. Voluntary and forced exercise influence the survival and body composition of ageing male rats differently. Exp Gerontol. 2001;36(10):1699-1711. 3. Crum AJ, Langer EJ. Mind-set matters: Exercise and the placebo effect. Psychol Sci. 2007;18(2):165-171. - Crum AJ, Akinola M, Martin A, Fath S. The role of stress mindset in shaping cognitive, emotional, and physiological responses to challenging and threatening stress. Anxiety Stress Copin. 2017;30(4):379-395. - Crum AJ, Santoro E, Handley-Miner I, et al. Evaluation of the "Rethink Stress" Mindset Intervention: A Metacognitive Approach to Changing Mindsets. J Exp Psychol Gen. 2023. - Crum AJ, Jamieson JP, Akinola M. Optimizing Stress: An Integrated Intervention for Regulating Stress Responses. Emotion. 2020;20(1):120-125.</p>
+<p>1. Ryu J, Jeong A, Min JH, et al. The relationship between domain-specific physical activity and depressive symptoms in Korean adults: Analysis of the Korea National Health and Nutrition Examination Survey. <em>J Affect Disord</em>. 2022;302:428-434. - Goo SY, Lee TH, Lim H, Lee EY, Kim JY, Jeon JY. Associations between different types of sedentary behavior and mental health: Gender-stratified analyses among 97,171 South Korean adolescents. <em>Ment Health Phys Act</em>. 2023;25. 2. Narath E, Skalicky M, Viidik A. Voluntary and forced exercise influence the survival and body composition of ageing male rats differently. <em>Exp Gerontol</em>. 2001;36(10):1699-1711. 3. Crum AJ, Langer EJ. Mind-set matters: Exercise and the placebo effect. <em>Psychol Sci</em>. 2007;18(2):165-171. - Crum AJ, Akinola M, Martin A, Fath S. The role of stress mindset in shaping cognitive, emotional, and physiological responses to challenging and threatening stress. <em>Anxiety Stress Copin</em>. 2017;30(4):379-395. - Crum AJ, Santoro E, Handley-Miner I, et al. Evaluation of the "Rethink Stress" Mindset Intervention: A Metacognitive Approach to Changing Mindsets. <em>J Exp Psychol Gen</em>. 2023. - Crum AJ, Jamieson JP, Akinola M. Optimizing Stress: An Integrated Intervention for Regulating Stress Responses. <em>Emotion</em>. 2020;20(1):120-125.</p>
 <h3>Chapter 36: From Insulin to Oxytocin</h3>
-<p>1. Du Vigneaud V. Trail of sulfur research: from insulin to oxytocin. Science. 1956;123(3205):967-974. 2. Ryan EA, Lakey JR, Rajotte RV, et al. Clinical outcomes and insulin secretion after islet transplantation with the Edmonton protocol. Diabetes. 2001;50(4):710-719. - Shapiro J, Ryan E, Warnock GL, et al. Could fewer islet cells be transplanted in type 1 diabetes? Insulin independence should be dominant force in islet transplantation. BMJ. 2001;322(7290):861. - Jeon JY, Weiss CB, Steadward RD, et al. Improved glucose tolerance and insulin sensitivity after electrical stimulation-assisted cycling in people with spinal cord injury. Spinal Cord. 2002;40(3):110-117. - Jeon JY, Harber VJ, Steadward RD. Leptin response to short-term fasting in sympathectomized men: role of the SNS. Am J Physiol Endocrinol Metab. 2003;284(3):E634-640. - Jeon JY, Steadward RD, Wheeler GD, Bell G, McCargar L, Harber V. Intact sympathetic nervous system is required for leptin effects on resting metabolic rate in people with spinal cord injury. J Clin Endocrinol Metab. 2003;88(1):402-407. - Jeon JY, Hettinga D, Steadward RD, Wheeler GD, Bell G, Harber V. Reduced plasma glucose and leptin after 12 weeks of functional electrical stimulation-rowing exercise training in spinal cord injury patients. Arch Phys Med Rehabil. 2010;91(12):1957-1959. - Jeon JY, Bradley RL, Kokkotou EG, et al. MCH-/- mice are resistant to aging-associated increases in body weight and insulin resistance. Diabetes. 2006;55(2):428-434. - Kokkotou E, Jeon JY, Wang X, et al. Mice with MCH ablation resist diet-induced obesity through strain-specific mechanisms. Am J Physiol Regul Integr Comp Physiol. 2005;289(1):R117-124. 3. Holmes MD, Chen WY, Feskanich D, Kroenke CH, Colditz GA. Physical activity and survival after breast cancer diagnosis. JAMA. 2005;293(20):2479-2486. - Meyerhardt JA, Giovannucci EL, Holmes MD, et al. Physical activity and survival after colorectal cancer diagnosis. J Clin Oncol. 2006;24(22):3527-3534. - Meyerhardt JA, Heseltine D, Niedzwiecki D, et al. Impact of physical activity on cancer recurrence and survival in patients with stage III colon cancer: findings from CALGB 89803. J Clin Oncol. 2006;24(22):3535-3541.</p>
+<p>1. Du Vigneaud V. Trail of sulfur research: from insulin to oxytocin. <em>Science</em>. 1956;123(3205):967-974. 2. Ryan EA, Lakey JR, Rajotte RV, et al. Clinical outcomes and insulin secretion after islet transplantation with the Edmonton protocol. <em>Diabetes</em>. 2001;50(4):710-719. - Shapiro J, Ryan E, Warnock GL, et al. Could fewer islet cells be transplanted in type 1 diabetes? Insulin independence should be dominant force in islet transplantation. <em>BMJ</em>. 2001;322(7290):861. - Jeon JY, Weiss CB, Steadward RD, et al. Improved glucose tolerance and insulin sensitivity after electrical stimulation-assisted cycling in people with spinal cord injury. <em>Spinal Cord</em>. 2002;40(3):110-117. - Jeon JY, Harber VJ, Steadward RD. Leptin response to short-term fasting in sympathectomized men: role of the SNS. <em>Am J Physiol Endocrinol Metab</em>. 2003;284(3):E634-640. - Jeon JY, Steadward RD, Wheeler GD, Bell G, McCargar L, Harber V. Intact sympathetic nervous system is required for leptin effects on resting metabolic rate in people with spinal cord injury. <em>J Clin Endocrinol Metab</em>. 2003;88(1):402-407. - Jeon JY, Hettinga D, Steadward RD, Wheeler GD, Bell G, Harber V. Reduced plasma glucose and leptin after 12 weeks of functional electrical stimulation-rowing exercise training in spinal cord injury patients. <em>Arch Phys Med Rehabil</em>. 2010;91(12):1957-1959. - Jeon JY, Bradley RL, Kokkotou EG, et al. MCH-/- mice are resistant to aging-associated increases in body weight and insulin resistance. <em>Diabetes</em>. 2006;55(2):428-434. - Kokkotou E, Jeon JY, Wang X, et al. Mice with MCH ablation resist diet-induced obesity through strain-specific mechanisms. <em>Am J Physiol Regul Integr Comp Physiol</em>. 2005;289(1):R117-124. 3. Holmes MD, Chen WY, Feskanich D, Kroenke CH, Colditz GA. Physical activity and survival after breast cancer diagnosis. <em>JAMA</em>. 2005;293(20):2479-2486. - Meyerhardt JA, Giovannucci EL, Holmes MD, et al. Physical activity and survival after colorectal cancer diagnosis. <em>J Clin Oncol</em>. 2006;24(22):3527-3534. - Meyerhardt JA, Heseltine D, Niedzwiecki D, et al. Impact of physical activity on cancer recurrence and survival in patients with stage III colon cancer: findings from CALGB 89803. <em>J Clin Oncol</em>. 2006;24(22):3535-3541.</p>
 </main>
 
 <div class="pdiv"><span></span></div>

@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -141,20 +141,22 @@ footer a{color:var(--coral);text-decoration:none}
     <figure class="chapter-figure">
         <img src="figures/fig04_global_priorities.png" alt="Fig04 Global Priorities" loading="lazy">
     </figure>
-<p>Years ago, I came across a book called <em>The Origins of Happiness</em> by Professor Eun-Kook Suh of Yonsei University. From the first page to the last, I couldn't put it down. The next day, I picked it up and read it again &mdash; the afterglow was still so vivid. I remember even chasing down the references afterward.<sup>1</sup></p>
-<p>The most memorable part of Professor Suh's book was the finding that physical pain and social pain activate the same regions in the brain. The agony of losing a leg in a sudden accident and being unable to earn a living is remarkably similar to the pain of being cut off from your group and facing the world alone. When social pain strikes &mdash; loneliness, betrayal, the sting of a breakup, the severing of a relationship &mdash; the brain produces real, physical pain to prevent isolation. In one study, sixty-two college students were divided into two groups: one received a painkiller (acetaminophen, known in the U.S. as Tylenol), and the other a placebo. The students who took Tylenol reported feeling significantly less pain from social rejection and relationship disconnection.<sup>2</sup></p>
-<p>The most shocking conclusion of the book was this: it is not successful people who are happy, but happy people who become successful. Drawing on sociobiological evidence, the author argues forcefully that &mdash; contrary to what we believe &mdash; success does not bring happiness. We often tell ourselves, "I may be struggling now, but just you wait. I'm going to succeed, and then I'll finally be happy." This narrative is borrowed endlessly by TV dramas and movies, offering cathartic, feel-good endings to frustrating, drawn-out storylines. But it turns out this isn't true.</p>
+<p>Years ago, I came across a book called <em>The Origins of Happiness</em> by Professor Eun-Kook Suh of Yonsei University. I sat down and did not stand up again until the last page fell shut. The next day, still haunted by its afterglow, I opened it and read it a second time. Then I hunted down the references.<sup>1</sup></p>
+<p>The passage that lodged most deeply in my memory was a finding so counterintuitive it felt almost offensive: the brain regions that register physical pain and social pain are identical. The agony of losing a leg in a sudden accident — of wondering how you will ever earn a living again — fires in the same neural circuitry as the agony of being cut from the group and facing the world alone. When social pain descends — loneliness, betrayal, the sting of a breakup, the severing of a bond you thought would last — the brain does not merely acknowledge it in the abstract. It generates real, bodily pain, as if evolution itself had decided that isolation was a wound worth screaming about.</p>
+<p>Here is the evidence. Sixty-two college students were divided into two groups. One received a common painkiller — acetaminophen, the active ingredient in Tylenol. The other received a placebo. The students who took Tylenol reported feeling significantly less distress from social rejection and relational disconnection.<sup>2</sup> Read that again: an over-the-counter headache pill dulled the ache of being excluded. The body makes no distinction between a broken bone and a broken heart.</p>
+<p>But the book's most electrifying conclusion was this: it is not successful people who are happy — it is happy people who become successful. Drawing on sociobiological evidence, Professor Suh argues, with considerable force, that success does not deliver happiness the way we imagine it does. We tell ourselves the familiar story: <em>I may be struggling now, but just wait — I will succeed, and then I will finally be happy.</em> Korean dramas and blockbuster films borrow this narrative wholesale, serving up cathartic, triumphant endings to punishingly frustrating storylines — the dramatic equivalent of finally biting into something refreshing after choking on a dry sweet potato, as the Korean idiom goes. The trouble is, the story isn't true.</p>
 <h3>Extroverts Are Happier</h3>
-<p>When I recently reread this book through the lens of my oxytocin research, an entirely different passage jumped out at me. It was the finding that the genes most closely linked to human happiness are those associated with extroversion. Extroverts are significantly happier than introverts. Even introverts report greater happiness when they are with someone rather than alone. This has been confirmed by multiple studies. A joint U.S.-Korean study found that the happier a person was, the more time they spent with other people rather than alone. Conversely, unhappy people spent far more time alone. The takeaway is straightforward: to be happy, you need to spend more time with other people.<sup>3</sup></p>
-<p>Some readers might think, "But I'm happier when I'm alone." Fair enough &mdash; but there is a crucial difference between choosing to be alone and having no choice. Being alone by will and preference is nothing like wanting to see people but being unable to, or avoiding others because of pain, insecurity, or depression. Just as being unmarried by choice is different from being unable to find a partner, voluntary solitude and involuntary isolation are entirely different things.</p>
-<p>In a 2021 global survey asking people what matters most in life, Korea was the only country where "material wealth" topped the list. In nearly every other developed nation &mdash; the United States, the United Kingdom, Germany, France, Italy, Australia, Japan &mdash; "family" came first. Korea may be the only country in the world where "Get rich!" is a standard greeting and well-wish. This tells us something profound about why Korea's suicide rate is so high and its birth rate so low. If a nation's priorities reflect its people's consciousness and happiness, then perhaps Koreans have been looking for happiness in the wrong place entirely.</p>
+<p>When I recently returned to this book through the lens of my oxytocin research, an entirely different passage leapt off the page. It was the finding that the genes most tightly linked to human happiness are those governing extroversion. Extroverts are far happier than introverts — and even introverts, it turns out, report greater happiness when they are with someone rather than alone. Study after study confirms it. A joint American-Korean research project found that the happier a person was, the more of their waking hours they spent in the company of others. The inverse held, too: unhappy people spent far more time alone. The implication is as simple as it is profound — to be happy, spend more time with other people.<sup>3</sup></p>
+<p>Some readers will object. <em>But I'm happier alone.</em> Fair enough — yet there is a canyon of difference between choosing solitude and having it thrust upon you. Being alone by will and preference is nothing like wanting to see people but being unable to, or avoiding them because of old wounds, insecurity, or depression that makes every social encounter feel like walking on glass. Just as being unmarried by choice is not the same as being unable to find a partner, voluntary solitude and involuntary isolation are entirely different countries.</p>
+<p>In a 2021 global survey asking what matters most in life, South Korea was the only country to place "material wealth" at the top. In virtually every other developed nation — the United States, the United Kingdom, Germany, France, Italy, Australia, Japan — "family" came first. Korea may be the only place on earth where "Get rich!" functions as a standard greeting and sincere blessing. This single data point illuminates, with uncomfortable clarity, why Korea's suicide rate ranks so high and its birth rate so stubbornly low. If a nation's priorities are a mirror reflecting its people's consciousness and well-being, then Koreans may have been searching for happiness in altogether the wrong place.</p>
 <h3>Oxytocin Is the Glue of Relationships</h3>
-<p>If extroverts are happier, could it be that people with higher oxytocin levels are happier too? There is already ample research showing that highly extroverted people are happier. The question is the relationship between oxytocin and extroversion. Since oxytocin is a peptide hormone, it requires a receptor to function. When mutations occur in that receptor, oxytocin's effects diminish regardless of how much is circulating in the blood. So do people with mutations in the oxytocin receptor gene rs53576 have reduced empathy and lower sociability?</p>
-<p>Yes, they do. Research has confirmed that people with mutations in their oxytocin receptors have lower emotional stability and reduced general sociability. They also showed diminished ability to consider other people's perspectives. In other words, if your oxytocin receptors aren't functioning properly, you may struggle to understand others or pick up on nonverbal cues &mdash; and as a result, you naturally become less social and more introverted.</p>
-<p>Consider the classic relationship scenario: a girlfriend sulks and says, "Do I really have to spell it out for you?" while her boyfriend stands there bewildered. Oxytocin might actually explain this. Women produce four to five times more oxytocin than men, which means they are far more attuned to nonverbal communication &mdash; and understandably frustrated when their partner can't read those signals.</p>
-<p>Oxytocin in our bodies enables us to empathize with others' pain and joy. People with higher oxytocin levels are more caring, more encouraging, more trusting, and quicker to forgive. And here is the really fascinating part: when we are kind to someone and see them light up with happiness, our own oxytocin levels rise even further. Oxytocin operates on a virtuous cycle. People with high oxytocin levels unconsciously raise the oxytocin levels of those around them.</p>
-<p>So what if your oxytocin levels are low? Does it mean you are destined to be introverted and unhappy? Not at all. There are countless ways to boost oxytocin production.</p>
-<div class="hl"><strong>Oxytocin in Everyday Life:</strong> Pull out a notebook, a planner, or even a napkin, and write down ten things that make you happy.</div>
+<p>If extroverts are happier, could it be that people with higher oxytocin levels are, too?</p>
+<p>The research on extroversion and happiness is robust. The more interesting question is the connection between oxytocin and extroversion itself. Oxytocin is a peptide hormone, which means it cannot do its work without a receptor to catch it. When mutations occur in that receptor, oxytocin's effects diminish — no matter how much of it is coursing through the blood. So what happens to people carrying a mutation in the oxytocin receptor gene known as rs53576? Does their empathy suffer? Does their sociability decline?</p>
+<p>It does. Studies have confirmed that people with oxytocin receptor mutations show lower emotional stability and diminished general sociability. Their ability to take another person's perspective — to stand, even momentarily, in someone else's shoes — is impaired. This means that if your oxytocin receptors are not functioning properly, you may struggle to understand others or to read the countless nonverbal cues that lubricate human interaction. The result, almost inevitably, is a personality that tilts toward introversion.</p>
+<p>Consider a scene familiar to anyone who has been in a relationship. A girlfriend turns away and says, in that unmistakable tone: "Do I really have to spell everything out for you?" Her boyfriend stands there, bewildered, hands dangling uselessly at his sides. Oxytocin may actually explain this impasse. Women produce four to five times more oxytocin than men, and with it comes a far more refined antenna for nonverbal communication. When that antenna detects nothing on the other end, frustration is inevitable.</p>
+<p>Oxytocin in our bodies enables us to feel what others feel — to ache when they ache, to light up when they light up. People with elevated oxytocin are more caring, more encouraging, more trusting, and quicker to forgive. And here is the truly remarkable part: when we extend kindness to someone and witness their face brighten with happiness, our own oxytocin climbs higher still. The molecule operates on a virtuous cycle. People with high oxytocin unconsciously lift the oxytocin of everyone around them, like tuning forks that set the whole room humming.</p>
+<p>So what about those whose levels run low? Are they condemned to introversion and unhappiness? Not remotely. The ways to coax oxytocin upward are nearly endless.</p>
+<div class="hl"><strong>Oxytocin in Everyday Life:</strong> Pull out a notebook, a planner, or even a napkin. Write down ten things that make you happy.</div>
 </main>
 
 <div class="pdiv"><span></span></div>

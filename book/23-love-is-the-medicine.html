@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,18 +138,20 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>-- The Oxytocin Effect</p>
-<p>The American sociologist Ira Reiss once described the four stages of love as a turning wheel. Though the theory dates back a few decades, his <em>Wheel Theory of Love</em> was one of the first relational development models to conceptualize the entire process by which two people meet, court, deepen their relationship, and ultimately choose each other as partners. According to Reiss, as a couple moves toward greater intimacy, they pass through a cyclical and sequential process with four interlocking stages &mdash; like the spokes of a wheel: rapport, self-revelation, mutual dependency, and personality need fulfillment. First, the couple discovers shared experiences and similarities, building rapport. Then, seeking a more satisfying relationship, they move into the stage of self-revelation &mdash; opening up to each other. As they come to know each other deeply, they grow increasingly dependent on one another, until they reach the stage where they fulfill each other's needs and desires. Reiss believed that every love relationship follows this path.</p>
-<p>Looking back at my own life, I can see that I traveled along this very wheel of love &mdash; meeting my wife as a complete stranger, falling in love, and eventually making it to the altar. It started with curiosity, then love pulled me in, and now we've become indispensable to each other. "For the one carelessly discarded like me, the only one who cried for me &mdash; I want to lean on those broad shoulders. Don't wake me from that dream." These are lyrics from "All I Know Is Love," a signature song by the beloved Korean singer Sim Su-bong. In an interview, she once revealed that she grew up without a father and had never been loved by a man &mdash; her husband was the first man to ever show her love. Human beings stake everything on love, make great sacrifices for love. Love is our greatest vulnerability and, at the same time, our greatest strength. Love is the one ability God placed within us. That's why Rumi, the great Sufi master, said, "Love is the symbol of God's great beauty."</p>
+<p>--- The Oxytocin Effect</p>
+<p>The American sociologist Ira Reiss once likened the stages of romantic love to a turning wheel. Though his <em>Wheel Theory of Love</em> dates back several decades, it was among the first models to conceptualize the full arc by which two strangers meet, court, deepen their bond, and ultimately choose each other as life partners. According to Reiss, as a couple moves toward genuine intimacy, they travel through four cyclical, interlocking stages &mdash; the spokes of the wheel: rapport, self-revelation, mutual dependency, and personality need fulfillment. First, the couple discovers common ground and builds rapport. Then, seeking a richer connection, they enter the stage of self-revelation &mdash; each opening up to the other. As mutual knowledge deepens, dependency grows, until they arrive at the stage of fulfilling each other's fundamental needs and desires. Reiss believed every love relationship follows this progression.</p>
+<p>Looking back at my own life, I can trace the wheel's revolutions with uncanny precision &mdash; from the initial curiosity that drew me toward a woman I had never met, through the vertigo of falling in love, to the quiet, unshakable interdependence of marriage. "For the one carelessly cast aside like me, the only one who wept &mdash; I want to lean against those broad shoulders. Don't wake me from that dream." These are lyrics from <em>All I Know Is Love</em>, the signature ballad of the beloved Korean singer Sim Su-bong. In an interview, she once disclosed that she grew up without a father and had never known a man's love &mdash; her husband was the first. Human beings stake everything on love. They make sacrifices for it that defy all rational calculation. Love is our most devastating vulnerability and, in the same breath, our greatest source of power. It is the one capacity God planted in the human heart. And that is why Rumi, the great Sufi mystic, wrote: "Love is the emblem of God's infinite beauty."</p>
 <h3>Love, That Mighty Force</h3>
-<p>In 1942, Karl A. Menninger wrote in his book <em>Love Against Hate</em>: "Science is merely our servant. We use it to make guns, and we use it to make fever reducers. We use it to build bridges, and we use it to build bombs." Menninger went on to say that when a psychologist speaks about science, it's like "a voice crying in the wilderness." He argued that because so many of the world's diseases originate in the mind, psychology and psychoanalysis are about healing the mind that causes those diseases. And the medicine that heals the mind, he declared, is <em>love</em>.</p>
-<p>In his book, he quoted Freud, who reportedly said near the end of his life: "The idea that love can cure hatred is an entirely new perspective. And it seems no one has yet dared to actually try it."[<sup>22</sup>-1]</p>
-<p>When Menninger wrote this book, World War II was raging, and nations were competing to build ever more effective weapons for killing on a massive scale. Even considering the harshness of the times, his insight &mdash; that human disease can arise from personality, thought patterns, and daily attitudes &mdash; is both fascinating and almost mystical. He went further still, essentially making a claim that sounds like something from scripture &mdash; "Love heals all sorrow" &mdash; but framing it in the language of science. Could the greed and personality flaws of national leaders, their insecurities and fragile self-esteem, be what drive wars between nations? Such wars have claimed countless lives. Someone lost a son, someone a husband, someone a father, someone a mother. Innumerable people lost parts of their bodies and live the rest of their lives with disabilities. Even more live with the lifelong trauma that war inflicts. Menninger prescribed love as the cure for all of it. Could it be that Menninger already knew about the power of oxytocin before anyone else?</p>
+<p>In 1942, Karl A. Menninger wrote in his book <em>Love Against Hate</em>: "Science is merely our servant. We use it to forge guns, and we use it to compound fever remedies. We use it to build bridges, and we use it to detonate them." He went on to say that when a psychologist speaks of science, the words fall like "a voice crying in the wilderness." His argument was radical for its era: because so many of the world's diseases originate in the mind, the task of psychology and psychoanalysis is to heal the mind from which those diseases spring. And the medicine that heals the mind, he declared, is <em>love</em>.</p>
+<p>In the same book, Menninger quoted Freud, who reportedly said near the end of his life: "The idea that love can cure hatred is an entirely novel perspective. And it seems no one has yet dared to put it into practice."[<sup>22</sup>-1]</p>
+<p>When Menninger published those words, the Second World War was raging and nations were competing to build ever more efficient instruments of mass death. Even accounting for the savagery of the times, his insight &mdash; that human disease can germinate from personality, thought patterns, and habitual attitudes &mdash; strikes the modern reader as both profound and almost mystical. He pushed further still, essentially making a claim that would not sound out of place in scripture &mdash; <em>love heals all sorrow</em> &mdash; but clothing it in the language of science. Could the wars between nations, he wondered, be driven not by grand geopolitical forces but by the vanity, insecurity, and wounded self-regard of individual leaders? Such wars have devoured countless lives. Someone lost a son. Someone, a husband. Someone, a father. Someone, a mother. Innumerable survivors lost limbs and live out their remaining years with disabilities; far more carry the invisible scars of trauma that never fully heal. Menninger prescribed love as the remedy for all of it. Could it be that he intuited the power of oxytocin decades before anyone thought to measure it?</p>
 <h3>Love Through the Lens of Oxytocin</h3>
-<p>Of course, Menninger was talking about how love can heal individual psychological problems and even mental illness. And indeed, oxytocin heals PTSD, repairs the damage caused by stress-related diseases, resolves the psychological problems born of loneliness, makes us more likable and optimistic, and mends broken relationships by rebuilding trust. When you consider that stress actually causes stomach ulcers, hypertension, cardiovascular disease, and diabetes &mdash; and can even trigger cancer &mdash; oxytocin starts to look like something close to a universal cure.</p>
-<p>In South Korea, suicide is the number one cause of death for people in their teens through thirties. When you account for the fact that oxytocin could potentially address all of the country's top five causes of death, the implications are staggering. Jesus said, "Love your neighbor as yourself." To love our neighbors, we must first love our own bodies. The fact that people who attempt suicide have significantly lower oxytocin levels than those who don't &mdash; what does this tell us about South Korea, a country that leads the world in suicide rates?[<sup>22</sup>-2]</p>
-<p>As a researcher who has spent his entire career in this field, I have devoted my life to proving a deceptively simple concept: <em>exercise is medicine</em>. I've spent years studying how to help more people become healthier and happier through physical activity. Along the way, I encountered oxytocin &mdash; and the more I learned about it, the more I studied its effects on health, the more I found myself drawn past the motto of "exercise is medicine" toward a new, even more fundamental truth: <em>love is medicine</em>.</p>
-<p>Love. Love with everything you have. And you will live.</p>
+<p>Menninger was, of course, speaking of how love heals individual psychological wounds and, at its most potent, mental illness itself. And indeed, oxytocin does precisely what he described. It alleviates PTSD. It repairs the physiological damage wrought by chronic stress. It resolves the psychological distortions born of loneliness. It makes us more likable and more optimistic. It mends fractured relationships by rebuilding the scaffolding of trust. When you consider that stress is a documented cause of peptic ulcers, hypertension, cardiovascular disease, diabetes, and cancer, oxytocin begins to resemble something dangerously close to a universal cure.</p>
+<p>In South Korea, suicide is the leading cause of death for people in their teens, twenties, and thirties. When you realize that oxytocin could, in principle, address every one of the nation's top five causes of death, the implications become enormous. Jesus said, "Love your neighbor as yourself." But to love our neighbors, we must first love our own bodies. The finding that individuals who attempt suicide have significantly lower circulating oxytocin than those who do not &mdash; what does this tell us about a country that leads the developed world in suicide rates?[<sup>22</sup>-2]</p>
+<p>I have spent my entire career as a researcher proving a deceptively simple proposition: <em>exercise is medicine</em>. For decades, I have studied how to help more people become healthier and more fulfilled through physical movement. Along the way, I encountered oxytocin &mdash; and the more I learned, the more I investigated its influence on human health, the more I felt myself drawn past the familiar motto and toward a deeper, more fundamental truth.</p>
+<p>Not just exercise is medicine.</p>
+<p><em>Love is medicine.</em></p>
+<p>Love fiercely. Love completely. Love as though your life depends on it &mdash; because it does.</p>
 <h3>References</h3>
 <p><strong>Chapter 17</strong></p>
 <p>[<sup>17</sup>-1]: Friedman, M. <em>Type A Behavior and Your Heart</em>. Ballantine Books, 1974. See also: Friedman M, Rosenman RH. Type A Behavior Pattern: its association with coronary heart disease. <em>Ann Clin Res</em>. 1971;3(6):300-312.</p>

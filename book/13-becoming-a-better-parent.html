@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,17 +138,17 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>These days, "no kids zones" &mdash; establishments that refuse entry to children below a certain age &mdash; have become a major social issue in Korea. As a parent, it can feel a bit harsh, but on the other hand, you can empathize with the business owner's frustration. No one appreciates parents who sit idle while their child rolls around on the floor making a scene, disturbing everyone around them. I used to find the noise of children annoying. But at some point, I began to enjoy the sound of children chattering and playing with carefree abandon. When the sound of children laughing and running in the playground drifted through my window, I would feel my heart warm and my body relax, almost without realizing it.</p>
-<p>In mice, a female that has never given birth dislikes the squeaking of other mice's pups and may even kill them. In contrast, a female with mothering experience feels boundless love for pups and will care for any infant, even another mother's offspring. In one experiment, every time a mother mouse pressed a button, researchers placed a pup in her cage. The mother pressed the button up to one hundred times per hour, displaying an extraordinary intensity of maternal devotion. The hormonal changes that occur during pregnancy and birth are what create this fierce maternal drive.</p>
-<h3>A Mother's Qualification: Oxytocin</h3>
-<p>Humans are remarkably similar. When mothers were shown photographs of their babies while undergoing fMRI scans, distinctive changes appeared in their brains &mdash; specifically in the regions that generate the deep maternal love and emotional readiness needed to care for a child.<sup>1</sup></p>
-<p>When a baby needs help, it simply cries. Hungry? It cries "I'm hungry." In pain? It cries "I'm hurting." Wet diaper? It cries "I'm uncomfortable." Crying is a baby's language, and mothers respond to this language instinctively. An infant's cry normally activates the mother's brain, compelling her to rush to the child. But in mothers with severe postpartum depression, this brain region does not activate in response to crying. An infant's cry stimulates the mother's anterior insula and prefrontal cortex. The <em>insula</em> is the brain region that allows us to feel another person's pain as our own &mdash; what scientists often call the "empathy center." It integrates signals from throughout the body and acts as a conductor, coordinating our emotions and regulating the frontal lobe. In cases of severe depression or drug addiction, a mother may hear her baby crying and feel nothing. Mothers whose prefrontal cortex does not respond to their baby's cries are at significantly higher risk of child abuse. Given the disturbing frequency of child abandonment cases in the news today, one can reasonably suspect that these mothers had extremely low oxytocin levels.<sup>2</sup></p>
-<h3>The Secret to Parenting: Oxytocin</h3>
-<p>Do parents who abuse or abandon their children come from dysfunctional homes where they themselves received no love? If so, they too are victims. Indeed, infant mice that were not cared for by their mothers have low oxytocin levels as adults and, when they have their own pups, neglect or even kill them. Monkeys raised by humans in zoos also show low oxytocin levels. What about children who were abandoned by their parents and raised in orphanages? Research shows that children raised in institutional care have larger amygdalae compared to control groups and exhibit far more anxious temperaments.* They carry more internalized problems, and when shown photographs of frightening faces, their amygdalae activate intensely. The neural connectivity between their amygdalae and frontal lobes is also diminished, which means that even when they experience negative emotions, their ability to regulate those emotions through the frontal lobe is impaired.<sup>3</sup></p>
-<p>Parents with higher oxytocin levels respond immediately to their baby's cries and make significantly more eye contact with their children. Parents who inhale oxytocin interact more smoothly with their children and become more proactive about protecting their child from unfamiliar people who might pose a threat. The oxytocin circulating in a parent's bloodstream flows into the brain, amplifying affection and attentiveness toward the child.</p>
-<p>The evidence, taken as a whole, paints a clear picture: a mother's oxytocin during pregnancy influences her child's social development; couples in more intimate relationships have higher oxytocin; parents' oxytocin levels are deeply linked to their children's oxytocin levels; and these effects extend into adulthood, shaping how those children eventually raise their own offspring. When you consider all of this together, the conclusion is inescapable: children raised by happy parents grow up to be happier, more socially adept, and more resilient.<sup>4</sup></p>
+<p>In Korea today, "no kids zones" &mdash; restaurants, cafes, and other establishments that refuse entry to children below a certain age &mdash; have become a lightning rod for social debate. For parents, such policies can feel like a slap. But you can also see the owner's side of it: no one enjoys sitting next to a child who is rolling across the floor, shrieking at full volume, while the parents do nothing. I used to be one of those people who found the noise of children grating. But somewhere along the way, something shifted. The sound of children chattering, laughing, playing with carefree abandon &mdash; it began to feel like music. When their squeals drifted up from the playground through my window, I noticed a warmth spreading through my chest, a sense of ease I had not invited but could not deny.</p>
+<p>In mice, a female that has never given birth despises the squeaking of other mothers' pups &mdash; and may even kill them. But a female who has experienced motherhood feels limitless affection for pups and will nurse any infant, even another mother's offspring. In one experiment, researchers rigged a button that delivered a pup to the mother's cage each time she pressed it. She pressed that button a hundred times an hour &mdash; an extraordinary display of maternal hunger. The hormonal revolution of pregnancy and birth is what forges this fierce drive.</p>
+<h3>A Mother's Credential: Oxytocin</h3>
+<p>The parallels in humans are unmistakable. When mothers were shown photographs of their babies during fMRI scans, a distinctive signature appeared in their brains &mdash; activation in the very regions that generate deep maternal love and the emotional readiness to care for a helpless infant.<sup>1</sup></p>
+<p>A baby who needs something does the only thing it can: it cries. Hungry &mdash; it cries <em>I am hungry</em>. In pain &mdash; it cries <em>I am hurting</em>. Wet diaper &mdash; it cries <em>I am uncomfortable</em>. Crying is a baby's mother tongue, and a mother responds to it with the force of instinct. Normally, an infant's wail activates specific regions in the mother's brain, propelling her to the child's side. But in mothers suffering from severe postpartum depression, those regions remain silent. The infant's cry stimulates the mother's anterior insula and prefrontal cortex. The <em>insula</em> is the region that allows us to experience another person's pain as our own &mdash; what neuroscientists call the empathy center. It gathers signals from throughout the body and serves as a conductor, orchestrating our emotional responses and modulating the frontal lobe. When severe depression or drug addiction intervenes, a mother may hear her baby cry and feel nothing at all. Research shows that mothers whose prefrontal cortex fails to respond to infant crying face a significantly elevated risk of child abuse. Given the disturbing frequency of child abandonment cases reported in the news, one can reasonably suspect that these mothers' oxytocin levels were perilously low.<sup>2</sup></p>
+<h3>The Secret to Raising Children Well: Oxytocin</h3>
+<p>Do parents who abuse or abandon their children come from dysfunctional homes where they themselves were denied love? If so, they too are victims, caught in a cycle they never chose. The science bears this out. Infant mice deprived of maternal care grow into adults with low oxytocin levels; when they have their own pups, they neglect or even kill them. Monkeys raised by human caretakers in zoos &mdash; rather than by their own mothers &mdash; also show diminished oxytocin. And what of children abandoned by their parents and raised in orphanages? Research reveals that children from institutional care have larger amygdalae than comparison groups and far more anxious temperaments.* They carry a heavier burden of internalized problems; when shown photographs of frightening faces, their amygdalae blaze with activation. The neural wiring between their amygdalae and frontal lobes is also weakened, which means that even when they experience negative emotions, the brain's capacity to regulate those feelings through the frontal lobe is diminished.<sup>3</sup></p>
+<p>Parents with higher oxytocin respond instantly to their baby's cries and maintain significantly more eye contact with their children. Parents who inhale oxytocin engage more fluidly in play and interaction, and they become fiercer protectors &mdash; more vigilant against unfamiliar people who might pose a threat. Oxytocin in the bloodstream travels to the brain, where it amplifies affection and attentiveness toward the child.</p>
+<p>When you step back and survey the full body of evidence, a coherent picture emerges: a mother's oxytocin during pregnancy shapes her child's social development. Couples in more intimate, loving relationships have higher oxytocin. Parents' oxytocin levels are deeply intertwined with their children's. And these effects ripple forward through the generations, influencing how children eventually raise their own sons and daughters. The conclusion is as clear as it is consequential: children raised by happy parents grow up to be happier, more socially capable, and more resilient in the face of life's inevitable storms.<sup>4</sup></p>
 <p class="footnote">\* The above research was not conducted in Korea. Additionally, not all individuals raised in institutional care have enlarged amygdalae.</p>
-<p><em>When we talk with someone, maintaining steady eye contact is a remarkably important social skill. Imagine explaining something to someone, only to see them staring at their phone or gazing elsewhere &mdash; even if they happen to be looking up something related to your topic, you would feel slighted. You would probably think, "They are not listening to me at all." Oxytocin helps us look into each other's eyes and develop more positive feelings toward one another. And those who gaze into each other's eyes produce even more oxytocin in return &mdash; a true virtuous cycle of oxytocin and eye contact. Next, let us explore the effects of oxytocin on love.</em></p>
+<p><em>When we are talking with someone, holding steady eye contact is one of the most powerful social skills we possess. Imagine explaining something to a person who is staring at their phone or gazing elsewhere &mdash; even if they happen to be searching for something related to your topic, you would feel dismissed. You would think, "They are not listening to me." Oxytocin helps us look into each other's eyes and develop warmer feelings toward one another. And those who hold each other's gaze produce still more oxytocin &mdash; creating a virtuous cycle of connection. Next, let us turn to the ways oxytocin shapes the experience of love.</em></p>
 </main>
 
 <div class="pdiv"><span></span></div>

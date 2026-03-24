@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,20 +138,20 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>-- The Hormone That Has Protected Humanity</p>
+<p>-- The Hormone That Has Guarded Humanity</p>
 <h3>The Discovery of Oxytocin</h3>
-<p>Oxytocin was first identified in 1906 by the British pharmacologist Sir Henry Hallett Dale. Considering that dopamine &mdash; a hormone most of us know well &mdash; wasn't discovered until the 1950s, oxytocin was identified remarkably early, despite the limited technology and knowledge of the time. Dale had long been interested in the possibility that chemical messengers &mdash; <em>neurotransmitters</em> &mdash; might be involved in the way nerve cells in the brain communicate with each other. He discovered that a substance extracted from the posterior pituitary gland of pregnant cats caused the uterus to contract, and he named this substance "oxytocin," from the Greek for "swift birth." Dale went on to confirm his findings by injecting oxytocin into the uteri of laboratory rats. For his work on oxytocin and his subsequent discoveries of other neurotransmitters, including acetylcholine and histamine, Dale was awarded the Nobel Prize in Physiology or Medicine in 1936.<sup>1</sup></p>
-<p>Nearly 40 years later, American biochemist Vincent du Vigneaud determined the protein structure of oxytocin and then succeeded in synthesizing it artificially &mdash; a peptide hormone composed of nine amino acids and a sulfur atom. Oxytocin is a peptide hormone, like insulin.* But while insulin is made up of 51 amino acids, oxytocin has just 9 &mdash; relatively small, which is why today it can be delivered as a nasal spray. Du Vigneaud was awarded the Nobel Prize in Chemistry the following year for his achievement in synthesizing a peptide hormone.<sup>1</sup></p>
-<p class="footnote">[* Hormones can be broadly divided into peptide hormones and steroid hormones. Peptide hormones work through receptors, while steroid hormones act directly on the cell nucleus without needing a receptor. For more detail, see the "Hormone 101" section.]</p>
-<p>How is oxytocin released during childbirth? As a mother approaches delivery, the posterior lobe of the hypothalamic-pituitary system increases its secretion of oxytocin. This surge of blood oxytocin binds to receptors that signal the brain to contract the uterus. As the uterus contracts, the hypothalamic-pituitary system releases still more oxytocin, which drives even stronger contractions. Through this feed-forward system, the intervals between contractions grow shorter and the contractions grow more powerful, ultimately pushing the baby out of the womb. During delivery, a mother's oxytocin levels can rise to 10 to 40 times their normal levels.<sup>2</sup></p>
-<p>The surge of oxytocin during childbirth also helps reduce labor pain. Oxytocin acts as a natural painkiller, easing the agony of delivery. It helps heal wounds in the uterine lining and birth canal. It amplifies the maternal instinct, compelling the mother to hold her newborn close and nurse. Animal experiments have shown that mothers deficient in oxytocin may neglect their offspring after birth &mdash; or, in extreme cases, kill them.</p>
-<p>Oxytocin plays a key role in breastfeeding. The more a baby suckles at the mother's breast, the more oxytocin the mother's body produces. As oxytocin increases, milk flows more abundantly, and the baby suckles more vigorously. Through breastfeeding, mother and child raise each other's oxytocin in a virtuous cycle that benefits them both. Remarkable, isn't it? In this way, a new mother experiences rapid recovery with the help of oxytocin. Oxytocin plays a vital role in both successful delivery and breastfeeding.<sup>2</sup></p>
-<p>Oxytocin also contributes significantly to an infant's brain development. When oxytocin is released in a nursing baby's brain, it increases blood flow to the neocortex and cerebral cortex, supporting overall brain development. It particularly influences the neocortex &mdash; which makes up 80 percent of brain volume and is responsible for abstract reasoning, inference, and logical thinking in areas like language and mathematics. This underscores just how important a mother's physical touch is for a newborn's brain development. Whether a baby is breastfed or bottle-fed, when an infant naturally makes eye contact and has skin-to-skin contact with a parent during feeding, oxytocin levels rise even further. Animal studies have shown that pups separated from their mothers for even three hours a day grew into adults with reduced sociability and weakened immune systems.<sup>3</sup></p>
-<p>We commonly know that breast milk generally boosts a baby's immune system. Breast milk contains a probiotic called <em>Lactobacillus reuteri</em>. But recent research found something surprising: when they tested breast milk for <em>Lactobacillus</em>, about 50 percent of rural mothers had it &mdash; but urban mothers had almost none. Given the well-documented decline in gut microbial diversity among city dwellers, it's reasonable to assume that not so long ago, breast milk universally contained abundant <em>Lactobacillus</em>, regardless of where the mother lived. Recent studies indicate that <em>Lactobacillus</em> in breast milk may help improve autism symptoms and promote the body's production of oxytocin. Combined with evidence that oxytocin aids in wound healing, breastfeeding appears to be critical not only for the mother's recovery but also for the baby's brain development and future social functioning.<sup>4</sup></p>
-<h3>Oxytocin: Head of the Low-Birth-Rate Task Force</h3>
-<p>In fact, oxytocin plays a role even before childbirth &mdash; from the moment two people meet, fall deeply in love, and feel drawn to each other, influencing sexual attraction and conception. Consider the tiny roundworm <em>Caenorhabditis elegans</em> &mdash; it looks something like an earthworm but is 100 to 1,000 times smaller. Because of its genetic similarity to humans, it's widely used in laboratory experiments today. When researchers knock out the oxytocin gene or oxytocin receptor gene in these worms, the males struggle to find females, and even when they do, they can't locate the female's reproductive opening. Even if they manage that, they fail to deposit their sperm, resulting in delayed fertilization.<sup>5</sup></p>
-<p>What about humans? Well, before two people can become intimate, they first have to recognize each other &mdash; and then feel attracted, right? So does oxytocin help people recognize each other and feel drawn to one another? The short answer is: <em>absolutely yes</em>. Even in animals, when oxytocin fails to function properly, they develop something resembling collective face-blindness &mdash; unable to recognize each other and unable to mate. Rodents rely on olfactory rather than visual cues to identify one another, so when oxytocin isn't working, it takes them much longer to recognize a potential mate. Humans, by contrast, identify and remember each other by face rather than by smell.</p>
-<p>Research has shown that oxytocin improves facial recognition. Multiple studies have demonstrated that inhaling oxytocin enhances not only the ability to recognize faces but also the ability to remember people after a single encounter. In 2013, another research team used fMRI to scan the brains of 18 adult men while showing them photographs of various women. In one session, the men inhaled real oxytocin; in another, a placebo. When they had inhaled real oxytocin, their sense of attraction to the women in the photographs increased. Importantly, this wasn't because of a dopamine spike &mdash; it was because negative emotions decreased. We'll explore the relationship between oxytocin, trust, and altruism in much greater depth later in the book.<sup>6</sup></p>
+<p>Oxytocin was first identified in 1906 by the British pharmacologist Sir Henry Hallett Dale. To appreciate how remarkable that is, consider that dopamine &mdash; a hormone most of us now take for granted &mdash; was not discovered until the 1950s. In an era of primitive instruments and fragmentary knowledge, Dale intuited that chemical messengers must exist within the brain, ferrying signals between nerve cells. He called them <em>neurotransmitters</em>. Working with pregnant cats, he extracted a substance from the posterior pituitary gland and showed that it caused the uterus to contract. He named it <em>oxytocin</em>, from the Greek for "swift birth." He then confirmed his findings by injecting the substance into the uteri of laboratory rats. For his pioneering work on oxytocin and his later discovery of other neurotransmitters &mdash; acetylcholine and histamine among them &mdash; Dale was awarded the Nobel Prize in Physiology or Medicine in 1936.<sup>1</sup></p>
+<p>Nearly four decades passed before the next great leap. American biochemist Vincent du Vigneaud determined the molecular structure of oxytocin and then accomplished what had seemed impossible: he synthesized it in the laboratory. The molecule turned out to be a peptide hormone* composed of just nine amino acids and a sulfur atom. For comparison, insulin &mdash; another peptide hormone &mdash; contains fifty-one amino acids. Oxytocin's compact size is the reason it can be delivered today as a simple nasal spray. Du Vigneaud received the Nobel Prize in Chemistry the following year for his achievement.<sup>1</sup></p>
+<p class="footnote">[Hormones fall into two broad categories: peptide hormones and steroid hormones. Peptide hormones act through receptors on the cell surface; steroid hormones pass through the membrane and act directly on the cell nucleus. For more detail, see the "Hormone 101" chapter.]</p>
+<p>How does oxytocin orchestrate the drama of childbirth? As delivery approaches, the posterior pituitary &mdash; nestled beneath the hypothalamus &mdash; begins releasing oxytocin in rising quantities. The hormone travels through the bloodstream, locks onto receptors, and commands the uterus to contract. Each contraction triggers a fresh wave of oxytocin, which drives an even stronger contraction. Through this elegant feed-forward mechanism, the intervals between contractions shorten and their force intensifies until the mother's body expels the child. At the peak of labor, a woman's oxytocin levels may reach ten to forty times their baseline.<sup>2</sup></p>
+<p>That same torrent of oxytocin serves as a natural analgesic, blunting the searing pain of delivery. It promotes the healing of the uterine lining and the birth canal. It ignites the maternal instinct with an almost irresistible force, compelling the mother to cradle her newborn and nurse. In animal experiments, mothers deprived of oxytocin neglected their young after birth. In the most extreme cases, they killed them.</p>
+<p>Oxytocin is essential to breastfeeding. The more vigorously a baby suckles, the more oxytocin the mother's body produces. As oxytocin rises, milk flows more freely, and the baby nurses with greater intensity. Mother and child thus raise each other's oxytocin in a virtuous spiral from which both benefit. Extraordinary, is it not? Through this mechanism, a new mother recovers with remarkable speed. Oxytocin is central to both a successful delivery and the nourishment that follows.<sup>2</sup></p>
+<p>The hormone also plays a vital role in an infant's brain development. When oxytocin is released in a nursing baby's brain, it increases blood flow to the neocortex and cerebral cortex, supporting overall neural growth. Its impact on the neocortex is particularly significant: this region constitutes 80 percent of brain volume and is responsible for abstract reasoning, inference, and the logical thinking that underpins language and mathematics. The implication is profound &mdash; a mother's physical touch is not merely comforting to a newborn; it is architecturally essential for the developing brain. Whether breastfed or bottle-fed, when an infant makes eye contact and has skin-to-skin contact with a parent during feeding, oxytocin levels climb even higher. Animal studies have shown that pups separated from their mothers for as little as three hours a day grew into adults with diminished sociability and compromised immune systems.<sup>3</sup></p>
+<p>Most of us know that breast milk strengthens an infant's immunity. It contains a beneficial bacterium called <em>Lactobacillus reuteri</em>. But recent research revealed a troubling disparity: when scientists tested breast milk for <em>Lactobacillus</em>, roughly half of rural mothers carried it &mdash; while urban mothers had almost none. Given the well-documented collapse of gut microbial diversity in city dwellers, it seems likely that not long ago, breast milk universally contained abundant <em>Lactobacillus</em>, regardless of geography. Recent studies suggest that this bacterium may help improve symptoms of autism and stimulate the body's own oxytocin production. Paired with evidence that oxytocin accelerates wound healing, breastfeeding emerges as critical not only for the mother's recovery but for the infant's brain development and lifelong social functioning.<sup>4</sup></p>
+<h3>Oxytocin: Commander of the Low-Birth-Rate Task Force</h3>
+<p>In truth, oxytocin begins its work long before delivery. From the moment two people meet, fall deeply in love, and feel the magnetic pull of attraction, this hormone is already on the job, shaping desire and conception alike. Consider the humble roundworm <em>Caenorhabditis elegans</em> &mdash; it resembles an earthworm but is one hundred to one thousand times smaller. Because of its genetic kinship with humans, it is a workhorse of modern laboratory science. When researchers disabled the oxytocin gene or the oxytocin receptor gene in these tiny creatures, the males could barely find females. Those that did struggled to locate the female's reproductive opening. And even those that managed that much failed to deposit their sperm. The result: reproduction ground nearly to a halt.<sup>5</sup></p>
+<p>What about humans? Before two people can become intimate, they must first recognize each other &mdash; and recognition must kindle attraction. Does oxytocin play a role in both? The short answer is: <em>unequivocally, yes.</em> Even in animals, when oxytocin fails to function, something resembling collective face-blindness sets in. The animals cannot recognize one another and cannot mate. Rodents rely on scent rather than sight to identify their companions, so when oxytocin is impaired, identifying a potential partner takes dramatically longer. Humans, of course, recognize and remember one another primarily by face.</p>
+<p>Research has demonstrated that oxytocin sharpens facial recognition. Multiple studies show that inhaling oxytocin improves not only the ability to identify faces but also the ability to remember someone after a single meeting. In a 2013 study, researchers scanned the brains of eighteen adult men with fMRI while showing them photographs of various women. In one session the men inhaled oxytocin; in another, a placebo. Under the influence of real oxytocin, their attraction to the women in the photographs increased &mdash; not because dopamine surged, but because negative emotions receded. We will explore the connections between oxytocin, trust, and altruism in much greater depth later.<sup>6</sup></p>
 </main>
 
 <div class="pdiv"><span></span></div>

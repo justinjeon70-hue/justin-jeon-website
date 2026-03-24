@@ -11,7 +11,7 @@
 <style>
 :root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:20px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
 
 /* Progress bar */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--coral),var(--gold));z-index:1000;width:0%;transition:width .1s linear}
@@ -25,16 +25,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 /* Chapter header */
 .chapter-header{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 40%,#4A1A2A 100%);color:#fff;text-align:center;padding:64px 40px 56px;position:relative;overflow:hidden}
 .chapter-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.15) 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,rgba(196,148,74,.1) 0%,transparent 60%);pointer-events:none}
-.chapter-header-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.chapter-header-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
 .part-label{font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chapter-title{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:0}
+.chapter-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:0}
 
 /* Content */
-.content{max-width:780px;margin:0 auto;padding:56px 40px 48px}
+.content{max-width:720px;margin:0 auto;padding:56px 40px 48px}
 .content p{margin-bottom:18px;text-align:justify;hyphens:auto}
-.content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
+.content h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;color:var(--rose);margin-top:52px;margin-bottom:18px;padding-top:28px;border-top:1px solid var(--divider)}
 .content h3:first-child{border-top:none;padding-top:0;margin-top:0}
-.content h4{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
+.content h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--dark);margin-top:36px;margin-bottom:14px}
 .content a{color:var(--coral);text-decoration:none;border-bottom:1px solid rgba(212,114,106,.3);transition:border-color .2s}
 .content a:hover{border-color:var(--coral)}
 .content sup{font-size:11px;color:var(--gold);font-weight:600}
@@ -47,16 +47,16 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .pq::before{margin-bottom:20px}.pq::after{margin-top:20px}
 
 /* Highlight box */
-.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:18px;line-height:1.75}
+.hl{background:var(--hl);border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.75}
 .hl strong{color:var(--dark)}
 
 /* Footnotes */
-.footnote{font-size:16px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
+.footnote{font-size:14px;color:var(--light);font-style:italic;margin:18px 0;padding-left:16px;border-left:2px solid var(--divider)}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin:28px 0}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:17px}
-.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:16px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:15px}
+.table-wrap th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:14px}
 .table-wrap td{padding:10px 14px;border-bottom:1px solid var(--divider)}
 .table-wrap tr:nth-child(even) td{background:rgba(253,248,240,.5)}
 
@@ -65,20 +65,20 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .chapter-figure img{max-width:100%;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
 
 /* Chapter nav */
-.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:780px;margin:0 auto;padding:48px 40px 56px}
+.chapter-nav{display:flex;justify-content:space-between;align-items:stretch;gap:20px;max-width:720px;margin:0 auto;padding:48px 40px 56px}
 .chapter-nav a{display:flex;flex-direction:column;justify-content:center;text-decoration:none;padding:20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid var(--divider);transition:all .2s;flex:1;max-width:48%}
 .chapter-nav a:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--coral);transform:translateY(-2px)}
 .nav-prev{text-align:left}
 .nav-next{text-align:right}
 .nav-arrow{font-size:20px;color:var(--coral);display:block;margin-bottom:4px}
 .nav-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
-.nav-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);line-height:1.35;display:block}
+.nav-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.35;display:block}
 .nav-disabled{visibility:hidden;flex:1}
 
 /* Divider */
 .pdiv{text-align:center;padding:48px 0 0}
 .pdiv span{display:inline-block;width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--coral),transparent);position:relative}
-.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:20px}
+.pdiv span::after{content:'\2767';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 12px;color:var(--coral);font-size:17px}
 
 /* Footer */
 footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
@@ -138,37 +138,7 @@ footer a{color:var(--coral);text-decoration:none}
 
 <main class="content" id="chapterContent">
 
-<p>-- Oxytocin and Cardiovascular Disease</p>
-<p>Not long ago, a group of leading cardiologists in Korea organized a vascular health conference called <em>Pulse of Asia</em>. As chair of the cardiac rehabilitation committee and a session moderator and panelist, I was invited to participate. After two grueling days of conference sessions and manuscript writing, the stress had taken its toll &mdash; I felt utterly drained. It just so happened that InBody, a body composition analysis company exhibiting at the conference, had brought a new blood pressure monitor and was offering free readings. I figured, why not? I sat down and stuck my arm in the cuff.</p>
-<p>That's when things went sideways. Out of nowhere, professors and graduate students started gathering around to watch. They all seemed curious about what kind of blood pressure readings a professor known for exercising religiously would get. Suddenly, my blood pressure had become a public spectacle. I felt like I'd walked into some kind of trap.</p>
-<p><em>Oh no, what if it comes out high? That can't happen.</em> The pressure of being watched must have gotten to me, because when the display lit up, I saw numbers I'd never seen in my life. 141/100 mmHg. Boom. Full-blown hypertension. The crowd behind me started murmuring. My face turned beet red, and I stammered that something must be wrong with the machine and asked them to try again. The InBody technician was flustered too, practically tripping over his words. "Um, Professor... I think the cuff might be too small for your arm. I'm so sorry." They measured again. 139/101 mmHg. <em>Is this really happening?</em> The cardiologists standing nearby looked embarrassed and quietly slipped away, one by one. I was mortified. I felt branded as someone who couldn't even take care of his own body. What on earth was going on?</p>
-<h3>Type A Behavior and Type B Behavior</h3>
-<p>I fled back into the conference hall like a man escaping a crime scene. I wanted the floor to swallow me whole. <em>What will the other professors think of me? What will my own students say?</em> I couldn't pull myself together. I slumped into a chair and sat there in a daze. The conference program was nothing more than background noise now. Then the excuses started creeping in. <em>I've been pushing my body too hard lately. Those sleepless nights spent writing papers must have caused this absurd situation. That late-night dinner with my colleague yesterday must have been the nail in the coffin.</em> But none of it settled my mind.</p>
-<p>The next day, I measured my blood pressure again at the university using the machine I always used. 111/71 mmHg. Completely normal. It made no sense. I was desperate to round up every professor and student who had witnessed my humiliation the day before and announce my new reading. Why was it hypertensive yesterday and normal today? Can a momentary burst of stress really spike your blood pressure that dramatically?</p>
-<p>Absolutely it can. Stress doesn't just elevate blood pressure &mdash; it raises cholesterol levels too, and it can trigger a myocardial infarction in otherwise healthy individuals, leading to sudden death. This brings us to a fascinating story about Meyer Friedman, a renowned cardiologist who first proposed the theory that people with Type A personalities face a greater risk of heart disease. One day, the sofas in the waiting room of Friedman's practice needed reupholstering. After the upholsterer finished the job, he turned to Dr. Friedman with a curious question: "Doctor, what brings most of your patients in? Strangely, only the front edges of the sofas are worn out."</p>
-<p>At first, Friedman didn't think much of the remark. But much later, as he happened to glance at those waiting room sofas, the upholsterer's words suddenly came flooding back. "Isn't it strange? I'd brushed off what he said, but that day it just kept ringing in my ears." From that day on, he began carefully observing the patients sitting in his waiting room. A striking number of them weren't sitting back comfortably and waiting their turn. Instead, they perched nervously on the edge of the sofa, habitually checking their watches, anxiously waiting for their name to be called. The more impatient ones didn't hesitate to ask the nurse &mdash; repeatedly &mdash; when their turn was coming.</p>
-<p>Witnessing this firsthand, Friedman began to wonder whether patient stress might be connected to heart disease. He felt a sudden urge to test his hypothesis through research. A year later, he conducted a remarkably clever study with forty accountants. His hypothesis: cholesterol levels would spike in March, the most stressful month for accountants due to tax season. Sure enough, the blood samples confirmed it &mdash; the accountants' cholesterol levels shot up dramatically during March. Through this series of observations and experiments, Friedman compiled his findings on the relationship between mental stress and heart disease into a book titled <em>Type A Behavior and Your Heart</em>.[<sup>17</sup>-1]</p>
-<p>So what exactly defines a Type A personality? These individuals tend to be competitive, quick to anger, impatient, aggressive, and domineering. Type B individuals, by contrast, are generally optimistic, laid-back, and slow to become agitated. The book drew sharply divided reactions when it was first published. The general public found it fascinating and deeply relatable, but the academic community &mdash; particularly cardiologists and medical experts &mdash; was highly skeptical and critical. Since then, however, numerous studies have been conducted, and Friedman's hypothesis is now widely accepted as established fact.[<sup>17</sup>-1]</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Type A Behavior</th><th>Type B Behavior</th></tr></thead><tbody>
-<tr><td>Speaks rapidly and cannot tolerate slowness</td><td>Calm and unhurried</td></tr>
-<tr><td>Always tries to do two or more things at once</td><td>Relaxed and easygoing about everything</td></tr>
-<tr><td>Trapped in preconceptions</td><td>Not conceited</td></tr>
-<tr><td>Never finds time to enjoy life</td><td>Less competitive in all things</td></tr>
-<tr><td>Perpetually dissatisfied with life</td><td>Empathizes easily with others</td></tr>
-<tr><td>Evaluates others' behavior on multiple dimensions</td><td>Slow to anger</td></tr>
-<tr><td>Aggressive and competitive in everything</td><td>Tolerant, understanding, and generous</td></tr>
-</tbody></table></div>
-<p><em>Differences between Type A and Type B behavior</em></p>
-<h3>Oxytocin Is the Answer</h3>
-<p>So what does oxytocin have to do with stress? Let's start with the anatomy and physiology. To release stress hormones, the hypothalamic-pituitary-adrenal (HPA) axis must be activated &mdash; but the same hypothalamus-pituitary pathway is also activated to release oxytocin. The difference lies in which part of the pituitary gland is involved. The anterior pituitary regulates the secretion of thyroid hormones, stress hormones, and sex hormones, while the posterior pituitary releases oxytocin and vasopressin. When stress hormones rise, oxytocin levels climb alongside them, acting as a natural counterbalance to the harmful effects of stress hormones. But if oxytocin fails to rise with the stress hormones, various mental and physical problems can develop. As I mentioned earlier, this is precisely why PTSD symptoms improve when patients inhale oxytocin.[<sup>17</sup>-2]</p>
-<p>In animal studies, stress can be induced in various ways &mdash; by frightening them, isolating them socially, restraining them so they can't move, shaking them vigorously, or forcing animals that can't swim to swim. And every single time, the body produces new oxytocin in response. This isn't limited to animals &mdash; human studies have confirmed it too. When people are asked to give public speeches, explain themselves before a panel of strangers, or endure interpersonal stress, their oxytocin levels spike rapidly. This explains why my blood pressure surged in that awkward situation at the conference. The oxytocin that rises in response to stress doesn't just reduce stress hormone secretion &mdash; it also lowers chronic inflammation (the root of all disease, as they say) and alleviates anxiety. Animals that can't produce oxytocin properly are unable to overcome these stressful situations and instead secrete cortisol, the stress hormone. Oxytocin works on GABA receptors to reduce cortisol secretion, but when oxytocin can't do its job, even more cortisol is released. In this way, oxytocin acts like a sponge, absorbing the cortisol that stress generates.[<sup>17</sup>-3]</p>
-<p>Studies showing that couples who hug more often and for longer periods have higher oxytocin levels and lower blood pressure; research demonstrating that administering oxytocin to rats with ischemic heart disease inhibits cardiac muscle damage; and findings that oxytocin stimulation of nerves improves heart failure &mdash; all of these consistently prove that oxytocin protects the heart from stress and improves its function. In today's world, almost no one lives in an environment completely free from stress. But perhaps the people who cope with stress most successfully &mdash; and even grow from it &mdash; are those who have effective strategies for managing it.[<sup>17</sup>-4]</p>
-<p>A few years ago, I went through a tremendously difficult period at the university involving administrative conflicts, and the relentless stress sent my health markers spiraling downward. The stress I endured during that time was probably the worst I'd experienced in my entire life. Around the same time, our family adopted a dog named Gurumi (meaning "cloud" in Korean) &mdash; a fluffy, adorable poodle who would trot over and burrow into my arms. Gurumi was a daily stress reliever. Late at night, as I stroked her while she slept on my lap, I could feel my mind settling. It was as though she was absorbing my stress. Looking back, petting Gurumi must have triggered a surge of oxytocin that recharged my depleted body and mind &mdash; like plugging a drained battery back into its charger &mdash; and melted the stress away.</p>
-<div class="hl"><strong>Oxytocin Lifestyle Tip: Preventing Aging</strong>
-South Korea is an aging society. Since 2000, the elderly population has been growing steadily, and the United Nations has projected that by 2050, Korea will be the second most aged nation in the world, after Hong Kong. It's a sobering forecast. Getting old is hard enough &mdash; but getting old <em>and</em> sick is truly miserable. Retirees who stop seeing people and isolate themselves at home age rapidly. But elderly people who regularly meet with friends, actively participate in religious communities, and create new social circles stay significantly healthier even as they age. So what does an oxytocin-friendly lifestyle look like for older adults?
-Above all, create reasons to see people. If your body aches, that's all the more reason to get out of the house. Organize reunions with hometown friends, college classmates, or peers your age. Invent every excuse you can and use every event as an opportunity to meet people. If starting a new group feels daunting, seek out existing ones &mdash; badminton, golf, table tennis, tennis, chess, hiking. More refined gatherings like movie clubs, book groups, cultural classes, calligraphy circles, or poetry reading societies are wonderful too. Any gathering is fine, as long as it doesn't devolve into all-day binge drinking &mdash; a bit of wine with good conversation is perfectly welcome.
-Pay attention to your diet. As you age, protein intake becomes crucial, but you should also increase your consumption of probiotics and vegetables for gut health. Volunteering can also be a powerful source of vitality. Don't think of yourself as society's burden &mdash; look for those who need your help. When you extend kindness to others through volunteer work, it adds meaning to your life and triggers a flood of oxytocin. Oxytocin prevents age-related diseases and dementia, and it transforms you into a kinder, less cantankerous person in your later years.</div>
+
 </main>
 
 <div class="pdiv"><span></span></div>
