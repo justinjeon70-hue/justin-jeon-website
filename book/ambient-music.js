@@ -211,21 +211,18 @@
     if (!ctx) initAudio();
     if (ctx.state === 'suspended') ctx.resume();
 
+    isPlaying = true;
     updateButton('loading');
 
     loadSamples(function() {
-      if (!isPlaying) {
-        isPlaying = true;
-        masterGain.gain.cancelScheduledValues(ctx.currentTime);
-        masterGain.gain.setValueAtTime(0, ctx.currentTime);
-        masterGain.gain.linearRampToValueAtTime(1.0, ctx.currentTime + 2);
-        playPhrase();
-        localStorage.setItem(STORAGE_KEY, 'on');
-        updateButton('playing');
-      }
+      if (!isPlaying) return; // user stopped during loading
+      masterGain.gain.cancelScheduledValues(ctx.currentTime);
+      masterGain.gain.setValueAtTime(0, ctx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(1.0, ctx.currentTime + 2);
+      playPhrase();
+      localStorage.setItem(STORAGE_KEY, 'on');
+      updateButton('playing');
     });
-
-    isPlaying = true;
   }
 
   function stopMusic() {
