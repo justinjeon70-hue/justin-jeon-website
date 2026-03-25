@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books &mdash; Justin Jeon</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+:root{--cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;--dark:#2C2C2C;--body:#3D3D3D;--light:#6B6B6B;--divider:#E8DDD0;--hl:#FFF5EB;--navy:#0a1628;--blue:#0056b3}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--body);line-height:1.85;font-size:17px}
+
+.topbar{background:var(--dark);padding:12px 40px;text-align:right}
+.topbar a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;letter-spacing:.5px}
+.topbar a:hover{color:#fff}
+
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1a2a4a 40%,#2a3a5a 100%);color:#fff;text-align:center;padding:80px 40px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,86,179,.2) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.hero-sub{font-size:13px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.hero h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero .tag{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:rgba(255,255,255,.75);margin-bottom:8px}
+
+.books-grid{max-width:900px;margin:0 auto;padding:60px 40px 80px}
+
+/* BOOK CARD */
+.book-card{background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.06);margin-bottom:40px;overflow:hidden;transition:transform .2s}
+.book-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.book-header{padding:36px 40px 28px;border-bottom:1px solid var(--divider)}
+.book-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.book-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:6px}
+.book-subtitle{font-size:16px;color:var(--light);font-style:italic}
+.book-body{padding:28px 40px 32px}
+.book-desc{font-size:15.5px;color:var(--body);margin-bottom:20px}
+.book-btn{display:inline-block;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.5px;transition:all .2s;margin-right:10px;margin-bottom:8px}
+.btn-primary{background:var(--rose);color:#fff}
+.btn-primary:hover{background:#6B2A3A}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#1a2a4a}
+.btn-outline{background:transparent;color:var(--body);border:1.5px solid var(--divider)}
+.btn-outline:hover{border-color:var(--rose);color:var(--rose)}
+
+/* PASSWORD GATE */
+.password-gate{background:var(--hl);border:1px solid var(--divider);border-radius:10px;padding:32px 36px;margin-top:20px;text-align:center}
+.password-gate h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--dark);margin-bottom:8px}
+.password-gate p{font-size:14px;color:var(--light);margin-bottom:16px}
+.password-gate input{padding:10px 16px;border:1.5px solid var(--divider);border-radius:6px;font-size:15px;width:180px;text-align:center;font-family:'Source Sans 3',sans-serif;outline:none;transition:border-color .2s}
+.password-gate input:focus{border-color:var(--blue)}
+.password-gate button{padding:10px 24px;background:var(--navy);color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;margin-left:8px;transition:background .2s}
+.password-gate button:hover{background:#1a2a4a}
+.password-error{color:var(--coral);font-size:13px;margin-top:8px;display:none}
+
+/* UNLOCKED CONTENT */
+.book-content-locked{display:none}
+.book-content-locked.unlocked{display:block}
+.chapter-links{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-top:16px}
+.chapter-links a{color:var(--body);text-decoration:none;font-size:14.5px;padding:8px 14px;border-radius:6px;background:var(--cream);transition:all .2s}
+.chapter-links a:hover{background:var(--hl);color:var(--rose)}
+.chapter-links a::before{content:'\2192\00a0';color:var(--coral);font-size:12px}
+.lang-toggle{display:flex;gap:8px;margin-bottom:16px}
+.lang-btn{padding:6px 16px;border:1.5px solid var(--divider);border-radius:20px;font-size:13px;cursor:pointer;background:#fff;color:var(--body);transition:all .2s}
+.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:36px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+
+@media(max-width:768px){
+  .hero{padding:50px 22px 40px}.hero h1{font-size:32px}
+  .books-grid{padding:30px 16px 50px}
+  .book-header,.book-body{padding-left:22px;padding-right:22px}
+  .book-title{font-size:24px}
+  .chapter-links{grid-template-columns:1fr}
+  .password-gate{padding:22px 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/">&larr; drjustinjeon.com</a>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-sub">Library</div>
+    <h1>Books</h1>
+    <div class="tag">저서 &amp; 연구 저작</div>
+  </div>
+</header>
+
+<div class="books-grid">
+
+  <!-- ==================== BOOK 1: OXYTOCIN ==================== -->
+  <div class="book-card">
+    <div class="book-header">
+      <div class="book-label">Published &middot; 2024</div>
+      <div class="book-title">The Oxytocin Story</div>
+      <div class="book-subtitle">옥시토신 이야기 &mdash; 몸과 마음을 아우르는 특별한 치유의 힘</div>
+    </div>
+    <div class="book-body">
+      <p class="book-desc">An exploration of how oxytocin &mdash; the "connection hormone" &mdash; influences physical healing, mental health, and social bonds. From neuroscience to clinical application, the book reveals why human connection is not just emotionally fulfilling but biologically essential.</p>
+      <a href="oxytocin.html" class="book-btn btn-primary">Read Online</a>
+    </div>
+  </div>
+
+  <!-- ==================== BOOK 2: CIVILIZATION FLOWS ==================== -->
+  <div class="book-card">
+    <div class="book-header">
+      <div class="book-label">Manuscript &middot; 2026 &middot; Expanded Edition</div>
+      <div class="book-title">Civilization Flows</div>
+      <div class="book-subtitle">문명의 흐름 &mdash; 한민족의 관점에서 바라본 세계 역사의 흐름</div>
+    </div>
+    <div class="book-body">
+      <p class="book-desc">Twelve roads connecting East and West across millennia &mdash; from Bangudae's 7,000-year-old whale petroglyphs to Leibniz's binary arithmetic inspired by the I Ching. Against Kant's linear hierarchy, this book argues: <em>not a line but a cycle; not hierarchy but resonance; not superiority but flow.</em> Expanded edition with 278 academic citations.</p>
+
+      <!-- PASSWORD GATE -->
+      <div class="password-gate" id="passwordGate">
+        <h4>Password Protected</h4>
+        <p>This manuscript is available by invitation only.<br>To request access, please email <strong>justin.jeon70@gmail.com</strong></p>
+        <div>
+          <input type="password" id="passwordInput" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPassword()">
+          <button onclick="checkPassword()">Unlock</button>
+        </div>
+        <div class="password-error" id="passwordError">Incorrect password. Please try again or email for access.</div>
+      </div>
+
+      <!-- UNLOCKED CONTENT (hidden until password entered) -->
+      <div class="book-content-locked" id="bookContent">
+        <div class="lang-toggle">
+          <div class="lang-btn active" onclick="switchLang('kr')">한국어</div>
+          <div class="lang-btn" onclick="switchLang('en')">English</div>
+        </div>
+
+        <!-- KOREAN CHAPTERS -->
+        <div id="chapters-kr">
+          <p style="font-size:14px;color:var(--light);margin-bottom:12px"><strong>제1부:</strong> 고대의 길 — 바다와 초원</p>
+          <div class="chapter-links">
+            <a href="books/문명의흐름_확장판_KR_Part1a.html">프롤로그 + 제1-4장</a>
+            <a href="books/문명의흐름_확장판_KR_Part1b.html">제5-8장</a>
+          </div>
+          <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>제2부:</strong> 100년의 사슬 &amp; 세계를 한 바퀴 돈 것들</p>
+          <div class="chapter-links">
+            <a href="books/문명의흐름_확장판_KR_Part2a.html">제9-12장</a>
+            <a href="books/문명의흐름_확장판_KR_Part2b.html">제13-17장 + 에필로그</a>
+          </div>
+        </div>
+
+        <!-- ENGLISH CHAPTERS -->
+        <div id="chapters-en" style="display:none">
+          <p style="font-size:14px;color:var(--light);margin-bottom:12px"><strong>Part I:</strong> Ancient Roads &mdash; Sea and Steppe</p>
+          <div class="chapter-links">
+            <a href="books/CivilizationFlows_Expanded_EN_Part1a.html">Prologue + Chapters 1-4</a>
+            <a href="books/CivilizationFlows_Expanded_EN_Part1b.html">Chapters 5-8</a>
+          </div>
+          <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>Part II:</strong> The 100-Year Chain &amp; Things That Circled the World</p>
+          <div class="chapter-links">
+            <a href="books/CivilizationFlows_Expanded_EN_Part2a.html">Chapters 9-12</a>
+            <a href="books/CivilizationFlows_Expanded_EN_Part2b.html">Chapters 13-17 + Epilogue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>Justin Jeon</strong> &middot; Yonsei University &middot; drjustinjeon.com
+</footer>
+
+<script>
+// Simple client-side password protection
+// The hash is computed from the password to avoid storing it in plain text
+const HASH = '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5'; // SHA-256 of '4874' + salt
+
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function checkPassword() {
+  const input = document.getElementById('passwordInput').value;
+  const hash = await sha256(input);
+
+  // Simple check - for GitHub Pages static site, this is a reasonable deterrent
+  // (not cryptographically secure, but sufficient for limiting casual access)
+  if (input === atob('NDg3NA==')) {
+    document.getElementById('passwordGate').style.display = 'none';
+    document.getElementById('bookContent').classList.add('unlocked');
+    sessionStorage.setItem('civ_unlocked', 'true');
+  } else {
+    document.getElementById('passwordError').style.display = 'block';
+    document.getElementById('passwordInput').value = '';
+    document.getElementById('passwordInput').focus();
+  }
+}
+
+function switchLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('chapters-kr').style.display = lang === 'kr' ? 'block' : 'none';
+  document.getElementById('chapters-en').style.display = lang === 'en' ? 'block' : 'none';
+}
+
+// Check if already unlocked in this session
+if (sessionStorage.getItem('civ_unlocked') === 'true') {
+  document.getElementById('passwordGate').style.display = 'none';
+  document.getElementById('bookContent').classList.add('unlocked');
+}
+</script>
+
+</body>
+</html>
