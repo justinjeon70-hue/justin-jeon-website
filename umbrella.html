@@ -472,6 +472,32 @@ body {
         text-align: center; padding: 60px 20px;
         color: #8b7b6b; font-size: 16px;
     }
+
+    .sort-section {
+        max-width: 900px;
+        margin: 0 auto 16px;
+        padding: 0 16px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+    .sort-btn {
+        padding: 8px 18px;
+        border: 1.5px solid rgba(107,79,61,0.2);
+        border-radius: 20px;
+        background: #fff;
+        color: #6b5a4e;
+        font-size: 13px;
+        font-family: 'Noto Sans KR', sans-serif;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .sort-btn:hover { border-color: #8B6F47; color: #8B6F47; }
+    .sort-btn.active {
+        background: #6b5a4e;
+        color: #fff;
+        border-color: #6b5a4e;
+    }
 </style>
 </head>
 <body>
@@ -492,6 +518,11 @@ body {
             <input type="text" id="searchInput" placeholder="글 검색... (제목, 본문, 날짜)" oninput="searchPosts()">
             <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none">&#x2715;</button>
         </div>
+    <div class="sort-section">
+        <button class="sort-btn" id="sortOldest" onclick="sortPosts('oldest')">오래된 글부터 ↑</button>
+        <button class="sort-btn" id="sortNewest" onclick="sortPosts('newest')">최신 글부터 ↓</button>
+    </div>
+
     </div>
 
     </div>
@@ -673,6 +704,51 @@ renderPosts('all');
         if (nr) nr.style.display = 'none';
         document.getElementById('currentTheme').textContent = '\uc804\uccb4\ubcf4\uae30';
         document.getElementById('postCountDisplay').textContent = POSTS.length + '\ud3b8\uc758 \uae00';
+    }
+
+    var currentSort = 'default';
+    
+    function sortPosts(order) {
+        // Update button states
+        document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
+        if (order === 'oldest') {
+            document.getElementById('sortOldest').classList.add('active');
+        } else if (order === 'newest') {
+            document.getElementById('sortNewest').classList.add('active');
+        }
+        
+        currentSort = order;
+        
+        // Get current visible cards
+        var container = document.getElementById('postsContainer');
+        var cards = Array.from(container.querySelectorAll('.post-card'));
+        
+        cards.sort(function(a, b) {
+            var dateA = getDateFromCard(a);
+            var dateB = getDateFromCard(b);
+            
+            if (order === 'oldest') {
+                return dateA - dateB;
+            } else {
+                return dateB - dateA;
+            }
+        });
+        
+        // Re-append in sorted order
+        cards.forEach(function(card) {
+            container.appendChild(card);
+        });
+    }
+    
+    function getDateFromCard(card) {
+        var dateText = card.querySelector('.post-date');
+        if (!dateText) return 0;
+        var text = dateText.textContent;
+        var match = text.match(/(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일/);
+        if (match) {
+            return new Date(parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3])).getTime();
+        }
+        return 0;
     }
 </script>
 
