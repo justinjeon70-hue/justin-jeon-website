@@ -40,6 +40,12 @@ body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var
 .btn-outline{background:transparent;color:var(--body);border:1.5px solid var(--divider)}
 .btn-outline:hover{border-color:var(--rose);color:var(--rose)}
 
+/* NEW BADGE */
+.new-badge{display:inline-block;background:linear-gradient(135deg,#e74c3c,#ff6b6b);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-left:10px;vertical-align:middle;position:relative;animation:badge-pulse 2s ease-in-out infinite;box-shadow:0 2px 8px rgba(231,76,60,.35)}
+@keyframes badge-pulse{0%,100%{transform:scale(1);box-shadow:0 2px 8px rgba(231,76,60,.35)}50%{transform:scale(1.08);box-shadow:0 3px 14px rgba(231,76,60,.5)}}
+.new-dot{position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#FFD700;border-radius:50%;animation:dot-blink 1.2s ease-in-out infinite}
+@keyframes dot-blink{0%,100%{opacity:1}50%{opacity:.3}}
+
 /* PASSWORD GATE */
 .password-gate{background:var(--hl);border:1px solid var(--divider);border-radius:10px;padding:32px 36px;margin-top:20px;text-align:center}
 .password-gate h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--dark);margin-bottom:8px}
@@ -107,7 +113,7 @@ footer strong{color:rgba(255,255,255,.9)}
   <div class="book-card">
     <div class="book-header">
       <div class="book-label">Essay Collection &middot; 2011&ndash;2025</div>
-      <div class="book-title">빗속의 우산 하나</div>
+      <div class="book-title">빗속의 우산 하나 <span class="new-badge">NEW<span class="new-dot"></span></span></div>
       <div class="book-subtitle">An Umbrella in the Rain &mdash; 전용관 교수의 14년간의 페이스북 글 모음</div>
     </div>
     <div class="book-body">
@@ -120,7 +126,7 @@ footer strong{color:rgba(255,255,255,.9)}
   <div class="book-card">
     <div class="book-header">
       <div class="book-label">Manuscript &middot; 2026 &middot; Expanded Edition</div>
-      <div class="book-title">Civilization Flows</div>
+      <div class="book-title">Civilization Flows <span class="new-badge">NEW<span class="new-dot"></span></span></div>
       <div class="book-subtitle">문명의 흐름 &mdash; 한민족의 관점에서 바라본 세계 역사의 흐름</div>
     </div>
     <div class="book-body">
