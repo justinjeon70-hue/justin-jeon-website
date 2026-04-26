@@ -2,12 +2,100 @@
 <html lang="en"><head><meta charset="UTF-8">
 <title>Civilization Flows Expanded — Chapters 9-12</title>
 <style>
-body { font-family: Georgia, 'Times New Roman', serif; max-width: 800px; margin: 0 auto; padding: 40px; font-size: 11pt; line-height: 2; color: #1a1a1a; }
-h1 { font-size: 24pt; color: #0a1628; border-bottom: 2px solid #0056b3; padding-bottom: 10px; margin-top: 60px; }
-h2 { font-size: 16pt; color: #0056b3; margin-top: 30px; }
-p { text-align: justify; margin-bottom: 12px; }
-.citation { color: #0056b3; }
-blockquote { border-left: 3px solid #0056b3; padding-left: 20px; color: #444; font-style: italic; margin: 20px 0; }
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+:root {
+  --ink: #2a2a2a;
+  --ink-soft: #444;
+  --ink-faint: #6b6b6b;
+  --accent: #0a1628;
+  --accent-blue: #0056b3;
+  --bg: #fafaf3;
+  --bg-soft: #f4eee0;
+  --border: #e0d8c4;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 36px 100px;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--ink);
+  background: var(--bg);
+  word-spacing: 0.02em;
+}
+h1 {
+  font-size: 30pt;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 14px;
+  margin: 60px 0 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+h1:first-of-type { margin-top: 12px; }
+h2 {
+  font-size: 20pt;
+  color: var(--accent-blue);
+  margin: 44px 0 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+h3 {
+  font-size: 15pt;
+  color: var(--accent);
+  margin: 30px 0 12px;
+  font-weight: 600;
+  font-style: italic;
+}
+p {
+  text-align: left;
+  margin: 0 0 20px;
+  hyphens: auto;
+}
+em { font-style: italic; color: var(--ink-soft); }
+strong { color: var(--accent); font-weight: 600; }
+a { color: var(--accent-blue); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { background: rgba(0,86,179,0.08); }
+blockquote {
+  border-left: 3px solid var(--accent-blue);
+  padding: 10px 26px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 28px 0;
+  background: rgba(0, 86, 179, 0.04);
+  font-size: 0.97em;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.citation, .cite {
+  color: var(--accent-blue);
+  font-size: 0.85em;
+  font-style: normal;
+}
+ul, ol { padding-left: 28px; margin: 0 0 20px; }
+li { margin-bottom: 6px; line-height: 1.7; }
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: 40px 0;
+}
+@media (max-width: 720px) {
+  body { padding: 32px 20px 60px; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 24pt; margin-top: 36px; }
+  h2 { font-size: 17pt; margin-top: 32px; }
+  h3 { font-size: 13.5pt; }
+  blockquote { padding: 8px 18px; }
+}
+@media print {
+  body { background: white; max-width: none; padding: 0; font-size: 11.5pt; }
+  h1 { page-break-before: always; }
+  h1:first-of-type { page-break-before: auto; }
+  blockquote { background: none; }
+}
 </style></head><body>
 
 <h1>Chapter 9<br>The World Silver Made — From Magellan to Manila</h1>
