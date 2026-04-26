@@ -78,6 +78,231 @@ footer strong{color:rgba(255,255,255,.9)}
   .chapter-links{grid-template-columns:1fr}
   .password-gate{padding:22px 18px}
 }
+
+
+/* ==== Peru book card — bespoke design ==== */
+.peru-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 32px rgba(0,0,0,.10);
+  margin-bottom: 48px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative;
+}
+.peru-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.14);
+}
+.peru-hero {
+  position: relative;
+  height: 320px;
+  background-image:
+    linear-gradient(180deg, rgba(15,28,48,.0) 0%, rgba(15,28,48,.15) 50%, rgba(15,28,48,.85) 100%),
+    url('books/peru/media/machu_picchu.jpg');
+  background-size: cover;
+  background-position: center 35%;
+}
+.peru-hero-inner {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 32px 40px 28px;
+  color: #fff;
+}
+.peru-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #f0c674;
+  margin-bottom: 10px;
+}
+.peru-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: #f0c674;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+.peru-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+.peru-title .new-badge {
+  vertical-align: middle;
+  margin-left: 14px;
+}
+.peru-title-en {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,.92);
+  letter-spacing: .3px;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
+}
+
+.peru-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 1px solid var(--divider);
+}
+.peru-strip a {
+  display: block;
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s ease;
+}
+.peru-strip a::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 18px 10px 8px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(0,0,0,.7), transparent);
+  text-align: center;
+}
+.peru-strip a:hover { transform: scale(1.04); }
+
+.peru-body {
+  padding: 36px 44px 40px;
+}
+.peru-desc {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--body);
+  margin-bottom: 28px;
+  font-family: 'Source Sans 3', Georgia, serif;
+}
+.peru-desc::first-line { font-variant: small-caps; letter-spacing: .5px; }
+
+.peru-toggle {
+  display: flex;
+  gap: 0;
+  margin: 0 auto 28px;
+  width: fit-content;
+  border: 1.5px solid #d9c8a8;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #fbf6ec;
+}
+.peru-toggle .lang-btn {
+  padding: 9px 26px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: transparent;
+  color: #8a6d3b;
+  border: none;
+  transition: all .25s;
+}
+.peru-toggle .lang-btn.active {
+  background: linear-gradient(135deg, #b8893f, #d2a85e);
+  color: #fff;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,.15);
+}
+
+.peru-part {
+  margin-top: 30px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.peru-part::before,
+.peru-part::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d9c8a8, transparent);
+}
+.peru-part-roman {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 600;
+  color: #b8893f;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.peru-part-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+}
+
+.peru-chapters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.peru-chapters a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 16px 11px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--body);
+  font-family: 'Source Sans 3', Georgia, serif;
+  font-size: 14.5px;
+  line-height: 1.5;
+  transition: all .2s;
+  border-left: 3px solid transparent;
+}
+.peru-chapters a:hover {
+  background: #fbf6ec;
+  border-left-color: #c8a04e;
+  color: var(--dark);
+  padding-left: 18px;
+}
+.peru-chapters a .ch-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  color: #b8893f;
+  flex: 0 0 32px;
+  text-align: right;
+}
+.peru-chapters a .ch-title {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .peru-hero { height: 240px; }
+  .peru-hero-inner { padding: 22px 20px 18px; }
+  .peru-title { font-size: 22px; }
+  .peru-title-en { font-size: 14px; }
+  .peru-strip { grid-template-columns: repeat(2, 1fr); }
+  .peru-strip a { height: 90px; }
+  .peru-strip a::after { font-size: 10px; }
+  .peru-body { padding: 24px 20px 28px; }
+  .peru-part-title { font-size: 14px; }
+  .peru-chapters a { font-size: 13.5px; padding: 9px 12px; }
+}
+
 </style>
 </head>
 <body>
@@ -97,93 +322,138 @@ footer strong{color:rgba(255,255,255,.9)}
 <div class="books-grid">
 
   <!-- ==================== BOOK 4: 페루-쿠스코-마추피추 여행기 ==================== -->
-  <div class="book-card">
-    <div class="book-header">
-      <div class="book-label">Travelogue &amp; Civilization Critique &middot; 2026</div>
-      <div class="book-title">페루-쿠스코-마추피추 여행기 <span class="new-badge">NEW<span class="new-dot"></span></span></div>
-      <div class="book-subtitle">Peru&ndash;Cusco&ndash;Machu Picchu Travelogue &mdash; 잉카 문명 답사에서 시작된 18장의 사유</div>
-    </div>
-    <div class="book-body">
-      <p class="book-desc">2026년 봄 페루 답사를 토대로 한 여행 에세이이자 문명 비평서. 삭사이와망의 거석에서 티폰의 물길까지, 잉카가 95년 만에 세운 제국의 비밀을 묻고 &mdash; 카하마르카에서 빌카밤바까지 정복이라 불린 학살을 따라간다. 이어 그리스에서 AI까지 분리의 사상사를 추적하고, Wetiko라는 이름의 질병을 진단한 뒤, Perichoresis와 Salutogenesis, 그리고 동양의 도·화쟁·기에서 치유의 길을 묻는다. 잉카·조선·크리, 세 길이 한 책에서 만난다.</p>
+  <div class="peru-card">
 
-      <div class="lang-toggle">
+    <!-- HERO -->
+    <div class="peru-hero">
+      <div class="peru-hero-inner">
+        <div class="peru-label">Travelogue &amp; Civilization Critique &middot; 2026</div>
+        <div class="peru-title">페루-쿠스코-마추피추 여행기 <span class="new-badge">NEW<span class="new-dot"></span></span></div>
+        <div class="peru-title-en">Peru&ndash;Cusco&ndash;Machu Picchu Travelogue</div>
+      </div>
+    </div>
+
+    <!-- PHOTO STRIP -->
+    <div class="peru-strip">
+      <a href="books/peru/en_ch01_draft_v1.html" data-caption="Sacsayhuamán" style="background-image:url('books/peru/media/sacsayhuaman_1.jpg')"></a>
+      <a href="books/peru/en_ch04_draft_v1.html" data-caption="Pisac" style="background-image:url('books/peru/media/pisac_2.jpg')"></a>
+      <a href="books/peru/en_ch03_draft_v1.html" data-caption="Tipón" style="background-image:url('books/peru/media/tipon_1.jpg')"></a>
+      <a href="books/peru/en_ch07_draft_v1.html" data-caption="Coricancha" style="background-image:url('books/peru/media/coricancha_1.jpg')"></a>
+    </div>
+
+    <div class="peru-body">
+
+      <p class="peru-desc">2026년 봄 페루 답사를 토대로 한 여행 에세이이자 문명 비평서. 삭사이와망의 거석에서 티폰의 물길까지, 잉카가 95년 만에 세운 제국의 비밀을 묻고 &mdash; 카하마르카에서 빌카밤바까지 정복이라 불린 학살을 따라간다. 이어 그리스에서 AI까지 분리의 사상사를 추적하고, Wetiko라는 이름의 질병을 진단한 뒤, Perichoresis와 Salutogenesis, 그리고 동양의 도·화쟁·기에서 치유의 길을 묻는다. <em>잉카·조선·크리, 세 길이 한 책에서 만난다.</em></p>
+
+      <div class="peru-toggle">
         <div class="lang-btn active" onclick="switchPeruLang('ko', this)">한국어</div>
         <div class="lang-btn" onclick="switchPeruLang('en', this)">English</div>
       </div>
 
       <!-- KOREAN CHAPTERS -->
       <div id="peru-chapters-ko">
-        <p style="font-size:14px;color:var(--light);margin-bottom:12px"><strong>제1부:</strong> 잉카 문명 &mdash; 100년의 제국</p>
-        <div class="chapter-links">
-          <a href="books/peru/ko_ch01_draft_v1.html">1장. 100년의 제국 &mdash; 잉카는 어떻게 그 많은 것을 지었을까</a>
-          <a href="books/peru/ko_ch02_draft_v1.html">2장. 하늘을 읽고 땅을 조각하다</a>
-          <a href="books/peru/ko_ch03_draft_v1.html">3장. 티폰에서 흐르는 물</a>
-          <a href="books/peru/ko_ch04_draft_v1.html">4장. 물 위에 세운 문명</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>제2부:</strong> 정복 &mdash; 두 문명의 충돌</p>
-        <div class="chapter-links">
-          <a href="books/peru/ko_ch05_draft_v1.html">5장. 로마의 수도교 vs. 잉카의 수로</a>
-          <a href="books/peru/ko_ch06_draft_v1.html">6장. 카하마르카에서 빌카밤바까지</a>
-          <a href="books/peru/ko_ch07_draft_v1.html">7장. 돌 위에 돌을 얹다</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>제3부:</strong> 분리의 사상사 &mdash; Wetiko의 진단</p>
-        <div class="chapter-links">
-          <a href="books/peru/ko_ch08_draft_v1.html">8장. 하나의 계보 &mdash; 그리스에서 AI까지</a>
-          <a href="books/peru/ko_ch09_draft_v1.html">9장. Wetiko라는 이름</a>
-          <a href="books/peru/ko_ch10_draft_v1.html">10장. 바야돌리드의 법정</a>
-          <a href="books/peru/ko_ch11_draft_v1.html">11장. 포토시에서 마닐라까지</a>
-          <a href="books/peru/ko_ch12_draft_v1.html">12장. 설탕 한 스푼의 무게</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>제4부:</strong> 잉카와 조선 &mdash; 운명을 가른 것</p>
-        <div class="chapter-links">
-          <a href="books/peru/ko_ch13_draft_v1.html">13장. 같은 파도의 다른 해변 &mdash; 1492와 1592</a>
-          <a href="books/peru/ko_ch14_draft_v1.html">14장. 잉카는 멸망했고 조선은 살아남았다</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>제5부:</strong> 치유의 사상들 &mdash; Perichoresis &middot; Salutogenesis</p>
-        <div class="chapter-links">
-          <a href="books/peru/ko_ch15_draft_v1.html">15장. Perichoresis &mdash; 서로 안에 거함의 존재론</a>
-          <a href="books/peru/ko_ch16_draft_v1.html">16장. 동양의 화답 &mdash; 도·화쟁·기, 그리고 정과 우리</a>
-          <a href="books/peru/ko_ch17_draft_v1.html">17장. Salutogenesis &mdash; 건강이란 무엇인가를 다시 묻다</a>
-          <a href="books/peru/ko_ch18_draft_v1.html">18장. 티폰의 물소리 &mdash; 500년의 흐름이 우리에게 묻는 것</a>
-        </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART I</span>
+    <span class="peru-part-title">잉카 문명 · 100년의 제국</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/ko_ch01_draft_v1.html"><span class="ch-num">Ⅰ</span><span class="ch-title">100년의 제국 — 잉카는 어떻게 그 많은 것을 지었을까</span></a>
+    <a href="books/peru/ko_ch02_draft_v1.html"><span class="ch-num">Ⅱ</span><span class="ch-title">하늘을 읽고 땅을 조각하다</span></a>
+    <a href="books/peru/ko_ch03_draft_v1.html"><span class="ch-num">Ⅲ</span><span class="ch-title">티폰에서 흐르는 물</span></a>
+    <a href="books/peru/ko_ch04_draft_v1.html"><span class="ch-num">Ⅳ</span><span class="ch-title">물 위에 세운 문명</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART II</span>
+    <span class="peru-part-title">정복 · 두 문명의 충돌</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/ko_ch05_draft_v1.html"><span class="ch-num">Ⅴ</span><span class="ch-title">로마의 수도교 vs. 잉카의 수로</span></a>
+    <a href="books/peru/ko_ch06_draft_v1.html"><span class="ch-num">Ⅵ</span><span class="ch-title">카하마르카에서 빌카밤바까지</span></a>
+    <a href="books/peru/ko_ch07_draft_v1.html"><span class="ch-num">Ⅶ</span><span class="ch-title">돌 위에 돌을 얹다</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART III</span>
+    <span class="peru-part-title">분리의 사상사 · Wetiko의 진단</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/ko_ch08_draft_v1.html"><span class="ch-num">Ⅷ</span><span class="ch-title">하나의 계보 — 그리스에서 AI까지</span></a>
+    <a href="books/peru/ko_ch09_draft_v1.html"><span class="ch-num">Ⅸ</span><span class="ch-title">Wetiko라는 이름</span></a>
+    <a href="books/peru/ko_ch10_draft_v1.html"><span class="ch-num">Ⅹ</span><span class="ch-title">바야돌리드의 법정</span></a>
+    <a href="books/peru/ko_ch11_draft_v1.html"><span class="ch-num">Ⅺ</span><span class="ch-title">포토시에서 마닐라까지</span></a>
+    <a href="books/peru/ko_ch12_draft_v1.html"><span class="ch-num">Ⅻ</span><span class="ch-title">설탕 한 스푼의 무게</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART IV</span>
+    <span class="peru-part-title">잉카와 조선 · 운명을 가른 것</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/ko_ch13_draft_v1.html"><span class="ch-num">XIII</span><span class="ch-title">같은 파도의 다른 해변 — 1492와 1592</span></a>
+    <a href="books/peru/ko_ch14_draft_v1.html"><span class="ch-num">XIV</span><span class="ch-title">잉카는 멸망했고 조선은 살아남았다</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART V</span>
+    <span class="peru-part-title">치유의 사상들 · Perichoresis · Salutogenesis</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/ko_ch15_draft_v1.html"><span class="ch-num">XV</span><span class="ch-title">Perichoresis — 서로 안에 거함의 존재론</span></a>
+    <a href="books/peru/ko_ch16_draft_v1.html"><span class="ch-num">XVI</span><span class="ch-title">동양의 화답 — 도·화쟁·기, 그리고 정과 우리</span></a>
+    <a href="books/peru/ko_ch17_draft_v1.html"><span class="ch-num">XVII</span><span class="ch-title">Salutogenesis — 건강이란 무엇인가를 다시 묻다</span></a>
+    <a href="books/peru/ko_ch18_draft_v1.html"><span class="ch-num">XVIII</span><span class="ch-title">티폰의 물소리 — 500년의 흐름이 우리에게 묻는 것</span></a>
+  </div>
       </div>
 
       <!-- ENGLISH CHAPTERS -->
       <div id="peru-chapters-en" style="display:none">
-        <p style="font-size:14px;color:var(--light);margin-bottom:12px"><strong>Part I:</strong> Inca Civilization &mdash; The Hundred-Year Empire</p>
-        <div class="chapter-links">
-          <a href="books/peru/en_ch01_draft_v1.html">Ch. 1. The Hundred-Year Empire &mdash; How Did the Inca Build So Much?</a>
-          <a href="books/peru/en_ch02_draft_v1.html">Ch. 2. Reading the Sky, Sculpting the Earth</a>
-          <a href="books/peru/en_ch03_draft_v1.html">Ch. 3. The Water That Flows from Tip&oacute;n</a>
-          <a href="books/peru/en_ch04_draft_v1.html">Ch. 4. A Civilization Built on Water</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>Part II:</strong> Conquest &mdash; Two Civilizations Collide</p>
-        <div class="chapter-links">
-          <a href="books/peru/en_ch05_draft_v1.html">Ch. 5. Roman Aqueducts vs. Inca Channels</a>
-          <a href="books/peru/en_ch06_draft_v1.html">Ch. 6. From Cajamarca to Vilcabamba</a>
-          <a href="books/peru/en_ch07_draft_v1.html">Ch. 7. Stone Upon Stone</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>Part III:</strong> The Intellectual History of Separation &mdash; Diagnosing Wetiko</p>
-        <div class="chapter-links">
-          <a href="books/peru/en_ch08_draft_v1.html">Ch. 8. One Lineage &mdash; From Greece to AI</a>
-          <a href="books/peru/en_ch09_draft_v1.html">Ch. 9. A Name Called Wetiko</a>
-          <a href="books/peru/en_ch10_draft_v1.html">Ch. 10. The Court at Valladolid</a>
-          <a href="books/peru/en_ch11_draft_v1.html">Ch. 11. From Potos&iacute; to Manila</a>
-          <a href="books/peru/en_ch12_draft_v1.html">Ch. 12. The Weight of a Spoonful of Sugar</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>Part IV:</strong> Inca and Joseon &mdash; What Decided Their Fates</p>
-        <div class="chapter-links">
-          <a href="books/peru/en_ch13_draft_v1.html">Ch. 13. Different Shores of the Same Wave &mdash; 1492 and 1592</a>
-          <a href="books/peru/en_ch14_draft_v1.html">Ch. 14. The Inca Fell and Joseon Survived</a>
-        </div>
-        <p style="font-size:14px;color:var(--light);margin:16px 0 12px"><strong>Part V:</strong> Toward Healing &mdash; Perichoresis &middot; Salutogenesis</p>
-        <div class="chapter-links">
-          <a href="books/peru/en_ch15_draft_v1.html">Ch. 15. Perichoresis &mdash; The Ontology of Mutual Indwelling</a>
-          <a href="books/peru/en_ch16_draft_v1.html">Ch. 16. The Eastern Answer &mdash; Tao, Hwajaeng, Qi, and <em>jeong</em> and <em>uri</em></a>
-          <a href="books/peru/en_ch17_draft_v1.html">Ch. 17. Salutogenesis &mdash; Asking Anew What Health Is</a>
-          <a href="books/peru/en_ch18_draft_v1.html">Ch. 18. The Sound of Tip&oacute;n's Water &mdash; What Five Hundred Years of Flow Asks of Us</a>
-        </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART I</span>
+    <span class="peru-part-title">Inca Civilization · The Hundred-Year Empire</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/en_ch01_draft_v1.html"><span class="ch-num">Ⅰ</span><span class="ch-title">The Hundred-Year Empire — How Did the Inca Build So Much?</span></a>
+    <a href="books/peru/en_ch02_draft_v1.html"><span class="ch-num">Ⅱ</span><span class="ch-title">Reading the Sky, Sculpting the Earth</span></a>
+    <a href="books/peru/en_ch03_draft_v1.html"><span class="ch-num">Ⅲ</span><span class="ch-title">The Water That Flows from Tip&oacute;n</span></a>
+    <a href="books/peru/en_ch04_draft_v1.html"><span class="ch-num">Ⅳ</span><span class="ch-title">A Civilization Built on Water</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART II</span>
+    <span class="peru-part-title">Conquest · Two Civilizations Collide</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/en_ch05_draft_v1.html"><span class="ch-num">Ⅴ</span><span class="ch-title">Roman Aqueducts vs. Inca Channels</span></a>
+    <a href="books/peru/en_ch06_draft_v1.html"><span class="ch-num">Ⅵ</span><span class="ch-title">From Cajamarca to Vilcabamba</span></a>
+    <a href="books/peru/en_ch07_draft_v1.html"><span class="ch-num">Ⅶ</span><span class="ch-title">Stone Upon Stone</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART III</span>
+    <span class="peru-part-title">Intellectual History of Separation · Diagnosing Wetiko</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/en_ch08_draft_v1.html"><span class="ch-num">Ⅷ</span><span class="ch-title">One Lineage — From Greece to AI</span></a>
+    <a href="books/peru/en_ch09_draft_v1.html"><span class="ch-num">Ⅸ</span><span class="ch-title">A Name Called Wetiko</span></a>
+    <a href="books/peru/en_ch10_draft_v1.html"><span class="ch-num">Ⅹ</span><span class="ch-title">The Court at Valladolid</span></a>
+    <a href="books/peru/en_ch11_draft_v1.html"><span class="ch-num">Ⅺ</span><span class="ch-title">From Potos&iacute; to Manila</span></a>
+    <a href="books/peru/en_ch12_draft_v1.html"><span class="ch-num">Ⅻ</span><span class="ch-title">The Weight of a Spoonful of Sugar</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART IV</span>
+    <span class="peru-part-title">Inca and Joseon · What Decided Their Fates</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/en_ch13_draft_v1.html"><span class="ch-num">XIII</span><span class="ch-title">Different Shores of the Same Wave — 1492 and 1592</span></a>
+    <a href="books/peru/en_ch14_draft_v1.html"><span class="ch-num">XIV</span><span class="ch-title">The Inca Fell and Joseon Survived</span></a>
+  </div>
+  <div class="peru-part">
+    <span class="peru-part-roman">PART V</span>
+    <span class="peru-part-title">Toward Healing · Perichoresis · Salutogenesis</span>
+  </div>
+  <div class="peru-chapters">
+    <a href="books/peru/en_ch15_draft_v1.html"><span class="ch-num">XV</span><span class="ch-title">Perichoresis — The Ontology of Mutual Indwelling</span></a>
+    <a href="books/peru/en_ch16_draft_v1.html"><span class="ch-num">XVI</span><span class="ch-title">The Eastern Answer — Tao, Hwajaeng, Qi, and <em>jeong</em> and <em>uri</em></span></a>
+    <a href="books/peru/en_ch17_draft_v1.html"><span class="ch-num">XVII</span><span class="ch-title">Salutogenesis — Asking Anew What Health Is</span></a>
+    <a href="books/peru/en_ch18_draft_v1.html"><span class="ch-num">XVIII</span><span class="ch-title">The Sound of Tip&oacute;n's Water — What Five Hundred Years of Flow Asks of Us</span></a>
+  </div>
       </div>
+
     </div>
   </div>
 
