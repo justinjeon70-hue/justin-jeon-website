@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9장. Wetiko라는 이름 — 한 질병의 진단 — 『페루-쿠스코-마추피추 여행기』</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #444;
+    --ink-faint: #777;
+    --accent: #0a3d62;
+    --accent-soft: #3c6382;
+    --bg: #fafaf7;
+    --bg-code: #f0ede5;
+    --border: #d8d3c4;
+    --link: #0a3d62;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 32px 120px;
+    font-size: 11.5pt;
+    line-height: 2.0;
+    color: var(--ink);
+    background: var(--bg);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  nav.topbar {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 9.5pt;
+    padding: 10px 0 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+    color: var(--ink-faint);
+  }
+  nav.topbar a { color: var(--accent); text-decoration: none; margin-right: 14px; }
+  nav.topbar a:hover { text-decoration: underline; }
+  h1 {
+    font-size: 22pt;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 12px;
+    margin: 0 0 36px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 15pt;
+    color: var(--accent);
+    margin-top: 44px;
+    margin-bottom: 14px;
+    font-weight: 600;
+    border-left: 4px solid var(--accent-soft);
+    padding-left: 12px;
+  }
+  h3 {
+    font-size: 12.5pt;
+    color: var(--accent-soft);
+    margin-top: 28px;
+    font-weight: 600;
+  }
+  h4 { font-size: 11.5pt; color: var(--ink-soft); margin-top: 24px; }
+  p {
+    text-align: justify;
+    margin: 0 0 14px;
+    text-indent: 0;
+  }
+  strong { color: var(--accent); font-weight: 700; }
+  em { color: var(--ink-soft); font-style: italic; }
+  blockquote {
+    border-left: 3px solid var(--accent-soft);
+    padding: 4px 20px;
+    color: var(--ink-soft);
+    font-style: normal;
+    margin: 18px 0;
+    background: rgba(60, 99, 130, 0.05);
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  ul, ol { padding-left: 24px; margin: 0 0 14px; }
+  li { margin-bottom: 4px; line-height: 1.85; }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+  code {
+    font-family: 'Menlo', 'Consolas', monospace;
+    background: var(--bg-code);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.92em;
+  }
+  pre {
+    background: var(--bg-code);
+    padding: 14px 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    line-height: 1.6;
+    font-size: 10pt;
+  }
+  pre code { background: transparent; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 18px 0;
+    font-size: 10.5pt;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th {
+    background: rgba(60, 99, 130, 0.1);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { background: rgba(10, 61, 98, 0.08); }
+  sup { line-height: 0; font-size: 0.75em; }
+  .meta {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 9pt;
+    color: var(--ink-faint);
+    text-align: right;
+    margin-top: 60px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  @media print {
+    body { max-width: none; padding: 0; font-size: 11pt; background: white; }
+    nav.topbar, .meta { display: none; }
+  }
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <a href="../../books.html">← Books</a>
+  <span>『페루-쿠스코-마추피추 여행기』 — 전용관</span>
+</nav>
+<h1>9장. Wetiko라는 이름 — 한 질병의 진단</h1>
+<h2>도입: 누나의 한마디 — &quot;많이 먹는 것&quot;</h2>
+<p>내가 이 단어를 처음 만난 것은 모닥불 옆이 아니었다. 책이었다.</p>
+<p>어느 해, 『농경사회의 ADHD』 라는 책을 읽고 있었다. 수렵 채집 사회에서 적응적이었을 특질이 — 왜 농경과 산업 사회에서는 장애로 분류되는지를 다루는 책. 그 안의 한 대목이 나를 붙들었다. <strong>&quot;Wetiko 시대의 ADHD는 자칫 실패자로 낙인찍힐 수 있다.&quot;</strong></p>
+<p><strong>Wetiko.</strong> 낯선 단어였다. 저자가 굳이 이 단어를 쓴 이유가 궁금했다. 찾아보기 시작했다. 잭 포브스. 폴 레비. 크리족 전통. 알곤킨 어족. 식인 괴물. 문명 비판의 도구. 자료를 따라가다 보니 점점 단어가 무거워졌다.</p>
+<p>그러다 어느 날, 내 <strong>크리족 누나</strong> 데비(Debbie)에게 물었다. 나는 1997년부터 2013년까지 거의 매년 그 공동체를 방문했고, 그 긴 시간의 한 지점에서 — 지금으로부터 23~24년 전 — 마스크와시스(Maskwacis) 크리 민족의 한 가족이 나를 친족으로 받아들였다. 그때부터 나는 그녀를 누나라 부른다. 입양이 내 정체성을 재구성한 것은 아니다. 나는 여전히 먼저 한국인이다. 다만 그 해의 기억과 의미는 내 안에 남아 있다. &quot;Wetiko 라는 단어, 크리어로 무슨 뜻이야?&quot;</p>
+<p>누나는 짧게 답했다.</p>
+<p><strong>&quot;많이 먹는 것.&quot;</strong></p>
+<p>그 대답이 나를 오래 붙잡았다. 어떤 거창한 신학적 해설도, 학술적 정의도 아니었다. 크리 공동체에서 <strong>일상적으로 쓰는 말</strong>. 아이가 과자를 너무 많이 집어 먹을 때, 누군가가 공동체의 몫을 과하게 가져갈 때 — 그럴 때 자연스럽게 튀어나오는 표현. &quot;많이 먹는 것.&quot;</p>
+<p>그런데 바로 <strong>그 평범함</strong>이 경고였다. 크리 공동체는 이 위험을 <strong>특별한 철학</strong>으로 가르치지 않았다. <strong>일상 언어에 새겨</strong> 두었다. &quot;너무 많이 먹지 마라.&quot; 밥상에서, 사냥터에서, 공동체의 모든 순간에. 그것이 병으로 자라지 않도록.</p>
+<p>내가 포브스와 레비의 무거운 책들에서 읽은 그 모든 이야기 — 영적 식인, 자기 은폐, 끝없는 허기 — 는 결국 누나의 그 한마디로 귀결된다. <strong>많이 먹는 것</strong>. 욕구의 <strong>한계</strong>를 모르는 것. 필요 이상을 취하는 것. 그리고 그것이 축적되면 어떻게 되는지.</p>
+<p>이 장은 그 평범한 경고가 어떻게 <strong>문명 전체의 진단</strong>이 되었는지를 추적한다. 크리족이 일상에 새겨 둔 지혜가 어떻게 20세기 원주민 지식인들에 의해 <strong>학문적 범주</strong>로 확장되었는지. 그것이 왜 <strong>지난 500년의 서양 역사</strong>를 정확히 짚는 언어인지. 그리고 — <strong>오늘 우리에게 이 이름이 왜 필요한지</strong>.</p>
+<hr>
+<p>간단한 배경부터 정리하자.</p>
+<p><strong>Wetiko</strong> (위티고, 위티코). 또는 지역 방언에 따라 <strong>Wendigo</strong>(원디고) 등 여러 형태로 전해지는 개념. 알곤킨 어족(Algonquian)에 속한 여러 민족 — 크리(Cree), 오지브웨(Ojibwe), 이누(Innu), 아니시나베(Anishinaabe) 등 — 의 <strong>공통된 전통 개념</strong>이다.¹</p>
+<p>원래 이 개념은 — <strong>초자연적 민담의 존재</strong>로 전해져 왔다. 북부 삼림 지역의 긴 겨울, 식량이 떨어진 상황에서 — 극도의 배고픔과 고립이 한 사람을 <strong>인육을 먹는 상태</strong>로 내몰 수 있다는 공포의 형상화. 일단 인육을 먹기 시작한 자는 — <strong>더 이상 인간이 아니다</strong>. 그는 <strong>Wetiko</strong> 가 된다. 다른 사람의 생명력을 먹고 사는, 끝없는 허기의 영혼. 그리고 — 한 번 먹은 자는 <strong>계속 먹고 싶어지고</strong>, 그 허기는 결코 채워지지 않는다.</p>
+<p>이 이야기가 크리·오지브웨 공동체에 오랫동안 전해진 데에는 <strong>실용적 이유</strong>가 있다. 북부 삼림은 — 자원이 제한된 환경이다. 공동체가 생존하려면 — <strong>소비의 한계</strong>를 아는 지혜가 필수다. 자기가 <strong>얼마나 많이 가져가는지</strong> 를 끊임없이 성찰해야 한다. Wetiko 이야기는 — 이 성찰을 세대에 걸쳐 전승하는 교육적 장치였다. &quot;너무 많이 먹지 마라. 그렇지 않으면 너도 Wetiko가 될 수 있다.&quot;</p>
+<p>그러나 — 20세기 후반 원주민 지식인들이 이 개념을 <strong>새로운 방식으로 읽기 시작</strong>했다. 그들이 본 것: <strong>Wetiko는 단순한 초자연 괴물이 아니다</strong>. 그것은 — <strong>사회적·문명적 질병</strong>의 이름이기도 하다. 한 공동체 전체가, 한 문명 전체가 — <strong>Wetiko의 상태에 빠질 수 있다</strong>. 그리고 그 상태에 빠진 문명이 — 다른 공동체를 <strong>먹어 들어갈 수 있다</strong>.</p>
+<p>이 재해석이 — 이 개념을 <strong>학문적 범주</strong>로 바꾸었다. 그리고 그 변환의 결정적 인물이 — 다음 섹션에서 만날 <strong>잭 포브스(Jack Forbes)</strong> 였다.</p>
+<p><strong>Wetiko.</strong></p>
+<h2>잭 포브스 — 학술적 정식화</h2>
+<h3>한 원주민 학자의 작업</h3>
+<p>Wetiko 개념을 학술 세계에 들여온 것은 <strong>잭 D. 포브스(Jack D. Forbes, 1934~2011)</strong> 였다.¹ 파워하탄-레나페(Powhatan-Lenape) 혈통의 미국 학자. 그는 평생 아메리카 원주민의 역사와 문화, 그리고 유럽 식민주의의 본질을 연구했다. UC 데이비스의 아메리카 원주민 연구학과를 공동 설립했고, 여러 권의 저서를 남겼다.</p>
+<p>그의 대표작 중 하나가 <strong>『콜럼버스와 다른 식인자들(Columbus and Other Cannibals)』</strong> 이다. 1979년에 처음 출간되었고, 2008년에 개정증보판이 나왔다.² 부제가 이 책의 주제를 압축한다: <strong>&quot;착취, 제국주의, 그리고 테러리즘의 Wetiko 질병(<em>The Wetiko Disease of Exploitation, Imperialism, and Terrorism</em>)&quot;</strong>.</p>
+<p>포브스의 핵심 주장은 단호하다. <strong>콜럼버스 이래 유럽 문명의 본질은 Wetiko다.</strong> 이것은 은유가 아니다. 진단이다. 크리족의 Wetiko 개념이 가리키는 것 — <strong>다른 존재의 생명력을 먹고 사는 영적 질병</strong> — 이 지난 500년간 서양 문명의 핵심 동력이었다는 것이다.</p>
+<p>이 주장이 어떻게 가능한가. 포브스의 논리를 따라가 보자.</p>
+<h3>영적 식인증</h3>
+<p>포브스는 Wetiko를 <strong>영적 식인증(spiritual cannibalism)</strong> 이라 정의한다. 여기서 &quot;영적&quot;이라는 수식어가 중요하다.</p>
+<p><strong>신체적 식인</strong>은 다른 인간의 몸을 먹는 것이다. 역사상 여러 문화에서 제한적으로 발생했다(기근 시의 극단적 생존, 의식적 식인, 전쟁 관행 등). 이것은 대개 <strong>예외적</strong>이고 <strong>한정적</strong>인 행위다. 지속 가능하지 않다 — 오랫동안 인간을 먹는 사회는 자기 인구 자체가 고갈된다.</p>
+<p><strong>영적 식인</strong>은 다르다. 다른 존재의 <strong>영혼, 생명력, 시간, 가능성, 꿈</strong>을 먹는 것이다. 한 사람의 하루 8시간을 자신의 이익을 위해 사용하는 것. 한 공동체의 자원을 빼앗아 다른 곳에서 소비하는 것. 한 문명의 예술을 녹여 자기 화폐로 만드는 것. 한 아이의 어린 시절을 공장 노동으로 바꾸는 것. 한 숲의 수백 년된 생명을 한 달치 매출로 환산하는 것.</p>
+<p>이것들이 영적 식인이다. 육체를 먹지는 않지만, <strong>그 존재가 가진 가장 소중한 것을 취한다</strong>. 그리고 그것을 <strong>자기 이익</strong>으로 전환한다.</p>
+<p>포브스의 핵심 통찰은 이것이다. <strong>영적 식인은 신체적 식인보다 훨씬 파괴적이다.</strong> 왜냐하면 <strong>지속 가능하기 때문</strong>이다. 한 집단을 영적으로 먹어치우고, 다음 집단으로 옮겨간다. 그 과정에서 먹히는 자는 <strong>살아 있다</strong>. 다만 그의 생명력이 조금씩, 꾸준히 추출된다. 그는 고갈되어 간다. 그리고 고갈되면 버려진다. 다른 곳에 새로운 먹이가 있다.</p>
+<p>이것이 <strong>500년간 작동한 시스템</strong>이다. 아메리카 원주민을 먹고, 아프리카 노예를 먹고, 아시아 식민지를 먹고, 이후에는 서양 자기 내부의 노동자를 먹고, 지금은 지구의 자연을 먹는다. <strong>먹이의 목록은 바뀌지만 구조는 동일하다</strong>.</p>
+<h3>콜럼버스 — 문명의 첫 번째 얼굴</h3>
+<p>포브스가 책 제목에 콜럼버스를 놓은 것은 상징적이다. 콜럼버스는 영웅이 아니라 <strong>Wetiko의 얼굴</strong>이다. 그의 일기에서 인용된 문장 하나가 결정적이다. 1492년 11월 27일, 아라와크 원주민을 만난 지 약 한 달 후:</p>
+<blockquote>
+<p>&quot;이 사람들은 대단히 고분고분하고 겁이 많다. 그들은 무기가 없고, 우리가 원하는 모든 것을 준다. 쉰 명만 있어도 우리는 그들 모두를 정복하고 <strong>우리가 원하는 대로 그들을 다스릴 수 있다</strong>.&quot;³</p>
+</blockquote>
+<p>이것이 유럽이 아메리카를 만난 <strong>첫 번째 목격 기록</strong>이다. &quot;친절한 사람들을 만났다&quot;가 아니라 &quot;<strong>이 친절한 사람들을 어떻게 지배할 수 있을까</strong>&quot; 가 첫 생각이었다. 이 한 문장에 <strong>Wetiko의 핵심</strong>이 있다. 만남을 <strong>약탈의 기회</strong>로 본다. 다른 존재의 친절함을 <strong>먹이의 신호</strong>로 받아들인다.</p>
+<p>포브스는 이 순간이 <strong>역사의 전환점</strong>이었다고 본다. 유럽의 기존 Wetiko 경향 — 십자군, 마녀사냥, 내전 — 이 <strong>전 지구적 스케일</strong>로 확장되는 순간. 이 순간 이후 같은 논리가 아메리카 전역으로, 아프리카로, 아시아로 퍼진다. <strong>세계가 먹이사슬의 한쪽 끝이 되었다</strong>.</p>
+<h2>폴 레비 — 융 심리학과 만남</h2>
+<h3>현대적 확장</h3>
+<p>포브스의 책은 출간 당시 주변적 위치에 머물렀다. 미국 학계의 주류는 그것을 무시했거나 &quot;급진적&quot; 이라고 치부했다. 그러나 시간이 지나면서 포브스의 통찰은 여러 후속 저자들에 의해 확장되었다. 그중 가장 유명한 것이 <strong>폴 레비(Paul Levy)</strong> 의 작업이다.</p>
+<p>레비는 미국의 융 심리학자이자 티베트 불교 수행자다. 그는 2013년 <strong>『Wetiko 걷어내기(Dispelling Wetiko: Breaking the Curse of Evil)』</strong> 를 출간했다.⁴ 포브스의 Wetiko 개념을 <strong>심리학적 프레임워크</strong>로 확장한 작업이다.</p>
+<p>레비는 Wetiko를 <strong>&quot;악성 자아병증(Malignant Egophrenia, ME disease)&quot;</strong> 으로 재명명했다. &quot;자아병증(egophrenia)&quot;은 조현병(schizophrenia)과 짝을 이루는 그의 신조어다. 조현병이 자아의 <strong>분열</strong>이라면, 자아병증은 자아의 <strong>팽창과 경직</strong>이다. 자아가 너무 커져서 <strong>다른 모든 존재를 자기 확장의 도구</strong>로 보게 되는 상태.</p>
+<h3>융의 그림자</h3>
+<p>레비의 핵심 자원은 <strong>카를 융(Carl Jung, 1875~1961)</strong> 의 심리학이다. 융은 &quot;<strong>그림자(Shadow)</strong>&quot; 라는 개념을 발전시켰다. 모든 개인이 의식적으로 받아들이지 않는 자기의 어두운 면을 가지고 있다는 것. 폭력성, 탐욕, 공포, 원한. 이것들은 억압되어 무의식 속으로 들어간다. 그러나 사라지지 않는다. <strong>무의식에 축적</strong>되고, 어느 순간 <strong>폭발적으로 표출</strong>되거나 <strong>투사(projection)</strong> 된다.</p>
+<p>투사는 자기 안의 어둠을 <strong>다른 사람에게 보는 것</strong>이다. 내가 받아들이지 않는 내 폭력성을 이웃이나 외국인이나 다른 인종에게 본다. 그래서 그들이 <strong>위협적</strong>으로 느껴지고, 그들에 대한 <strong>적대감</strong>이 정당화된다. 사실은 그 적대감의 원천이 <strong>내 안</strong>에 있는데도 말이다.</p>
+<p>그림자는 <strong>집단적</strong>이기도 하다. 한 사회 전체가 받아들이지 않는 어두운 면을 가질 수 있다. 그것이 <strong>집단 그림자(collective shadow)</strong> 다. 그리고 집단 그림자가 <strong>집단 투사</strong>를 낳으면 — 대규모 폭력의 조건이 마련된다. 홀로코스트, 마녀사냥, 인종 청소, 식민 학살. 이 모든 것은 <strong>집단 그림자의 외부 투사</strong>로 이해될 수 있다.</p>
+<p>레비의 통찰은 이것이다. <strong>Wetiko는 집단 그림자의 원형적 이름</strong>이다. 크리족이 &quot;식인 영혼&quot; 이라는 이야기 형태로 알고 있었던 것을, 융은 &quot;그림자의 집단적 투사&quot; 로 학술화했다. 두 언어는 같은 것을 가리킨다.</p>
+<h3>핵심 특징 — 자기 은폐</h3>
+<p>레비가 추가한 결정적 통찰은 Wetiko의 <strong>자기 은폐</strong> 성격이다.</p>
+<p>Wetiko의 가장 치명적 특징은 무엇인가. 폭력성? 탐욕? 아니다. <strong>자기가 병에 걸렸음을 인지하지 못하는 것</strong>. 이것이 레비의 핵심 주장이다.⁵</p>
+<p>다른 질병은 <strong>증상</strong>을 통해 자신을 알린다. 발열, 통증, 무력감. 환자는 자기가 아프다는 것을 안다. 그래서 치료를 구한다.</p>
+<p>Wetiko는 다르다. 증상이 오히려 <strong>자기를 강화하는 경험</strong>으로 느껴진다. 부를 축적하는 것. 권력을 확대하는 것. 영토를 확장하는 것. 이 모든 것이 &quot;성공&quot; 의 이름으로 포장된다. <strong>Wetiko에 걸린 사람은 자기가 번영하고 있다고 느낀다</strong>.</p>
+<p>그리고 이 자기 인식이 있는 한 — <strong>치유는 불가능하다</strong>. 왜냐하면 <strong>문제를 문제로 인식하지 못하기 때문</strong>이다. Wetiko는 자기 존재를 <strong>부정함으로써</strong> 자기를 유지한다. 이것이 어떤 면에서 Wetiko의 &quot;천재성&quot; 이다. 그것은 피해자뿐 아니라 <strong>자기 자신도</strong> 속인다.</p>
+<p>이 역학이 왜 중요한가. 이것은 Wetiko와 싸우는 방식을 근본적으로 바꾸기 때문이다. <strong>직접 대결</strong>로는 Wetiko를 이길 수 없다. 왜냐하면 Wetiko는 자기가 <strong>대결의 대상이 아니라고</strong> 믿기 때문이다. 그것은 &quot;정의로운 일을 하고 있다&quot;고 느낀다. 외부의 비판은 <strong>공격</strong>으로 인식되고, 방어 기제는 더 강해진다.</p>
+<p>Wetiko를 치유하는 유일한 방법은 <strong>자기 인식</strong>이다. 감염자 스스로가 <strong>&quot;아, 내가 Wetiko에 걸려 있었구나&quot;</strong> 라고 깨닫는 순간. 그 순간 처음으로 치유가 가능해진다.</p>
+<p>이것이 왜 이 책이 필요한 이유이기도 하다. <strong>이름 붙이기</strong>. 질병에 이름을 붙이는 행위가 치유의 첫 걸음이다.</p>
+<h2>네 가지 작동 방식</h2>
+<p>Wetiko가 구체적으로 어떻게 작동하는지를 구분해 보자. 나는 네 가지 핵심 메커니즘을 제시하려 한다.</p>
+<h3>① 사물화(Reification)</h3>
+<p><strong>사물화</strong>는 살아있는 존재를 &quot;것(thing)&quot;으로 만드는 것이다. 주체를 대상으로 환원한다.</p>
+<p>이 책의 앞 장들에서 본 여러 예가 있다. 잉카 장인들이 수십 년 걸려 만든 황금 예술품이 <strong>금괴</strong>로 녹아내린 것(7장). 이것은 형상에서 질량으로의 환원 — 의미를 가진 대상에서 <strong>단순한 물질</strong>로의 환원이다. 노동자가 공장의 <strong>&quot;인적 자원&quot;</strong> 으로 분류되는 것(8장). 사람이 자원이 된다. 자원은 <strong>효율적으로 사용</strong>되어야 할 대상이다. 소비자가 <strong>&quot;타겟 고객군&quot;</strong> 으로 분석되는 것. 인간의 욕망이 광고의 재료가 된다.</p>
+<p>사물화의 철학적 뿌리는 8장에서 본 <strong>데카르트 이원론</strong>에 있다. 주체(생각하는 것)와 대상(연장된 것)의 이분법. 모든 존재는 이 두 범주 중 하나로 분류되어야 한다. &quot;주체&quot;의 목록은 좁다 — 전통적으로 유럽인 남성 기독교인. 나머지는 모두 &quot;대상&quot; 의 범주로 떨어진다. 여성, 비유럽인, 아동, 동물, 자연. 일단 대상이 되면 — <strong>조작 가능한 것</strong>이 된다.</p>
+<p>사물화의 일상적 표현은 <strong>언어</strong>에 있다. &quot;사람들을 활용하다(utilize people)&quot;. &quot;시간을 투자하다&quot;. &quot;관계를 관리하다&quot;. 이런 표현에 우리는 너무 익숙해져서 <strong>그 안에 담긴 존재론</strong>을 알아차리지 못한다. 그러나 이런 말을 쓸 때마다 — 우리는 살아있는 존재를 대상으로 <strong>재분류</strong>하고 있다.</p>
+<h3>② 추상화(Abstraction)</h3>
+<p><strong>추상화</strong>는 구체적 존재를 숫자, 범주, 통계로 환원하는 것이다.</p>
+<p>&quot;2차 세계대전에서 약 6천만 명이 죽었다.&quot; 이 문장에 공포는 없다. 왜냐하면 6천만이라는 숫자는 <strong>인간이 직접 경험할 수 있는 규모</strong>를 넘어가기 때문이다. 이것은 이오시프 스탈린의 유명한 말로 알려진 것(실제 그가 말한 것인지는 논쟁)과 관련된다. &quot;한 사람의 죽음은 비극이다. 백만 명의 죽음은 통계다.&quot;</p>
+<p>추상화의 힘은 <strong>거리를 만드는</strong> 데 있다. 드론 조종사가 수천 킬로미터 떨어진 컴퓨터 화면에서 &quot;타겟을 제거&quot;한다. 그 타겟이 한 아버지였고, 그의 아들이 그 옆에 있었다는 것은 <strong>화면의 픽셀</strong>이 된다. 증권 거래사가 &quot;공매도 포지션을 잡는다&quot;. 그 매도가 수천 가구의 일자리를 의미한다는 사실은 <strong>보이지 않는다</strong>. 경영 컨설턴트가 <strong>&quot;인력 감축 30%&quot;</strong> 를 권고한다. 한 사람의 삶이 무너지는 것은 <strong>스프레드시트의 숫자</strong>가 된다.</p>
+<p>추상화는 Wetiko가 <strong>대규모로</strong> 작동하기 위한 조건이다. 소규모의 직접적 잔혹성은 인간의 도덕적 감각이 비교적 견뎌낸다. 그러나 <strong>대규모의 추상적 잔혹성</strong>은 훨씬 쉽다. 왜냐하면 <strong>얼굴이 사라지기 때문</strong>이다.</p>
+<p>20세기의 위대한 철학자 <strong>한나 아렌트(Hannah Arendt)</strong> 가 아이히만 재판을 분석한 후 만든 개념 — <strong>&quot;악의 평범함(banality of evil)&quot;</strong> — 이 이것을 가리킨다.⁶ 아이히만은 괴물이 아니었다. 그는 <strong>서류 더미를 처리하는 관료</strong>였다. 각 서류에는 수천 명의 운송 명령이 담겨 있었다. 그에게 그것은 <strong>숫자</strong>였지 <strong>얼굴</strong>이 아니었다. 추상화가 그를 잔혹에서 분리시켰다. 그리고 추상화가 홀로코스트의 규모를 가능하게 했다.</p>
+<h3>③ 분리(Separation)</h3>
+<p><strong>분리</strong>는 나와 너, 인간과 자연, 몸과 마음의 경계를 <strong>절대화</strong>하는 것이다.</p>
+<p>8장에서 본 데카르트의 이원론이 이것의 철학적 완성형이다. 정신과 물질은 <strong>본질적으로 다르다</strong>. 인간과 동물은 <strong>본질적으로 다르다</strong>. 이성적인 것과 감성적인 것은 <strong>본질적으로 다르다</strong>. 이 &quot;본질적 차이&quot; 의 주장들이 하나씩 벽을 세운다.</p>
+<p>경계 자체가 문제인 것은 아니다. 자아와 타자의 구별이 없으면 관계도 없다. 문제는 <strong>경계를 절대화</strong>하는 것이다. 투과할 수 없는 벽으로 만드는 것. 내 안에 너의 무엇도 들어올 수 없고, 네 안에 내 무엇도 흘러가지 않는다는 환상.</p>
+<p>이 환상 속에서 — <strong>착취가 도덕적 문제가 되지 않는다</strong>. 왜냐하면 &quot;너&quot; 는 나와 본질적으로 다른 존재이기 때문이다. 너의 고통이 나의 고통이 아니다. 너의 몰락이 나의 몰락이 아니다. 따라서 너를 사용해 내 이익을 취하는 것이 <strong>불가피하고 자연스러운</strong> 일이 된다.</p>
+<p>에리히 프롬(Erich Fromm)이 1976년 저서 『**소유냐 존재냐(<em>To Have or To Be?</em>)**』 에서 분석한 것이 이것이다.⁷ 현대 사회는 &quot;존재 양식(being mode)&quot; 에서 &quot;<strong>소유 양식(having mode)</strong>&quot; 으로 이행했다. 존재 양식에서는 내가 <strong>세계와 연결되어</strong> 있다. 소유 양식에서는 내가 <strong>세계와 분리되어 있고, 그 세계의 일부를 내가 소유하려고 한다</strong>. 사랑조차 소유의 대상이 된다. 경험조차 축적의 대상이 된다.</p>
+<p>분리는 자기 안에서도 일어난다. 몸과 마음의 분리. 생각과 감정의 분리. 일과 삶의 분리. 이 모든 분리가 <strong>내면의 Wetiko</strong>를 만든다. 나의 일부가 나의 다른 일부를 착취한다. 이것이 한병철이 진단한 <strong>자기 착취</strong>(8장 참조)의 뿌리이기도 하다.</p>
+<h3>④ 자기 은폐(Self-concealment)</h3>
+<p>마지막이자 가장 치명적인 메커니즘. Wetiko의 <strong>자기 은폐</strong>.</p>
+<p>앞서 레비의 분석에서 보았듯이, Wetiko는 <strong>자기가 Wetiko임을 모른다</strong>. 그것은 언제나 <strong>자기 자신에게 선한 이야기</strong>를 들려준다.</p>
+<p>&quot;우리는 문명화하고 있다.&quot; — 19세기 유럽 제국주의의 자기 정당화.
+&quot;우리는 원주민에게 문자를 가르치고 있다.&quot; — 캐나다 기숙학교의 공식 임무.
+&quot;우리는 시장 효율을 높이고 있다.&quot; — 21세기 신자유주의의 언어.
+&quot;우리는 인류의 생산성을 혁신하고 있다.&quot; — 오늘 실리콘밸리의 수사.</p>
+<p>이 이야기들은 <strong>거짓말</strong>이 아니다. 거짓말이라면 오히려 간단하다. 그것들은 <strong>부분적 진실</strong>이다. 그리고 부분적 진실이기에 더 강력하다. 실제로 원주민 아이들 중 일부는 기숙학교에서 영어를 배웠다. 실제로 시장 논리는 어떤 면에서 효율을 높였다. 이 부분적 진실이 <strong>전체적 파괴</strong>를 가린다.</p>
+<p>Wetiko는 <strong>선의를 통해 작동한다</strong>. 이것이 가장 무서운 점이다. 식민 관료 중 많은 수가 진정으로 &quot;원주민을 돕는다&quot;고 믿었다. 선교사 중 많은 수가 진정으로 &quot;영혼을 구한다&quot;고 믿었다. 현대의 테크 리더 중 많은 수가 진정으로 &quot;세상을 더 나은 곳으로 만든다&quot;고 믿는다. 그들의 선의가 거짓이 아니다. 그러나 그 선의가 <strong>구조적 파괴</strong>와 <strong>분리되지 않는다</strong>는 점이 Wetiko의 본질이다.</p>
+<p>악이 악의 얼굴을 하면 오히려 방어하기 쉽다. 악이 선의 얼굴을 할 때 — 방어가 훨씬 어렵다. 피해자조차 자기가 피해자인지 모르는 경우가 많다.</p>
+<h2>부버의 I-It / I-Thou — Wetiko의 대척점</h2>
+<h3>1923년의 작은 책</h3>
+<p>독일-오스트리아 유대인 철학자 <strong>마르틴 부버(Martin Buber, 1878~1965)</strong> 는 1923년 짧은 책 한 권을 출간했다. 제목은 <strong>『나와 너(<em>Ich und Du</em>)』</strong>.⁸ 약 150페이지의 얇은 책이지만, 20세기 철학에 지대한 영향을 미쳤다.</p>
+<p>부버의 주장은 간결하다. 인간은 <strong>두 가지 근본적 관계 양식</strong>을 가진다. <strong>I-It(나-그것)</strong> 관계와 <strong>I-Thou(나-너)</strong> 관계.</p>
+<p><strong>I-It 관계</strong>는 대상과의 관계다. 내가 무언가를 <strong>사용, 분석, 경험, 소유</strong>할 때의 관계. 이 관계에서 &quot;It(그것)&quot;은 나에게 <strong>대상</strong>이다. 나는 그것을 관찰하고, 측정하고, 이용한다. 필요하면 버린다. 이 관계에서 나는 <strong>주체로 남아 있고</strong>, 그것은 <strong>대상에 머문다</strong>. 경계가 명확하다.</p>
+<p><strong>I-Thou 관계</strong>는 만남의 관계다. 내가 다른 존재를 <strong>마주할 때</strong>의 관계. 이 관계에서 &quot;Thou(너)&quot;는 내 <strong>대상이 아니다</strong>. 나는 그것을 관찰하지 않고 그것과 <strong>함께 있다</strong>. 측정하지 않고 <strong>참여한다</strong>. 이 관계에서 <strong>나와 너의 경계가 녹는다</strong>. 나는 내가 되고, 너는 네가 되지만, 우리는 <strong>동시에 우리</strong>가 된다.</p>
+<p>부버는 두 관계 모두 필요하다고 말했다. I-It 없이는 과학도 기술도 사회도 불가능하다. 어떤 활동은 대상화를 요구한다. 문제는 <strong>현대 세계가 모든 관계를 I-It으로 환원</strong>한다는 것이다.</p>
+<blockquote>
+<p>&quot;모든 It의 세계에는 하나의 You가 필요하다. 그러나 현대인은 You를 보는 눈을 잃었다.&quot;⁹</p>
+</blockquote>
+<h3>Wetiko와 I-It의 동일성</h3>
+<p><strong>Wetiko는 모든 관계를 I-It으로 환원하는 경향이다.</strong></p>
+<p>이것이 내가 이 책에서 Wetiko를 이해하는 방식이다. Wetiko는 <strong>I-Thou 관계의 억압</strong>이다. 살아있는 존재를 살아있는 존재로 <strong>만나지 못하게</strong> 막는 것. 대신 <strong>대상</strong>으로, <strong>자원</strong>으로, <strong>도구</strong>로 환원시키는 것.</p>
+<p>이 환원이 완성되면 — <strong>어떤 착취도 도덕적 문제가 되지 않는다</strong>. 왜냐하면 &quot;It(그것)&quot;을 사용하는 것은 도덕의 영역이 아니기 때문이다. 나는 연필을 &quot;착취&quot;하지 않는다. 나는 연필을 <strong>사용</strong>한다. 같은 논리가 노동자에게, 자연에, 심지어 가족에게도 적용되면 — <strong>식인이 일상</strong>이 된다.</p>
+<p>부버의 통찰은 이것이다. <strong>I-Thou 관계를 회복하지 않으면, 우리는 인간성 자체를 잃는다</strong>. 왜냐하면 인간됨은 <strong>다른 존재를 Thou로 마주할 능력</strong>에서 나오기 때문이다. 그 능력이 소멸하면, 우리는 — 기술적으로 인간이지만 — <strong>영적으로는 자동인형</strong>이 된다.</p>
+<p>부버가 이 글을 쓴 것은 <strong>홀로코스트 이전</strong>이다. 그는 자기 책의 예언적 무게를 알지 못했을 것이다. 그러나 그가 묘사한 <strong>I-It의 세계</strong>가 결국 가스실을 낳았다. 수백만 유대인, 집시, 동성애자, 장애인이 그야말로 <strong>&quot;It&quot;으로 처리되었다</strong>. 서류 번호. 운송 할당. 선별 범주. 그들은 그야말로 <strong>그것</strong>이 되어 죽었다.</p>
+<p>부버 자신이 유대인이었고 독일에서 추방되었다. 그는 살아남아 이스라엘로 이주했다. 그러나 홀로코스트 이후 그의 메시지는 <strong>더욱 긴급해졌다</strong>. 그리고 오늘 21세기에도 — 여전히 긴급하다. 왜냐하면 Wetiko는 <strong>형태를 바꾸어 계속</strong> 작동하기 때문이다.</p>
+<h2>Wetiko의 현대적 형태</h2>
+<h3>현대는 Wetiko의 정점이다</h3>
+<p>이 장의 마지막 부분은 현재로 돌아온다. Wetiko는 과거의 문제가 아니다. <strong>지금 이 순간 우리 모두의 일상</strong>에 스며들어 있다.</p>
+<h3>번아웃 — 자기를 먹는 자아</h3>
+<p>한국은 이 현상의 극단적 사례다. OECD 최고 자살률. 세계 최저 출산율. <strong>전 세계에서 가장 오래 일하는 노동자</strong>. 이 통계들이 가리키는 것이 무엇인가.</p>
+<p><strong>번아웃(burnout)</strong>. 자기 생명력을 자기가 먹는 것.</p>
+<p>한병철의 『피로사회』(2010)가 진단한 구조를 기억하자(8장). 과거의 규율 사회는 <strong>외부 강제</strong>로 작동했다. 공장 감독관, 사회의 도덕 주입, 국가 권력. 신자유주의 사회는 <strong>자기 강제</strong>로 작동한다. 아무도 당신에게 더 일하라고 명령하지 않는다. <strong>당신이 스스로 더 일하도록 만든다</strong>. &quot;당신은 성취해야 한다.&quot; &quot;당신은 더 나아질 수 있다.&quot; &quot;당신의 가능성을 낭비하지 마라.&quot;</p>
+<p>이것이 <strong>내면화된 Wetiko</strong>다. 외부의 주인이 없기 때문에 반항할 대상이 없다. 나 자신이 나의 주인이자 노예다. 쉬지 않는다. 쉬면 <strong>스스로에게 죄의식</strong>을 느낀다.</p>
+<p>이 상태가 몇 년, 몇 십 년 지속되면 — 몸과 마음이 소진된다. 이것이 번아웃이다. 그리고 번아웃은 점점 더 어린 나이에 온다. 한국 대학생의 상당 부분이 이미 번아웃 증상을 보인다. 중학생도.</p>
+<p>의학자로서 덧붙이면, 번아웃은 단순한 &quot;피곤함&quot;이 아니다. 그것은 <strong>생물학적 상태</strong>다. 만성 스트레스가 면역계를 약화시킨다. 염증 지표가 높아진다. 노화가 가속된다. 암 발병 위험이 증가한다. 심혈관계 질환이 증가한다. 우울증과 불안이 일상이 된다. <strong>자기 착취의 대가는 몸에 찍힌다</strong>.</p>
+<p>그런데 이 증상을 개별 환자의 &quot;스트레스 관리 문제&quot;로 접근하는 것이 현대 의료의 습관이다. 명상을 권하고, 운동을 권하고, 휴식을 권한다. 이것들은 도움이 된다. 그러나 <strong>문제의 근원을 건드리지 않는다</strong>. 근원은 <strong>구조</strong>다. 사회가 사람을 쉴 수 없게 만드는 구조. 의료가 이 구조를 알아차리지 못하면, 의료는 <strong>Wetiko의 공모자</strong>가 된다. 증상만 다루면서 구조적 착취가 계속되도록 돕는 것이다.</p>
+<p>17장 살루토제네시스에서 이 주제로 돌아올 것이다.</p>
+<h3>외로움 — 관계 없는 존재</h3>
+<p>번아웃과 짝을 이루는 또 하나의 현대적 증상이 <strong>외로움(loneliness)</strong> 이다.</p>
+<p>최근 연구들이 외로움을 <strong>공중 보건 위기</strong>로 다루기 시작했다.¹⁰ 영국은 2018년 &quot;외로움 장관(Minister for Loneliness)&quot; 을 공식 임명했다. 미국 연방 의료장관(Surgeon General)은 2023년 외로움에 대한 경고문(advisory)을 발표했다. 그 문서의 결론: <strong>&quot;사회적 연결 결핍이 하루에 담배 15개를 피우는 것과 건강에 동등한 해를 끼친다.&quot;</strong></p>
+<p>왜 외로움이 이렇게 증가했는가. 한 가지 답은 <strong>관계의 시장화</strong>다. 우정이 &quot;소셜 미디어 네트워크&quot; 로 바뀌었다. 사랑이 &quot;데이팅 앱&quot; 으로 바뀌었다. 공동체가 &quot;고객 커뮤니티&quot; 로 바뀌었다. 이 각 치환은 관계의 <strong>표면</strong>을 유지하면서 <strong>깊이</strong>를 제거한다.</p>
+<p>이것이 Wetiko의 섬세한 작동이다. 관계를 완전히 없애지는 않는다. 그것은 너무 노골적이다. 대신 관계를 <strong>거래</strong>로 바꾼다. 거래는 <strong>I-It 관계</strong>다. 당신은 나에게 가치를 주고, 나는 당신에게 가치를 준다. 계산이 맞으면 관계가 지속된다. 맞지 않으면 종료된다. 이것이 오늘 많은 관계의 실체가 되었다.</p>
+<p>그리고 외로움은 이 치환의 <strong>부작용</strong>이다. 거래 속에는 <strong>Thou</strong>가 없다. 존재로서의 만남이 없다. 나는 수백 명의 친구가 있어도 — 혼자 남는다. 왜냐하면 <strong>아무도 나의 Thou가 아니기 때문</strong>이다.</p>
+<h3>생태 위기 — 자연을 먹는 것</h3>
+<p>그리고 가장 큰 규모의 Wetiko: <strong>기후 위기와 생태 붕괴</strong>.</p>
+<p>지구의 생명력이 추출되고 있다. 화석연료로, 산림 파괴로, 해양 남획으로, 토양 악화로. 이 추출의 속도가 <strong>지질학적 시간 단위</strong>의 비율로 일어나고 있다. 과학자들이 현재 시대를 <strong>인류세(Anthropocene)</strong> 로 명명했다. 인간 활동이 지구의 기본 시스템을 <strong>근본적으로 변형</strong>시키는 시대.</p>
+<p>기후 위기의 기술적 해법이 많이 논의된다. 태양광, 풍력, 전기차, 원자력. 탄소 포집. 생태 복원. 이것들 모두 필요하다. 그러나 이것들이 근본 해법은 아니다. 왜냐하면 <strong>문제는 기술이 아니라 관계</strong>이기 때문이다.</p>
+<p>기후 위기는 <strong>자연을 Thou가 아니라 It으로 대한 문명의 필연적 귀결</strong>이다. 자연을 살아있는 존재로 만났다면 우리는 지금 상태에 이르지 않았을 것이다. 대신 우리는 자연을 <strong>무한한 자원 창고</strong>로 보았다. <strong>버려도 되는 쓰레기통</strong>으로 보았다. 그 결과가 지금 우리 앞에 있다.</p>
+<p>기술적 해법만으로는 부족하다. <strong>관계의 회복</strong>이 필요하다. 즉 — <strong>파차마마를 다시 기억하는 것</strong>(4장). <strong>야쿠를 다시 친족으로 부르는 것</strong>. <strong>아푸에게 다시 제물을 바치는 것</strong>. 문자 그대로가 아니더라도, <strong>그 정신을</strong> 회복하는 것.</p>
+<p>이것은 미신의 권장이 아니다. 이것은 <strong>현실적 생존 전략</strong>이다. 자연을 Thou로 대하지 않으면, 우리는 자연을 파괴하는 것을 멈출 수 없다.</p>
+<h3>감시 자본주의 — 주의의 추출</h3>
+<p>21세기의 특별한 Wetiko 형태로 <strong>감시 자본주의(surveillance capitalism)</strong> 가 있다. 하버드 경영대학원의 <strong>쇼샤나 주보프(Shoshana Zuboff)</strong> 가 2019년 동명의 책에서 분석한 개념.¹¹</p>
+<p>감시 자본주의의 구조는 간단하다. 구글, 페이스북, 아마존, 틱톡 같은 플랫폼이 <strong>무료 서비스</strong>를 제공한다. 대신 사용자의 <strong>행동 데이터</strong>를 수집한다. 이 데이터를 분석하고 판매한다. 핵심 상품은 <strong>미래 예측</strong> — 사용자가 다음에 무엇을 할 것인지, 무엇을 살 것인지, 누구를 믿을 것인지.</p>
+<p>이 비즈니스 모델의 표면은 <strong>편의</strong>다. 당신은 무료로 서비스를 받는다. 그러나 그 뒤에는 <strong>당신 자신이 상품</strong>이다. 당신의 주의, 당신의 감정, 당신의 관계, 당신의 꿈 — 이 모든 것이 <strong>추출되고 분류되고 판매</strong>된다.</p>
+<p>이것이 Wetiko다. 왜냐하면 <strong>당신의 영적 에너지(주의, 시간, 욕망)가 다른 사람의 이익으로 전환</strong>되기 때문이다. 그리고 이 전환은 <strong>당신이 알지 못하는 사이에</strong> 일어난다. 자기 은폐의 교묘함.</p>
+<p>오늘 나는 이 책을 쓰기 위해 컴퓨터를 켰다. 그러나 컴퓨터를 켜는 순간부터 — 내 주의의 작은 조각들이 여러 방향으로 새어 나간다. 이메일 알림. 소셜 미디어 체크. 뉴스 헤드라인. 각각 1분, 2분. 하지만 합치면 <strong>하루 몇 시간</strong>이 된다. 그 시간은 어디로 갔는가? <strong>추출되었다</strong>. 내 시간이 내 것이 아니게 되었다.</p>
+<h2>결론: 감염되지 않은 사람은 없다</h2>
+<p>Wetiko 전통의 핵심에 있는 경고를 다시 떠올려본다.</p>
+<p><strong>&quot;너도 Wetiko가 된다. 한 번 먹기 시작하면.&quot;</strong></p>
+<p>이 문장이 이 장의 가장 무거운 진실이다.</p>
+<p>Wetiko는 &quot;그들&quot; 의 문제가 아니다. 포브스도 레비도 부버도 이 점을 강조한다. <strong>Wetiko는 전염병이다</strong>. 그리고 이 전염병은 수백 년간 지구를 휩쓸었다. <strong>감염되지 않은 사람은 없다</strong>.</p>
+<p>나도 감염되어 있다. 내가 이 책을 쓰는 행위조차 — 어떤 면에서 — Wetiko의 작동이다. 나는 잉카의 이야기를 <strong>내 책의 재료로</strong> 사용하고 있다. 크리족 원로의 가르침을 <strong>내 학술적 분석으로</strong> 변환하고 있다. 이것들은 선의에서 나온다. 그러나 선의만으로는 부족하다. 나는 끊임없이 <strong>자기 점검</strong>을 해야 한다. 내가 어느 지점에서 재료 삼고 있는가. 어느 지점에서 만나고 있는가. 경계가 늘 흐릿하다.</p>
+<p>이것이 Wetiko의 가장 겸손한 인식이다. <strong>우리는 감염자다</strong>. 그러나 — 그 사실을 아는 것이 <strong>첫 치유</strong>다. 크리 원로는 말했다. &quot;우리가 이 이야기를 아이들에게 전한다. 다른 누군가에게서 Wetiko를 알아보기 위해서.&quot; 자기 안에서 알아보는 것이 먼저일 수도 있다.</p>
+<p>그리고 <strong>알아본 다음에는 무엇을 해야 하는가</strong>. 이 질문이 이 책의 나머지 부분의 주제다.</p>
+<p>먼저, Wetiko가 <strong>역사에서 어떻게 정식화</strong>되었는지를 본다(10장 바야돌리드). 그 다음, 어떻게 <strong>경제로 물질화</strong>되었는지를 본다(11장 포토시, 12장 설탕). 어떻게 <strong>동아시아로 확산</strong>되었는지를 본다(13장 1492와 1592). 어떻게 <strong>세 문명의 운명을 갈랐는지</strong>를 본다(14장). 이것이 3부의 나머지.</p>
+<p>그 후, 4부에서 <strong>치유</strong>를 향해 간다. 페리코레시스(15장). 동양의 응답(16장). 살루토제네시스(17장). 그리고 마지막 — AI 시대의 물음을 품은 채 티폰의 물소리 앞으로 돌아가는 18장.</p>
+<p>그러나 지금, 이 장을 덮으며, 하나의 단어를 되새긴다.</p>
+<p><strong>Wetiko.</strong></p>
+<p>크리 원로가 가르쳐준 단어. 수천 년의 지혜가 담긴 이름. 지난 500년의 세계사를 정확히 진단하는 개념. 그리고 — 오늘 내가, 그리고 당신이, 나에게서, 너에게서 찾아내야 할 병의 이름.</p>
+<p><strong>이름을 안다는 것이 이미 무언가다.</strong></p>
+<hr>
+<h2>각주</h2>
+<p>¹ 잭 포브스의 전기적 정보에 관하여는 UC 데이비스 아메리카 원주민 연구학과의 공식 자료 참조. 그의 주요 저작으로는 <em>Apache, Navaho and Spaniard</em> (1960), <em>Aztecas del Norte</em> (1973), <em>Africans and Native Americans</em> (1988) 등이 있다.</p>
+<p>² Jack D. Forbes, <em>Columbus and Other Cannibals: The Wetiko Disease of Exploitation, Imperialism, and Terrorism</em>, rev. ed. (New York: Seven Stories Press, 2008; orig. 1979).</p>
+<p>³ Christopher Columbus, <em>The Log of Christopher Columbus</em>, trans. Robert H. Fuson (Camden, ME: International Marine Publishing, 1987), 1492년 11월 27일 항목. 번역은 저자가 다듬었다.</p>
+<p>⁴ Paul Levy, <em>Dispelling Wetiko: Breaking the Curse of Evil</em> (Berkeley, CA: North Atlantic Books, 2013).</p>
+<p>⁵ 위의 책, 특히 제2장 &quot;Wetiko as Psychic Blindness.&quot;</p>
+<p>⁶ Hannah Arendt, <em>Eichmann in Jerusalem: A Report on the Banality of Evil</em> (New York: Viking, 1963). 한국어 번역본: 《예루살렘의 아이히만》, 김선욱 역, 한길사, 2006.</p>
+<p>⁷ Erich Fromm, <em>To Have or To Be?</em> (New York: Harper &amp; Row, 1976). 한국어 번역본: 《소유냐 존재냐》, 차경아 역, 까치글방.</p>
+<p>⁸ Martin Buber, <em>Ich und Du</em> (Leipzig: Insel Verlag, 1923). 영역본: <em>I and Thou</em>, trans. Walter Kaufmann (New York: Scribner, 1970). 한국어 번역본: 《나와 너》, 표재명 역, 문예출판사, 2001.</p>
+<p>⁹ 위의 책, 제1부. 번역은 저자.</p>
+<p>¹⁰ 외로움의 공중 보건적 함의에 관하여는 U.S. Surgeon General, <em>Our Epidemic of Loneliness and Isolation: The U.S. Surgeon General&#39;s Advisory on the Healing Effects of Social Connection and Community</em> (Washington, D.C.: U.S. Department of Health and Human Services, 2023).</p>
+<p>¹¹ Shoshana Zuboff, <em>The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power</em> (New York: PublicAffairs, 2019).</p>
+
+<div class="meta">『페루-쿠스코-마추피추 여행기』 집필 중 · 생성: 2026. 4. 20. PM 8:24:38</div>
+</body>
+</html>
