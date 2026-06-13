@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경계에서 경계를 바라보다 &mdash; Justin Jeon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FDF8F0;--rose:#8B3A4A;--coral:#D4726A;--gold:#C4944A;
+    --dark:#2C2C2C;--ink:#2a2622;--body:#3D3837;--light:#6B6360;--divider:#E8DDD0;--hl:#FFF5EB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Noto Serif KR',Georgia,'Times New Roman',serif;
+    background:var(--cream);color:var(--body);
+    line-height:2.05;font-size:18px;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+
+  /* TOP BAR */
+  .topbar{background:var(--dark);padding:12px 40px;text-align:left}
+  .topbar a{color:rgba(255,255,255,.72);text-decoration:none;font-family:'Noto Sans KR',sans-serif;font-size:14px;letter-spacing:.3px;margin-right:18px}
+  .topbar a:hover{color:#fff}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#8B3A4A 0%,#6B2A3A 42%,#4A1A2A 100%);color:#fff;text-align:center;padding:88px 40px 72px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,114,106,.22) 0%,transparent 70%),radial-gradient(ellipse at 72% 28%,rgba(196,148,74,.16) 0%,transparent 60%);pointer-events:none}
+  .hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+  .hero-sub{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:300;letter-spacing:5px;color:rgba(255,255,255,.6);margin-bottom:22px}
+  .hero h1{font-size:40px;font-weight:700;line-height:1.32;margin-bottom:18px;letter-spacing:-.5px}
+  .hero .tag{font-size:16.5px;font-weight:300;font-style:normal;color:rgba(255,255,255,.82);line-height:1.7}
+  .hero .auth{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:rgba(255,255,255,.66);letter-spacing:1px;margin-top:30px}
+
+  /* ARTICLE */
+  article{max-width:720px;margin:0 auto;padding:64px 32px 40px}
+  .lead{font-size:19.5px;color:var(--ink);line-height:1.95;margin-bottom:30px}
+  .lead::first-letter{
+    font-family:'Playfair Display',serif;
+    float:left;font-size:64px;line-height:.86;font-weight:700;
+    color:var(--rose);margin:6px 14px 0 0;
+  }
+  p{text-align:justify;margin:0 0 22px}
+  .scene-break{display:flex;align-items:center;justify-content:center;gap:16px;margin:42px 0 38px;color:var(--gold)}
+  .scene-break::before,.scene-break::after{content:'';height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--divider))}
+  .scene-break::after{background:linear-gradient(90deg,var(--divider),transparent)}
+  .scene-break span{font-size:14px;letter-spacing:6px;color:var(--gold)}
+
+  /* CLOSING PULL-QUOTE */
+  .closing{margin:54px auto 10px;padding:38px 34px;background:var(--hl);border-radius:14px;border:1px solid var(--divider);text-align:center}
+  .closing .big{font-family:'Playfair Display','Noto Serif KR',serif;font-size:24px;font-weight:700;color:var(--rose);line-height:1.5;margin-bottom:18px}
+  .closing p{text-align:center;font-size:17px;color:var(--ink);margin:0 0 6px;line-height:1.85}
+
+  footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:38px;font-size:13px;font-family:'Noto Sans KR',sans-serif;margin-top:60px}
+  footer strong{color:rgba(255,255,255,.9)}
+  footer a{color:rgba(255,255,255,.7);text-decoration:none}
+  footer a:hover{color:#fff}
+
+  @media(max-width:768px){
+    .hero{padding:54px 22px 44px}.hero h1{font-size:27px}.hero .tag{font-size:14.5px}
+    article{padding:40px 20px 30px}
+    body{font-size:16.5px}
+    .lead{font-size:17.5px}
+    .lead::first-letter{font-size:52px}
+    .closing .big{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/">&larr; drjustinjeon.com</a>
+  <a href="books.html">&larr; Books</a>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-sub">경계에서 경계를 바라보다</div>
+    <h1>우리는 사실이 아니라 이야기를 산다</h1>
+    <div class="tag">— 좌뇌라는 이야기꾼, 그리고 의미를 만들어야만 하는 인간에 대하여</div>
+    <div class="auth">Justin Jeon</div>
+  </div>
+</header>
+
+<article>
+
+  <p class="lead">우리는 날마다 선택한다. 무엇을 입을지, 누구에게 연락할지, 왜 화가 났는지, 왜 그 말을 했는지. 그리고 그때마다 그럴듯한 이유를 댄다. 나는 충분히 생각한 끝에 그렇게 했다고, 나름의 판단이 있었노라고, 내 선택에는 분명한 근거가 있었다고 믿는다. 그런데 만약 그 이유들 가운데 상당수가 사실은 선택 이후에 뒤늦게 덧붙여진 이야기라면 어떨까.</p>
+
+  <p>이 질문은 인간의 이성을 모욕하려는 장난이 아니다. 오히려 인간이 얼마나 독특한 방식으로 세계를 견디는지를 보여 주는 질문이다. 우리는 있는 그대로의 사실만으로는 오래 버티지 못한다. 삶은 너무 우연하고, 감정은 너무 먼저 일어나며, 행동은 종종 설명보다 앞서기 때문이다. 그래서 인간은 해석한다. 이유를 만든다. 조각난 사건들을 하나의 줄거리로 엮는다. 때로는 사실이 부족해도, 심지어 사실과 조금 어긋나더라도, 의미가 있어야만 앞으로 나아갈 수 있기 때문이다.</p>
+
+  <p>이 점을 드러내는 장면이 세 가지 있다. 얼핏 보면 서로 아무 상관이 없어 보인다. 똑같은 양말 네 켤레 중 하나를 고르는 평범한 사람들, 뇌가 두 반구로 갈라진 채 살아가는 분리뇌 환자, 그리고 단순한 확률 게임. 그러나 이 세 장면은 결국 하나의 사실로 모인다. 사람은 이유를 찾는 존재이며, 이야기를 만들어야만 견딜 수 있는 존재라는 사실이다. 그리고 그 비밀은 좌뇌와 우뇌를 잇는 가느다란 다리, 곧 뇌량(corpus callosum)을 끊는 순간 극적으로 드러났다.</p>
+
+  <div class="scene-break"><span>I</span></div>
+
+  <p>먼저, 아주 사소한 선택 하나를 떠올려 보자.</p>
+
+  <p>실험실에 도착한 참가자들은 눈앞에 놓인 양말 네 켤레 중 품질이 가장 좋은 것을 골라 달라는 요청을 받았다. 사람들은 양말을 만져 보고, 늘려 보고, 질감을 느껴 보며 신중하게 선택했다. 그리고 자신이 고른 양말이 왜 더 좋은지 설명해 보라는 질문을 받자 대부분 자신 있게 대답했다. 어떤 이는 질감이 더 좋다고 했고, 어떤 이는 짜임새가 더 단단해 보인다고 했다. 하지만 여기에는 작은 함정이 있었다. 네 켤레의 양말은 사실 모두 똑같았다. 더 좋은 품질의 양말 같은 것은 애초에 존재하지 않았다.</p>
+
+  <p>그런데도 사람들은 특정한 양말을 훨씬 더 자주 골랐다. 유독 맨 오른쪽에 놓인 양말이 선택되는 비율이 높았다. 단순한 위치 효과였다. 그러나 흥미로운 것은 그다음이었다. 사람들은 자신이 오른쪽에 있는 양말을 골랐기 때문이라고 거의 말하지 않았다. 대신 그 선택이 얼마나 합리적이었는지 설명하는 이유를 만들어 냈다. 그리고 나중에 양말들이 사실 모두 같았다고 알려 주어도, 많은 사람은 여전히 처음의 설명을 쉽게 거두지 않았다.</p>
+
+  <p>이 실험이 보여 주는 것은 단순한 착각이 아니다. 인간은 자신의 선택이 우연하거나 임의적이었다는 사실을 좀처럼 견디지 못한다. 우리는 &ldquo;그냥 그렇게 됐다&rdquo;는 답보다, 비록 나중에 덧붙인 것일지라도 그럴듯한 설명을 더 원한다. 선택보다 설명이 나중에 왔음에도, 우리는 그 설명을 진짜 원인처럼 받아들인다. 여기서 이미 한 가지 중요한 특징이 드러난다. 인간의 마음은 단지 경험하는 데서 멈추지 않는다. 경험을 납득 가능한 이야기로 바꾸려 한다.</p>
+
+  <div class="scene-break"><span>II</span></div>
+
+  <p>이 성향은 일상적 선택에서만 나타나는 것이 아니다. 오히려 극단적인 신경과학 실험 속에서 더 선명하게 모습을 드러낸다.</p>
+
+  <p>간질 치료를 위해 뇌량을 절제한 분리뇌 환자들은 좌뇌와 우뇌가 서로의 정보를 충분히 주고받지 못한다. 로저 스페리와 마이클 가자니가의 연구는 이 낯선 상태를 통해, 평소에는 하나의 자아처럼 보이는 마음이 사실 얼마나 섬세한 연결 위에 놓여 있는지 보여 주었다. 예컨대 한 환자에게 오른쪽 시야에는 망치를, 왼쪽 시야에는 톱을 보여 주면, 말을 담당하는 좌뇌는 오른쪽 시야의 망치만 보고 &ldquo;망치&rdquo;라고 대답한다. 그러나 왼손으로 그림을 그리라고 하면, 우뇌가 본 톱을 그릴 수 있다. 입은 망치라고 말하고, 손은 톱을 그리는 것이다. 하나의 사람이지만, 그 사람 안에서 이미 두 개의 정보 흐름이 각기 작동하고 있는 셈이다.</p>
+
+  <p>더 놀라운 것은 좌뇌가 자신이 모르는 것을 모른다고 말하지 않는다는 점이다. 가자니가는 이를 &lsquo;해석기(interpreter)&rsquo;라고 불렀다. 좌뇌는 흩어진 정보 조각들을 하나의 일관된 서사로 엮어 내는 장치다. 문제는 그 정보가 불완전할 때도 이 장치가 멈추지 않는다는 데 있다. 사실을 다 알지 못해도, 좌뇌는 빈칸을 비워 두기보다 메우는 쪽을 택한다.</p>
+
+  <p>한 분리뇌 환자는 오른쪽 시야에는 음표를, 왼쪽 시야에는 집을 보았다. 이후 여러 그림 중 하나를 고르게 하자 그는 오케스트라 그림을 골랐다. 왜 오케스트라를 골랐느냐는 질문에 그는 이렇게 설명했다. &ldquo;집에는 피아노가 있을 수 있고, 피아노가 있으면 레슨도 할 수 있으니까요.&rdquo; 그 설명은 언뜻 그럴듯하다. 그러나 실제 이유는 달랐다. 그의 우뇌가 음표를 보았기 때문에 오케스트라 그림을 고른 것이다. 좌뇌는 그 사실을 알지 못했다. 하지만 모른다고 말하는 대신, 즉석에서 하나의 줄거리를 만들어 냈다.</p>
+
+  <p>이 사례는 인간이 거짓말을 잘한다는 뜻이 아니다. 더 정확히 말하면, 인간은 의도적으로 속이지 않아도 이야기를 만들어 낼 수 있는 존재라는 뜻이다. 좌뇌의 해석기는 자기기만의 엔진이 아니라, 세계를 이해 가능한 형태로 묶어 주는 장치다. 그것은 삶을 정리해 주고, 파편을 연결하며, &lsquo;나는 왜 이런 행동을 했는가&rsquo;라는 질문에 어떤 식으로든 답을 내놓는다. 설령 그 답이 사실 그대로가 아닐지라도.</p>
+
+  <div class="scene-break"><span>III</span></div>
+
+  <p>이야기는 여기서 끝나지 않는다. 좌뇌의 해석 욕망은 때때로 현실 판단 자체를 흐리기도 한다.</p>
+
+  <p>가자니가와 동료들은 단순한 확률 게임을 통해 좌뇌와 우뇌의 차이를 보여 주었다. 화면 위쪽에 불빛이 켜질 확률은 80퍼센트, 아래쪽에 켜질 확률은 20퍼센트였다. 가장 높은 정답률을 얻는 전략은 간단하다. 매번 위쪽을 고르는 것이다. 그러면 80퍼센트는 맞힌다. 그런데 좌뇌는 이런 단순함을 잘 견디지 못한다. 몇 번 반복되면 규칙을 찾으려 든다. &ldquo;이번에는 아래가 나올 차례야.&rdquo; &ldquo;아까 위가 계속 나왔으니 이제 패턴이 바뀔 거야.&rdquo; 존재하지 않는 질서를 상상하고, 무작위 속에서 서사를 읽어 내려고 하는 것이다. 그 결과 정답률은 오히려 떨어진다.</p>
+
+  <p>반면 우뇌는 비교적 단순하게 반응한다. 가장 자주 나오는 쪽을 계속 선택한다. 설명은 빈약하지만 현실 적합성은 더 높다. 좌뇌는 의미를 원하고, 우뇌는 빈도를 따른다. 좌뇌는 세계를 이해하려 하고, 우뇌는 세계를 있는 그대로 받아들이는 쪽에 더 가깝다. 이 차이는 중요하다. 인간은 사실을 계산하는 기계가 아니라, 의미를 직조하는 존재라는 점을 보여 주기 때문이다.</p>
+
+  <p>이제 세 장면을 다시 겹쳐 보자. 사람들은 같은 양말 중 하나를 고른 뒤 그럴듯한 이유를 만들었다. 분리뇌 환자의 좌뇌는 자신이 알지 못하는 행동의 이유를 즉석에서 지어 냈다. 확률 게임에서 좌뇌는 없는 패턴을 읽어 내다가 더 자주 틀렸다. 이 셋은 모두 같은 방향을 가리킨다. 인간의 마음은 공백을 싫어한다. &ldquo;모른다&rdquo;는 상태를 오래 견디지 못한다. 우연은 불편하고, 단절은 불안하며, 의미 없음은 거의 고통에 가깝다. 그래서 우리는 이유를 찾고, 연결을 만들고, 이야기를 지어낸다.</p>
+
+  <div class="scene-break"><span>&middot; &middot; &middot;</span></div>
+
+  <p>이 지점에서 중요한 질문이 생긴다. 그렇다면 이야기는 단지 오류일까. 좌뇌의 해석기는 우리를 진실에서 멀어지게 만드는 결함일까.</p>
+
+  <p>반드시 그렇지는 않다. 제롬 브루너가 말했듯, 인간은 세계를 논리만으로 이해하지 않는다. 우리는 서사를 통해 의미를 구성한다. 상실을 겪고도 살아가는 사람들, 설명할 수 없는 사건을 견디는 사람들, 이미 지나간 실패를 다시 자기 삶 속에 배치하는 사람들은 사실을 사실로 아는 것만으로는 충분하지 않다. 왜 그런 일이 일어났는지, 그것이 내 삶에서 무엇을 뜻하는지, 나는 그 경험을 어떤 문장으로 품고 살아갈지를 정해야 비로소 다음으로 나아갈 수 있다.</p>
+
+  <p>어떤 사람에게는 사건 자체보다 그 사건을 설명하는 이야기의 부재가 더 큰 고통이 되기도 한다. 누군가를 잃은 뒤 사람을 무너뜨리는 것은 상실 그 자체만이 아니라, 그 상실이 아무 의미도 없이 남아 있다는 감각일 수 있다. 반대로, 왜 그런 일이 일어났는지에 대한 설명이 주어지면, 사실이 달라지지 않았는데도 마음의 무게는 달라진다. 인간은 사실을 안다고 안도하는 것이 아니라, 그 사실을 이야기 속에 넣을 수 있을 때 비로소 버틸 수 있다.</p>
+
+  <p>그래서 더 본질적인 질문은 &ldquo;우리는 이야기를 만들 것인가, 만들지 않을 것인가&rdquo;가 아니다. 그것은 선택의 문제가 아니다. 우리는 이미 이야기하는 존재다. 좌뇌의 해석기는 멈추지 않는다. 진짜 질문은 이것이다. 나는 어떤 이야기를 쓰며 살 것인가.</p>
+
+  <p>같은 하루를 두고도 어떤 사람은 &ldquo;겨우 버텨 낸 하루&rdquo;라고 쓸 것이고, 어떤 사람은 &ldquo;끝내 살아 낸 하루&rdquo;라고 쓸 것이다. 두 문장은 겉보기에 비슷하지만, 그 안에서 살아가는 사람은 점점 다른 사람이 된다. 어떤 이는 늙음을 쇠퇴의 서사로 받아들이고, 어떤 이는 변화와 적응의 서사로 다시 읽는다. 어떤 이는 병을 망가짐의 증거로만 받아들이고, 어떤 이는 몸이 보내는 새로운 언어로 해석한다. 삶을 바꾸는 것은 때로 사실 그 자체가 아니라, 그 사실을 엮는 문장이다.</p>
+
+  <p>물론 여기에는 경계가 필요하다. 더 나은 이야기를 선택한다는 것이 현실을 부정하거나 고통을 미화한다는 뜻은 아니다. 상처를 없는 일로 만들자는 말도 아니다. 오히려 정반대다. 우리는 사실을 지운 채 좋은 기분을 꾸며 내는 것이 아니라, 사실을 견딜 수 있는 방식으로 다시 배열해야 한다. 건강한 서사는 현실을 지우지 않는다. 현실을 감당할 수 있도록 의미를 부여한다. 좌뇌의 해석기를 속이는 것이 아니라, 그 힘을 좀 더 정직하고 더 넓은 방향으로 이끄는 일이다.</p>
+
+  <p>결국 인간은 사실만으로는 살지 못한다. 우리는 이야기를 필요로 한다. 선택의 이유를 설명하려 하고, 이해할 수 없는 행동에 서사를 부여하며, 우연한 세계 속에서도 질서의 흔적을 찾으려 한다. 그 충동은 때로 우리를 틀리게 만들지만, 동시에 우리를 살아가게 만든다. 좌뇌의 해석기는 약점이 아니라, 인간이라는 존재의 형식에 가깝다. 우리는 그 장치를 버릴 수 없다. 그렇다면 남는 일은 하나뿐이다. 그 장치에 무엇을 쥐여 줄 것인가, 어떤 문장으로 내 삶을 해석하게 할 것인가를 스스로 묻는 일이다.</p>
+
+  <div class="closing">
+    <div class="big">우리는 사실이 아니라 이야기를 산다.</div>
+    <p>그러니 삶을 바꾸는 마지막 능력은 어쩌면 사실을 더 많이 아는 데 있지 않을지 모른다.</p>
+    <p>어떤 사실을, 어떤 순서로, 어떤 목소리로 이야기할지를 다시 선택하는 데 있을 것이다.</p>
+  </div>
+
+</article>
+
+<footer>
+  <strong>Justin Jeon</strong> &middot; Yonsei University &middot; <a href="/">drjustinjeon.com</a><br>
+  『경계에서 경계를 바라보다』
+</footer>
+
+</body>
+</html>
