@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>피렌체에서 시작된 또 하나의 여행 &mdash; Justin Jeon</title>
-<meta name="description" content="유라시아에서 본 같은 그물망 — 페루 여행기의 자매편. 메디치 시스템에서 대분기·약탈, 大同·상생, AI 갈림길까지 — 페루 여행기의 자매편. 전용관.">
+<meta name="description" content="유라시아에서 본 같은 그물망 — 페루 여행기의 자매편">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -11,9 +11,11 @@
 body{margin:0;background:var(--bg);color:var(--body);
 font-family:'Noto Serif KR',Georgia,'Times New Roman',serif;line-height:2.0;font-size:18px;
 word-break:keep-all;overflow-wrap:break-word}
-.topbar{background:#241f1b;padding:12px 40px}
-.topbar a{color:rgba(255,255,255,.72);text-decoration:none;font-family:'Noto Sans KR',sans-serif;font-size:14px;margin-right:18px}
+.topbar{background:#241f1b;padding:12px 40px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.topbar a{color:rgba(255,255,255,.72);text-decoration:none;font-family:'Noto Sans KR',sans-serif;font-size:14px}
 .topbar a:hover{color:#fff}
+.topbar .lang{margin-left:auto;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:3px 14px;font-size:13px}
+.topbar .lang:hover{background:rgba(255,255,255,.12);color:#fff}
 .hero{background:linear-gradient(135deg,#9c4a2f 0%,#7d3a26 45%,#5c3a2e 100%);color:#fff;text-align:center;padding:88px 32px 74px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 28% 40%,rgba(181,136,59,.24),transparent 65%),radial-gradient(ellipse at 75% 70%,rgba(107,115,80,.20),transparent 60%)}
 .hero-in{position:relative;max-width:780px;margin:0 auto}
@@ -23,8 +25,7 @@ word-break:keep-all;overflow-wrap:break-word}
 .hero .auth{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:rgba(255,255,255,.7);letter-spacing:1px;margin-top:26px}
 .toc{max-width:760px;margin:44px auto 0;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 30px}
 .toc h2{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:4px;color:var(--gold);text-align:center;margin:0 0 18px;font-weight:600}
-.toc ol{list-style:none;margin:0;padding:0;counter-reset:c}
-.toc li{margin:0}
+.toc ol{list-style:none;margin:0;padding:0}
 .toc a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:var(--ink);padding:7px 6px;border-radius:8px;font-size:16px;line-height:1.5}
 .toc a:hover{background:var(--hl)}
 .toc .n{font-family:'Noto Sans KR',sans-serif;color:var(--terra);font-weight:600;font-size:13.5px;min-width:26px;text-align:right}
@@ -39,20 +40,16 @@ p{text-align:justify;margin:0 0 20px}
 em{font-style:italic;color:var(--olive)}
 strong{font-weight:700;color:var(--ink)}
 .fns{margin:34px 0 0;padding:18px 20px;background:var(--hl);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;font-size:13.5px;line-height:1.75;color:var(--muted)}
-.fns p{margin:0 0 8px;text-align:left}
-.fns p:last-child{margin:0}
+.fns p{margin:0 0 8px;text-align:left}.fns p:last-child{margin:0}
 .up{position:fixed;right:22px;bottom:22px;background:var(--terra);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,.2);font-size:20px}
 footer{background:#241f1b;color:rgba(255,255,255,.62);text-align:center;padding:40px;font-size:13px;font-family:'Noto Sans KR',sans-serif;margin-top:64px}
 footer a{color:rgba(255,255,255,.75);text-decoration:none}
-@media(max-width:768px){.hero{padding:56px 20px 46px}.hero h1{font-size:27px}article{padding:36px 18px 28px}.toc{padding:20px}body{font-size:16.5px}.chapter h2{font-size:22px}}
+@media(max-width:768px){.hero{padding:56px 20px 46px}.hero h1{font-size:27px}article{padding:36px 18px 28px}.toc{padding:20px}body{font-size:16.5px}.chapter h2{font-size:22px}.topbar{padding:12px 20px}}
 @media print{@page{margin:20mm}.topbar,.up,.toc{display:none}body{background:#fff;color:#000;font-size:11.5pt}.hero{background:#fff;color:#000;padding:0 0 20px}.hero .eyebrow,.hero .sub,.hero .auth{color:#333}.chapter+.chapter{page-break-before:always;border-top:0}.chapter h2,h3{color:#000;page-break-after:avoid}.fns{background:#f4f4f4}}
 </style></head><body>
-<div class="topbar" id="top"><a href="/">&larr; drjustinjeon.com</a><a href="books.html">&larr; Books</a></div>
-<header class="hero"><div class="hero-in">
-<div class="eyebrow">ESSAY &middot; TRAVELOGUE</div>
-<h1>피렌체에서 시작된 또 하나의 여행</h1>
-<div class="sub">유라시아에서 본 같은 그물망 — 페루 여행기의 자매편</div>
-<div class="auth">전용관</div></div></header>
+<div class="topbar" id="top"><a href="/">&larr; drjustinjeon.com</a><a href="books.html">&larr; Books</a><a class="lang" href="firenze_en.html">EN</a></div>
+<header class="hero"><div class="hero-in"><div class="eyebrow">ESSAY &middot; TRAVELOGUE</div>
+<h1>피렌체에서 시작된 또 하나의 여행</h1><div class="sub">유라시아에서 본 같은 그물망 — 페루 여행기의 자매편</div><div class="auth">전용관</div></div></header>
 <nav class="toc"><h2>차례</h2><ol>
 <li><a href="#ch1"><span class="n">1</span><span>피렌체의 돌 위에서 — 시스템을 설계한 가문</span></a></li>
 <li><a href="#ch2"><span class="n">2</span><span>1492년, 두 개의 문 — 무게중심이 옮겨가다</span></a></li>
@@ -68,10 +65,8 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <li><a href="#ch12"><span class="n">12</span><span>페리코레시스로 간 사람들 — 다른 길이 가능하다</span></a></li>
 <li><a href="#ch13"><span class="n">13</span><span>시에나의 벽 — 좋은 정부를 그린 도시</span></a></li>
 <li><a href="#ch14"><span class="n">14</span><span>키안티의 밤</span></a></li>
-</ol></nav>
-<article>
-<section class="chapter" id="ch1">
-<span class="cnum">1</span><h2>피렌체의 돌 위에서 — 시스템을 설계한 가문</h2>
+</ol></nav><article>
+<section class="chapter" id="ch1"><span class="cnum">1</span><h2>피렌체의 돌 위에서 — 시스템을 설계한 가문</h2>
 <h3>빈 벽감 앞에서</h3>
 <p>피렌체 산 로렌초 성당 뒤편, 메디치 예배당의 가장 안쪽 방. 군주 예배당(Cappella dei Principi)이라 불리는 거대한 팔각형 공간에 나는 한참을 서 있었다. 벽은 온통 반암과 청금석과 벽옥으로 뒤덮여 있었다. 이집트에서, 지구 반대편에서 실어 온 돌들을 하나하나 잘라 맞춘 상감이었다. 돈으로 할 수 있는 일의 거의 끝까지 가 본 방이었다.</p>
 <p>그런데 그 화려함 한가운데, 무언가가 비어 있었다.</p>
@@ -114,8 +109,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>² 파치 음모(1478)와 줄리아노 데 메디치의 피살, 로렌초의 생존은 동시대 피렌체 사료들에 상세히 기록되어 있다. 줄리아노의 무덤은 미켈란젤로가 신 성구실에 조각했다.</p>
 </div>
 </section>
-<section class="chapter" id="ch2">
-<span class="cnum">2</span><h2>1492년, 두 개의 문 — 무게중심이 옮겨가다</h2>
+<section class="chapter" id="ch2"><span class="cnum">2</span><h2>1492년, 두 개의 문 — 무게중심이 옮겨가다</h2>
 <h3>남쪽으로 난 길</h3>
 <p>피렌체에서 남쪽으로 차를 몰면, 키안티의 언덕이 시작되기 전에 안티노리 와이너리가 나온다. 토스카나의 능선에 파묻히듯 지어진 현대적인 건물이다. 주소부터가 "시에나로 가는 카시아 가도(Via Cassia per Siena)"였다. 나는 그 이름 앞에서 잠깐 멈췄다. 카시아 가도. 로마인들이 닦은 옛길이다. 이 길은 시에나로 내려가고, 시에나를 지나면 결국 로마로 이어진다. 남쪽으로, 계속 남쪽으로.</p>
 <p>와인 한 잔을 받아 들고 창밖의 포도밭을 보면서, 나는 길이라는 것에 대해 생각했다. 모든 길은 어딘가로 이어지고, 그 끝은 대개 한 시대의 중심을 향한다. 로마로 통하던 길, 피렌체로 모이던 길. 그런데 한 도시가, 한 바다가 세계의 중심이던 시대는 어떻게 끝나는가. 무게중심은 어떻게 옮겨가는가.</p>
@@ -147,8 +141,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>이 길은 남쪽으로, 로마를 향해 이어진다. 한때 모든 길이 향하던 그 중심. 그러나 1492년 이후, 세계의 진짜 길은 더 이상 로마나 피렌체로 모이지 않았다. 그 길들은 리스본의 부두에서, 세비야의 항구에서, 대서양을 가로질러 뻗어 나갔다. 그리고 그 길의 끝은 — 다음 장들에서 보게 되겠지만 — 마침내 동쪽으로, 일본과 조선과 명나라의 해안에까지 닿는다.</p>
 <p>무게중심이 옮겨간다는 것은 단지 부유한 도시가 바뀐다는 뜻이 아니다. 그것은 세계가 다시 짜인다는 뜻이다. 1492년에 열린 그 문 너머로, 인류는 처음으로 하나의 연결된 시스템 안에서 살게 된다. 리스본의 결정이 베이징의 운명에 닿고, 포토시의 은이 조선의 해안에서 칼이 되어 돌아오는 세계. 그 그물망을 추적하는 것이, 이제부터의 여정이다.</p>
 </section>
-<section class="chapter" id="ch3">
-<span class="cnum">3</span><h2>인쇄술과 프레스터 존 — 흐른 것과 환상이 낳은 것</h2>
+<section class="chapter" id="ch3"><span class="cnum">3</span><h2>인쇄술과 프레스터 존 — 흐른 것과 환상이 낳은 것</h2>
 <h3>계단을 오르며</h3>
 <p>산 로렌초 성당 경내에는 미켈란젤로가 설계한 라우렌치아나 도서관(Biblioteca Medicea Laurenziana)이 있다. 입구에 들어서면 그 유명한 계단이 먼저 눈에 들어온다. 회색 돌이 마치 용암처럼 흘러내리는 듯한 계단. 그것을 올라가면 긴 열람실이 나오고, 양옆으로 메디치 가문이 모은 필사본들이 보관되어 있다.</p>
 <p>나는 그 방에서, 인쇄술 이전의 세계를 생각했다. 이 필사본들은 모두 손으로 베껴 쓴 것이다. 책 한 권을 만드는 데 수도사가 몇 달, 몇 년을 매달려야 했다. 그래서 책은 극도로 비쌌고, 메디치 같은 가문만이 도서관을 가질 수 있었다. 지식은 소수의 서재에 갇혀 있었다.</p>
@@ -191,8 +184,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>⁶ 다네가시마 조총 전래의 연도는 자료에 따라 1542년과 1543년으로 갈린다. Olof G. Lidin, <em>Tanegashima: The Arrival of Europe in Japan</em>(2002).</p>
 </div>
 </section>
-<section class="chapter" id="ch4">
-<span class="cnum">4</span><h2>도자기와 은의 세계 — 동에서 서로</h2>
+<section class="chapter" id="ch4"><span class="cnum">4</span><h2>도자기와 은의 세계 — 동에서 서로</h2>
 <h3>메디치가 흉내 내려 한 것</h3>
 <p>피렌체의 한 박물관에서 나는 작고 푸른 무늬가 그려진 도자기 몇 점 앞에 멈췄다. 메디치 자기(Medici porcelain)였다. 16세기 후반, 프란체스코 1세 데 메디치가 중국의 청화백자를 흉내 내려고 만든, 유럽 최초의 연질 자기 시도 가운데 하나다. 지금 세계에 60여 점만 남아 있다.¹</p>
 <p>흥미로운 것은, 이 시도가 사실상 실패였다는 점이다. 메디치의 장인들은 중국 자기의 그 영롱한 흰빛과 단단함을 끝내 재현하지 못했다. 돈으로 무엇이든 하던 가문이, 도자기 하나만은 살 수도 만들 수도 없었다. 유럽이 진짜 자기를 스스로 만들어 낸 것은 그로부터 한참 뒤인 18세기, 독일 마이센에서였다.</p>
@@ -231,8 +223,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>³ 일본 측 기록은 하카타 상인 가미야 주테이(神屋寿禎)가 1526년 이와미 은광을 발견하고, 1533년 조선에서 온 기술자(경수·종단 등 자료에 따라 이름이 다름)를 통해 회취법을 도입했다고 전한다. 이와미 은광은 16세기 중반 한때 세계 은 생산의 약 3분의 1을 차지한 것으로 추정된다.</p>
 </div>
 </section>
-<section class="chapter" id="ch5">
-<span class="cnum">5</span><h2>유라시아의 매듭 — 열린 초원과 고구려</h2>
+<section class="chapter" id="ch5"><span class="cnum">5</span><h2>유라시아의 매듭 — 열린 초원과 고구려</h2>
 <h3>토스카나의 옛 주인들</h3>
 <p>토스카나(Toscana)라는 이름은 에트루리아(Etruria)에서 왔다. 로마가 일어서기 전, 이 땅의 주인은 에트루리아인이었다. 피렌체도, 키안티의 언덕도, 내가 와인을 마신 그 포도밭도 모두 한때 에트루리아의 땅이었다. 그들은 정교한 금세공으로 이름났다. 좁쌀 같은 금 알갱이를 표면에 붙이는 그래뉼레이션 기법은 지금도 재현하기 어려울 만큼 섬세했다.</p>
 <p>흥미로운 것은, 이 에트루리아인의 기원을 둘러싼 오랜 논쟁이다. 고대 그리스의 헤로도토스는 그들이 동방, 소아시아에서 건너왔다고 적었다. 다른 이들은 토착민이라 했다. 최근의 유전학 연구는 대체로 토착 기원에 무게를 두면서도, 주변 집단과 공유하는 초원 계통의 흔적을 함께 보여 준다. 결국 그들은 어느 한 줄기에서 깔끔하게 나온 민족이 아니라, 여러 흐름이 만난 자리에서 형성된 사람들이었다.</p>
@@ -272,8 +263,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>⁵ 안시성 전투(645)와 당 태종의 철군, 수 양제의 고구려 원정 실패와 수의 멸망은 동아시아사의 주요 사건으로 기록되어 있다.</p>
 </div>
 </section>
-<section class="chapter" id="ch6">
-<span class="cnum">6</span><h2>약탈의 그물</h2>
+<section class="chapter" id="ch6"><span class="cnum">6</span><h2>약탈의 그물</h2>
 <h3>같은 길로 흐른 두 가지</h3>
 <p>키안티의 밤이었다. 언덕에 어둠이 내리고, 나는 와인 한 잔을 앞에 두고 그날 본 것들을 되짚고 있었다. 메디치의 시스템, 1492년의 경첩, 동에서 서로 흐른 도자기와 은, 유라시아의 매듭. 모든 것이 연결되어 있다는 그림이 점점 또렷해지고 있었다.</p>
 <p>그런데 그 그림이 또렷해질수록, 한 가지가 마음에 걸렸다. 내가 추적해 온 이 아름다운 연결망이, 오랫동안 하나의 논리로 작동해 왔다는 것이다. 빼앗고 추출하는 논리. 황금과 기술과 사상이 흐른 그 길로, 동시에 약탈이 흘렀다.</p>
@@ -289,8 +279,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>그러나 이 약탈의 패턴은 동아시아에만 있던 것이 아니다. 같은 시대, 같은 논리가 전 지구를 휩쓸고 있었다. 우리는 흔히 유럽의 부상을 유럽 내부의 천재성 — 르네상스, 과학혁명, 합리성 — 으로 설명한다. 그러나 정직하게 따져 보면, 유럽의 성장을 떠받친 연료의 상당 부분은 유럽 바깥에서 왔다. 한때 더 부유하고 강했던 세계들이, 유럽이 부상하는 그 몇백 년 동안 차례로 무너지거나 변방으로 밀려났다.</p>
 <p>다음 장에서 나는 그 전 지구적 그물 — 역사가들이 대분기(Great Divergence)라 부르는 거대한 갈라짐 — 으로 시선을 넓힌다. 유럽이 부상할 때 나머지 세계에 무슨 일이 일어났는가. 그 약탈은 어떻게 스스로를 정당화했으며, 약탈당한 쪽은 왜 막지 못했는가. 진단은, 아직 끝나지 않았다.</p>
 </section>
-<section class="chapter" id="ch7">
-<span class="cnum">7</span><h2>대분기 — 유럽이 부상할 때, 나머지 세계는</h2>
+<section class="chapter" id="ch7"><span class="cnum">7</span><h2>대분기 — 유럽이 부상할 때, 나머지 세계는</h2>
 <h3>벽에 걸린 세계</h3>
 <p>피렌체 베키오 궁(Palazzo Vecchio) 깊숙한 곳에 지도의 방(Sala delle Carte Geografiche)이 있다. 코시모 1세 데 메디치가 16세기에 만들게 한 방이다. 벽을 가득 채운 나무 패널마다, 당대에 알려진 세계 전체가 한 장씩 그려져 있다. 유럽과 아시아, 아프리카와 새로 발견된 아메리카까지. 한 작은 내륙 공국의 군주가, 자기 서재의 벽에 지구 전체를 펼쳐 놓고 그 한가운데 앉았던 것이다.</p>
 <p>나는 그 방에서 묘한 기분에 사로잡혔다. 이 지도들은 단순한 장식이 아니었다. 그것은 한 시대의 욕망의 지도였다. 세계를 한눈에 보고, 좌표로 나누고, 손에 쥐려는 욕망. 1492년에 열린 그 문 너머로, 유럽은 이제 세계 전체를 자기 서재의 벽처럼 다루기 시작하고 있었다.</p>
@@ -327,8 +316,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>¹ 부의 유출(Drain of Wealth)은 다다바이 나오로지가 19세기에 제기했고, 우차 파트나익(Utsa Patnaik)은 1765~1938년 영국의 대인도 수탈을 약 45조 달러로 추산했다(2018). 단 이 추산은 환산 방법(복리 가정 등)을 둘러싸고 논쟁이 있으며, 본문은 정확한 액수가 아니라 '한 방향 유출'이라는 구조에 논거를 둔다.</p>
 </div>
 </section>
-<section class="chapter" id="ch8">
-<span class="cnum">8</span><h2>약탈의 정당화 — "지들이 뭔데"의 해부</h2>
+<section class="chapter" id="ch8"><span class="cnum">8</span><h2>약탈의 정당화 — "지들이 뭔데"의 해부</h2>
 <h3>명패 앞에서</h3>
 <p>피렌체에는 세계에서 가장 오래된 인류학 박물관의 하나가 있다. 나는 그곳의 한 진열장 앞에서 오래 멈췄다. 19세기에 수집된, 인간을 '분류'하려던 흔적들이었다. 두개골의 크기를 재던 도구, 인종을 등급으로 나눈 도표. 한때 이것이 '과학'이라 불렸다.</p>
 <p>그 진열장 앞에서 나는 솔직히 화가 났다. 도대체 그들이 뭐라고, 한 대륙을 자로 나누고, 한 문명을 등급으로 매기고, 다른 사람들을 '미개'라 부르며 빼앗았는가. 앞 장을 쓰는 내내 그 분노가 따라왔다. 그러나 나는 그 분노를 그대로 두지 않으려 한다. 분노가 "그들은 악마였다"에서 멈추면, 정작 그 약탈을 가능하게 한 것의 정체를 놓치기 때문이다. 이 장은 그 분노를 해부대 위에 올려놓는 장이다. 그들은 자신의 약탈을 어떻게 스스로 정당화했는가.</p>
@@ -350,8 +338,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>그러므로 분노의 진짜 과녁은 '나쁜 인종'이 아니라 '약탈하는 시스템'이어야 한다. 이 구분은 가해자에게 면죄부를 주는 것이 아니다. 오히려 더 깊은 책임을 묻는다. 문제가 특정 민족의 본성이라면 그 민족만 비난하면 되지만, 문제가 시스템이라면 — 그 시스템을 바꾸지 않는 한 그 자리에 누가 서든 같은 일이 반복된다. 어제의 피해자가 힘을 얻으면 내일의 가해자가 될 수 있다는 뜻이기도 하다. 그래서 더 어렵고, 더 근본적인 책임이다.</p>
 <p>박물관을 나오면서 나는 그 분노가 조금 다른 것으로 바뀌어 있는 것을 느꼈다. 한 인종을 향한 미움이 아니라, 한 시스템을 향한 또렷한 응시로. 미움은 과거에 묶이지만, 응시는 미래를 향할 수 있다. 그리고 그 응시가 다음 질문으로 나를 데려갔다. 그렇다면 — 약탈당한 쪽은, 왜 그것을 막지 못했는가.</p>
 </section>
-<section class="chapter" id="ch9">
-<span class="cnum">9</span><h2>왜 막지 못했는가 — 대분기의 안쪽</h2>
+<section class="chapter" id="ch9"><span class="cnum">9</span><h2>왜 막지 못했는가 — 대분기의 안쪽</h2>
 <h3>메디치가 만든 항구에서</h3>
 <p>피렌체에서 서쪽으로 내려가면 리보르노(Livorno)가 나온다. 메디치가 만든 항구 도시다. 내륙 도시 피렌체에는 바다가 없었다. 그래서 메디치는 대서양의 시대가 열리는 것을 보며, 늦게나마 바다로 나가는 문을 내려 했다. 리보르노를 자유무역항으로 선포하고, 종교와 출신을 묻지 않고 상인을 받아들였다. 유대인도, 무슬림도, 박해를 피해 온 이들도 이곳에서는 장사할 수 있었다. 작지만 영리한 시도였다 — 흐름이 바뀌는 것을 읽고, 거기에 올라타려는.</p>
 <p>그 항구에 서서 나는 앞 장들의 분노를 잠시 내려놓고, 더 불편한 질문을 마주했다. 유럽이 약탈했다는 것은 사실이다. 그러나 "유럽이 약탈했다"만으로 모든 것을 설명하면, 나는 아시아를 순수한 피해자로만 그리게 된다. 그리고 정작 중요한 질문을 놓친다. <strong>왜 막지 못했는가. 왜 한때 더 부유하고 강했던 문명들이, 그 흐름을 읽지 못하고 당하기만 했는가.</strong> 이 질문을 피하면, 피해의 역사에서 배울 것이 없어진다.</p>
@@ -375,8 +362,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>이것은 우리 자신을 탓하려는 말이 아니다. 피해의 책임을 피해자에게 돌리는 것은 또 하나의 약탈이다. 그러나 피해를 세계사적 구조 속에서 정직하게 읽으면, 미래를 향한 태도가 달라진다. 필요한 것은 누군가를 향한 원한이 아니라, 흐름을 읽고 자기 모델을 다시 설계하는 능력이다. 그 능력이야말로, 약탈의 시대에 무너진 쪽과 살아남은 쪽을 가른 진짜 분기점이었다.</p>
 <p>리보르노의 항구에 저녁이 내렸다. 메디치가 작게나마 흐름에 올라타려 만든 그 항구를 보며, 나는 이 진단을 현재로 가져가지 않을 수 없었다. 흐름을 읽고 모델을 재설계하는가 — 이것은 16세기만의 이야기가 아니다. 바로 지금, 우리 시대의 강자와 약자를 가르고 있는 질문이기도 하다. 다음 장은 그 현재로 간다.</p>
 </section>
-<section class="chapter" id="ch10">
-<span class="cnum">10</span><h2>메디치의 패턴은 반복된다 — 독일, 스페인, 그리고 AI</h2>
+<section class="chapter" id="ch10"><span class="cnum">10</span><h2>메디치의 패턴은 반복된다 — 독일, 스페인, 그리고 AI</h2>
 <h3>언덕 위의 패널</h3>
 <p>키안티로 돌아오는 길, 한 농가의 지붕 위에서 햇빛에 반짝이는 것을 보았다. 태양광 패널이었다. 수백 년 된 돌집의 붉은 기와 위에, 햇빛을 전기로 바꾸는 푸른 판이 얹혀 있었다. 오래된 토스카나의 능선 위로, 멀리 풍력 발전기의 흰 날개도 천천히 돌고 있었다.</p>
 <p>나는 그 장면 앞에서, 이 여행이 줄곧 추적해 온 한 가지 원리를 현재의 풍경에서 다시 보았다. 패권의 흥망은 그 주체가 우월하거나 열등해서가 아니라, <strong>시대의 거대한 흐름을 읽고 자기 모델을 다시 설계했는가</strong>에 달렸다는 것. 그리고 어제의 성공 공식이 내일의 족쇄가 된다는 것. 한 시대를 가장 완벽하게 구현한 강자가, 전제가 바뀔 때 가장 취약해진다는 것.</p>
@@ -398,8 +384,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>그래서 AI 앞에서 던져야 할 진짜 질문은 "우리가 AI에서 이길 것인가"가 아니다. <strong>"우리가 AI를 어느 방향으로 설계할 것인가"</strong> 이다. 빼앗는 도구로 만들 것인가, 잇는 도구로 만들 것인가. 이 질문이야말로, 진단을 끝낸 이 여행이 이제 처방으로 — 약탈의 그물에서 상생의 그물로 — 넘어가는 문턱이다.</p>
 <p>언덕 위의 태양광 패널이 마지막 햇빛을 받아 반짝였다. 오래된 돌집 위에 얹힌 새 기술. 과거와 미래가 한 지붕 위에 포개진 그 풍경이, 묘하게 이 여행의 한가운데처럼 느껴졌다. 우리는 늘 옛 토대 위에서 새 흐름을 맞는다. 문제는 그 흐름을 어떤 손으로 쥐느냐다. 이제부터 나는, 빼앗지 않고 잇는 그 손을 찾아 나선다.</p>
 </section>
-<section class="chapter" id="ch11">
-<span class="cnum">11</span><h2>분리에서 연결로 — 그리고 다시 설계하다</h2>
+<section class="chapter" id="ch11"><span class="cnum">11</span><h2>분리에서 연결로 — 그리고 다시 설계하다</h2>
 <h3>단순한 관광객이 아니라는 것</h3>
 <p>산카시아노의 한 사람이 우리에게 동네 식당을 일러 주었다. 칸티네타 델 노노(Cantinetta del Nonno) — "할아버지의 작은 와인 창고"라는 이름의, 관광객이 아니라 동네 이탈리아 사람들이 가는 트라토리아였다. 그러면서 그가 덧붙였다. 원하면 자기가 대신 전화를 걸어 두겠다고. 그래야 식당 쪽에서 "당신들이 단순한 관광객이 아니라는 걸" 알게 된다고.</p>
 <p>나는 그 한마디가 오래 마음에 남았다. 단순한 관광객이 아니라는 것. 관광객이란 무엇인가. 식당의 입장에서 관광객은 한 번 오고 가는 거래다. 돈을 내고 음식을 받고 떠나는, 서로에게 도구인 관계. 그러나 누군가의 소개로 "내가 아는 사람들"이라는 한마디가 얹히는 순간, 그 관계는 거래가 아니라 환대가 된다. 같은 식탁, 같은 음식인데, 사람을 대하는 방식이 통째로 달라진다.</p>
@@ -440,8 +425,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>여기까지 적고 나는 잠시 펜을 멈췄다. 솔직한 의심이 들었기 때문이다. 관계를 단위로 삼는 시스템, 권력을 사익이 아니라 공동선으로 묶는 시스템 — 이것은 한낱 이상주의적 공상은 아닌가. 인류가 한 번이라도 그런 것을 실제로 그려 보고, 제도로 만들어 살아 본 적이 있는가.</p>
 <p>그 의심에 답을 준 것은, 역사 곳곳에 흩어진 사람들이었다. 약탈의 고통을 직접 겪은 뒤, 다른 길을 의식적으로 설계한 이들. 거대한 제도에서 작은 식탁까지, 빼앗지 않고 서로 잇기를 택한 사람들. 다음 장에서 나는 먼저 그들을 찾아 나선다. 그리고 그 여정의 끝에서 — 며칠 전 시에나에서 본, 인류가 좋은 정부를 벽에 그려 두고 매일 그 앞에 앉았던 한 방 앞에 다시 서게 될 것이다.</p>
 </section>
-<section class="chapter" id="ch12">
-<span class="cnum">12</span><h2>페리코레시스로 간 사람들 — 다른 길이 가능하다</h2>
+<section class="chapter" id="ch12"><span class="cnum">12</span><h2>페리코레시스로 간 사람들 — 다른 길이 가능하다</h2>
 <h3>포도를 거두는 저녁</h3>
 <p>키안티의 가을이었다. 포도 수확이 한창이었다. 언덕마다 사람들이 줄지어 포도를 따고, 광주리가 트랙터에 실려 내려갔다. 저녁이 되자 한 농가의 마당에 긴 식탁이 차려졌다. 그해의 첫 포도주가 따라졌고, 누구의 밭에서 일했는지를 잠시 잊은 손들이 같은 빵을 떼고 같은 잔을 들었다. 수확은 혼자 하는 일이 아니었다. 함께 거두고, 함께 먹는 일이었다.</p>
 <p>나는 그 식탁 앞에서, 지구 반대편의 아주 오래된 한 장면을 떠올렸다. 2500년 전, 한 사람이 추수의 제사를 마치고 성문 누각 위에 올라 서글피 탄식하고 있었다. 같은 가을, 같은 수확, 그러나 그의 한숨은 잔칫상의 온기와는 거리가 멀었다.</p>
@@ -488,8 +472,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>¹⁰ 톨레도 번역원의 다종교 협업은 12~13세기에 활발했고, 1492년 알람브라 칙령에 따른 유대인 추방(이어 무슬림 추방)으로 이베리아의 공존(콘비벤시아)은 막을 내렸다. '콘비벤시아'를 갈등 없는 이상향으로 미화하는 것은 부정확하며, 위계와 긴장을 포함한 공존이었다.</p>
 </div>
 </section>
-<section class="chapter" id="ch13">
-<span class="cnum">13</span><h2>시에나의 벽 — 좋은 정부를 그린 도시</h2>
+<section class="chapter" id="ch13"><span class="cnum">13</span><h2>시에나의 벽 — 좋은 정부를 그린 도시</h2>
 <h3>엉뚱한 방</h3>
 <p>시에나의 푸블리코 궁(Palazzo Pubblico). 나는 그 안에서 처음에 엉뚱한 방으로 들어갔다. 천장이 온통 금빛으로 화려한 방이었다. 고대 로마의 집정관들이 근엄하게 그려진, 위를 올려다보느라 목이 아픈 천장화. 한참을 두리번거렸다. 내가 찾던 것은 이게 아니었다.</p>
 <p>안내를 받아 다시 걸어, 마침내 그 방을 찾았다. 화려한 천장의 방에 비하면 소박하고 고풍스러운 벽들이었다. 금빛도, 압도하는 장식도 없었다. 그저 세 벽에 빛바랜 프레스코가 펼쳐져 있을 뿐이었다. 그런데 나는 그 빛바랜 벽 앞에서 오래 서 있게 되었다. '평화의 방(Sala dei Nove)', 또는 '평화의 방(Sala della Pace)'이라 불리는 곳. 암브로조 로렌체티가 1338년에서 1339년에 걸쳐 그린, 서양 미술사 최초의 본격적인 정치 회화가 거기 있었다.¹</p>
@@ -531,8 +514,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>⁴ 1348년 흑사병으로 시에나 인구의 약 절반이 사망했고, 화가 암브로조 로렌체티도 이해에 죽은 것으로 전해진다. 1355년 카를 4세의 입성과 함께 봉기가 일어나 아홉 명의 정부가 무너졌다. 1555년 시에나는 코시모 1세(메디치)의 피렌체에 정복되었다.</p>
 </div>
 </section>
-<section class="chapter" id="ch14">
-<span class="cnum">14</span><h2>키안티의 밤</h2>
+<section class="chapter" id="ch14"><span class="cnum">14</span><h2>키안티의 밤</h2>
 <h3>빈 벽감으로 돌아와</h3>
 <p>시에나에서 키안티로 돌아온 그 밤, 와인 한 잔을 다시 앞에 두고 나는 좋은 정부를 그린 그 벽을 오래 생각했다. 그리고 이 여행이 시작된 자리로 마음이 돌아갔다. 피렌체의 빈 벽감이다.</p>
 <p>이 여행은 군주 예배당의, 세계에서 가장 값비싼 재료로 뒤덮였으나 정작 주인공의 자리는 비워 둔 채 멈춘 그 방에서 시작했다.</p>
@@ -556,8 +538,5 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none}
 <p>와인 잔을 비우고 나는 토스카나의 어둠을 바라보았다. 멀리 키안티의 언덕 위로 별이 돋고 있었다. 그 별빛은 수천 년 전 초원을 달리던 유목민도, 피렌체의 돌을 쌓던 석공도, 시에나의 벽에 평화를 그리던 화가도, 포토시에서 죽어 가던 광부도 보았을 같은 별빛이었다. 우리는 모두 같은 하늘 아래, 같은 그물 안에 있었다. 그 그물을 어떻게 다시 짤 것인가 — 그 물음을 안고, 나는 이 여행을 닫는다.</p>
 <p>페루 여행기가 티폰의 물소리로 닫혔듯, 이 여행은 토스카나의 별빛 아래에서 닫힌다. 두 소리, 두 빛, 그러나 하나의 하늘이다.</p>
 </section>
-</article>
-<a class="up" href="#top" title="맨 위로">&#8593;</a>
-<footer><strong style="color:#fff">Justin Jeon</strong> &middot; Yonsei University &middot; <a href="/">drjustinjeon.com</a><br>
-『피렌체에서 시작된 또 하나의 여행』 &middot; 페루 여행기의 자매편 (초고)</footer>
-</body></html>
+</article><a class="up" href="#top" title="맨 위로">&#8593;</a>
+<footer><strong style="color:#fff">Justin Jeon</strong> &middot; Yonsei University &middot; <a href="/">drjustinjeon.com</a><br>『피렌체에서 시작된 또 하나의 여행』 &middot; 페루 여행기의 자매편 (초고)</footer></body></html>
