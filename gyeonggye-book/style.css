@@ -1,0 +1,63 @@
+:root{ --ink:#1a1a1a; --soft:#555; --line:#d8d2c6; --paper:#faf7f0; --accent:#7a5c3e; }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Nanum Myeongjo","Batang","Apple SD Gothic Neo",serif;
+    line-height:2.0; font-size:18px; letter-spacing:.01em;
+  }
+  .book{max-width:680px; margin:0 auto; padding:64px 28px 120px;}
+  /* 표지 */
+  .cover{min-height:70vh; display:flex; flex-direction:column; justify-content:center;
+    text-align:center; border-bottom:1px solid var(--line); margin-bottom:60px; padding-bottom:60px;}
+  .cover .kicker{color:var(--accent); letter-spacing:.4em; font-size:14px; margin-bottom:28px}
+  .cover h1{font-size:56px; letter-spacing:.12em; margin:0 0 20px; font-weight:700}
+  .cover .sub{color:var(--soft); font-size:19px; line-height:1.7; margin-bottom:36px}
+  .cover .byline{font-size:16px; color:var(--ink)}
+  .cover .note{margin-top:40px; font-size:13px; color:#a99}
+  /* 부 표지 */
+  .part{margin:100px 0 50px; text-align:center}
+  .part .pn{color:var(--accent); letter-spacing:.35em; font-size:14px}
+  .part h2{font-size:30px; letter-spacing:.08em; margin:14px 0 6px; font-weight:700}
+  .part .pd{color:var(--soft); font-size:15px}
+  .part hr{border:none; border-top:1px solid var(--line); width:60px; margin:26px auto 0}
+  /* 장 */
+  .ch{margin:72px 0 0}
+  .ch .cn{color:var(--accent); font-size:14px; letter-spacing:.3em; margin-bottom:8px}
+  .ch h3{font-size:27px; letter-spacing:.02em; margin:0 0 4px; font-weight:700; line-height:1.5}
+  .ch .cs{color:var(--soft); font-size:16px; margin:0 0 30px; font-style:italic}
+  .ch p{margin:0 0 18px; text-align:justify}
+  .ch p.lead::first-letter{font-size:1.15em}
+  .solo{margin:26px 0; text-align:center; color:var(--accent); font-size:19px; letter-spacing:.02em}
+  blockquote{margin:28px 0; padding:2px 0 2px 22px; border-left:2px solid var(--accent);
+    color:#3a332b; font-size:17px; line-height:1.9}
+  blockquote .src{display:block; margin-top:8px; font-size:14px; color:var(--soft); font-style:normal}
+  .em{color:var(--accent)}
+  .frontmatter{text-align:justify}
+  .frontmatter h3{font-size:24px; letter-spacing:.06em; text-align:center; margin:0 0 30px; font-weight:700}
+  hr.soft{border:none; border-top:1px solid var(--line); margin:60px 0}
+  @media (max-width:520px){ body{font-size:16.5px} .cover h1{font-size:40px} .book{padding:40px 20px 80px} }
+  @media print{ body{background:#fff; font-size:11pt; line-height:1.7} .book{max-width:none} .part,.ch{break-inside:avoid-page} .ch{break-before:page} }
+  .refhead{margin-top:28px;text-align:center;color:#b3a894;font-size:12px;letter-spacing:.25em}
+  .ref{color:#8a8172;font-size:12.5px;line-height:1.75;text-align:center;margin-top:2px}
+
+/* ---- 페이지 네비게이션 (분권용) ---- */
+.pagenav{display:flex; justify-content:space-between; align-items:center; gap:12px;
+  font-size:14px; letter-spacing:.02em;}
+.pagenav a{color:var(--accent); text-decoration:none; padding:6px 2px;}
+.pagenav a:hover{text-decoration:underline;}
+.pagenav.top{border-bottom:1px solid var(--line); padding-bottom:14px; margin-bottom:40px; justify-content:center;}
+.pagenav.top a{letter-spacing:.3em; font-size:13px; color:var(--soft);}
+.pagenav.bottom{border-top:1px solid var(--line); padding-top:22px; margin-top:64px;}
+.pagenav .spacer{flex:1;}
+.pagenav .disabled{color:#c9c1b3; pointer-events:none;}
+/* ---- 목차(index) ---- */
+.toc{margin-top:20px;}
+.toc .tpart{margin:40px 0 6px; color:var(--accent); letter-spacing:.15em; font-size:15px; font-weight:700;}
+.toc .tpart span{color:var(--soft); font-weight:400; letter-spacing:0; font-size:14px;}
+.toc a.titem{display:flex; align-items:baseline; gap:14px; text-decoration:none; color:var(--ink);
+  padding:10px 0; border-bottom:1px dotted var(--line);}
+.toc a.titem:hover{color:var(--accent);}
+.toc .tnum{color:var(--accent); font-size:13px; min-width:44px; letter-spacing:.1em;}
+.toc .ttit{font-size:18px;}
+.toc .tsub{color:var(--soft); font-size:14px; font-style:italic; margin-left:auto; text-align:right;}
