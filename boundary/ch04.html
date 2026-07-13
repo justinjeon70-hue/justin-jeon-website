@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="pwgate"><div class="pwbox"><h2>🔒 비밀번호</h2><p>이 글은 비밀번호로 보호되어 있습니다.</p><input id="pwin" type="password" inputmode="numeric" autocomplete="off" onkeydown="if(event.key==='Enter')pwCheck()"><button onclick="pwCheck()">확인</button><div id="pwerr" class="pwerr">비밀번호가 올바르지 않습니다.</div></div></div>
 <div class="book">
-  <div class="langbar"><a class="active" href="ch04.html">한국어</a><a href="en/ch04.html">English</a></div>
+  <div class="langbar"><a class="active" href="ch04.html">KR</a><a href="en/ch04.html">EN</a></div>
   <div class="pagenav top"><a href="index.html">경계 — 목차</a></div>
 <div class="part">
   <div class="pn">제 2 부</div>
@@ -57,5 +58,9 @@
     <a href="ch03.html">← 3장</a><span class="spacer"></span><a href="index.html">목차</a><span class="spacer"></span><a href="ch05.html">5장 →</a>
   </nav>
 </div>
+<script>
+(function(){if(sessionStorage.getItem("boundary_ok")==="1"){var g=document.getElementById("pwgate");if(g)g.parentNode.removeChild(g);}else{document.documentElement.style.overflow="hidden";var i=document.getElementById("pwin");if(i)i.focus();}})();
+function pwCheck(){var v=document.getElementById("pwin").value.trim();if(v===atob("NDg3NA==")){sessionStorage.setItem("boundary_ok","1");var g=document.getElementById("pwgate");if(g)g.parentNode.removeChild(g);document.documentElement.style.overflow="";}else{document.getElementById("pwerr").style.display="block";}}
+</script>
 </body>
 </html>

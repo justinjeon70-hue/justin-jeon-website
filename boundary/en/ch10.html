@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="pwgate"><div class="pwbox"><h2>🔒 Password</h2><p>This writing is password protected.</p><input id="pwin" type="password" inputmode="numeric" autocomplete="off" onkeydown="if(event.key==='Enter')pwCheck()"><button onclick="pwCheck()">Enter</button><div id="pwerr" class="pwerr">Incorrect password.</div></div></div>
 <div class="book">
-  <div class="langbar"><a href="../ch10.html">한국어</a><a class="active" href="ch10.html">English</a></div>
+  <div class="langbar"><a href="../ch10.html">KR</a><a class="active" href="ch10.html">EN</a></div>
   <div class="pagenav top"><a href="index.html">Boundary — Contents</a></div>
 <section class="ch">
   <div class="cn">Chapter Ten</div>
@@ -45,5 +46,9 @@
     <a href="ch09.html">← Ch. 9</a><span class="spacer"></span><a href="index.html">Contents</a><span class="spacer"></span><a href="ch11.html">Ch. 11 →</a>
   </nav>
 </div>
+<script>
+(function(){if(sessionStorage.getItem("boundary_ok")==="1"){var g=document.getElementById("pwgate");if(g)g.parentNode.removeChild(g);}else{document.documentElement.style.overflow="hidden";var i=document.getElementById("pwin");if(i)i.focus();}})();
+function pwCheck(){var v=document.getElementById("pwin").value.trim();if(v===atob("NDg3NA==")){sessionStorage.setItem("boundary_ok","1");var g=document.getElementById("pwgate");if(g)g.parentNode.removeChild(g);document.documentElement.style.overflow="";}else{document.getElementById("pwerr").style.display="block";}}
+</script>
 </body>
 </html>

@@ -67,3 +67,13 @@
 .langbar a{display:inline-block;padding:9px 22px;border:1.5px solid var(--accent);border-radius:999px;color:var(--accent);background:transparent;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.03em;transition:background .15s,color .15s}
 .langbar a:hover{background:var(--accent);color:#fff}
 .langbar a.active{background:var(--accent);color:#fff}
+
+/* password gate */
+#pwgate{position:fixed;inset:0;z-index:9999;background:var(--paper);display:flex;align-items:center;justify-content:center;padding:24px}
+#pwgate .pwbox{max-width:360px;text-align:center}
+#pwgate h2{color:var(--accent);font-size:22px;margin-bottom:10px;letter-spacing:.05em}
+#pwgate p{color:var(--soft);font-size:15px;margin-bottom:18px;line-height:1.6}
+#pwgate input{padding:11px 18px;border:1.5px solid var(--line);border-radius:8px;font-size:16px;width:180px;text-align:center;outline:none}
+#pwgate input:focus{border-color:var(--accent)}
+#pwgate button{display:block;margin:14px auto 0;padding:10px 28px;background:var(--accent);color:#fff;border:none;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer}
+#pwgate .pwerr{display:none;color:#b3392f;font-size:13px;margin-top:12px}

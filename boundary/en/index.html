@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="pwgate"><div class="pwbox"><h2>🔒 Password</h2><p>This writing is password protected.</p><input id="pwin" type="password" inputmode="numeric" autocomplete="off" onkeydown="if(event.key==='Enter')pwCheck()"><button onclick="pwCheck()">Enter</button><div id="pwerr" class="pwerr">Incorrect password.</div></div></div>
 <div class="book">
-  <div class="langbar"><a href="../index.html">한국어</a><a class="active" href="index.html">English</a></div>
+  <div class="langbar"><a href="../index.html">KR</a><a class="active" href="index.html">EN</a></div>
 <section class="cover">
   <div class="kicker">Things Born at the Boundary</div>
   <h1>Beholding the Boundary from the Boundary</h1>
@@ -38,5 +39,9 @@
 <a class="titem" href="epilogue.html"><span class="tnum">Epilogue</span><span class="ttit">All the Boundaries Between Me and the World Shall Fall</span></a>
 </section>
 </div>
+<script>
+(function(){if(sessionStorage.getItem("boundary_ok")==="1"){var g=document.getElementById("pwgate");if(g)g.parentNode.removeChild(g);}else{document.documentElement.style.overflow="hidden";var i=document.getElementById("pwin");if(i)i.focus();}})();
+function pwCheck(){var v=document.getElementById("pwin").value.trim();if(v===atob("NDg3NA==")){sessionStorage.setItem("boundary_ok","1");var g=document.getElementById("pwgate");if(g)g.parentNode.removeChild(g);document.documentElement.style.overflow="";}else{document.getElementById("pwerr").style.display="block";}}
+</script>
 </body>
 </html>
