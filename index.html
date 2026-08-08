@@ -1849,7 +1849,7 @@ layout: null
             <img src="photo_hero.jpg" alt="Justin Jeon" class="hero-new-photo fade-in">
             <div class="hero-stats fade-in fade-in-delay-2">
                 <div class="hero-stat">
-                    <span class="hero-stat-number">13.4K</span>
+                    <span class="hero-stat-number" id="hero-citations">14K</span>
                     <span class="hero-stat-label">Citations</span>
                 </div>
                 <div class="hero-stat">
@@ -1857,7 +1857,7 @@ layout: null
                     <span class="hero-stat-label">Papers</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-number">58</span>
+                    <span class="hero-stat-number" id="hero-hindex">59</span>
                     <span class="hero-stat-label">h-index</span>
                 </div>
             </div>
@@ -1935,9 +1935,9 @@ layout: null
                 <div class="metrics-card">
                     <div class="metrics-card-title" data-i18n="about.metrics">Google Scholar Metrics</div>
                     <div id="gs-metrics">
-                        <div class="metric-row"><span class="metric-label" data-i18n="about.citations">Citations</span><span class="metric-value" id="gs-citations">Loading...</span></div>
-                        <div class="metric-row"><span class="metric-label">h-index</span><span class="metric-value" id="gs-hindex">Loading...</span></div>
-                        <div class="metric-row"><span class="metric-label">i10-index</span><span class="metric-value" id="gs-i10">Loading...</span></div>
+                        <div class="metric-row"><span class="metric-label" data-i18n="about.citations">Citations</span><span class="metric-value" id="gs-citations">14,040</span></div>
+                        <div class="metric-row"><span class="metric-label">h-index</span><span class="metric-value" id="gs-hindex">59</span></div>
+                        <div class="metric-row"><span class="metric-label">i10-index</span><span class="metric-value" id="gs-i10">175</span></div>
                         <div class="metric-row"><span class="metric-label" data-i18n="about.pubs">Publications</span><span class="metric-value">300+</span></div>
                     </div>
                     <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="metrics-link" data-i18n="about.viewgs" data-i18n-html="true">
@@ -2582,37 +2582,26 @@ document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in').forE
     setTimeout(type, 1500);
 })();
 
-// Google Scholar metrics via CORS proxy, with fallback
+// Google Scholar metrics from scholar-stats.json (refreshed weekly by GitHub Actions)
 (async function loadScholarMetrics() {
-    const SCHOLAR_ID = '43h5Xs8AAAAJ';
-    const corsProxies = [
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://scholar.google.com/citations?user=${SCHOLAR_ID}&hl=en`)}`,
-        `https://corsproxy.io/?${encodeURIComponent(`https://scholar.google.com/citations?user=${SCHOLAR_ID}&hl=en`)}`
-    ];
-
-    for (const proxyUrl of corsProxies) {
-        try {
-            const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(8000) });
-            if (!response.ok) continue;
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const cells = doc.querySelectorAll('#gsc_rsb_st td.gsc_rsb_std');
-            if (cells.length >= 6) {
-                document.getElementById('gs-citations').textContent = cells[0].textContent.trim();
-                document.getElementById('gs-hindex').textContent = cells[2].textContent.trim();
-                document.getElementById('gs-i10').textContent = cells[4].textContent.trim();
-                console.log('Google Scholar metrics loaded live');
-                return;
-            }
-        } catch (e) {
-            console.warn('Proxy failed:', e.message);
+    try {
+        const response = await fetch('scholar-stats.json', { cache: 'no-cache' });
+        if (!response.ok) return;
+        const s = await response.json();
+        if (!s.citations || !s.h_index) return;
+        document.getElementById('gs-citations').textContent = s.citations.toLocaleString('en-US');
+        document.getElementById('gs-hindex').textContent = s.h_index;
+        document.getElementById('gs-i10').textContent = s.i10_index;
+        const heroCitations = document.getElementById('hero-citations');
+        if (heroCitations) {
+            heroCitations.textContent = (s.citations / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
         }
+        const heroHindex = document.getElementById('hero-hindex');
+        if (heroHindex) heroHindex.textContent = s.h_index;
+        console.log('Google Scholar metrics loaded (updated ' + s.updated + ')');
+    } catch (e) {
+        console.warn('scholar-stats.json load failed, using inline values:', e.message);
     }
-    document.getElementById('gs-citations').textContent = '13,443';
-    document.getElementById('gs-hindex').textContent = '58';
-    document.getElementById('gs-i10').textContent = '170';
-    console.log('Using cached Google Scholar metrics');
 })();
 
 // ===== Language Toggle =====
