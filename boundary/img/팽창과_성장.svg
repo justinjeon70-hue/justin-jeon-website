@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" width="620" height="300">
+  <defs>
+    <marker id="o" markerWidth="7" markerHeight="7" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 z" fill="#9c9384"/>
+    </marker>
+  </defs>
+
+  <!-- 팽창 -->
+  <g>
+    <circle cx="155" cy="112" r="72" fill="none" stroke="#9c9384" stroke-width="1"/>
+    <circle cx="155" cy="112" r="30" fill="none" stroke="#c6bfb2" stroke-width="1.2" stroke-dasharray="3 4"/>
+    <g stroke="#9c9384" stroke-width="1.2">
+      <line x1="155" y1="76"  x2="155" y2="32"  marker-end="url(#o)"/>
+      <line x1="191" y1="112" x2="235" y2="112" marker-end="url(#o)"/>
+      <line x1="155" y1="148" x2="155" y2="192" marker-end="url(#o)"/>
+      <line x1="119" y1="112" x2="75"  y2="112" marker-end="url(#o)"/>
+      <line x1="181" y1="86"  x2="212" y2="55"  marker-end="url(#o)"/>
+      <line x1="129" y1="138" x2="98"  y2="169" marker-end="url(#o)"/>
+    </g>
+    <text x="155" y="238" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="700" fill="#2c2925">팽창</text>
+    <text x="155" y="264" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#7d746a">커질수록 막이 얇아진다</text>
+    <text x="155" y="285" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#7d746a">가장 커진 순간 가장 약하다</text>
+  </g>
+
+  <text x="310" y="120" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="15" fill="#c6bfb2">|</text>
+
+  <!-- 성장 -->
+  <g fill="none" stroke="#a8703f">
+    <circle cx="465" cy="112" r="72" stroke-width="5"/>
+    <circle cx="465" cy="112" r="62" stroke-width="1.3"/>
+    <circle cx="465" cy="112" r="52" stroke-width="1.3"/>
+    <circle cx="465" cy="112" r="42" stroke-width="1.3"/>
+    <circle cx="465" cy="112" r="31" stroke-width="1.3"/>
+    <circle cx="465" cy="112" r="20" stroke-width="1.3"/>
+    <circle cx="465" cy="112" r="9"  stroke-width="1.3"/>
+  </g>
+  <text x="465" y="238" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="700" fill="#a8703f">성장</text>
+  <text x="465" y="264" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#7d746a">커질수록 껍질이 두꺼워진다</text>
+  <text x="465" y="285" text-anchor="middle" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#7d746a">안쪽에 나이테가 하나 더 생긴다</text>
+</svg>

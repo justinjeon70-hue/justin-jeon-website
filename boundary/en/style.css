@@ -61,6 +61,17 @@
 .toc .tnum{color:var(--accent); font-size:13px; min-width:44px; letter-spacing:.1em;}
 .toc .ttit{font-size:18px;}
 .toc .tsub{color:var(--soft); font-size:14px; font-style:italic; margin-left:auto; text-align:right;}
+/* ---- 본문 삽화 ---- */
+figure.fig{margin:48px auto; text-align:center;}
+figure.fig img{max-width:400px; width:100%; height:auto; display:block; margin:0 auto;}
+figure.fig figcaption{margin-top:14px; font-size:14px; color:var(--soft); line-height:1.7;}
+@media print{ figure.fig{page-break-inside:avoid;} }
+figure.fig.wide img{max-width:680px;}
+/* ---- 참고문헌 ---- */
+.bib h4{margin:34px 0 10px; font-size:16px; color:var(--accent); letter-spacing:.02em;}
+.bib ul{list-style:none; padding:0; margin:0;}
+.bib li{padding:7px 0 7px 18px; text-indent:-18px; font-size:15.5px; line-height:1.75;}
+.bib .kr{color:var(--soft); font-size:14px;}
 
 /* language toggle */
 .langbar{display:flex;justify-content:center;gap:10px;margin:24px 0 4px}

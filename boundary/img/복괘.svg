@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300">
+  <g fill="#2c2925">
+    <rect x="150" y="34"  width="94" height="15" rx="2"/><rect x="276" y="34"  width="94" height="15" rx="2"/>
+    <rect x="150" y="78"  width="94" height="15" rx="2"/><rect x="276" y="78"  width="94" height="15" rx="2"/>
+    <rect x="150" y="122" width="94" height="15" rx="2"/><rect x="276" y="122" width="94" height="15" rx="2"/>
+    <rect x="150" y="176" width="94" height="15" rx="2"/><rect x="276" y="176" width="94" height="15" rx="2"/>
+    <rect x="150" y="220" width="94" height="15" rx="2"/><rect x="276" y="220" width="94" height="15" rx="2"/>
+  </g>
+  <rect x="150" y="264" width="220" height="15" rx="2" fill="#a8703f"/>
+  <g font-family="Malgun Gothic, sans-serif" font-size="12.5" fill="#9c9384" text-anchor="end">
+    <text x="132" y="46">상육</text>
+    <text x="132" y="90">육오</text>
+    <text x="132" y="134">육사</text>
+    <text x="132" y="188">육삼</text>
+    <text x="132" y="232">육이</text>
+    <text x="132" y="276" fill="#a8703f">초구</text>
+  </g>
+  <g stroke="#cfc7ba" stroke-width="1" fill="none">
+    <path d="M394 34 L402 34 L402 137 L394 137"/>
+    <path d="M394 176 L402 176 L402 279 L394 279"/>
+  </g>
+  <g font-family="Malgun Gothic, sans-serif" font-size="13.5" fill="#7d746a">
+    <text x="412" y="81">땅 坤</text>
+    <text x="412" y="223">우레 震</text>
+  </g>
+</svg>
