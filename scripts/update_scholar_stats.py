@@ -1,8 +1,13 @@
 """Fetch Google Scholar profile metrics and write them to scholar-stats.json.
 
 Run weekly by .github/workflows/update-scholar-stats.yml.
-If every fetch strategy fails (Scholar rate-limiting etc.), exits 0 without
-touching the JSON so the previous numbers stay in place until the next run.
+If every fetch strategy fails (Scholar blocks datacenter IPs, rate-limiting
+etc.), the JSON is left untouched and the script exits 1 so the caller fails
+loudly instead of reporting a green run that changed nothing.
+
+The weekly GitHub Actions run is expected to fail this way; the authoritative
+updater is the Windows scheduled task "UpdateScholarStats" on the author's PC
+(scripts/update_scholar_weekly.ps1), which runs from a residential IP.
 """
 
 import json
@@ -69,7 +74,7 @@ def main() -> int:
         print(f"updated {OUT_PATH.name}: {stats}")
         return 0
     print("all fetch strategies failed; keeping previous stats", file=sys.stderr)
-    return 0
+    return 1
 
 
 if __name__ == "__main__":

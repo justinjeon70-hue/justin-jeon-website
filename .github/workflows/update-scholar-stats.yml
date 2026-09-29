@@ -18,10 +18,16 @@ jobs:
         with:
           python-version: '3.12'
 
+      # Google Scholar blocks GitHub's datacenter IPs, so this step usually
+      # fails. It is a backup only: the primary updater is the Windows
+      # scheduled task "UpdateScholarStats" on the author's PC.
       - name: Fetch Scholar metrics
+        id: fetch
+        continue-on-error: true
         run: python scripts/update_scholar_stats.py
 
       - name: Commit and push if changed
+        if: steps.fetch.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -32,3 +38,7 @@ jobs:
           else
             echo "No changes in scholar stats"
           fi
+
+      - name: Report blocked fetch
+        if: steps.fetch.outcome != 'success'
+        run: echo "::warning::Scholar fetch blocked on the runner; stats still come from the local scheduled task."
