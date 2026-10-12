@@ -551,6 +551,115 @@ layout: null
             line-height: 1.55;
         }
 
+        /* ===== Vision ===== */
+        html[lang="ko"] .research-card p,
+        html[lang="ko"] .vision-panel { word-break: keep-all; }
+
+        #vision { padding-top: 40px; }
+
+        .vision-panel {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-dark);
+            color: #f5f5f7;
+            border-radius: 28px;
+            padding: 72px 64px 56px;
+        }
+
+        .vision-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 0%, rgba(0, 113, 227, 0.28), transparent 70%),
+                radial-gradient(ellipse 50% 50% at 90% 100%, rgba(52, 199, 89, 0.18), transparent 70%);
+            pointer-events: none;
+        }
+
+        .vision-panel > * { position: relative; }
+
+        .vision-panel .section-label { color: #64a8ff; }
+
+        .vision-quote {
+            font-size: clamp(1.35rem, 2.6vw, 2rem);
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -0.015em;
+            max-width: 860px;
+            margin: 0.5rem 0 1.25rem;
+        }
+
+        .vision-quote em {
+            font-style: normal;
+            background: linear-gradient(135deg, #64a8ff, #34c759);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .vision-attr {
+            font-size: 0.9rem;
+            color: #a1a1a6;
+            margin-bottom: 3.5rem;
+        }
+
+        .vision-pipeline-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #a1a1a6;
+            margin-bottom: 1.25rem;
+        }
+
+        .vision-pipeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            counter-reset: step;
+        }
+
+        .vision-step {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 1.5rem;
+            counter-increment: step;
+        }
+
+        .vision-step::before {
+            content: '0' counter(step);
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64a8ff;
+            margin-bottom: 0.6rem;
+        }
+
+        .vision-step h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #f5f5f7;
+        }
+
+        .vision-step p {
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: #a1a1a6;
+        }
+
+        @media (max-width: 900px) {
+            .vision-pipeline { grid-template-columns: repeat(2, 1fr); }
+            .vision-panel { padding: 56px 40px 44px; }
+        }
+
+        @media (max-width: 600px) {
+            .vision-pipeline { grid-template-columns: 1fr; }
+            .vision-panel { padding: 40px 1.5rem 32px; border-radius: 20px; }
+            #vision { padding-top: 20px; }
+        }
+
         /* ===== Education ===== */
         .edu-timeline {
             display: flex;
@@ -1818,6 +1927,7 @@ layout: null
         <ul>
             <li><a href="#about" data-i18n="nav.about">About</a></li>
             <li><a href="#research" data-i18n="nav.research">Research</a></li>
+            <li><a href="#vision" data-i18n="nav.vision">Vision</a></li>
             <li><a href="#education" data-i18n="nav.education">Education</a></li>
             <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
             <li><a href="#network" data-i18n="nav.network">Network</a></li>
@@ -1875,7 +1985,7 @@ layout: null
                     <span class="hero-stat-label">Papers</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-number" id="hero-hindex">59</span>
+                    <span class="hero-stat-number" id="hero-hindex">61</span>
                     <span class="hero-stat-label">h-index</span>
                 </div>
             </div>
@@ -1945,17 +2055,18 @@ layout: null
                     the University of Zurich.
                 </p>
                 <p class="fade-in" data-i18n="about.p4" data-i18n-html="true">
-                    With over <strong>300 publications</strong> spanning exercise oncology, diabetes, obesity, and health systems,
-                    his work aims to translate scientific evidence into real-world interventions that improve lives.
+                    With over <strong>300 publications</strong> and <strong>30+ randomized controlled trials</strong> spanning exercise medicine,
+                    obesity and diabetes, cancer, digital therapeutics, and AI, his work aims to translate scientific evidence into
+                    real-world interventions that improve lives.
                 </p>
             </div>
             <div class="fade-in">
                 <div class="metrics-card">
                     <div class="metrics-card-title" data-i18n="about.metrics">Google Scholar Metrics</div>
                     <div id="gs-metrics">
-                        <div class="metric-row"><span class="metric-label" data-i18n="about.citations">Citations</span><span class="metric-value" id="gs-citations">14,040</span></div>
-                        <div class="metric-row"><span class="metric-label">h-index</span><span class="metric-value" id="gs-hindex">59</span></div>
-                        <div class="metric-row"><span class="metric-label">i10-index</span><span class="metric-value" id="gs-i10">175</span></div>
+                        <div class="metric-row"><span class="metric-label" data-i18n="about.citations">Citations</span><span class="metric-value" id="gs-citations">14,734</span></div>
+                        <div class="metric-row"><span class="metric-label">h-index</span><span class="metric-value" id="gs-hindex">61</span></div>
+                        <div class="metric-row"><span class="metric-label">i10-index</span><span class="metric-value" id="gs-i10">178</span></div>
                         <div class="metric-row"><span class="metric-label" data-i18n="about.pubs">Publications</span><span class="metric-value">300+</span></div>
                     </div>
                     <a href="https://scholar.google.com/citations?user=43h5Xs8AAAAJ&hl=en" target="_blank" class="metrics-link" data-i18n="about.viewgs" data-i18n-html="true">
@@ -1973,37 +2084,67 @@ layout: null
     <div class="section-inner">
         <p class="section-label slide-right" data-i18n="research.label">Research</p>
         <h2 class="section-heading slide-right" data-i18n="research.heading">Areas of focus.</h2>
-        <p class="section-subheading slide-right" data-i18n="research.sub">Pioneering research at the intersection of exercise science, chronic disease, and health system transformation.</p>
+        <p class="section-subheading slide-right" data-i18n="research.sub">Five connected fields, one translational program &mdash; from molecular mechanisms and clinical trials to digital therapeutics and AI, grounded in a salutogenic view of health.</p>
         <div class="research-grid">
             <div class="research-card tilt-card glow-card fade-in">
-                <div class="research-icon">&#127981;</div>
-                <h3 data-i18n="research.c1t">Exercise Oncology</h3>
-                <p data-i18n="research.c1p">Exercise interventions for cancer patients and survivors across all phases of survivorship</p>
+                <div class="research-icon">&#127939;</div>
+                <h3 data-i18n="research.c1t">Exercise Medicine</h3>
+                <p data-i18n="research.c1p">Prescribing exercise as therapy for every population &mdash; spinal cord injury, Parkinson&rsquo;s disease, NTM lung disease, cardiac rehabilitation, mental health, and youth fitness across the lifespan</p>
             </div>
             <div class="research-card fade-in fade-in-delay-1">
                 <div class="research-icon">&#129656;</div>
-                <h3 data-i18n="research.c2t">Exercise &amp; Diabetes</h3>
-                <p data-i18n="research.c2p">Physical activity-based management strategies for type 2 diabetes and metabolic syndrome</p>
+                <h3 data-i18n="research.c2t">Obesity &amp; Diabetes</h3>
+                <p data-i18n="research.c2p">Resistance exercise and physical activity for type 2 diabetes, metabolic syndrome, MASLD and CKD &mdash; including resting heart rate as a zero-cost population biomarker</p>
             </div>
             <div class="research-card fade-in fade-in-delay-2">
-                <div class="research-icon">&#127793;</div>
-                <h3 data-i18n="research.c3t">Salutogenesis</h3>
-                <p data-i18n="research.c3p">Health generation paradigm &mdash; shifting from disease treatment to systemic health creation</p>
+                <div class="research-icon">&#127895;</div>
+                <h3 data-i18n="research.c3t">Exercise Oncology</h3>
+                <p data-i18n="research.c3p">Exercise across the cancer journey &mdash; prehabilitation, treatment and survivorship in colorectal, breast, prostate and pediatric cancers, from biomarkers to multi-site RCTs</p>
             </div>
             <div class="research-card fade-in fade-in-delay-3">
-                <div class="research-icon">&#129516;</div>
-                <h3 data-i18n="research.c4t">Exercise Physiology</h3>
-                <p data-i18n="research.c4p">Mechanisms of exercise-induced health benefits, molecular pathways, and biomarkers</p>
+                <div class="research-icon">&#128241;</div>
+                <h3 data-i18n="research.c4t">Digital Therapeutics</h3>
+                <p data-i18n="research.c4p">Turning validated exercise programs into treatment in the patient&rsquo;s hand &mdash; Saluto AI, breath acetone biosensors, wearable body composition and textile electrostimulation</p>
             </div>
             <div class="research-card fade-in fade-in-delay-4">
-                <div class="research-icon">&#127759;</div>
-                <h3 data-i18n="research.c5t">Public Health &amp; Policy</h3>
-                <p data-i18n="research.c5p">System-level interventions for suicide prevention, chronic disease, and health equity</p>
+                <div class="research-icon">&#129302;</div>
+                <h3 data-i18n="research.c5t">AI in Health</h3>
+                <p data-i18n="research.c5p">Machine learning that predicts and personalizes &mdash; undiagnosed diabetes, cardiovascular mortality, ECG-based screening, and exercise energy expenditure estimation</p>
             </div>
             <div class="research-card fade-in fade-in-delay-5">
-                <div class="research-icon">&#129302;</div>
-                <h3 data-i18n="research.c6t">AI in Health</h3>
-                <p data-i18n="research.c6p">Human-centered AI platforms integrating personal, relational, and environmental health data</p>
+                <div class="research-icon">&#127793;</div>
+                <h3 data-i18n="research.c6t">Salutogenesis</h3>
+                <p data-i18n="research.c6p">The framework that ties it together &mdash; shifting from disease treatment (pathogenesis) to systemic health creation for individuals, communities and society</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision -->
+<section id="vision" class="section">
+    <div class="section-inner">
+        <div class="vision-panel fade-in">
+            <p class="section-label" data-i18n="vision.label">Vision</p>
+            <p class="vision-quote" data-i18n="vision.quote" data-i18n-html="true">&ldquo;In a world where chronic disease is the leading cause of death and disability, <em>exercise is not a luxury &mdash; it is a fundamental therapeutic modality</em> that must be prescribed, personalized, and scaled through technology to reach every patient, every survivor, every community.&rdquo;</p>
+            <p class="vision-attr" data-i18n="vision.attr">&mdash; The research vision of Dr. Justin Y. Jeon</p>
+            <p class="vision-pipeline-title" data-i18n="vision.pipeline">From discovery to health solutions</p>
+            <div class="vision-pipeline">
+                <div class="vision-step">
+                    <h3 data-i18n="vision.s1t">Basic Mechanisms</h3>
+                    <p data-i18n="vision.s1p">Adipocytokines, inflammasomes, DNA methylation and metabolomics &mdash; understanding why exercise heals at the molecular level.</p>
+                </div>
+                <div class="vision-step">
+                    <h3 data-i18n="vision.s2t">Clinical Trials</h3>
+                    <p data-i18n="vision.s2p">30+ RCTs across cancer, metabolic disease, cardiac rehabilitation and spinal cord injury &mdash; proving exercise is medicine.</p>
+                </div>
+                <div class="vision-step">
+                    <h3 data-i18n="vision.s3t">Population Science</h3>
+                    <p data-i18n="vision.s3p">KNHANES analyses, Global Matrix report cards across 57 countries and global surveillance &mdash; shaping guidelines for millions.</p>
+                </div>
+                <div class="vision-step">
+                    <h3 data-i18n="vision.s4t">Digital Solutions</h3>
+                    <p data-i18n="vision.s4p">Wearables, breath biomarkers, AI prediction and digital therapeutics &mdash; scaling the evidence to reach every patient.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -2627,6 +2768,7 @@ const translations = {
     ko: {
         'nav.about': '소개',
         'nav.research': '연구',
+        'nav.vision': '비전',
         'nav.education': '학력',
         'nav.publications': '논문',
         'nav.media': '미디어',
@@ -2643,7 +2785,7 @@ const translations = {
         'about.p1': '전용관 교수는 <strong>연세대학교</strong> 교육과학대학 스포츠응용산업학과, 세브란스병원 연세암센터 암예방센터에 재직하고 있습니다.',
         'about.p2': '연세대학교 <strong>운동의학·살루토제네시스 센터</strong> 센터장으로서, 만성질환 관리를 위한 운동 기반 중재를 개발하고 검증하고 있으며, 그의 연구는 운동생리학, 종양학, 공중보건의 교차점에 위치합니다.',
         'about.p3': '최근에는 <strong>한국 건강생성 시스템 전환 연구그룹</strong>을 이끌며, 자살, 저출산, 만성질환 등 한국의 복합적 건강 위기에 대해 병인론(Pathogenesis, 질병 중심)에서 <strong>살루토제네시스</strong>(Salutogenesis, 건강 생성)로의 패러다임 전환을 추구하고 있습니다. <strong>살루토제네시스 글로벌 워킹그룹</strong>(IUHPE/STARS) 회원이며, 취리히대학교 살루토제네시스 센터와 협력하고 있습니다.',
-        'about.p4': '운동종양학, 당뇨, 비만, 건강 시스템 분야에서 <strong>300편 이상의 논문</strong>을 발표하였으며, 과학적 근거를 실제 삶을 변화시키는 중재로 전환하는 것을 목표로 하고 있습니다.',
+        'about.p4': '운동의학, 비만·당뇨, 암, 디지털 치료제, AI 분야에서 <strong>300편 이상의 논문</strong>을 발표하고 <strong>30건 이상의 무작위 대조시험</strong>을 수행하였으며, 과학적 근거를 실제 삶을 변화시키는 중재로 전환하는 것을 목표로 하고 있습니다.',
         'about.metrics': 'Google Scholar 지표',
         'about.citations': '피인용수',
         'about.pubs': '논문 수',
@@ -2659,19 +2801,31 @@ const translations = {
         'network.s4': '기관',
         'research.label': '연구',
         'research.heading': '주요 연구 분야.',
-        'research.sub': '운동과학, 만성질환, 건강 시스템 전환의 교차점에서 선도적 연구를 수행하고 있습니다.',
-        'research.c1t': '운동종양학',
-        'research.c1p': '암 환자 및 생존자를 위한 생존 단계별 운동 중재 연구',
-        'research.c2t': '운동과 당뇨',
-        'research.c2p': '제2형 당뇨병 및 대사증후군의 신체활동 기반 관리 전략',
-        'research.c3t': '살루토제네시스',
-        'research.c3p': '건강 생성 패러다임 — 질병 치료에서 체계적 건강 창출로의 전환',
-        'research.c4t': '운동생리학',
-        'research.c4p': '운동 유발 건강 효과의 메커니즘, 분자 경로 및 바이오마커 연구',
-        'research.c5t': '공중보건 및 정책',
-        'research.c5p': '자살 예방, 만성질환, 건강 형평성을 위한 시스템 수준의 중재',
-        'research.c6t': 'AI 헬스',
-        'research.c6p': '개인·관계·환경 건강 데이터를 통합하는 인간 중심 AI 플랫폼',
+        'research.sub': '서로 연결된 다섯 분야, 하나의 중개 연구 — 분자 기전과 임상시험에서 디지털 치료제와 AI까지, 살루토제네시스의 관점으로 잇습니다.',
+        'research.c1t': '운동의학',
+        'research.c1p': '모든 사람을 위한 운동 처방 — 척수손상, 파킨슨병, 비결핵항산균 폐질환, 심장재활, 정신건강, 그리고 생애 전반의 체력',
+        'research.c2t': '비만 · 당뇨',
+        'research.c2p': '제2형 당뇨병, 대사증후군, 지방간, 만성콩팥병을 위한 근력운동과 신체활동 — 비용 없는 지표인 안정시 심박수 연구 포함',
+        'research.c3t': '암',
+        'research.c3p': '진단부터 치료 후 생존까지 — 대장암·유방암·전립선암·소아암의 수술 전 운동, 치료 중 운동, 생존자 운동을 바이오마커부터 다기관 임상시험까지',
+        'research.c4t': '디지털 치료제',
+        'research.c4p': '검증된 운동 프로그램을 환자 손 안의 치료로 — Saluto AI, 호기 아세톤 센서, 웨어러블 체성분 측정, 섬유형 전기자극',
+        'research.c5t': 'AI',
+        'research.c5p': '예측하고 개인화하는 건강 지능 — 미진단 당뇨, 심혈관 사망, 심전도 기반 선별, 운동 에너지 소비 추정',
+        'research.c6t': '살루토제네시스',
+        'research.c6p': '모든 연구를 잇는 틀 — 질병 치료(병인론)에서 개인·공동체·사회의 건강 생성으로',
+        'vision.label': '비전',
+        'vision.quote': '“만성질환이 사망과 장애의 가장 큰 원인인 세상에서, <em>운동은 사치가 아니라 근본적인 치료입니다.</em> 운동은 처방되고, 개인에게 맞춰지고, 기술을 통해 확장되어 모든 환자, 모든 생존자, 모든 지역사회에 닿아야 합니다.”',
+        'vision.attr': '— 전용관 교수의 연구 비전',
+        'vision.pipeline': '발견에서 건강 솔루션까지',
+        'vision.s1t': '기초 기전',
+        'vision.s1p': '아디포카인, 인플라마좀, DNA 메틸화, 대사체 — 운동이 왜 몸을 치유하는지 분자 수준에서 밝힙니다.',
+        'vision.s2t': '임상시험',
+        'vision.s2p': '암, 대사질환, 심장재활, 척수손상 분야의 30건 이상의 무작위 대조시험 — 운동이 약임을 증명합니다.',
+        'vision.s3t': '인구집단 연구',
+        'vision.s3p': '국민건강영양조사 분석, 57개국 글로벌 매트릭스 보고서, 세계 신체활동 감시 — 수백만 명을 위한 지침을 만듭니다.',
+        'vision.s4t': '디지털 솔루션',
+        'vision.s4p': '웨어러블, 호기 바이오마커, AI 예측, 디지털 치료제 — 근거를 모든 환자에게 닿게 합니다.',
         'edu.label': '학력',
         'edu.heading': '학문적 여정.',
         'edu.postdoc': '박사후',
